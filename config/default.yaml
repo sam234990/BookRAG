@@ -1,0 +1,84 @@
+# configs/default.yaml
+
+pdf_path: TODO
+save_path: TODO
+
+llm:
+  model_name: TODO
+  api_key: TODO
+  api_base: TODO
+  backend: openai
+  max_tokens: 5000
+  temperature: 0.1
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+  max_workers: 8
+
+
+vlm:
+  model_name: TODO
+  api_key: TODO
+  api_base: TODO
+  temperature: 0.1
+  max_tokens: 6000
+  backend: ollama
+
+index:
+  chunk_size: 512
+  overlap: 50
+
+mineru:
+  backend: vlm-sglang-client
+  method: vlm
+  server_url: TODO
+  lang: en
+
+tree:
+  node_keywords: True
+  node_summary: True
+
+graph:
+  extractor_type: "llm"
+  local_model_name: "en_core_web_sm"
+  image_description_force: True
+  max_gleaning: 0
+  refine_type: "advanced"
+  embedding_config:
+    model_name: TODO
+    backend: openai
+    max_length: TODO
+    device: TODO
+    api_base: TODO
+  reranker_config:
+    model_name: TODO
+    max_length: 4096
+    device: TODO
+    backend: vllm
+    api_base: TODO
+
+vdb:
+  mm_embedding: True
+  vdb_dir_name: "Tree_vdb"
+  collection_name: "TreeVDB"
+  embedding_config:
+    model_name: TODO
+    device: TODO
+
+rag_force_reprocess: True
+
+rag:
+  strategy: gbc
+  varient: standard
+  topk: 10
+  sim_threshold: 0.3
+  select_depth: 2
+  max_retry: 2
+  reranker_config:
+    model_name: TODO
+    max_length: TODO
+    device: TODO
+    backend: vllm
+    api_base: TODO
+  mm_reranker_config:
+    model_name: TODO
+    device: TODO

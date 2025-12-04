@@ -1,0 +1,3 @@
+api_base
+api_key
+gpt-4o-mini
