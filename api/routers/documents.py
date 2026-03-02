@@ -137,6 +137,13 @@ async def download_raw_document(doc_id: str, current_user: dict = Depends(get_cu
     if not raw_path or not os.path.isfile(raw_path):
         raise HTTPException(status_code=404, detail="Raw document file not found")
 
+    # Prevent path-traversal: resolved path must be inside UPLOAD_DIR
+    resolved = os.path.realpath(raw_path)
+    upload_root = os.path.realpath(UPLOAD_DIR)
+    if not resolved.startswith(upload_root + os.sep) and resolved != upload_root:
+        log.warning(f"Path traversal blocked: {raw_path} resolved to {resolved}")
+        raise HTTPException(status_code=403, detail="Access denied")
+
     filename = os.path.basename(raw_path)
     return FileResponse(
         path=raw_path,

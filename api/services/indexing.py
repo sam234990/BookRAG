@@ -3,13 +3,12 @@ import asyncio
 import logging
 import os
 import shutil
-from concurrent.futures import ThreadPoolExecutor
 
 from api.db import mongodb as db
-from api.dependencies import MONGO_URI, MONGO_DB_PREFIX, INDEX_SAVE_DIR
+from api.dependencies import MONGO_URI, MONGO_DB_PREFIX, INDEX_SAVE_DIR, THREAD_POOL
 
 log = logging.getLogger(__name__)
-_executor = ThreadPoolExecutor(max_workers=2)
+_executor = THREAD_POOL
 
 
 def _build_index_sync(pdf_path: str, save_path: str, tenant_id: str, doc_id: str, config_path: str):

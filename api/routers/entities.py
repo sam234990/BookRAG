@@ -39,7 +39,7 @@ async def list_entities(doc_id: str, current_user: dict = Depends(get_current_us
         entities = await svc.list_entities(tenant_id, doc_id, CONFIG_PATH)
     except Exception as exc:
         log.exception(f"list_entities failed: {exc}")
-        raise HTTPException(status_code=500, detail=str(exc))
+        raise HTTPException(status_code=500, detail="Internal server error")
 
     return EntityListResponse(
         entities=[EntityInfo(**e) for e in entities],
@@ -73,7 +73,7 @@ async def rename_entity(
         raise HTTPException(status_code=404, detail=str(exc))
     except Exception as exc:
         log.exception(f"rename_entity failed: {exc}")
-        raise HTTPException(status_code=500, detail=str(exc))
+        raise HTTPException(status_code=500, detail="Internal server error")
 
     return EntityOperationResponse(
         success=True,
@@ -111,7 +111,7 @@ async def merge_entities(
         raise HTTPException(status_code=404, detail=str(exc))
     except Exception as exc:
         log.exception(f"merge_entities failed: {exc}")
-        raise HTTPException(status_code=500, detail=str(exc))
+        raise HTTPException(status_code=500, detail="Internal server error")
 
     return EntityOperationResponse(
         success=True,
@@ -150,7 +150,7 @@ async def split_entity(
         raise HTTPException(status_code=404, detail=str(exc))
     except Exception as exc:
         log.exception(f"split_entity failed: {exc}")
-        raise HTTPException(status_code=500, detail=str(exc))
+        raise HTTPException(status_code=500, detail="Internal server error")
 
     return EntityOperationResponse(
         success=True,
@@ -184,7 +184,7 @@ async def suggest_merges(
         )
     except Exception as exc:
         log.exception(f"suggest_merges failed: {exc}")
-        raise HTTPException(status_code=500, detail=str(exc))
+        raise HTTPException(status_code=500, detail="Internal server error")
 
     return SuggestMergesResponse(suggestions=[
         MergeSuggestion(

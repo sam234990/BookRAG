@@ -10,11 +10,12 @@ After a document is indexed, this service:
 import asyncio
 import logging
 import os
-from concurrent.futures import ThreadPoolExecutor
 from typing import List
 
+from api.dependencies import THREAD_POOL
+
 log = logging.getLogger(__name__)
-_executor = ThreadPoolExecutor(max_workers=2)
+_executor = THREAD_POOL
 
 RESOLUTION_THRESHOLD = float(os.getenv("BOOKRAG_ENTITY_RESOLUTION_THRESHOLD", "0.85"))
 GLOBAL_VDB_DIR = os.getenv("BOOKRAG_GLOBAL_VDB_DIR", "./indices")

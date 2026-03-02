@@ -1,20 +1,37 @@
 """Pydantic request and response models for the BookRAG API."""
 from typing import List, Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
+
+# ── Reusable length constraints ──────────────────────────────────────────────
+_SHORT_STR = 128        # usernames, tenant_ids, role names
+_PASSWORD_MIN = 8
+_PASSWORD_MAX = 128
+_QUERY_MAX = 10_000     # max characters for a chat query
 
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 
 class RegisterRequest(BaseModel):
-    username: str
-    password: str
-    tenant_id: str
+    username: str = Field(..., min_length=3, max_length=_SHORT_STR)
+    password: str = Field(..., min_length=_PASSWORD_MIN, max_length=_PASSWORD_MAX)
+    tenant_id: str = Field(..., min_length=1, max_length=_SHORT_STR)
+
+    @field_validator("password")
+    @classmethod
+    def password_complexity(cls, v: str) -> str:
+        if not any(c.isupper() for c in v):
+            raise ValueError("Password must contain at least one uppercase letter")
+        if not any(c.islower() for c in v):
+            raise ValueError("Password must contain at least one lowercase letter")
+        if not any(c.isdigit() for c in v):
+            raise ValueError("Password must contain at least one digit")
+        return v
 
 
 class LoginRequest(BaseModel):
-    username: str
-    password: str
-    tenant_id: str
+    username: str = Field(..., min_length=1, max_length=_SHORT_STR)
+    password: str = Field(..., min_length=1, max_length=_PASSWORD_MAX)
+    tenant_id: str = Field(..., min_length=1, max_length=_SHORT_STR)
 
 
 class TokenResponse(BaseModel):
@@ -25,9 +42,9 @@ class TokenResponse(BaseModel):
 # ── Tenant ────────────────────────────────────────────────────────────────────
 
 class TenantCreateRequest(BaseModel):
-    tenant_id: str
-    name: str
-    description: Optional[str] = ""
+    tenant_id: str = Field(..., min_length=1, max_length=_SHORT_STR)
+    name: str = Field(..., min_length=1, max_length=256)
+    description: Optional[str] = Field(default="", max_length=1000)
 
 
 class TenantResponse(BaseModel):
@@ -51,16 +68,16 @@ class BatchUploadResponse(BaseModel):
 
 
 class PermissionGrantRequest(BaseModel):
-    user_id: str
-    doc_id: str
-    role: str = "reader"
+    user_id: str = Field(..., min_length=1, max_length=_SHORT_STR)
+    doc_id: str = Field(..., min_length=1, max_length=_SHORT_STR)
+    role: str = Field(default="reader", max_length=32)
 
 
 # ── Chat ──────────────────────────────────────────────────────────────────────
 
 class ChatQueryRequest(BaseModel):
-    query: str
-    session_id: Optional[str] = None
+    query: str = Field(..., min_length=1, max_length=_QUERY_MAX)
+    session_id: Optional[str] = Field(default=None, max_length=_SHORT_STR)
     doc_ids: Optional[List[str]] = None  # restrict to specific docs; None = all accessible
     cross_doc: bool = False  # use global cross-document graph
 
@@ -69,6 +86,7 @@ class ChatQueryResponse(BaseModel):
     answer: str
     session_id: str
     doc_ids_used: List[str] = Field(default_factory=list)
+    rewritten_query: Optional[str] = None  # set when history was used to rewrite the query
 
 
 class SessionCreateRequest(BaseModel):

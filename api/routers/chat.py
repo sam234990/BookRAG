@@ -13,6 +13,7 @@ from api.db import mongodb as db
 from api.dependencies import (
     MONGO_URI, MONGO_DB_PREFIX,
     get_current_user, filter_accessible_docs,
+    rate_limit_query,
 )
 from api.services.chat import handle_query
 
@@ -23,7 +24,7 @@ CONFIG_PATH = os.getenv("BOOKRAG_CONFIG_PATH", "config/gbc.yaml")
 
 
 @router.post("/query", response_model=ChatQueryResponse)
-async def query(req: ChatQueryRequest, current_user: dict = Depends(get_current_user)):
+async def query(req: ChatQueryRequest, current_user: dict = Depends(rate_limit_query)):
     """Submit a query. Automatically filters to accessible documents."""
     tenant_id = current_user["tenant_id"]
     user_id = current_user["user_id"]

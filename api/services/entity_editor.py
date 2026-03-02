@@ -14,18 +14,18 @@ import asyncio
 import logging
 import os
 from collections import defaultdict
-from concurrent.futures import ThreadPoolExecutor
 from difflib import SequenceMatcher
 from typing import Dict, List, Optional
 
 from api.dependencies import (
     FALKORDB_HOST, FALKORDB_PORT, FALKORDB_PASSWORD,
     INDEX_SAVE_DIR, MONGO_URI, MONGO_DB_PREFIX,
+    THREAD_POOL,
 )
 from api.db import mongodb as db
 
 log = logging.getLogger(__name__)
-_executor = ThreadPoolExecutor(max_workers=2)
+_executor = THREAD_POOL
 
 # Per-document asyncio lock — keyed by "{tenant_id}:{doc_id}"
 _doc_locks: Dict[str, asyncio.Lock] = defaultdict(asyncio.Lock)

@@ -1,8 +1,10 @@
 """Async MongoDB client and CRUD helpers using Motor."""
 import logging
+import os
 from typing import List, Optional
 from datetime import datetime, timezone
 
+import pymongo
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
 
 log = logging.getLogger(__name__)
@@ -30,6 +32,36 @@ async def close_client():
     if _client:
         _client.close()
         _client = None
+
+
+async def ensure_indexes(uri: str, system_db: str, db_prefix: str, tenant_ids: List[str]):
+    """Create MongoDB indexes for all known tenant databases.
+
+    Called once at startup. Indexes are idempotent — ``create_index`` is a no-op
+    if the index already exists.
+    """
+    client = get_client(uri)
+
+    # System DB indexes
+    sdb = client[system_db]
+    await sdb["tenants"].create_index("tenant_id", unique=True)
+    log.info(f"Ensured indexes on system db '{system_db}'")
+
+    # Per-tenant DB indexes
+    for tid in tenant_ids:
+        tdb = client[f"{db_prefix}_{tid}"]
+        await tdb["users"].create_index("username", unique=True)
+        await tdb["users"].create_index("user_id", unique=True)
+        await tdb["documents"].create_index("doc_id", unique=True)
+        await tdb["permissions"].create_index(
+            [("user_id", pymongo.ASCENDING), ("doc_id", pymongo.ASCENDING)],
+            unique=True,
+        )
+        await tdb["sessions"].create_index("session_id", unique=True)
+        await tdb["sessions"].create_index("user_id")
+        await tdb["entity_edits"].create_index("doc_id")
+        await tdb["entity_edits"].create_index("ts")
+    log.info(f"Ensured indexes on {len(tenant_ids)} tenant database(s)")
 
 
 # ── Tenant CRUD ──────────────────────────────────────────────────────────────
@@ -115,6 +147,12 @@ async def get_accessible_doc_ids(uri: str, db_prefix: str, tenant_id: str, user_
     return [p["doc_id"] async for p in cursor]
 
 
+async def get_permission(uri: str, db_prefix: str, tenant_id: str, user_id: str, doc_id: str) -> Optional[dict]:
+    """Return the permission record for a user+doc pair, or None."""
+    db = get_tenant_db(uri, db_prefix, tenant_id)
+    return await db["permissions"].find_one({"user_id": user_id, "doc_id": doc_id})
+
+
 # ── Session / Message CRUD ────────────────────────────────────────────────────
 
 async def create_session(uri: str, db_prefix: str, tenant_id: str, session_data: dict) -> str:
@@ -124,12 +162,17 @@ async def create_session(uri: str, db_prefix: str, tenant_id: str, session_data:
     return str(result.inserted_id)
 
 
+# Max messages per session — prevents unbounded array growth (16 MB doc limit).
+# Each user+assistant turn = 2 messages, so 200 = ~100 turns.
+_SESSION_MSG_CAP = int(os.environ.get("BOOKRAG_SESSION_MSG_CAP", "200"))
+
+
 async def append_message(uri: str, db_prefix: str, tenant_id: str, session_id: str, message: dict):
     db = get_tenant_db(uri, db_prefix, tenant_id)
     message["ts"] = datetime.now(timezone.utc)
     await db["sessions"].update_one(
         {"session_id": session_id},
-        {"$push": {"messages": message}},
+        {"$push": {"messages": {"$each": [message], "$slice": -_SESSION_MSG_CAP}}},
     )
 
 

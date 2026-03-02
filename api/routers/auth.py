@@ -1,12 +1,13 @@
 """Authentication router: register and login endpoints."""
 import logging
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status
 
 from api.models.requests import RegisterRequest, LoginRequest, TokenResponse
 from api.db import mongodb as db
 from api.dependencies import (
     MONGO_URI, MONGO_DB_PREFIX, MONGO_SYSTEM_DB,
     hash_password, verify_password, create_access_token,
+    rate_limit_login,
 )
 
 log = logging.getLogger(__name__)
@@ -37,7 +38,7 @@ async def register(req: RegisterRequest):
     return {"message": "User registered successfully"}
 
 
-@router.post("/login", response_model=TokenResponse)
+@router.post("/login", response_model=TokenResponse, dependencies=[Depends(rate_limit_login)])
 async def login(req: LoginRequest):
     """Authenticate and return a JWT access token."""
     user = await db.get_user_by_username(MONGO_URI, MONGO_DB_PREFIX, req.tenant_id, req.username)

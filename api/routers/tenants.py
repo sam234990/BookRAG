@@ -44,10 +44,27 @@ async def grant_permission(
     req: PermissionGrantRequest,
     current_user=Depends(get_current_user),
 ):
-    """Grant a user read access to a document within a tenant."""
-    # Only admins or tenant members with admin role can grant permissions
-    if current_user["role"] != "admin" and current_user["tenant_id"] != tenant_id:
+    """Grant a user access to a document within a tenant.
+
+    Requires the requesting user to be either:
+    - a global admin, OR
+    - the document owner (role='owner' on the target document)
+    """
+    if current_user["tenant_id"] != tenant_id and current_user["role"] != "admin":
         raise HTTPException(status_code=403, detail="Access denied")
+
+    # Non-admin users must have 'owner' role on the document to grant permissions
+    if current_user["role"] != "admin":
+        perm = await db.get_permission(
+            MONGO_URI, MONGO_DB_PREFIX, tenant_id,
+            current_user["user_id"], req.doc_id,
+        )
+        if not perm or perm.get("role") != "owner":
+            raise HTTPException(
+                status_code=403,
+                detail="Only document owners or admins can grant permissions",
+            )
+
     await db.grant_permission(
         MONGO_URI, MONGO_DB_PREFIX, tenant_id,
         req.user_id, req.doc_id, req.role,
