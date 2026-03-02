@@ -25,6 +25,7 @@ if not _secret:
 SECRET_KEY = _secret
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("BOOKRAG_TOKEN_EXPIRE", "60"))
+REFRESH_TOKEN_EXPIRE_DAYS = int(os.getenv("BOOKRAG_REFRESH_TOKEN_DAYS", "7"))
 
 MONGO_URI = os.getenv("BOOKRAG_MONGO_URI", "mongodb://localhost:27017")
 MONGO_DB_PREFIX = os.getenv("BOOKRAG_MONGO_PREFIX", "bookrag")
@@ -62,7 +63,34 @@ def create_access_token(data: dict) -> str:
     from datetime import datetime, timedelta, timezone
     payload = data.copy()
     payload["exp"] = datetime.now(timezone.utc) + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    payload["type"] = "access"
     return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
+
+
+def create_refresh_token(data: dict) -> str:
+    """Create a long-lived refresh token (default 7 days)."""
+    from datetime import datetime, timedelta, timezone
+    payload = data.copy()
+    payload["exp"] = datetime.now(timezone.utc) + timedelta(days=REFRESH_TOKEN_EXPIRE_DAYS)
+    payload["type"] = "refresh"
+    return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
+
+
+def decode_refresh_token(token: str) -> dict:
+    """Decode and validate a refresh token.  Raises HTTPException on failure."""
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        if payload.get("type") != "refresh":
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid token type — expected refresh token",
+            )
+        return payload
+    except JWTError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid or expired refresh token",
+        )
 
 
 # ── Current-user dependency ───────────────────────────────────────────────────
@@ -75,6 +103,9 @@ async def get_current_user(token: str = Depends(oauth2_scheme)) -> dict:
     )
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        # Reject refresh tokens used as access tokens
+        if payload.get("type") == "refresh":
+            raise credentials_exc
         user_id: str = payload.get("sub")
         tenant_id: str = payload.get("tenant_id")
         role: str = payload.get("role", "user")

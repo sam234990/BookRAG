@@ -21,6 +21,9 @@ router = APIRouter(prefix="/documents", tags=["documents"])
 
 CONFIG_PATH = os.getenv("BOOKRAG_CONFIG_PATH", "config/gbc.yaml")
 
+# Max upload size in bytes — default 200 MB
+_MAX_UPLOAD_BYTES = int(os.getenv("BOOKRAG_MAX_UPLOAD_MB", "200")) * 1024 * 1024
+
 
 async def _save_and_register_file(
     file: UploadFile,
@@ -28,14 +31,30 @@ async def _save_and_register_file(
     user_id: str,
     tenant_upload_dir: str,
 ) -> dict:
-    """Save one uploaded file to the tenant upload dir and return doc metadata."""
+    """Save one uploaded file to the tenant upload dir and return doc metadata.
+
+    Raises ``HTTPException(413)`` if the file exceeds ``_MAX_UPLOAD_BYTES``.
+    """
     doc_id = str(uuid.uuid4())
     # Preserve original filename; prefix with doc_id to avoid collisions
     safe_name = os.path.basename(file.filename)
     pdf_path = os.path.join(tenant_upload_dir, f"{doc_id}_{safe_name}")
 
+    total_size = 0
     async with aiofiles.open(pdf_path, "wb") as out:
         while chunk := await file.read(1024 * 1024):  # 1 MB chunks
+            total_size += len(chunk)
+            if total_size > _MAX_UPLOAD_BYTES:
+                # Clean up partial file
+                await out.close()
+                try:
+                    os.remove(pdf_path)
+                except OSError:
+                    pass
+                raise HTTPException(
+                    status_code=413,
+                    detail=f"File exceeds maximum upload size of {_MAX_UPLOAD_BYTES // (1024*1024)} MB",
+                )
             await out.write(chunk)
 
     return {

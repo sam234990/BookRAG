@@ -30,6 +30,11 @@ _executor = THREAD_POOL
 # Per-document asyncio lock — keyed by "{tenant_id}:{doc_id}"
 _doc_locks: Dict[str, asyncio.Lock] = defaultdict(asyncio.Lock)
 
+# Dedup tracker: prevents redundant VDB rebuilds when multiple edits fire
+# in quick succession on the same document.
+_rebuild_pending: set[str] = set()
+_rebuild_pending_lock = asyncio.Lock()
+
 
 def _get_lock(tenant_id: str, doc_id: str) -> asyncio.Lock:
     return _doc_locks[f"{tenant_id}:{doc_id}"]
@@ -100,6 +105,26 @@ def _rebuild_vdb_sync(tenant_id: str, doc_id: str, config_path: str) -> None:
         log.info(f"VDB rebuilt for {tenant_id}/{doc_id}")
     except Exception as exc:
         log.warning(f"VDB rebuild failed for {tenant_id}/{doc_id}: {exc}")
+
+
+async def _schedule_vdb_rebuild(tenant_id: str, doc_id: str, config_path: str) -> None:
+    """Await a VDB rebuild, deduplicating concurrent requests for the same doc.
+
+    If a rebuild is already in-flight for this ``tenant_id:doc_id``, the call
+    is skipped (the already-running rebuild will pick up the latest graph JSON).
+    """
+    key = f"{tenant_id}:{doc_id}"
+    async with _rebuild_pending_lock:
+        if key in _rebuild_pending:
+            log.debug(f"VDB rebuild already pending for {key} — skipping")
+            return
+        _rebuild_pending.add(key)
+    try:
+        loop = asyncio.get_event_loop()
+        await loop.run_in_executor(_executor, _rebuild_vdb_sync, tenant_id, doc_id, config_path)
+    finally:
+        async with _rebuild_pending_lock:
+            _rebuild_pending.discard(key)
 
 
 # ── List entities ─────────────────────────────────────────────────────────────
@@ -178,8 +203,7 @@ async def rename_entity(
         "before": {"entity_name": entity_name, "entity_type": entity_type},
         "after": {"entity_name": new_entity_name, "entity_type": new_entity_type or entity_type},
     })
-    loop = asyncio.get_event_loop()
-    loop.run_in_executor(_executor, _rebuild_vdb_sync, tenant_id, doc_id, config_path)
+    await _schedule_vdb_rebuild(tenant_id, doc_id, config_path)
     return result
 
 
@@ -253,8 +277,7 @@ async def split_entity(
         "before": {"entity_name": entity_name, "entity_type": entity_type},
         "after": [{"entity_name": e["entity_name"], "entity_type": e["entity_type"]} for e in result],
     })
-    loop = asyncio.get_event_loop()
-    loop.run_in_executor(_executor, _rebuild_vdb_sync, tenant_id, doc_id, config_path)
+    await _schedule_vdb_rebuild(tenant_id, doc_id, config_path)
     return result
 
 
@@ -273,21 +296,26 @@ def _suggest_merges_sync(
 
     suggestions: List[dict] = []
 
-    # String similarity
-    n = len(entities)
-    for i in range(n):
-        for j in range(i + 1, n):
-            a, b = entities[i], entities[j]
-            if a["entity_type"] != b["entity_type"]:
-                continue
-            score = SequenceMatcher(None, a["entity_name"].lower(), b["entity_name"].lower()).ratio()
-            if score >= min_score:
-                suggestions.append({
-                    "entity_a": {"entity_name": a["entity_name"], "entity_type": a["entity_type"]},
-                    "entity_b": {"entity_name": b["entity_name"], "entity_type": b["entity_type"]},
-                    "score": round(score, 4),
-                    "method": "string_similarity",
-                })
+    # Pre-group entities by type so we only compare within same-type groups
+    # This reduces O(n²) to O(Σ nᵢ²) where nᵢ is entity count per type
+    by_type: Dict[str, List[dict]] = defaultdict(list)
+    for ent in entities:
+        by_type[ent["entity_type"]].append(ent)
+
+    # String similarity — only within same-type groups
+    for _etype, group in by_type.items():
+        n = len(group)
+        for i in range(n):
+            for j in range(i + 1, n):
+                a, b = group[i], group[j]
+                score = SequenceMatcher(None, a["entity_name"].lower(), b["entity_name"].lower()).ratio()
+                if score >= min_score:
+                    suggestions.append({
+                        "entity_a": {"entity_name": a["entity_name"], "entity_type": a["entity_type"]},
+                        "entity_b": {"entity_name": b["entity_name"], "entity_type": b["entity_type"]},
+                        "score": round(score, 4),
+                        "method": "string_similarity",
+                    })
 
     # Embedding similarity (optional)
     if use_embeddings:
@@ -433,7 +461,6 @@ async def merge_entities(
         "before": source_entities,
         "after": {"entity_name": canonical_name, "entity_type": canonical_type},
     })
-    loop = asyncio.get_event_loop()
-    loop.run_in_executor(_executor, _rebuild_vdb_sync, tenant_id, doc_id, config_path)
+    await _schedule_vdb_rebuild(tenant_id, doc_id, config_path)
     return result
 

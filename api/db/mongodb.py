@@ -1,4 +1,5 @@
 """Async MongoDB client and CRUD helpers using Motor."""
+import hashlib
 import logging
 import os
 from typing import List, Optional
@@ -61,6 +62,10 @@ async def ensure_indexes(uri: str, system_db: str, db_prefix: str, tenant_ids: L
         await tdb["sessions"].create_index("user_id")
         await tdb["entity_edits"].create_index("doc_id")
         await tdb["entity_edits"].create_index("ts")
+        # Refresh token revocation index
+        await tdb["refresh_tokens"].create_index("token_hash", unique=True)
+        await tdb["refresh_tokens"].create_index("user_id")
+        await tdb["refresh_tokens"].create_index("expires_at", expireAfterSeconds=0)
     log.info(f"Ensured indexes on {len(tenant_ids)} tenant database(s)")
 
 
@@ -197,3 +202,44 @@ async def log_entity_edit(uri: str, db_prefix: str, tenant_id: str, edit_record:
     edit_record["ts"] = datetime.now(timezone.utc)
     await db["entity_edits"].insert_one(edit_record)
 
+
+
+# ── Refresh Token Management ────────────────────────────────────────────────
+
+def _hash_token(token: str) -> str:
+    """SHA-256 hash of the raw refresh token — we never store plaintext."""
+    return hashlib.sha256(token.encode()).hexdigest()
+
+
+async def store_refresh_token(
+    uri: str, db_prefix: str, tenant_id: str,
+    user_id: str, token: str, expires_at: datetime,
+):
+    """Store a hashed refresh token so it can be revoked later."""
+    db = get_tenant_db(uri, db_prefix, tenant_id)
+    await db["refresh_tokens"].insert_one({
+        "token_hash": _hash_token(token),
+        "user_id": user_id,
+        "created_at": datetime.now(timezone.utc),
+        "expires_at": expires_at,
+    })
+
+
+async def is_refresh_token_valid(uri: str, db_prefix: str, tenant_id: str, token: str) -> bool:
+    """Return True if the token hash exists (i.e. has NOT been revoked)."""
+    db = get_tenant_db(uri, db_prefix, tenant_id)
+    doc = await db["refresh_tokens"].find_one({"token_hash": _hash_token(token)})
+    return doc is not None
+
+
+async def revoke_refresh_token(uri: str, db_prefix: str, tenant_id: str, token: str):
+    """Revoke a single refresh token by removing it."""
+    db = get_tenant_db(uri, db_prefix, tenant_id)
+    await db["refresh_tokens"].delete_one({"token_hash": _hash_token(token)})
+
+
+async def revoke_all_refresh_tokens(uri: str, db_prefix: str, tenant_id: str, user_id: str):
+    """Revoke all refresh tokens for a user (e.g. password change)."""
+    db = get_tenant_db(uri, db_prefix, tenant_id)
+    result = await db["refresh_tokens"].delete_many({"user_id": user_id})
+    log.info(f"Revoked {result.deleted_count} refresh tokens for user {user_id}")
