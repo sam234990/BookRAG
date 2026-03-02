@@ -126,13 +126,38 @@ async def get_document_raw_path(uri: str, db_prefix: str, tenant_id: str, doc_id
     return doc.get("pdf_path") if doc else None
 
 
-async def list_documents(uri: str, db_prefix: str, tenant_id: str, user_id: str) -> List[dict]:
+async def list_documents(
+    uri: str, db_prefix: str, tenant_id: str, user_id: str,
+    limit: int = 50, offset: int = 0,
+) -> tuple[list[dict], int]:
+    """Return paginated docs accessible to *user_id*, sorted by document_date desc.
+
+    Returns ``(docs, total_count)``.  Documents without ``document_date``
+    fall back to ``created_at``; documents with neither sort last.
+    """
     db = get_tenant_db(uri, db_prefix, tenant_id)
-    # Return docs the user has access to via permissions
     perm_cursor = db["permissions"].find({"user_id": user_id})
     doc_ids = [p["doc_id"] async for p in perm_cursor]
-    cursor = db["documents"].find({"doc_id": {"$in": doc_ids}})
-    return [d async for d in cursor]
+    filt = {"doc_id": {"$in": doc_ids}}
+    total = await db["documents"].count_documents(filt)
+    cursor = (
+        db["documents"]
+        .find(filt)
+        .sort([("document_date", pymongo.DESCENDING), ("created_at", pymongo.DESCENDING)])
+        .skip(offset)
+        .limit(limit)
+    )
+    docs = [d async for d in cursor]
+    return docs, total
+
+
+async def delete_document(uri: str, db_prefix: str, tenant_id: str, doc_id: str):
+    """Delete a document and all associated permissions, sessions, entity edits."""
+    db = get_tenant_db(uri, db_prefix, tenant_id)
+    await db["documents"].delete_one({"doc_id": doc_id})
+    await db["permissions"].delete_many({"doc_id": doc_id})
+    await db["entity_edits"].delete_many({"doc_id": doc_id})
+    log.info(f"Deleted document '{doc_id}' and related records from tenant '{tenant_id}'")
 
 
 # ── Permission CRUD ───────────────────────────────────────────────────────────
@@ -184,6 +209,53 @@ async def append_message(uri: str, db_prefix: str, tenant_id: str, session_id: s
 async def get_session(uri: str, db_prefix: str, tenant_id: str, session_id: str) -> Optional[dict]:
     db = get_tenant_db(uri, db_prefix, tenant_id)
     return await db["sessions"].find_one({"session_id": session_id})
+
+
+async def list_sessions(
+    uri: str, db_prefix: str, tenant_id: str, user_id: str,
+    limit: int = 50, offset: int = 0,
+) -> tuple[list[dict], int]:
+    """Return paginated sessions for *user_id*, newest first."""
+    db = get_tenant_db(uri, db_prefix, tenant_id)
+    filt = {"user_id": user_id}
+    total = await db["sessions"].count_documents(filt)
+    cursor = (
+        db["sessions"]
+        .find(filt, {"messages": 0})  # exclude messages array for listing
+        .sort("created_at", pymongo.DESCENDING)
+        .skip(offset)
+        .limit(limit)
+    )
+    sessions = [s async for s in cursor]
+    return sessions, total
+
+
+async def delete_session(uri: str, db_prefix: str, tenant_id: str, session_id: str):
+    """Delete a session and all its messages."""
+    db = get_tenant_db(uri, db_prefix, tenant_id)
+    await db["sessions"].delete_one({"session_id": session_id})
+
+
+async def recover_stale_indexing(uri: str, db_prefix: str, tenant_ids: List[str]) -> int:
+    """Reset docs stuck in 'indexing' status to 'error' — called at startup.
+
+    If the server crashed mid-indexing, those docs will never complete.
+    Returns the total number of documents recovered across all tenants.
+    """
+    client = get_client(uri)
+    recovered = 0
+    for tid in tenant_ids:
+        tdb = client[f"{db_prefix}_{tid}"]
+        result = await tdb["documents"].update_many(
+            {"status": "indexing"},
+            {"$set": {
+                "status": "error",
+                "error": "Indexing interrupted by server restart — please re-upload",
+                "updated_at": datetime.now(timezone.utc),
+            }},
+        )
+        recovered += result.modified_count
+    return recovered
 
 
 # ── Entity Edit Audit Log ─────────────────────────────────────────────────────

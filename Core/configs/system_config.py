@@ -11,6 +11,7 @@ from Core.configs.falkordb_config import FalkorDBConfig
 from Core.configs.mongodb_config import MongoDBConfig
 from pydantic import BaseModel, Field
 from typing import Optional, Any
+from datetime import datetime
 
 
 class SystemConfig(BaseModel):
@@ -48,6 +49,13 @@ class SystemConfig(BaseModel):
     # Multi-tenant identifiers (optional for backward compatibility)
     tenant_id: Optional[str] = None
     doc_id: Optional[str] = None
+
+    # Document temporal metadata (optional, for recency-aware RAG)
+    document_date: Optional[datetime] = Field(
+        default=None,
+        description="Original authoring/publishing date of the document. "
+                    "Used for temporal awareness in cross-document RAG queries.",
+    )
 
     # Database configurations
     falkordb: Any = Field(default_factory=FalkorDBConfig)

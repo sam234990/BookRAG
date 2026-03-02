@@ -1,4 +1,5 @@
 """Pydantic request and response models for the BookRAG API."""
+from datetime import datetime
 from typing import List, Optional
 from pydantic import BaseModel, Field, field_validator
 
@@ -35,9 +36,9 @@ class LoginRequest(BaseModel):
 
 
 class TokenResponse(BaseModel):
-    access_token: str
-    refresh_token: str
-    token_type: str = "bearer"
+    access_token: str = Field(..., description="Short-lived JWT access token (default 60 min)")
+    refresh_token: str = Field(..., description="Long-lived refresh token for rotation (default 7 days)")
+    token_type: str = Field(default="bearer", description="OAuth2 token type")
 
 
 class RefreshRequest(BaseModel):
@@ -61,15 +62,21 @@ class TenantResponse(BaseModel):
 # ── Document ──────────────────────────────────────────────────────────────────
 
 class DocumentResponse(BaseModel):
-    doc_id: str
-    filename: str
-    status: str  # pending | indexing | ready | error
-    error: Optional[str] = None
+    doc_id: str = Field(..., description="Unique document identifier")
+    filename: str = Field(..., description="Original filename")
+    status: str = Field(..., description="Indexing status: pending | indexing | ready | error")
+    error: Optional[str] = Field(default=None, description="Error message if status is 'error'")
+    created_at: Optional[datetime] = Field(default=None, description="Upload timestamp (UTC)")
+    document_date: Optional[datetime] = Field(
+        default=None,
+        description="User-provided original authoring/publishing date of the document. "
+                    "Used for temporal awareness in cross-document RAG.",
+    )
 
 
 class BatchUploadResponse(BaseModel):
-    uploaded: List["DocumentResponse"]
-    failed: List[dict] = Field(default_factory=list)  # {"filename": ..., "error": ...}
+    uploaded: List["DocumentResponse"] = Field(..., description="Successfully uploaded documents")
+    failed: List[dict] = Field(default_factory=list, description="Files that failed: [{filename, error}]")
 
 
 class PermissionGrantRequest(BaseModel):
@@ -81,17 +88,17 @@ class PermissionGrantRequest(BaseModel):
 # ── Chat ──────────────────────────────────────────────────────────────────────
 
 class ChatQueryRequest(BaseModel):
-    query: str = Field(..., min_length=1, max_length=_QUERY_MAX)
-    session_id: Optional[str] = Field(default=None, max_length=_SHORT_STR)
-    doc_ids: Optional[List[str]] = None  # restrict to specific docs; None = all accessible
-    cross_doc: bool = False  # use global cross-document graph
+    query: str = Field(..., min_length=1, max_length=_QUERY_MAX, description="User question")
+    session_id: Optional[str] = Field(default=None, max_length=_SHORT_STR, description="Existing session ID for history-aware queries")
+    doc_ids: Optional[List[str]] = Field(default=None, description="Restrict to specific docs; None = all accessible")
+    cross_doc: bool = Field(default=False, description="Use cross-document retrieval mode")
 
 
 class ChatQueryResponse(BaseModel):
-    answer: str
-    session_id: str
-    doc_ids_used: List[str] = Field(default_factory=list)
-    rewritten_query: Optional[str] = None  # set when history was used to rewrite the query
+    answer: str = Field(..., description="LLM-generated answer")
+    session_id: str = Field(..., description="Session ID (created if not provided)")
+    doc_ids_used: List[str] = Field(default_factory=list, description="Document IDs used for retrieval")
+    rewritten_query: Optional[str] = Field(default=None, description="Rewritten query when history was used")
 
 
 class SessionCreateRequest(BaseModel):
@@ -100,6 +107,18 @@ class SessionCreateRequest(BaseModel):
 
 class SessionResponse(BaseModel):
     session_id: str
+
+
+class SessionListItem(BaseModel):
+    session_id: str
+    created_at: Optional[datetime] = None
+    message_count: int = 0
+    doc_ids: List[str] = Field(default_factory=list)
+
+
+class SessionListResponse(BaseModel):
+    sessions: List[SessionListItem]
+    total: int
 
 
 class MessageResponse(BaseModel):
@@ -111,6 +130,7 @@ class MessageResponse(BaseModel):
 class SessionMessagesResponse(BaseModel):
     session_id: str
     messages: List[MessageResponse]
+    total: int = Field(0, description="Total messages in session (before pagination)")
 
 
 # ── Entity Management ─────────────────────────────────────────────────────────

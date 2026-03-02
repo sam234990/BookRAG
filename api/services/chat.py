@@ -277,9 +277,35 @@ async def handle_query(
             )
             for did in target_docs
         ])
-        answer = "\n\n---\n\n".join(
-            f"[Document: {did}]\n{ans}" for did, ans in zip(target_docs, answers)
-        )
+
+        # ── Temporal awareness: fetch document dates for cross-doc synthesis ──
+        doc_dates: dict[str, str] = {}
+        try:
+            for did in target_docs:
+                doc_record = await db.get_document(MONGO_URI, MONGO_DB_PREFIX, tenant_id, did)
+                if doc_record:
+                    ddate = doc_record.get("document_date") or doc_record.get("created_at")
+                    if ddate:
+                        doc_dates[did] = str(ddate)[:10]  # YYYY-MM-DD
+        except Exception:
+            pass  # Non-fatal: temporal info is best-effort
+
+        # Build answer with temporal context
+        parts = []
+        for did, ans in zip(target_docs, answers):
+            date_str = f" (dated {doc_dates[did]})" if did in doc_dates else ""
+            parts.append(f"[Document: {did}{date_str}]\n{ans}")
+
+        if doc_dates:
+            # Prepend a temporal instruction for the combined answer
+            temporal_note = (
+                "NOTE: The answers below come from multiple documents with different dates. "
+                "When documents contain contradictory or overlapping information, "
+                "prefer the information from the more recently dated document.\n\n"
+            )
+            answer = temporal_note + "\n\n---\n\n".join(parts)
+        else:
+            answer = "\n\n---\n\n".join(parts)
     else:
         doc_id = doc_ids[0] if doc_ids else None
         if not doc_id:
