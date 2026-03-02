@@ -45,6 +45,11 @@ class DocumentResponse(BaseModel):
     error: Optional[str] = None
 
 
+class BatchUploadResponse(BaseModel):
+    uploaded: List["DocumentResponse"]
+    failed: List[dict] = Field(default_factory=list)  # {"filename": ..., "error": ...}
+
+
 class PermissionGrantRequest(BaseModel):
     user_id: str
     doc_id: str
@@ -83,4 +88,70 @@ class MessageResponse(BaseModel):
 class SessionMessagesResponse(BaseModel):
     session_id: str
     messages: List[MessageResponse]
+
+
+# ── Entity Management ─────────────────────────────────────────────────────────
+
+class EntityRef(BaseModel):
+    entity_name: str
+    entity_type: str
+
+
+class EntityInfo(BaseModel):
+    entity_name: str
+    entity_type: str
+    description: str
+    source_ids: List[int]
+    node_name: str
+
+
+class EntityListResponse(BaseModel):
+    entities: List[EntityInfo]
+    total: int
+
+
+class RenameEntityRequest(BaseModel):
+    entity_name: str
+    entity_type: str
+    new_entity_name: str
+    new_entity_type: str = ""  # empty → keep same type
+    new_description: Optional[str] = None  # None → keep existing description
+
+
+class MergeEntitiesRequest(BaseModel):
+    source_entities: List[EntityRef]           # entities to merge (≥ 2)
+    canonical_entity_name: str
+    canonical_entity_type: str
+    canonical_description: str = ""
+
+
+class NewEntitySpec(BaseModel):
+    entity_name: str
+    entity_type: str
+    description: str = ""
+    source_ids: List[int] = Field(default_factory=list)
+
+
+class SplitEntityRequest(BaseModel):
+    entity_name: str
+    entity_type: str
+    new_entities: List[NewEntitySpec]          # ≥ 2 new entities
+    edge_mode: str = "duplicate"               # "duplicate" | "none"
+
+
+class MergeSuggestion(BaseModel):
+    entity_a: EntityRef
+    entity_b: EntityRef
+    score: float                               # 0.0 – 1.0
+    method: str                               # "string_similarity" | "embedding_similarity"
+
+
+class SuggestMergesResponse(BaseModel):
+    suggestions: List[MergeSuggestion]
+
+
+class EntityOperationResponse(BaseModel):
+    success: bool
+    message: str
+    entities: List[EntityInfo] = Field(default_factory=list)
 

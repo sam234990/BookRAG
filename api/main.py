@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from api.db import mongodb as db
 from api.dependencies import MONGO_URI
-from api.routers import auth, documents, chat, tenants
+from api.routers import auth, documents, chat, tenants, entities
 
 logging.basicConfig(
     level=logging.INFO,
@@ -50,6 +50,7 @@ app.include_router(auth.router)
 app.include_router(tenants.router)
 app.include_router(documents.router)
 app.include_router(chat.router)
+app.include_router(entities.router)
 
 
 @app.get("/health")

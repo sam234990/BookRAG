@@ -83,6 +83,12 @@ async def get_document(uri: str, db_prefix: str, tenant_id: str, doc_id: str) ->
     return await db["documents"].find_one({"doc_id": doc_id})
 
 
+async def get_document_raw_path(uri: str, db_prefix: str, tenant_id: str, doc_id: str) -> Optional[str]:
+    """Return the raw PDF path stored at upload time, or None if not found."""
+    doc = await get_document(uri, db_prefix, tenant_id, doc_id)
+    return doc.get("pdf_path") if doc else None
+
+
 async def list_documents(uri: str, db_prefix: str, tenant_id: str, user_id: str) -> List[dict]:
     db = get_tenant_db(uri, db_prefix, tenant_id)
     # Return docs the user has access to via permissions
@@ -130,4 +136,21 @@ async def append_message(uri: str, db_prefix: str, tenant_id: str, session_id: s
 async def get_session(uri: str, db_prefix: str, tenant_id: str, session_id: str) -> Optional[dict]:
     db = get_tenant_db(uri, db_prefix, tenant_id)
     return await db["sessions"].find_one({"session_id": session_id})
+
+
+# ── Entity Edit Audit Log ─────────────────────────────────────────────────────
+
+async def log_entity_edit(uri: str, db_prefix: str, tenant_id: str, edit_record: dict):
+    """Write a lightweight audit entry for any entity edit operation.
+
+    ``edit_record`` should contain at minimum:
+        - ``operation``: one of "rename" | "merge" | "split"
+        - ``doc_id``: document scope of the edit
+        - ``user_id``: who performed the edit
+        - ``before``: snapshot of the entity/entities before the change
+        - ``after``:  snapshot of the entity/entities after the change
+    """
+    db = get_tenant_db(uri, db_prefix, tenant_id)
+    edit_record["ts"] = datetime.now(timezone.utc)
+    await db["entity_edits"].insert_one(edit_record)
 
