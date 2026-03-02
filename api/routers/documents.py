@@ -81,6 +81,11 @@ async def upload_documents(
         description="Optional ISO-8601 date for ALL uploaded files (original authoring date). "
                     "Example: 2025-06-15 or 2025-06-15T10:30:00Z",
     ),
+    document_lang: Optional[str] = Form(
+        default=None,
+        description="Optional ISO 639-1 language code (e.g. 'en', 'id') for ALL uploaded files. "
+                    "Omit or set to 'auto' for automatic detection from extracted text.",
+    ),
     current_user: dict = Depends(get_current_user),
 ):
     """Upload one or more PDFs and start background indexing for each.
@@ -88,6 +93,10 @@ async def upload_documents(
     An optional ``document_date`` (ISO-8601) can be provided to indicate
     the original authoring/publishing date of the documents.  This date is
     used for temporal-awareness in cross-document RAG queries.
+
+    An optional ``document_lang`` (ISO 639-1 code like ``en``, ``id``) can
+    be provided to hint the document language for legal heading detection
+    and text processing.  Omit for automatic detection.
     """
     tenant_id = current_user["tenant_id"]
     user_id = current_user["user_id"]
@@ -121,6 +130,10 @@ async def upload_documents(
         if parsed_doc_date:
             doc_data["document_date"] = parsed_doc_date
 
+        # Attach document_lang if provided
+        if document_lang:
+            doc_data["document_lang"] = document_lang
+
         # Register document in MongoDB
         await db.create_document(MONGO_URI, MONGO_DB_PREFIX, tenant_id, doc_data)
         # Auto-grant uploader owner access
@@ -129,10 +142,12 @@ async def upload_documents(
         background_tasks.add_task(
             run_indexing, tenant_id, doc_data["doc_id"], doc_data["pdf_path"], CONFIG_PATH,
             document_date=parsed_doc_date,
+            document_lang=document_lang,
         )
         uploaded.append(DocumentResponse(
             doc_id=doc_data["doc_id"], filename=file.filename, status="pending",
             document_date=parsed_doc_date,
+            document_lang=document_lang,
         ))
 
     return BatchUploadResponse(uploaded=uploaded, failed=failed)

@@ -50,6 +50,17 @@ class SystemConfig(BaseModel):
     tenant_id: Optional[str] = None
     doc_id: Optional[str] = None
 
+    # Document language hint (ISO 639-1).  Used by the legal-heading
+    # detector, incomplete-paragraph heuristics, and other language-aware
+    # pipeline stages.  Set to "auto" (default) for automatic detection
+    # from extracted text, or an explicit code like "en" or "id".
+    document_lang: Optional[str] = Field(
+        default="auto",
+        description="ISO 639-1 language code of the document content, or "
+                    "'auto' for automatic detection. "
+                    "Supported: auto, en, id, de, fr, es, pt, it, nl, th, zh, ja, ko, ar.",
+    )
+
     # Document temporal metadata (optional, for recency-aware RAG)
     document_date: Optional[datetime] = Field(
         default=None,

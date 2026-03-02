@@ -2,6 +2,7 @@ from Core.Index.Tree import DocumentTree
 from Core.pipelines.tree_node_builder import create_node_by_type
 from Core.pipelines.outline_extractor import extract_pdf_outline_in_chunks
 from Core.pipelines.pdf_refiner import pdf_info_refiner
+from Core.pipelines.legal_heading_detector import detect_legal_headings, detect_document_language
 from Core.provider.extract_pdf_info import parse_doc, merge_middle_content
 from Core.pipelines.tree_node_summary import generate_tree_node_summary
 from Core.configs.system_config import SystemConfig
@@ -151,7 +152,11 @@ def build_tree_from_pdf(cfg: SystemConfig, reforce: bool = False) -> DocumentTre
     llm = LLM(cfg.llm)
     vlm = VLM(cfg.vlm) if cfg.tree.use_vlm else None
 
-    pdf_list = pdf_info_refiner(pdf_list, llm)
+    lang = getattr(cfg, "document_lang", "auto") or "auto"
+    if lang == "auto":
+        lang = detect_document_language(pdf_list, fallback="en")
+    pdf_list = pdf_info_refiner(pdf_list, llm, lang=lang)
+    pdf_list = detect_legal_headings(pdf_list, lang=lang)
     title_outline = extract_pdf_outline_in_chunks(pdf_list, llm)
     tree_index = construct_tree_index(
         tree_index=tree_index, pdf_list=pdf_list, title_outline=title_outline

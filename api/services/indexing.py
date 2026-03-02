@@ -13,7 +13,7 @@ _executor = THREAD_POOL
 
 def _build_index_sync(
     pdf_path: str, save_path: str, tenant_id: str, doc_id: str,
-    config_path: str, document_date=None,
+    config_path: str, document_date=None, document_lang=None,
 ):
     """Synchronous index build — runs in a thread pool."""
     from Core.configs.system_config import load_system_config
@@ -28,6 +28,9 @@ def _build_index_sync(
     # Propagate document_date into the config for temporal awareness
     if document_date is not None:
         cfg.document_date = document_date
+    # Propagate document_lang into the config for language-aware processing
+    if document_lang is not None:
+        cfg.document_lang = document_lang
     # FalkorDB will be used if BOOKRAG_FALKORDB_HOST is set
     fdb_host = os.getenv("BOOKRAG_FALKORDB_HOST", "")
     if fdb_host:
@@ -44,6 +47,7 @@ async def run_indexing(
     pdf_path: str,
     config_path: str,
     document_date=None,
+    document_lang=None,
 ):
     """Async wrapper: update status in MongoDB before/after indexing."""
     save_path = os.path.join(INDEX_SAVE_DIR, tenant_id, doc_id)
@@ -56,6 +60,7 @@ async def run_indexing(
             _executor,
             _build_index_sync,
             pdf_path, save_path, tenant_id, doc_id, config_path, document_date,
+            document_lang,
         )
         await db.update_document_status(MONGO_URI, MONGO_DB_PREFIX, tenant_id, doc_id, "ready")
         log.info(f"Indexing complete for doc '{doc_id}' in tenant '{tenant_id}'")

@@ -72,6 +72,11 @@ class DocumentResponse(BaseModel):
         description="User-provided original authoring/publishing date of the document. "
                     "Used for temporal awareness in cross-document RAG.",
     )
+    document_lang: Optional[str] = Field(
+        default=None,
+        description="ISO 639-1 language code (e.g. 'en', 'id') or 'auto' for auto-detection. "
+                    "Used for legal heading detection and language-aware text processing.",
+    )
 
 
 class BatchUploadResponse(BaseModel):

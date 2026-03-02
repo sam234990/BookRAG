@@ -16,73 +16,82 @@ from bs4 import BeautifulSoup
 log = logging.getLogger(__name__)
 
 
-def is_likely_incomplete_paragraph(text: str) -> bool:
-    """
-    Determine if an English paragraph is likely incomplete (truncated due to page/column breaks).
+# ---------------------------------------------------------------------------
+# Language-specific settings for incomplete-paragraph detection
+# ---------------------------------------------------------------------------
+_LANG_TERMINAL_PUNCTUATION = {
+    "en": r"[.!?]",
+    "id": r"[.!?]",          # Bahasa Indonesia uses Latin punctuation
+    "de": r"[.!?]",
+    "fr": r"[.!?\u00BB]",    # » can close a quote-sentence
+    "es": r"[.!?\u00BF\u00A1]",
+    "pt": r"[.!?]",
+    "it": r"[.!?]",
+    "nl": r"[.!?]",
+    "th": r"[\u0E2F\u0E46.!?]",   # Thai ฯ, ๆ, plus Latin
+    "zh": r"[\u3002\uFF01\uFF1F.!?]",   # 。！？
+    "ja": r"[\u3002\uFF01\uFF1F.!?]",
+    "ko": r"[\uFF0E\uFF01\uFF1F.!?]",
+    "ar": r"[\u061F\u06D4.!?]",    # ؟ ۔
+}
 
-    :param text: input text to check
-    :return: bool, True if the paragraph is likely incomplete, False otherwise
-    e.g. "He said, "This method is the best." -> False (complete)
-    e.g. "The quick brown fox jumps over the lazy dog and" -> True (incomplete)
+_LANG_INCOMPLETE_ENDINGS: dict[str, set[str]] = {
+    "en": {
+        "and", "or", "but", "because", "although", "however",
+        "if", "while", "when", "to", "for", "in", "of", "with",
+        "on", "as", "at", "by", "from", "such", "the", "a", "an",
+    },
+    "id": {
+        "dan", "atau", "tetapi", "namun", "karena", "sebab",
+        "jika", "apabila", "bahwa", "dengan", "untuk", "pada",
+        "dari", "oleh", "yang", "di", "ke", "se", "ini", "itu",
+    },
+}
+
+
+def is_likely_incomplete_paragraph(text: str, lang: str = "en") -> bool:
+    """
+    Determine if a paragraph is likely incomplete (truncated due to
+    page / column breaks).  Language-aware.
+
+    :param text:  input text to check
+    :param lang:  ISO 639-1 language code (default ``"en"``)
+    :return:      ``True`` if the paragraph is likely incomplete
     """
     if not text:
         return False  # 空文本不是我们关心的“不完整段落”
 
     text = text.strip()
 
-    # Rule 1: Filter out very short strings. They are likely standalone titles/captions, not paragraphs to be merged.
+    # Rule 1: Filter out very short strings — likely titles/captions.
     if len(text.split()) < 5 or len(text) < 25:
         return False
 
-    # --- From here, we look for clear signals of INCOMPLETENESS ---
-
-    # Rule 2: Ending with a hyphen is a very strong signal of incompleteness (a word was split).
+    # Rule 2: Ending with a hyphen → word was split across pages.
     if text.endswith("-"):
         return True
 
-    # Handles cases like "said he," or "he said."
+    # Strip trailing quotes so we can inspect the "real" ending.
     cleaned_text = re.sub(r"['\"]+$", "", text)
 
-    # Rule 3: Ending with a comma, colon, or semicolon is also a strong signal.
+    # Rule 3: Ending with comma / colon / semicolon → strong signal.
     if cleaned_text.endswith((",", ":", ";")):
         return True
 
-    # Rule 4: Not ending with a standard terminal punctuation mark. This is the most common case.
-    if not re.search(r"[.!?]$", cleaned_text):
+    # Rule 4: Not ending with terminal punctuation (language-aware).
+    terminal_re = _LANG_TERMINAL_PUNCTUATION.get(lang, r"[.!?]")
+    if not re.search(terminal_re + r"$", cleaned_text):
         return True
 
-    # Rule 5: Ending with a common connector word (even if mistakenly followed by a period).
-    # e.g., "The quick brown fox jumps over the lazy dog and."
-    incomplete_endings = {
-        "and",
-        "or",
-        "but",
-        "because",
-        "although",
-        "however",
-        "if",
-        "while",
-        "when",
-        "to",
-        "for",
-        "in",
-        "of",
-        "with",
-        "on",
-        "as",
-        "at",
-        "by",
-        "from",
-        "such",
-        "the",
-        "a",
-        "an",
-    }
+    # Rule 5: Ending with a connector word (language-aware).
+    incomplete_endings = _LANG_INCOMPLETE_ENDINGS.get(
+        lang, _LANG_INCOMPLETE_ENDINGS.get("en", set())
+    )
     last_word_match = re.findall(r"\b\w+\b", cleaned_text)
     if last_word_match and last_word_match[-1].lower() in incomplete_endings:
         return True
 
-    # If no "incomplete" signals were triggered, we assume it's complete.
+    # No "incomplete" signals triggered → assume complete.
     return False
 
 
@@ -355,7 +364,7 @@ def merge_text_and_mark_invalid(prev_content: dict, merged_list: list[dict]):
     print(f"{prev_content['text']}")  # Print first 100 chars for debug
 
 
-def text_merger(pdf_list: list[Optional[str]], llm: LLM) -> list[Optional[str]]:
+def text_merger(pdf_list: list[Optional[str]], llm: LLM, lang: str = "en") -> list[Optional[str]]:
     incomplete_paragraphs = []
     # for循环的逻辑可以更清晰地组织
     for content in pdf_list:
@@ -368,7 +377,7 @@ def text_merger(pdf_list: list[Optional[str]], llm: LLM) -> list[Optional[str]]:
 
         # The logic is now direct: "if the paragraph is likely incomplete, add it."
         text = content.get("text", "")
-        if is_likely_incomplete_paragraph(text):
+        if is_likely_incomplete_paragraph(text, lang=lang):
             incomplete_paragraphs.append(content)
 
     if not incomplete_paragraphs:
@@ -744,7 +753,7 @@ def truncate_ocr_error_refiner(
     return pdf_list
 
 
-def pdf_info_refiner(pdf_list: list[Optional[str]], llm: LLM) -> list[Optional[str]]:
+def pdf_info_refiner(pdf_list: list[Optional[str]], llm: LLM, lang: str = "en") -> list[Optional[str]]:
     # Heuristic refiner for "-" error in OCR
     pdf_list = dash_line_refiner(pdf_list)
     # Heuristic refiner for OCR Error
@@ -754,7 +763,7 @@ def pdf_info_refiner(pdf_list: list[Optional[str]], llm: LLM) -> list[Optional[s
     pdf_list = enumerate_pdf_list(pdf_list)
 
     # Then we refine the PDF information by merging incomplete paragraphs and tables
-    pdf_list = text_merger(pdf_list, llm)
+    pdf_list = text_merger(pdf_list, llm, lang=lang)
     pdf_list = table_merger(pdf_list, llm)
 
     # After merging, we need to re-enumerate the pdf_list
