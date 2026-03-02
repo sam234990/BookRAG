@@ -2,14 +2,16 @@ import networkx as nx
 from networkx.readwrite import json_graph
 import os
 from collections import defaultdict
-from typing import Iterable, Union, Set, List
-from numpy import source
+from typing import Iterable, Union, Set, List, Optional, TYPE_CHECKING  # noqa: F401
 from pydantic import BaseModel, Field
 import json
 
 import logging
 
 log = logging.getLogger(__name__)
+
+if TYPE_CHECKING:
+    from Core.configs.falkordb_config import FalkorDBConfig
 
 
 class Entity(BaseModel):
@@ -64,13 +66,29 @@ class Graph:
     _DATA_FILE = "graph_data.json"  # index data file
     _BASE_FILENAME = "graph_data"
 
-    def __init__(self, save_path: str = None, variant: str = None):
+    def __init__(
+        self,
+        save_path: str = None,
+        variant: str = None,
+        tenant_id: str = None,
+        doc_id: str = None,
+        falkordb_cfg=None,  # Optional[FalkorDBConfig]
+    ):
         self.kg = nx.Graph()
         # 节点名采用 "entity_name (entity_type)"，确保唯一性
         self.tree2kg = defaultdict(set)  # Maps tree nodes id (int) to graph entities
-        # self.name_to_nodes = defaultdict(set)  # entity_name -> set of node names
         self.save_dir = save_path
         self.variant = variant
+
+        # Multi-tenant FalkorDB support
+        self.tenant_id = tenant_id
+        self.doc_id = doc_id
+        self.falkordb_cfg = falkordb_cfg
+        self.use_falkordb = falkordb_cfg is not None and tenant_id is not None and doc_id is not None
+        self._fdb_graph = None  # lazy FalkorDB graph handle
+        self._fdb_graph_name: Optional[str] = None
+        if self.use_falkordb:
+            self._fdb_graph_name = falkordb_cfg.graph_name_for_doc(tenant_id, doc_id)
 
         # dynamic filename based on variant
         self.data_filename = self._get_filename(variant)
@@ -217,22 +235,6 @@ class Graph:
             raise KeyError(f"Node '{node_name}' not found in knowledge graph.")
         return Entity(**self.kg.nodes[node_name])
 
-    def get_kg_subgraph(
-        self, tree_node_ids: Iterable[int], copy: bool = True
-    ) -> nx.Graph:
-        """
-        Given one or more tree node IDs, return the induced subgraph of the KG
-        containing all linked entities. By default returns a deep copy; if copy=False,
-        returns a lightweight view (faster slicing).
-
-        Complexity: O(sum(degree(n)) + |nodes| + |edges|).
-        For a few hundred nodes, this remains efficient even if KG has millions of edges.
-        """
-        # Collect all KG node names for the provided tree nodes
-        kg_nodes = set().union(*(self.tree2kg.get(tid, set()) for tid in tree_node_ids))
-        sub = self.kg.subgraph(kg_nodes)
-        return sub.copy() if copy else sub
-
     def get_subgraph_data(self, entities: List[str]) -> dict:
         # Return the subgraph entities data, excluding description and source_ids in entities
         # If the relation connects two entities in the subgraph, it will be included
@@ -301,38 +303,220 @@ class Graph:
         self.kg.remove_edges_from(self_loop_edges)
         log.info("All self-loops have been removed.")
 
+    # ------------------------------------------------------------------ #
+    #  FalkorDB helpers                                                    #
+    # ------------------------------------------------------------------ #
+
+    def _get_fdb_graph(self):
+        """Lazy-initialise and return the FalkorDB graph handle."""
+        if self._fdb_graph is not None:
+            return self._fdb_graph
+        try:
+            from falkordb import FalkorDB
+            cfg = self.falkordb_cfg
+            conn_kwargs = {"host": cfg.host, "port": cfg.port}
+            if cfg.password:
+                conn_kwargs["password"] = cfg.password
+            client = FalkorDB(**conn_kwargs)
+            self._fdb_graph = client.select_graph(self._fdb_graph_name)
+            log.info(f"Connected to FalkorDB graph '{self._fdb_graph_name}'")
+        except Exception as e:
+            log.error(f"Failed to connect to FalkorDB: {e}")
+            raise
+        return self._fdb_graph
+
+    def _save_to_falkordb(self) -> None:
+        """Persist the in-memory NetworkX graph to FalkorDB."""
+        g = self._get_fdb_graph()
+        # Clear existing data for idempotent saves
+        try:
+            g.query("MATCH (n) DETACH DELETE n")
+        except Exception:
+            pass
+
+        # Write nodes
+        for node_name, data in self.kg.nodes(data=True):
+            source_ids_list = list(data.get("source_ids", set()))
+            desc = data.get("description", "").replace("'", "\\'")
+            ename = data.get("entity_name", "").replace("'", "\\'")
+            etype = data.get("entity_type", "").replace("'", "\\'")
+            nname = node_name.replace("\\", "\\\\").replace("'", "\\'")
+            cypher = (
+                f"CREATE (n:Entity {{"
+                f"node_name: '{nname}', "
+                f"entity_name: '{ename}', "
+                f"entity_type: '{etype}', "
+                f"description: '{desc}', "
+                f"source_ids: {source_ids_list}"
+                f"}})"
+            )
+            g.query(cypher)
+
+        # Write edges
+        for src, tgt, data in self.kg.edges(data=True):
+            rel_name = data.get("relation_name", "").replace("'", "\\'")
+            weight = float(data.get("weight", 0.0))
+            desc = data.get("description", "").replace("'", "\\'")
+            src_ids = list(data.get("source_ids", set()))
+            src_q = src.replace("\\", "\\\\").replace("'", "\\'")
+            tgt_q = tgt.replace("\\", "\\\\").replace("'", "\\'")
+            cypher = (
+                f"MATCH (a:Entity {{node_name: '{src_q}'}}), "
+                f"(b:Entity {{node_name: '{tgt_q}'}}) "
+                f"CREATE (a)-[:RELATION {{"
+                f"relation_name: '{rel_name}', "
+                f"weight: {weight}, "
+                f"description: '{desc}', "
+                f"source_ids: {src_ids}"
+                f"}}]->(b)"
+            )
+            g.query(cypher)
+
+        # Write tree2kg as node property (source_ids already on nodes)
+        log.info(f"Saved graph to FalkorDB '{self._fdb_graph_name}': "
+                 f"{self.kg.number_of_nodes()} nodes, {self.kg.number_of_edges()} edges.")
+
+    def _load_from_falkordb(self) -> None:
+        """Load graph data from FalkorDB into in-memory NetworkX graph."""
+        g = self._get_fdb_graph()
+        result = g.query("MATCH (n:Entity) RETURN n")
+        for record in result.result_set:
+            node = record[0]
+            props = node.properties
+            source_ids = set(props.get("source_ids", []))
+            node_name = props["node_name"]
+            self.kg.add_node(node_name,
+                             entity_name=props.get("entity_name", ""),
+                             entity_type=props.get("entity_type", ""),
+                             description=props.get("description", ""),
+                             source_ids=source_ids)
+            for tid in source_ids:
+                self.tree2kg[int(tid)].add(node_name)
+
+        edge_result = g.query(
+            "MATCH (a:Entity)-[r:RELATION]->(b:Entity) "
+            "RETURN a.node_name, b.node_name, r.relation_name, r.weight, r.description, r.source_ids"
+        )
+        for rec in edge_result.result_set:
+            src_name, tgt_name, rel_name, weight, desc, src_ids = rec
+            self.kg.add_edge(
+                src_name, tgt_name,
+                src_entity_name=self.kg.nodes[src_name].get("entity_name", ""),
+                tgt_entity_name=self.kg.nodes[tgt_name].get("entity_name", ""),
+                relation_name=rel_name or "",
+                weight=float(weight or 0.0),
+                description=desc or "",
+                source_ids=set(src_ids or []),
+            )
+        log.info(f"Loaded graph from FalkorDB '{self._fdb_graph_name}': "
+                 f"{self.kg.number_of_nodes()} nodes, {self.kg.number_of_edges()} edges.")
+
+    def _get_fdb_subgraph(self, tree_node_ids: Iterable[int]) -> nx.Graph:
+        """Query FalkorDB for the subgraph linked to given tree node IDs."""
+        # Collect node names from tree2kg (loaded at init)
+        kg_nodes = set().union(*(self.tree2kg.get(tid, set()) for tid in tree_node_ids))
+        if not kg_nodes:
+            return nx.Graph()
+
+        g = self._get_fdb_graph()
+        node_list = [n.replace("'", "\\'") for n in kg_nodes]
+        node_filter = "['" + "', '".join(node_list) + "']"
+        result = g.query(
+            f"MATCH (n:Entity) WHERE n.node_name IN {node_filter} RETURN n"
+        )
+        subgraph = nx.Graph()
+        for rec in result.result_set:
+            node = rec[0]
+            props = node.properties
+            node_name = props["node_name"]
+            subgraph.add_node(node_name,
+                              entity_name=props.get("entity_name", ""),
+                              entity_type=props.get("entity_type", ""),
+                              description=props.get("description", ""),
+                              source_ids=set(props.get("source_ids", [])))
+
+        edge_result = g.query(
+            f"MATCH (a:Entity)-[r:RELATION]->(b:Entity) "
+            f"WHERE a.node_name IN {node_filter} AND b.node_name IN {node_filter} "
+            f"RETURN a.node_name, b.node_name, r.relation_name, r.weight, r.description, r.source_ids"
+        )
+        for rec in edge_result.result_set:
+            src_name, tgt_name, rel_name, weight, desc, src_ids = rec
+            if src_name in subgraph and tgt_name in subgraph:
+                subgraph.add_edge(src_name, tgt_name,
+                                  relation_name=rel_name or "",
+                                  weight=float(weight or 0.0),
+                                  description=desc or "",
+                                  source_ids=set(src_ids or []))
+        return subgraph
+
     def save_graph(self) -> None:
 
-        if not self.save_dir:
+        if not self.save_dir and not self.use_falkordb:
             log.warning("Warning: save_dir is not set. Nothing will be saved.")
             return
 
-        os.makedirs(self.save_dir, exist_ok=True)
-        # save_path = os.path.join(self.save_dir, self._DATA_FILE)
+        # If FalkorDB is configured, persist there
+        if self.use_falkordb:
+            self._save_to_falkordb()
+            # Also save JSON as backup if save_dir is set
+            if self.save_dir:
+                os.makedirs(self.save_dir, exist_ok=True)
 
-        # use dynamic filename based on variant
-        save_path = os.path.join(self.save_dir, self.data_filename)
+        if self.save_dir:
+            os.makedirs(self.save_dir, exist_ok=True)
+            save_path = os.path.join(self.save_dir, self.data_filename)
+            graph_json_data = json_graph.node_link_data(self.kg, edges="links")
+            data_to_save = {
+                "graph": graph_json_data,
+                "tree2kg": {k: list(v) for k, v in self.tree2kg.items()},
+                "variant": self.variant,
+            }
+            with open(save_path, "w", encoding="utf-8") as f:
+                json.dump(data_to_save, f, cls=SetEncoder, indent=4, ensure_ascii=False)
+            log.info(f"Graph data successfully saved to: {save_path}")
 
-        graph_json_data = json_graph.node_link_data(self.kg, edges="links")
-
-        data_to_save = {
-            "graph": graph_json_data,
-            "tree2kg": {k: list(v) for k, v in self.tree2kg.items()},
-            "variant": self.variant,
-        }
-
-        # 3. 保存为格式化的JSON文件
-        with open(save_path, "w", encoding="utf-8") as f:
-            json.dump(data_to_save, f, cls=SetEncoder, indent=4, ensure_ascii=False)
-
-        log.info(f"Graph data successfully saved to: {save_path}")
+    def get_kg_subgraph(
+        self, tree_node_ids: Iterable[int], copy: bool = True
+    ) -> nx.Graph:
+        """
+        Given one or more tree node IDs, return the induced subgraph of the KG.
+        In FalkorDB mode, queries the database directly for only the needed nodes.
+        """
+        if self.use_falkordb and not self.kg.nodes:
+            # FalkorDB-only mode: fetch subgraph from DB
+            return self._get_fdb_subgraph(tree_node_ids)
+        # Default: in-memory NetworkX subgraph
+        kg_nodes = set().union(*(self.tree2kg.get(tid, set()) for tid in tree_node_ids))
+        sub = self.kg.subgraph(kg_nodes)
+        return sub.copy() if copy else sub
 
     @classmethod
-    def load_from_dir(cls, load_dir: str, variant: str = None) -> "Graph":
+    def load_from_dir(
+        cls,
+        load_dir: str,
+        variant: str = None,
+        tenant_id: str = None,
+        doc_id: str = None,
+        falkordb_cfg=None,
+    ) -> "Graph":
+        """Load a Graph from JSON file, or from FalkorDB if configured."""
+        # FalkorDB mode: load tree2kg from DB, keep kg empty for lazy subgraph queries
+        if falkordb_cfg is not None and tenant_id is not None and doc_id is not None:
+            graph_instance = cls(
+                save_path=load_dir,
+                variant=variant,
+                tenant_id=tenant_id,
+                doc_id=doc_id,
+                falkordb_cfg=falkordb_cfg,
+            )
+            graph_instance._load_from_falkordb()
+            log.info(f"Graph loaded from FalkorDB graph '{graph_instance._fdb_graph_name}'")
+            return graph_instance
+
+        # Default: JSON file load
         target_filename = cls._get_filename(variant)
         load_path = os.path.join(load_dir, target_filename)
-        
-        # load_path = os.path.join(load_dir, cls._DATA_FILE)
         if not os.path.exists(load_path):
             raise FileNotFoundError(f"Error: Missing graph file: {load_path}")
 
@@ -340,8 +524,8 @@ class Graph:
             loaded_data = json.load(f)
 
         graph_instance = cls(save_path=load_dir)
-
-        graph_instance.kg = json_graph.node_link_graph(loaded_data["graph"])
+        # Pass edges="links" to match the key used when saving with node_link_data(edges="links")
+        graph_instance.kg = json_graph.node_link_graph(loaded_data["graph"], edges="links")
 
         for _, node_data in graph_instance.kg.nodes(data=True):
             if "source_ids" in node_data and isinstance(node_data["source_ids"], list):
@@ -360,6 +544,81 @@ class Graph:
             f"Graph contains {len(graph_instance.kg.nodes)} nodes and {len(graph_instance.kg.edges)} edges."
         )
         return graph_instance
+
+    # ------------------------------------------------------------------ #
+    #  Phase 3: Global graph methods                                       #
+    # ------------------------------------------------------------------ #
+
+    def save_to_global_graph(self, falkordb_cfg, tenant_id: str) -> None:
+        """
+        Merge this document's KG nodes into the tenant-level global FalkorDB graph.
+        Each entity is stored as a canonical node; a HAS_MENTION edge links the
+        canonical node back to its document source.
+        """
+        try:
+            from falkordb import FalkorDB
+            cfg = falkordb_cfg
+            conn_kwargs = {"host": cfg.host, "port": cfg.port}
+            if cfg.password:
+                conn_kwargs["password"] = cfg.password
+            client = FalkorDB(**conn_kwargs)
+            global_graph = client.select_graph(cfg.graph_name_for_global(tenant_id))
+        except Exception as e:
+            log.error(f"Failed to connect to FalkorDB global graph: {e}")
+            raise
+
+        for node_name, data in self.kg.nodes(data=True):
+            ename = data.get("entity_name", "").replace("'", "\\'")
+            etype = data.get("entity_type", "").replace("'", "\\'")
+            desc = data.get("description", "").replace("'", "\\'")
+            nname = node_name.replace("\\", "\\\\").replace("'", "\\'")
+            doc_id_esc = self.doc_id.replace("'", "\\'") if self.doc_id else ""
+            # MERGE canonical entity node
+            global_graph.query(
+                f"MERGE (n:Entity {{node_name: '{nname}'}}) "
+                f"ON CREATE SET n.entity_name='{ename}', n.entity_type='{etype}', n.description='{desc}' "
+                f"CREATE (n)-[:HAS_MENTION {{doc_id: '{doc_id_esc}'}}]->(n)"
+            )
+        log.info(f"Merged {self.kg.number_of_nodes()} nodes into global graph for tenant '{tenant_id}'.")
+
+    def get_global_subgraph(
+        self,
+        falkordb_cfg,
+        tenant_id: str,
+        accessible_doc_ids: List[str],
+    ) -> nx.Graph:
+        """
+        Fetch a cross-document subgraph from the global FalkorDB graph,
+        restricted to documents in accessible_doc_ids.
+        """
+        try:
+            from falkordb import FalkorDB
+            cfg = falkordb_cfg
+            conn_kwargs = {"host": cfg.host, "port": cfg.port}
+            if cfg.password:
+                conn_kwargs["password"] = cfg.password
+            client = FalkorDB(**conn_kwargs)
+            global_graph = client.select_graph(cfg.graph_name_for_global(tenant_id))
+        except Exception as e:
+            log.error(f"Failed to connect to FalkorDB global graph: {e}")
+            raise
+
+        # Use a relationship variable r to filter by doc_id property on HAS_MENTION edges
+        doc_filter = "['" + "', '".join(d.replace("'", "\\'") for d in accessible_doc_ids) + "']"
+        result = global_graph.query(
+            f"MATCH (n:Entity)-[r:HAS_MENTION]->(n) "
+            f"WHERE r.doc_id IN {doc_filter} RETURN DISTINCT n"
+        )
+        subgraph = nx.Graph()
+        for rec in result.result_set:
+            node = rec[0]
+            props = node.properties
+            node_name = props["node_name"]
+            subgraph.add_node(node_name,
+                              entity_name=props.get("entity_name", ""),
+                              entity_type=props.get("entity_type", ""),
+                              description=props.get("description", ""))
+        return subgraph
 
 
 if __name__ == "__main__":

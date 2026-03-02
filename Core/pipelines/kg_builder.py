@@ -60,7 +60,15 @@ def build_knowledge_graph(tree: DocumentTree, cfg: SystemConfig):
     else:
         variant = None
 
-    graph_index = Graph(save_path=cfg.save_path, variant=variant)
+    # Pass FalkorDB config when tenant/doc IDs are set
+    falkordb_cfg = cfg.falkordb if (cfg.tenant_id and cfg.doc_id) else None
+    graph_index = Graph(
+        save_path=cfg.save_path,
+        variant=variant,
+        tenant_id=cfg.tenant_id,
+        doc_id=cfg.doc_id,
+        falkordb_cfg=falkordb_cfg,
+    )
 
     kg_extractor = KGExtractor(
         cfg_graph=cfg.graph, llm=llm, vlm=vlm, save_path=cfg.save_path

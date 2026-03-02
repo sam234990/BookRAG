@@ -7,8 +7,10 @@ from Core.configs.graph_config import GraphConfig
 from Core.configs.vlm_config import VLMConfig
 from Core.configs.rag_config import RAGConfig
 from Core.configs.vdb_config import VDBConfig
+from Core.configs.falkordb_config import FalkorDBConfig
+from Core.configs.mongodb_config import MongoDBConfig
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import Optional, Any
 
 
 class SystemConfig(BaseModel):
@@ -42,6 +44,14 @@ class SystemConfig(BaseModel):
     # Paths
     pdf_path: Optional[str] = "/home/wangshu/multimodal/GBC-RAG/test/double_paper.pdf"
     save_path: Optional[str] = "/home/wangshu/multimodal/GBC-RAG/test/tree_index"
+
+    # Multi-tenant identifiers (optional for backward compatibility)
+    tenant_id: Optional[str] = None
+    doc_id: Optional[str] = None
+
+    # Database configurations
+    falkordb: Any = Field(default_factory=FalkorDBConfig)
+    mongodb: Any = Field(default_factory=MongoDBConfig)
 
     # # 新增: 专门用于存放评估结果的根目录
     # evaluation_output_path: Optional[str] = Field(

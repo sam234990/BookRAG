@@ -31,11 +31,18 @@ class GBC:
         self.TreeIndex: DocumentTree = TreeIndex
         self.GraphIndex: Graph = graph_index
 
-        # load the vdb of entities
+        # load the vdb of entities — namespaced by tenant/doc if available
         if config.graph.refine_type == "basic":
-            self.entity_vdb_path = os.path.join(self.save_dir, "kg_vdb_basic")
+            vdb_name = "kg_vdb_basic"
         else:
-            self.entity_vdb_path = os.path.join(self.save_dir, "kg_vdb")
+            vdb_name = "kg_vdb"
+
+        if config.tenant_id and config.doc_id:
+            self.entity_vdb_path = os.path.join(
+                self.save_dir, config.tenant_id, config.doc_id, vdb_name
+            )
+        else:
+            self.entity_vdb_path = os.path.join(self.save_dir, vdb_name)
         
         self.embedder = TextEmbeddingProvider(
             model_name=config.graph.embedding_config.model_name,
@@ -109,8 +116,43 @@ class GBC:
             variant = "basic"
         else:
             variant = None
-        
-        graph_index = Graph.load_from_dir(config.save_path, variant=variant)
+
+        # Pass FalkorDB config if tenant/doc IDs are set
+        falkordb_cfg = config.falkordb if (config.tenant_id and config.doc_id) else None
+        graph_index = Graph.load_from_dir(
+            config.save_path,
+            variant=variant,
+            tenant_id=config.tenant_id,
+            doc_id=config.doc_id,
+            falkordb_cfg=falkordb_cfg,
+        )
         GBC = cls(config=config, graph_index=graph_index, TreeIndex=tree_index)
         log.info(f"GBC index loaded from {config.save_path}")
         return GBC
+
+    def rebuild_global_vdb(self, global_vdb_path: str) -> None:
+        """
+        Build a global vector database of canonical entities (Phase 3).
+        Pulls all nodes from the current GraphIndex and adds them to a shared VDB.
+        """
+        from Core.provider.vdb import VectorStore
+        global_vdb = VectorStore(
+            db_path=global_vdb_path,
+            embedding_model=self.embedder,
+            collection_name="global_kg_collection",
+        )
+        nodes = self.GraphIndex.get_all_nodes()
+        texts = []
+        meta_datas = []
+        for node in nodes:
+            texts.append(node)
+            entity = self.GraphIndex.get_entity_by_node_name(node)
+            meta_datas.append({
+                "entity_name": entity.entity_name,
+                "entity_type": entity.entity_type,
+                "description": entity.description,
+                "doc_id": self.config.doc_id or "",
+                "tenant_id": self.config.tenant_id or "",
+            })
+        global_vdb.add_texts(texts=texts, metadatas=meta_datas)
+        log.info(f"Rebuilt global VDB with {len(texts)} entries from doc '{self.config.doc_id}'.")
