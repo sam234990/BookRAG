@@ -1,5 +1,6 @@
 import yaml
 from Core.configs.mineru_config import MinerU
+from Core.configs.docling_config import DoclingConfig
 from Core.configs.llm_config import LLMConfig
 from Core.configs.tree_config import TreeConfig
 from Core.configs.graph_config import GraphConfig
@@ -20,6 +21,10 @@ class SystemConfig(BaseModel):
     llm: LLMConfig = Field(default_factory=LLMConfig)
     vlm: VLMConfig = Field(default_factory=VLMConfig)
     mineru: MinerU = Field(default_factory=MinerU)
+
+    # Parser selection: "mineru" (default) or "docling"
+    parser: Optional[str] = "mineru"
+    docling: Optional[DoclingConfig] = Field(default_factory=DoclingConfig)
 
     # Index Configurations
     tree: TreeConfig = Field(default_factory=TreeConfig)
