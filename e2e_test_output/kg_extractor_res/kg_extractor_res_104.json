@@ -1,0 +1,251 @@
+{
+  "entities": [
+    {
+      "entity_name": "select by entity",
+      "entity_type": "TECHNOLOGY",
+      "description": "select by entity is a method that targets contiguous document segments by retrieving subtrees rooted at specific section nodes",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "entity_name": "select by section",
+      "entity_type": "TECHNOLOGY",
+      "description": "select by section is a method that targets contiguous document segments by retrieving subtrees rooted at specific section nodes",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "entity_name": "gt link",
+      "entity_type": "TECHNOLOGY",
+      "description": "gt link is a mechanism used to link sections to entities",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "TECHNOLOGY",
+      "description": "llm is a system used to select sections in the described process",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "entity_name": "s target",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "s target represents a set of target section nodes at a specified depth",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "entity_name": "n",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "n represents the set of nodes in the document structure",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "entity_name": "e q",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "e q represents the entities linked to sections via gt link",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "entity_name": "n s",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "n s represents the selected node set formed by retrieving descendants of target sections",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "entity_name": "document",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "document is the text being processed by the select by entity and select by section methods",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "entity_name": "subtree",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "subtree refers to the data structure rooted at specific section nodes that is retrieved by the methods",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "entity_name": "section node",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "section node is a specific node within the document structure that serves as a root for subtrees",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "entity_name": "depth",
+      "entity_type": "MEASUREMENT",
+      "description": "depth is a specified parameter determining the level of the target section nodes",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "entity_name": "descendant",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "descendant refers to the nodes below the target section nodes that are retrieved to form the selected node set",
+      "source_ids": [
+        104
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "select by entity",
+      "tgt_entity_name": "s target",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "select by entity identifies a set of target section nodes  s target  as part of its process",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "src_entity_name": "select by section",
+      "tgt_entity_name": "s target",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "select by section identifies a set of target section nodes  s target  as part of its process",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "src_entity_name": "s target",
+      "tgt_entity_name": "e q",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "s target consists of sections linked to entities  e q  via gt link",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "src_entity_name": "s target",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "s target includes sections selected by the llm",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "src_entity_name": "s target",
+      "tgt_entity_name": "n s",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "n s is formed by retrieving all descendants of the target section nodes  s target",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "src_entity_name": "gt link",
+      "tgt_entity_name": "e q",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "gt link is the mechanism used to link sections to entities  e q",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "src_entity_name": "select by entity",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "select by entity targets contiguous segments within the document",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "src_entity_name": "select by section",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "select by section targets contiguous segments within the document",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "src_entity_name": "select by entity",
+      "tgt_entity_name": "subtree",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "select by entity retrieves subtrees rooted at specific section nodes",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "src_entity_name": "select by section",
+      "tgt_entity_name": "subtree",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "select by section retrieves subtrees rooted at specific section nodes",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "src_entity_name": "s target",
+      "tgt_entity_name": "section node",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "s target consists of specific section nodes",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "src_entity_name": "s target",
+      "tgt_entity_name": "depth",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "s target is defined at a specified depth",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "src_entity_name": "n s",
+      "tgt_entity_name": "descendant",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "n s is formed by retrieving all descendants of the target sections",
+      "source_ids": [
+        104
+      ]
+    },
+    {
+      "src_entity_name": "gt link",
+      "tgt_entity_name": "section node",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gt link links sections  nodes  to entities",
+      "source_ids": [
+        104
+      ]
+    }
+  ],
+  "node_idx": 104
+}

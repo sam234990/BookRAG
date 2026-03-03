@@ -1,0 +1,217 @@
+{
+  "entities": [
+    {
+      "entity_name": "entity resolution adjudicator",
+      "entity_type": "PERSON",
+      "description": "entity resolution adjudicator is an expert role tasked with determining if a new entity refers to the same real world concept as candidate entities",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "entity_name": "new entity",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "new entity is a recently extracted entity from a text that needs to be matched against candidate entities",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "entity_name": "candidate entities",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "candidate entities are a list of semantically similar entities retrieved from an existing knowledge base for comparison",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "entity_name": "knowledge graph",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "knowledge graph is the existing database from which candidate entities are retrieved",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "entity_name": "knowledge base",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "knowledge base is the source of semantically similar candidate entities",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "entity_name": "json object",
+      "entity_type": "FILE_TYPE",
+      "description": "json object is the required format for the output containing the id of the matching candidate and an explanation",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "entity_name": "id",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "id is a unique identifier used to reference candidate entities in the output",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "entity_name": "1",
+      "entity_type": "VALUE",
+      "description": "1 is a specific value indicating that no matching candidate was found for the new entity",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "entity_name": "text",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "text is the source material from which the new entity is recently extracted",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "entity_name": "explanation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "explanation is a brief description required in the output to justify the decision",
+      "source_ids": [
+        262
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "entity resolution adjudicator",
+      "tgt_entity_name": "new entity",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the entity resolution adjudicator evaluates the new entity to find a match",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "src_entity_name": "entity resolution adjudicator",
+      "tgt_entity_name": "candidate entities",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the entity resolution adjudicator compares the new entity against the candidate entities",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "src_entity_name": "new entity",
+      "tgt_entity_name": "candidate entities",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the new entity is compared against the candidate entities to determine if they refer to the same concept",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "src_entity_name": "candidate entities",
+      "tgt_entity_name": "knowledge graph",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "candidate entities are retrieved from the knowledge graph",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "src_entity_name": "candidate entities",
+      "tgt_entity_name": "knowledge base",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "candidate entities are retrieved from the knowledge base",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "src_entity_name": "entity resolution adjudicator",
+      "tgt_entity_name": "json object",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the entity resolution adjudicator must output the result in a json object format",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "src_entity_name": "entity resolution adjudicator",
+      "tgt_entity_name": "id",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the entity resolution adjudicator outputs the id of the matching candidate",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "src_entity_name": "entity resolution adjudicator",
+      "tgt_entity_name": "1",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the entity resolution adjudicator outputs  1 if no match is found",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "src_entity_name": "entity resolution adjudicator",
+      "tgt_entity_name": "explanation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the entity resolution adjudicator provides an explanation for the decision",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "src_entity_name": "new entity",
+      "tgt_entity_name": "text",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the new entity is extracted from the text",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "src_entity_name": "candidate entities",
+      "tgt_entity_name": "id",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "each candidate entity has a unique id for reference",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "src_entity_name": "json object",
+      "tgt_entity_name": "id",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the json object contains the id of the matching candidate",
+      "source_ids": [
+        262
+      ]
+    },
+    {
+      "src_entity_name": "json object",
+      "tgt_entity_name": "explanation",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the json object contains the explanation for the decision",
+      "source_ids": [
+        262
+      ]
+    }
+  ],
+  "node_idx": 262
+}

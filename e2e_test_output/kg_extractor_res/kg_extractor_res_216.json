@@ -1,0 +1,537 @@
+{
+  "entities": [
+    {
+      "entity_name": "timo schick",
+      "entity_type": "PERSON",
+      "description": "timo schick is listed as one of the authors of the document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "entity_name": "jane dwivedi yu",
+      "entity_type": "PERSON",
+      "description": "jane dwivedi yu is listed as one of the authors of the document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "entity_name": "roberto dess",
+      "entity_type": "PERSON",
+      "description": "roberto dess  is listed as one of the authors of the document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "entity_name": "roberta raileanu",
+      "entity_type": "PERSON",
+      "description": "roberta raileanu is listed as one of the authors of the document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "entity_name": "maria lomeli",
+      "entity_type": "PERSON",
+      "description": "maria lomeli is listed as one of the authors of the document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "entity_name": "eric hambro",
+      "entity_type": "PERSON",
+      "description": "eric hambro is listed as one of the authors of the document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "entity_name": "luke zettlemoyer",
+      "entity_type": "PERSON",
+      "description": "luke zettlemoyer is listed as one of the authors of the document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "entity_name": "nicola cancedda",
+      "entity_type": "PERSON",
+      "description": "nicola cancedda is listed as one of the authors of the document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "entity_name": "thomas scialom",
+      "entity_type": "PERSON",
+      "description": "thomas scialom is listed as one of the authors of the document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "entity_name": "2024",
+      "entity_type": "DATE",
+      "description": "2024 is the year associated with the publication or work by the listed authors",
+      "source_ids": [
+        216
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "timo schick",
+      "tgt_entity_name": "jane dwivedi yu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "timo schick",
+      "tgt_entity_name": "roberto dess",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "timo schick",
+      "tgt_entity_name": "roberta raileanu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "timo schick",
+      "tgt_entity_name": "maria lomeli",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "timo schick",
+      "tgt_entity_name": "eric hambro",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "timo schick",
+      "tgt_entity_name": "luke zettlemoyer",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "timo schick",
+      "tgt_entity_name": "nicola cancedda",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "timo schick",
+      "tgt_entity_name": "thomas scialom",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "jane dwivedi yu",
+      "tgt_entity_name": "roberto dess",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "jane dwivedi yu",
+      "tgt_entity_name": "roberta raileanu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "jane dwivedi yu",
+      "tgt_entity_name": "maria lomeli",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "jane dwivedi yu",
+      "tgt_entity_name": "eric hambro",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "jane dwivedi yu",
+      "tgt_entity_name": "luke zettlemoyer",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "jane dwivedi yu",
+      "tgt_entity_name": "nicola cancedda",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "jane dwivedi yu",
+      "tgt_entity_name": "thomas scialom",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "roberto dess",
+      "tgt_entity_name": "roberta raileanu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "roberto dess",
+      "tgt_entity_name": "maria lomeli",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "roberto dess",
+      "tgt_entity_name": "eric hambro",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "roberto dess",
+      "tgt_entity_name": "luke zettlemoyer",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "roberto dess",
+      "tgt_entity_name": "nicola cancedda",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "roberto dess",
+      "tgt_entity_name": "thomas scialom",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "roberta raileanu",
+      "tgt_entity_name": "maria lomeli",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "roberta raileanu",
+      "tgt_entity_name": "eric hambro",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "roberta raileanu",
+      "tgt_entity_name": "luke zettlemoyer",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "roberta raileanu",
+      "tgt_entity_name": "nicola cancedda",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "roberta raileanu",
+      "tgt_entity_name": "thomas scialom",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "maria lomeli",
+      "tgt_entity_name": "eric hambro",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "maria lomeli",
+      "tgt_entity_name": "luke zettlemoyer",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "maria lomeli",
+      "tgt_entity_name": "nicola cancedda",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "maria lomeli",
+      "tgt_entity_name": "thomas scialom",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "eric hambro",
+      "tgt_entity_name": "luke zettlemoyer",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "eric hambro",
+      "tgt_entity_name": "nicola cancedda",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "eric hambro",
+      "tgt_entity_name": "thomas scialom",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "luke zettlemoyer",
+      "tgt_entity_name": "nicola cancedda",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "luke zettlemoyer",
+      "tgt_entity_name": "thomas scialom",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "nicola cancedda",
+      "tgt_entity_name": "thomas scialom",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "timo schick",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "timo schick is an author of the work published in 2024",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "jane dwivedi yu",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "jane dwivedi yu is an author of the work published in 2024",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "roberto dess",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "roberto dess  is an author of the work published in 2024",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "roberta raileanu",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "roberta raileanu is an author of the work published in 2024",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "maria lomeli",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "maria lomeli is an author of the work published in 2024",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "eric hambro",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "eric hambro is an author of the work published in 2024",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "luke zettlemoyer",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "luke zettlemoyer is an author of the work published in 2024",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "nicola cancedda",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "nicola cancedda is an author of the work published in 2024",
+      "source_ids": [
+        216
+      ]
+    },
+    {
+      "src_entity_name": "thomas scialom",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "thomas scialom is an author of the work published in 2024",
+      "source_ids": [
+        216
+      ]
+    }
+  ],
+  "node_idx": 216
+}

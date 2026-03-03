@@ -1,0 +1,3141 @@
+[
+    {
+        "type": "text",
+        "text": "BookRAG: A Hierarchical Structure-aware Index-based Approach for Retrieval-Augmented Generation on Complex Documents",
+        "text_level": 0,
+        "page_idx": 0,
+        "pdf_id": 0,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Shu Wang The Chinese University of Hong Kong, Shenzhen shuwang3@link.cuhk.edu.cn",
+        "text_level": -1,
+        "page_idx": 0,
+        "pdf_id": 1,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Yingli Zhou The Chinese University of Hong Kong, Shenzhen yinglizhou@link.cuhk.edu.cn",
+        "text_level": -1,
+        "page_idx": 0,
+        "pdf_id": 2,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Yixiang Fang The Chinese University of Hong Kong, Shenzhen fangyixiang@cuhk.edu.cn",
+        "text_level": -1,
+        "page_idx": 0,
+        "pdf_id": 3,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "ABSTRACT",
+        "text_level": 0,
+        "page_idx": 0,
+        "pdf_id": 4,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "As an effective method to boost the performance of Large Language Models (LLMs) on the question answering (QA) task, RetrievalAugmented Generation (RAG), which queries highly relevant information from external complex documents, has attracted tremendous attention from both industry and academia. Existing RAG approaches often focus on general documents, and they overlook the fact that many real-world documents (such as books, booklets, handbooks, etc.) have a hierarchical structure, which organizes their content from different granularity levels, leading to poor performance for the QA task. To address these limitations, we introduce BookRAG, a novel RAG approach targeted for documents with a hierarchical structure, which exploits logical hierarchies and traces entity relations to query the highly relevant information. Specifically, we build a novel index structure, called BookIndex, by extracting a hierarchical tree from the document, which serves as the role of its table of contents, using a graph to capture the intricate relationships between entities, and mapping entities to tree nodes. Leveraging the BookIndex, we then propose an agent-based query method inspired by the Information Foraging Theory, which dynamically classifies queries and employs a tailored retrieval workflow. Extensive experiments on three widely adopted benchmarks demonstrate that BookRAG achieves state-of-the-art performance, significantly outperforming baselines in both retrieval recall and QA accuracy while maintaining competitive efficiency.",
+        "text_level": -1,
+        "page_idx": 0,
+        "pdf_id": 5,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "PVLDB Reference Format:",
+        "text_level": 0,
+        "page_idx": 0,
+        "pdf_id": 6,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Shu Wang, Yingli Zhou, and Yixiang Fang. BookRAG: A Hierarchical Structure-aware Index-based Approach for Retrieval-Augmented Generation on Complex Documents. PVLDB, 19(1): XXX-XXX, 2025. doi:XX.XX/XXX.XX",
+        "text_level": -1,
+        "page_idx": 0,
+        "pdf_id": 7,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "PVLDB Artifact Availability:",
+        "text_level": 0,
+        "page_idx": 0,
+        "pdf_id": 8,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "The source code, data, and/or other artifacts have been made available at https://github.com/sam234990/BookRAG.",
+        "text_level": -1,
+        "page_idx": 0,
+        "pdf_id": 9,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "1 INTRODUCTION",
+        "text_level": 0,
+        "page_idx": 0,
+        "pdf_id": 10,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Large Language Models (LLMs) such as Qwen 3 [60] and Gemini 2.5 [13] have revolutionized the Question Answering (QA) system [15, 61, 65]. The industry has increasingly adopted LLMs to build QA systems that assist users and reduce manual effort in",
+        "text_level": -1,
+        "page_idx": 0,
+        "pdf_id": 11,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "This work is licensed under the Creative Commons BY-NC-ND 4.0 International License. Visit https://creativecommons.org/licenses/by-nc-nd/4.0/ to view a copy of this license. For any use beyond those covered by this license, obtain permission by emailing info@vldb.org. Copyright is held by the owner/author(s). Publication rights licensed to the VLDB Endowment.",
+        "text_level": -1,
+        "page_idx": 0,
+        "pdf_id": 12,
+        "middle_json": {
+            "docling_label": "footnote"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Proceedings of the VLDB Endowment, Vol. 19, No. 1 ISSN 2150-8097. doi:XX.XX/XXX.XX",
+        "text_level": -1,
+        "page_idx": 0,
+        "pdf_id": 13,
+        "middle_json": {
+            "docling_label": "footnote"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 1: Comparison of existing methods and BookRAG for complex document QA.",
+        "text_level": -1,
+        "page_idx": 0,
+        "pdf_id": 14,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "image",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 0,
+        "pdf_id": 15,
+        "img_path": "/Volumes/ExtMac/Projects/Exorty/BOOKRag/e2e_test_output/docling/images/BOOKRAG_VLDB_2026_full-picture-1.png",
+        "image_caption": [
+            "cref='#/texts/14'"
+        ],
+        "image_footnote": [],
+        "middle_json": {
+            "docling_label": "picture"
+        }
+    },
+    {
+        "type": "text",
+        "text": "many applications [65, 67], such as financial auditing [29, 37], legal compliance [8], and scientific discovery [56]. However, directly relying on LLMs may lead to missing domain knowledge and generating outdated or unsupported information. To address these issues, Retrieval-Augmented Generation (RAG) has been widely adopted [17, 22] by retrieving relevant domain knowledge from external sources and using it to guide the LLM during response generation. On the other hand, in real-world enterprise scenarios, domain knowledge is often stored in long-form documents, such as technical handbooks, API reference manuals, and operational guidebooks [49]. A notable feature of such documents is that they follow the structure of books, characterized by intricate layouts and rigorous logical hierarchies (e.g., explicit tables of contents, nested chapters, and multi-level sections). In this paper, we aim to design an effective RAG system for QA over long and highly structured documents.",
+        "text_level": -1,
+        "page_idx": 0,
+        "pdf_id": 16,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Prior works. The existing RAG approaches for documentlevel QA generally fall into two paradigms, as illustrated in Figure 1. The first paradigm relies on OCR (Optical Character Recognition) to convert the document into plain text, after which any text-based RAG method can be directly applied. Among text-based RAG methods, state-of-the-art approaches increasingly adopt graph-based RAG [6, 62, 66], where graph data serves as an external knowledge source because it captures rich semantic information and the",
+        "text_level": -1,
+        "page_idx": 0,
+        "pdf_id": 17,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Table 1: Comparison of representative methods and our BookRAG.",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 18,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "table",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 19,
+        "img_path": "",
+        "table_caption": [
+            "cref='#/texts/17'"
+        ],
+        "table_footnote": [],
+        "table_body": "| Type             | Representative Method     | Core Feature                                                 | Multi-hop Reasoning   | Document Parsing   | Query Workflow   |\n|------------------|---------------------------|--------------------------------------------------------------|-----------------------|--------------------|------------------|\n| Graph-based      | RAPTOR [45] GraphRAG [16] | Recursive summarization                                      |                       |                    | Static           |\n| Layout segmented | MM-Vanilla                | Global community detection                                   |                       |                    | Static           |\n| Layout segmented | DocETL [47]               | Multi-modal retrieval LLM-based document processing pipeline |                       |                    | Static Manual    |\n| Doc-Native       | BookRAG (Ours)            | Structure-award Index & Agent-based retrieval                |                       |                    | Dynamic          |",
+        "middle_json": {
+            "docling_label": "table"
+        }
+    },
+    {
+        "type": "text",
+        "text": "relational structure between entities. As shown in Table 1, two representative methods are GraphRAG [16] and RAPTOR [45]. Specifically, GraphRAG first constructs a knowledge graph (KG) from the textual corpus, and then applies the Leiden community detection algorithm [51] to obtain hierarchical clusters. Summaries are generated for each community, providing a comprehensive, global overview of the entire corpus. RAPTOR builds a recursive tree structure by iteratively clustering document chunks and summarizing them at each level, enabling the model to capture both fine-grained and high-level semantic information across the corpus.",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 20,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "In contrast, the second paradigm, layout-aware segmentation [5, 52], first parses the document into structured blocks that preserve the original layout and information of the document, such as paragraphs, tables, figures, or equations. By doing so, it not only avoids the fixed chunk size used in the first paradigm, which often leads to fragmented information, but also retains document-native structural information. These blocks often exhibit multimodal characteristics, and a typical approach is to apply multimodal retrieval to obtain relevant content for answering queries. Recently, a state-ofthe-art method in this category, DocETL [47], provides a declarative interface that allows users to manually define LLM-based processing pipelines to analyze the retrieved blocks. These pipelines consist of LLM-powered operations combined with task-specific optimizations.",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 21,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Limitations of existing works. However, these methods suffer from two fundamental limitations ( L for short): L1: Failure to capture the deep connection of document structure and semantics. Text-based approaches cannot capture the structural layout of the document, resulting in the loss of important relationships stored in the hierarchical blocks, such as tables nested within a specific section. While layout-segmented methods preserve document structure, they cannot capture the relationships between different blocks in the document, which limits their capability for multi-hop reasoning across these blocks and ultimately affects their overall performance. L2: Static of query workflows. In real-world QA scenarios, user queries are highly heterogeneous, ranging from simple keyword lookups to complex multi-hop questions that require synthesizing evidence scattered across different parts of the document. Applying a uniform strategy, such as static or manually predefined workflows, to diverse needs is inefficient; for example, complex queries often require question decomposition, whereas simple queries do not.",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 22,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Our technical contributions. To bridge this gap, we introduce BookRAG , the first retrieval-augmented generation method built upon a document-native BookIndex , designed to document",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 23,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "QA tasks. Specifically, to capture the deep connection of the relation in the document, BookIndex organizes information through two complementary structures. First, to preserve the document's native logical hierarchy, we organize the parsed content blocks into a hierarchical tree structure, which serves as the role of its table of contents. Second, to capture the intricate relations within these blocks, we construct a KG containing fine-grained entities. Finally, we unify these two structures by mapping the KG entities to their corresponding tree nodes.",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 24,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "However, effective multi-hop reasoning on the graph relies on a high-quality KG [62, 66], which is often compromised by entity ambiguity (e.g., distinct entities with names like 'LLM' and 'Large Language Model'). To address this, we propose a novel gradient-based entity resolution method that analyzes the similarity distribution of candidate entities. By identifying sharp drops in similarity scores, we can efficiently distinguish and merge coreferent entities, thereby ensuring graph connectivity and enhancing reasoning capabilities.",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 25,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Building upon the BookIndex, we address the static of query workflows ( L2 ) by implementing an agent-based retrieval . Specifically, our agent first classifies user queries based on their intent and complexity, and then dynamically generates tailored retrieval workflows. Grounded in Information Foraging Theory [42], our retrieval process mimics foraging by using Selector to narrow down the search space via information scents and Reasoner to locate highly relevant evidence.",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 26,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "We conduct extensive experiments on three widely adopted datasets to validate the effectiveness and efficiency of our BookRAG, comparing it against several state-of-the-art baselines. The experimental results demonstrate that BookRAG consistently achieves superior performance in both retrieval recall and QA accuracy across all datasets. Furthermore, our detailed analysis validates the critical contributions of our key features, such as the high-quality KG and the agent-based retrieval mechanism.",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 27,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "We summarize our contributions as:",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 28,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· We introduce BookRAG , a novel method that constructs a document-native BookIndex by integrating a hierarchical tree of document layout blocks with a KG storing finegrained entity relations.",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 29,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· We propose an Agent-based Retrieval approach inspired by Information Foraging Theory, which dynamically classifies queries and configures optimal retrieval workflows to locate highly relevant evidence within documents.",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 30,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Extensive experiments on multiple benchmarks show that BookRAG significantly outperforms existing baselines, attaining state-of-the-art performance in solving complex",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 31,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "2",
+        "text_level": -1,
+        "page_idx": 1,
+        "pdf_id": 32,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "document QA tasks while maintaining competitive efficiency.",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 33,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Outline. We review related work in Section 2. Section 3 introduces the problem formulation, IFT, and RAG workflow. In Section 4, we present the structure of our BookIndex and its construction. Section 5 presents our agent-based retrieval, elaborating on the query classification and operators used in the structured execution of BookRAG. We present the experimental results and detailed analysis in Section 6, and conclude the paper in Section 7.",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 34,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "2 RELATED WORK",
+        "text_level": 0,
+        "page_idx": 2,
+        "pdf_id": 35,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "In this section, we review the related works, including LLM in document analysis and the modern representative RAG approaches.",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 36,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· LLM in document analysis. Recent advances in LLMs have offered opportunities to leverage LLMs in document data analysis. Due to the robust semantic reasoning capabilities of LLMs, there is an increasing number of works focusing on transferring unstructured documents (e.g., HTML, PDFs, and raw text) into structured formats, such as relational tables [1, 7, 25, 38]. For example, Evaporate [1] utilizes LLMs to synthesize extraction code, enabling cost-effective conversion of semi-structured web documents into structured databases without heavy manual annotation. In addition, several LLM-based document analysis systems have been proposed to equip standard data pipelines with semantic understanding [28, 40, 47, 53]. For instance, LOTUS [40] extends the relational model with semantic operators, allowing users to execute SQL-like queries with LLM-powered predicates (e.g., filter, join) over unstructured text corpora. Similarly, DocETL [47] introduces an agentic framework to optimize complex information extraction tasks. Furthermore, another line of research proposes to directly analyze or parse documents by viewing the document pages as images, thereby preserving critical layout and visual information [26, 31, 54].",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 37,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· RAG approaches. RAG has been proven to excel in many tasks, including open-ended question answering [24, 48], programming context [9, 10], SQL rewrite [30, 50], and data cleaning [35, 36, 43]. The naive RAG technique relies on retrieving query-relevant contexts from external knowledge bases to mitigate the 'hallucination' of LLMs. Recently, many RAG approaches [16, 18, 19, 21, 27, 32, 32, 45, 55, 58, 66] have adopted graph structures to organize the information and relationships within documents, achieving improved overall retrieval performance. For more details, please refer to the recent survey of graph-based RAG methods [41]. Besides, the Agentic RAG paradigm has been widely studied, employing autonomous agents to dynamically orchestrate and refine the RAG pipeline, thus significantly boosting the reasoning robustness and generation fidelity [2, 23, 59].",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 38,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "3 PRELIMINARIES",
+        "text_level": 0,
+        "page_idx": 2,
+        "pdf_id": 39,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "This section formalizes the research problem of complex document QA, introduces the foundational Information Foraging Theory (IFT), and briefly reviews the general workflow of RAG systems",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 40,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "3.1 Problem Formulation",
+        "text_level": 0,
+        "page_idx": 2,
+        "pdf_id": 41,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "We study the problem of Question Answering (QA) over complex documents, which aims to answer user queries based on long-form",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 42,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "3",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 43,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "documents [5, 11, 33]. Formally, a document 𝐷 is represented as a sequence of 𝑁 pages, 𝐷 = { 𝑃 𝑖 } 𝑁 𝑖 = 1 . These pages collectively contain a sequence of content blocks B = { 𝑏 𝑗 } 𝑀 𝑗 = 1 , where each block 𝑏 𝑗 represents a distinct element (e.g., text segment, section header, table, or image) organized within a logical chapter hierarchy. Given a user query 𝑞 , the goal is to generate an accurate answer 𝐴 , ideally grounded in a specific set of evidence blocks 𝐸 ⊂ B . The task is formulated as developing a method S that maps the structured document and the query to the final answer:",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 44,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝐴 = S( 𝐷,𝑞 ) (1)",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 45,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "where S should navigate both the sequential page content and the logical hierarchy of 𝐷 to synthesize the response.",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 46,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "3.2 Information Foraging Theory",
+        "text_level": 0,
+        "page_idx": 2,
+        "pdf_id": 47,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Information Foraging Theory (IFT) [42] provides a framework for understanding information access as a process analogous to animal foraging. It suggests that users follow cues, known as information scent (e.g., keywords or icons), to navigate between clusters of content, known as information patches (e.g., sections in handbooks). The goal is to maximize the rate of valuable information gain while minimizing effort, guiding the decision to either stay within a patch or seek a new one.",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 48,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Consider experts seeking a solution to a specific problem within a large technical handbook. They first extract key terms related to the problem, which act as information scent. This scent guides them to navigate towards one or more promising sections (the information patches). Within these patches, they analyze the diverse content to extract the precise knowledge required to formulate a final answer",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 49,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "3.3 RAG workflow",
+        "text_level": 0,
+        "page_idx": 2,
+        "pdf_id": 50,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Retrieval-Augmented Generation (RAG) systems typically operate in a two-phase framework [6, 16, 41]. In the Offline Indexing phase, unstructured corpus data is organized into a structured index, which can take various forms such as vector databases or KG [66]. Subsequently, in the Online Retrieval phase, the system retrieves relevant components (e.g., text chunks or subgraphs) based on the user query 𝑞 to inform the LLM's generation. However, these general workflows often treat the index as a structure derived purely from content, potentially detaching it from the document's original logical hierarchy. In contrast, our approach seeks to deeply integrate these retrieval structures with the document's native tree topology.",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 51,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "4 BOOKINDEX",
+        "text_level": 0,
+        "page_idx": 2,
+        "pdf_id": 52,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "This section introduces our proposed BookIndex , a hierarchical structure-aware index designed to capture both the explicit logical hierarchy and the intricate entity relations within complex documents. We first formally define the structure of the BookIndex ( 𝐵 ). Subsequently, we elaborate on the sequential, two-stage construction process: (1) Tree Construction , which parses the document's layout to establish a hierarchical nodes, each categorized by type; and (2) Graph Construction , which extracts fine-grained entity knowledge from the tree nodes and refines it through a novel gradient-based entity resolution method.",
+        "text_level": -1,
+        "page_idx": 2,
+        "pdf_id": 53,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 2: The BookIndex Construction process. This phase includes Tree Construction, derived from Layout Parsing and Section Filtering, and Graph Construction, which involves KG Construction and Gradient-based Entity Resolution.",
+        "text_level": -1,
+        "page_idx": 3,
+        "pdf_id": 54,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "image",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 3,
+        "pdf_id": 55,
+        "img_path": "/Volumes/ExtMac/Projects/Exorty/BOOKRag/e2e_test_output/docling/images/BOOKRAG_VLDB_2026_full-picture-2.png",
+        "image_caption": [
+            "cref='#/texts/52'"
+        ],
+        "image_footnote": [],
+        "middle_json": {
+            "docling_label": "picture"
+        }
+    },
+    {
+        "type": "text",
+        "text": "4.1 Overview of BookIndex",
+        "text_level": 0,
+        "page_idx": 3,
+        "pdf_id": 56,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "We formally define our BookIndex as a triplet 𝐵 = ( 𝑇,𝐺, 𝑀 ) . Here, 𝑇 = ( 𝑁, 𝐸 𝑇 ) represents a Tree structure where 𝑁 is the set of nodes derived from the document's explicit logical hierarchy (e.g., titles, sections, tables), and 𝐸 𝑇 denotes their nesting relationships. 𝐺 = ( 𝑉, 𝐸 𝐺 ) is a Knowledge Graph that captures fine-grained entities ( 𝑉 ) and their relations ( 𝐸 𝐺 ) scattered throughout the document. Finally, 𝑀 𝑉 : →P( 𝑁 ) is the Graph-Tree Link (GT-Link) , which links each entity in 𝑉 to the set of specific tree nodes in 𝑁 from which it was extracted. These links are crucial for capturing the intricate, cross-sectional relations within the document. The hierarchical tree nodes in 𝑇 serve as the document's native information patches , providing structured contexts for information seeking. Meanwhile, the entities and relations in 𝐺 , connected via 𝑀 , act as the rich information scent that guides navigation between and within these patches.",
+        "text_level": -1,
+        "page_idx": 3,
+        "pdf_id": 57,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 2 provides an example of our BookIndex. The Tree component, positioned at the top, organizes the document into a hierarchical structure, where content blocks such as text, tables, and images serve as leaf nodes nested within section nodes. The Graph component is composed of entities and relations extracted from these nodes. The GT-Link, illustrated by the blue dotted lines, explicitly connects these entities back to their corresponding tree nodes, thereby grounding the semantic entities within the document's logical hierarchy.",
+        "text_level": -1,
+        "page_idx": 3,
+        "pdf_id": 58,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "4.2 Tree Construction",
+        "text_level": 0,
+        "page_idx": 3,
+        "pdf_id": 59,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "The first stage transforms the raw document into a structured hierarchical tree 𝑇 . This involves two key steps: robust layout parsing and intelligent section filtering.",
+        "text_level": -1,
+        "page_idx": 3,
+        "pdf_id": 60,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "4.2.1 Layout Parsing. The Layout Parsing phase processes the input document 𝐷 (a collection of pages) using layout analysis and recognition models. This step identifies, extracts, and organizes diverse blocks (e.g., text, tables, images) from the document pages.",
+        "text_level": -1,
+        "page_idx": 3,
+        "pdf_id": 61,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "The output is a sequence of primitive blocks, B = { 𝑏 , 𝑏 1 2 , · · · , 𝑏 𝑘 } , where each block 𝑏 𝑖 = ( 𝑐 , 𝜏 , 𝑓 𝑖 𝑖 𝑖 ) is defined as a triplet. Here, 𝑐 𝑖 is the raw content (e.g., text, image data), 𝜏 𝑖 is the initial layout-based type (e.g., Title, Text, Table, Image ), and 𝑓 𝑖 is a vector of associated layout features (e.g., 'FontSize', bounding box).",
+        "text_level": -1,
+        "page_idx": 3,
+        "pdf_id": 62,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "4.2.2 Section Filtering. Next, the Section Filtering phase processes this initial sequence to identify the document's logically hierarchical structure. Layout Parsing identifies blocks as Title but does not assign their hierarchical level. Therefore, we select the candidate subset B title ⊂ B (where 𝜏 𝑖 = Title ) for an LLM-based analysis. To handle extremely long documents, this analysis is performed in batches, where each batch retains a contextual window of high-level section information (with 𝑙 = 1 as the root). The LLM analyzes the content 𝑐 𝑖 and layout features 𝑓 𝑖 of the candidates to determine two key properties: their actual hierarchical level 𝑙 𝑖 ∈ { 1 2 , , ... } and final node type 𝜏 ' 𝑖 (e.g., re-classifying an erroneous Title as Text if its level is 'None'). This step is crucial for preserving the document's logical hierarchy by correcting blocks erroneously parsed as Title , such as descriptive text within images or borderless table headers.",
+        "text_level": -1,
+        "page_idx": 3,
+        "pdf_id": 63,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Finally, the definitive tree 𝑇 = ( 𝑁, 𝐸 𝑇 ) is constructed. The node set 𝑁 is composed of all blocks from the filtering and re-classification process, where each node 𝑛 ∈ 𝑁 retains its content ( 𝑐 𝑖 ) and its final node type ( 𝜏 ' 𝑖 ) (e.g., Text , Section , Table , and Image ). The edge set 𝐸 𝑇 , representing the parent-child nesting relationships, is then established. Parent-child relationships are inferred by sequentially traversing the nodes, using both the determined hierarchical levels ( 𝑙 𝑖 ) of Section nodes and the overall document order to assemble the complete tree structure.",
+        "text_level": -1,
+        "page_idx": 3,
+        "pdf_id": 64,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "As an example shown in Figure 2, the Layout Parsing phase identifies diverse blocks, typing them as Title Text Table , , , and Image . During the Section Filtering phase, the Title candidates (e.g., \"Method\", \"Experiment\", and \"MOE Layer\") are analyzed by the LLM. The blocks 'Method' and 'Experiment' (both with 'FontSize: 14') are correctly identified as Section nodes at 'Level: 2'. Conversely,",
+        "text_level": -1,
+        "page_idx": 3,
+        "pdf_id": 65,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "4",
+        "text_level": -1,
+        "page_idx": 3,
+        "pdf_id": 66,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "the 'MOE Layer' block ('FontSize: 20'), which was erroneously tagged as Title by the parser, is re-classified by the LLM as a Text node with 'Level: None'. This correction is crucial for preserving the document's logical hierarchy. Following this process, all filtered and classified nodes are assembled into the final tree structure based on their determined levels and document order.",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 67,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "4.3 Graph Construction",
+        "text_level": 0,
+        "page_idx": 4,
+        "pdf_id": 68,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Once the tree 𝑇 is established, we proceed to populate the Knowledge Graph 𝐺 by extracting and refining entities from the tree nodes.",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 69,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "4.3.1 KG Construction. We iterate each node 𝑛 𝑖 ∈ 𝑁 from the previously constructed tree 𝑇 . For each node 𝑛 𝑖 , we extract a subgraph 𝑔 𝑖 = ( 𝑉 , 𝐸 𝑖 𝑅𝑖 ) based on its content 𝑐 𝑖 and final node type 𝜏 ' 𝑖 . This extraction is modality-dependent: if the node is text-only, an LLM is prompted to extract entities and relations, while for nodes containing visual elements (e.g., 𝜏 ' 𝑖 = Image ), a Vision Language Model (VLM) is employed to extract visual knowledge. Crucially, for every entity 𝑣 ∈ 𝑉 𝑖 extracted, its origin tree node 𝑛 𝑖 is recorded, which is vital for constructing the final mapping 𝑀 .",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 70,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Furthermore, to preserve structural semantics for specific logical types (e.g., Table , Formula ), our process first creates a distinct, typed entity (e.g., 𝑣 table representing the table itself). The other extracted entities from the specific node's content are linked to this primary vertex. For Table nodes specifically, row and column headers are also explicitly extracted as distinct entities and linked to 𝑣 table via a 'ContainedIn' relationship.",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 71,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "4.3.2 Gradient-based Entity Resolution. As shown in the literature [62, 66], a well-constructed KG is essential for document question answering. A common challenge in the extraction process is that the same conceptual entity is often fragmented into multiple distinct entities due to abbreviations, co-references, or its varied occurrences across different document sections. This necessitates a robust Entity Resolution (ER) process, which identifies and merges these fragmented entities to refine the raw KG.",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 72,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "However, conventional ER methods are computationally expensive. They are often designed for batch processing across multiple data sources (commonly referred to as dirty ER), aiming to ensure accurate entity resolution by finding all possible matching pairs [12]. This process typically requires finding the transitive closure of all detected matches. That is, to definitively merge multiple entities (e.g., A, B, and C) as the same concept, the system must ideally compare all possible pairs ('A-B', 'A-C', and 'B-C') to confirm their equivalence. This can lead to a quadratic ( 𝑂 𝑛 ( 2 ) ) number of pairwise comparisons, a process that becomes prohibitively slow and computationally expensive when relying on LLMs for high-accuracy judgments.",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 73,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "To address this, we employ a gradient-based ER method, operating on a single document (simplified as the clean ER), which performs ER incrementally as each new entity 𝑣 𝑛 is extracted. This transforms the quadratic batch problem into a simpler, repeated lookup task: determining where the single new entity 𝑣 𝑛 fits among the already-processed entities in the database. This incremental process yields two distinct, observable scoring patterns when 𝑣 𝑛 is reranked against its 𝑡𝑜𝑝 _ 𝑘 most relevant candidates:",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 74,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "5",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 75,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Algorithm 1: Gradient-based entity resolution",
+        "text_level": 0,
+        "page_idx": 4,
+        "pdf_id": 76,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Input: KG 𝐺 , New entity 𝑣 𝑛 , Rerank model R , Entity vector database 𝐷𝐵 , Vector search number 𝑡𝑜𝑝 _ 𝑘 , threshold of gradient 𝑔",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 77,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "// Vector Search 𝑡𝑜𝑝 _ 𝑘 relevant entities in 𝐷𝐵 . 1 𝐸 𝑐 ← Search( 𝐷𝐵, 𝑣 𝑛 , 𝑡𝑜𝑝 _ 𝑘 ); 2 S ← R( 𝐸 , 𝑣 𝑐 𝑛 ) ; // Sort all candidate entities by rerank scores. 3 Sort( 𝐸 , 𝑐 S ); 4 𝑠𝑐𝑜𝑟𝑒 ← S[ ] 0 , 𝑆𝑒𝑙 ← 𝐸 𝑐 [ 0 ; ] // Gradient select similar entities. 5 for each remain entity 𝑣 𝑐 ∈ 𝐸 𝑐 \\ { 𝐸 𝑐 [ 0 ] } do 6 if S[ 𝑣 𝑐 ] > 𝑠𝑐𝑜𝑟𝑒 / 𝑔 then 7 𝑆𝑒𝑙 ← 𝑆𝑒𝑙 ∪ { 𝑣 𝑐 } , 𝑠𝑐𝑜𝑟𝑒 ← S[ 𝑣 𝑐 ] ; 8 else break; // Merge entity or add new entity. 9 if length( 𝑆𝑒𝑙 ) = length( 𝐸 𝑐 ) then 10 𝐺 ← AddNewEntity( 𝐺, 𝑣 𝑛 ), 𝐷𝐵 ← AddNew( 𝐷𝐵, 𝑣 𝑛 ); 11 else 12 if length( 𝑆𝑒𝑙 ) = 1 then 𝑣 𝑠𝑒𝑙 ← 𝑆𝑒𝑙 [ 0 ; ] 13 else 𝑣 𝑠𝑒𝑙 ← LLMSelect( 𝑆𝑒𝑙 ); 14 𝐺 ← MergeEntity( 𝐺, 𝑣 𝑛 , 𝑣 𝑠𝑒𝑙 ), 𝐷𝐵 ← Update( 𝐷𝐵, 𝑣 𝑠𝑒𝑙 , 𝑣 𝑛 ); 15 return 𝐺,𝐷𝐵 ;",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 78,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Case A: New Entity. If 𝑣 𝑛 is a new conceptual entity, its relevance scores against all existing entities will be uniformly low, showing no significant gradient or discriminative pattern.",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 79,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Case B: Existing Entity. If 𝑣 𝑛 is an alias of an existing entity, its scores will show a high relevance to the true match (or a small set of equivalent aliases). Due to the reranker's inherent discriminative limitations, this initial high-relevance set might occasionally contain multiple similar entities. This high-relevance set is then typically followed by a sharp decline (a large 'gradient') before transitioning to a gradual slope of irrelevant entities.",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 80,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Our Gradient-based ER algorithm is designed precisely to detect this sharp decline (characteristic of Case B), allowing us to efficiently isolate the high-relevance set. Subsequently, an LLM is utilized for finer-grained distinction when multiple similar entities are identified within this set, differentiating it from the 'no gradient' scenario (Case A) without quadratic comparisons.",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 81,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Algorithm 1 shows the above entity resolution process. For a new entity 𝑣 𝑛 , we first retrieve its 𝑡𝑜𝑝 _ 𝑘 candidates 𝐸 𝑐 from the vector database 𝐷𝐵 , which are then reranked by R against 𝑣 𝑛 and sorted based on their scores S (Lines 1-3). We initialize the selection set 𝑆𝑒𝑙 with the top-scoring candidate 𝐸 𝑐 [ 0 ] and set the initial score to S[ ] 0 (Line 4). We then iterate through the remaining sorted candidates (Lines 5-8). The core logic checks if the current score S[ 𝑣 𝑐 ] is still within the gradient threshold 𝑔 of the previous score (i.e., S[ 𝑣 𝑐 ] > score / 𝑔 ). If the score drop is gentle (passes the check), the candidate 𝑣 𝑐 is added to 𝑆𝑒𝑙 , and score is updated (Lines 7-8); otherwise, the loop breaks (Line 8) as soon as a sharp score drop is detected. Finally, the algorithm makes its decision (Lines 9-14). If the selection set 𝑆𝑒𝑙 is identical to 𝐸 𝑐 , this indicates that all candidates passed the gradient check. This corresponds to Case A , where the scores lacked discriminative power (i.e., 𝑣 𝑛 is equally dissimilar to",
+        "text_level": -1,
+        "page_idx": 4,
+        "pdf_id": 82,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "all candidates), so 𝑣 𝑛 is added as a new entity (Line 9-10). Conversely, if a gradient was found (i.e., 𝑙𝑒𝑛𝑔𝑡ℎ 𝑆𝑒𝑙 ( ) < 𝑙𝑒𝑛𝑔𝑡ℎ ( 𝐸 𝑐 ) ), this signals Case B . We then select the canonical entity 𝑣 𝑠𝑒𝑙 from 𝑆𝑒𝑙 , using an LLM (Line 13) if the reranker identifies multiple aliases, and merge 𝑣 𝑛 with it (Lines 12-14). The updated 𝐺 and 𝐷𝐵 are then returned (Line 15).",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 83,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "For instance, considering the example in Figure 2, when the new entity 𝑒 9 is processed, it is first compared with existing entities in the KG. As depicted in the similarity curve (orange line), 𝑒 9 shows high similarity with 𝑒 7, followed by a sharp decline in similarity with other entities like 𝑒 6, 𝑒 8, and 𝑒 5. Our gradient-based selection process identifies 𝑒 7 as the unique, high-confidence match for 𝑒 9. Consequently, 𝑒 9 is merged with 𝑒 7, enriching the KG with consolidated information as shown in the final merged entity 𝑒 ' 7 .",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 84,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Graph-Tree Link (GT-Link). The GT-Link 𝑀 is formalized to complete the BookIndex 𝐵 = ( 𝑇,𝐺, 𝑀 ) . As described in the KG Construction phase, the origin tree node 𝑛 𝑖 is recorded for every newly extracted entity 𝑣 𝑖 . GT-Link is then refined during entity resolution: when an entity 𝑣 𝑛 is merged into a canonical entity 𝑣 𝑠𝑒𝑙 , the origin node set of 𝑣 𝑠𝑒𝑙 is updated to include all origin nodes previously associated with 𝑣 𝑛 . This aggregation process creates the final mapping 𝑀 : 𝑉 → P( 𝑁 ) , which bi-directionally links the entities in 𝐺 to the set of their structural locations (nodes) in 𝑇 .",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 85,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "5 AGENT-BASED RETRIEVAL",
+        "text_level": 0,
+        "page_idx": 5,
+        "pdf_id": 86,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Real-world document queries are often complex, necessitating operations like modal type filtering, semantic selection, and multi-hop reasoning. To address this, we propose an agent-based approach in BookRAG, which intelligently plans and executes operations on the BookIndex. We first introduce the overall workflow and present two core mechanisms: Agent-based Planning , which formulates the strategy, and the Structured Execution , which includes the retrieval process under the principles of IFT and generation.",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 87,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "5.1 Overall Workflow",
+        "text_level": 0,
+        "page_idx": 5,
+        "pdf_id": 88,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "The overall workflow of agent-based retrieval, illustrated in Figure 3, follows a three-stage pipeline designed to address users' queries systematically.",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 89,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "1. Agent-based Planning. BookRAG first performs Classification & Plan . This stage aims to distinguish simple keyword-based queries from reasoning questions that require decomposition and analysis. For instance, a query like 'How does Transformer differ from RNNs in handling long-range dependencies?' cannot be",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 90,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 3: The general workflow of agent-based retrieval in BookRAG, which contains agent-based planning, retrieval, and generation processes.",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 91,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "image",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 92,
+        "img_path": "/Volumes/ExtMac/Projects/Exorty/BOOKRag/e2e_test_output/docling/images/BOOKRAG_VLDB_2026_full-picture-3.png",
+        "image_caption": [
+            "cref='#/texts/89'"
+        ],
+        "image_footnote": [],
+        "middle_json": {
+            "docling_label": "picture"
+        }
+    },
+    {
+        "type": "text",
+        "text": "solved by retrieving from a single keyword. Therefore, the planning stage first performs query classification . Based on this classification and a predefined set of operators designed for the BookIndex, it generates a specific operators plan that effectively guides the retrieval and generation strategies.",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 93,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "2. Retrieval Process. Guided by the operator plan, the retrieval process executes Scent/Filter-based Retrieval . This stage navigates the BookIndex 𝐵 = ( 𝑇,𝐺, 𝑀 ) , either utilizing a scent-based retrieval principle (e.g., following relevant entities in 𝐺 ) to find information, or employing various filters (e.g., modal type) to refine the selection. After reasoning, BookRAG gets the retrieval set of highly relevant information blocks from the BookIndex.",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 94,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "3. Generation Process. Finally, all retrieved information enters the generation stage for Analysis & Merging . This stage synthesizes these (often fragmented) pieces of evidence, performs final analysis, and formulates a coherent response.",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 95,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "5.2 Agent-based Planning",
+        "text_level": 0,
+        "page_idx": 5,
+        "pdf_id": 96,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "The planning stage is the core of BookRAG, designed to intelligently navigate our BookIndex 𝐵 = ( 𝑇,𝐺, 𝑀 ) . To support flexible retrieval, we define four types of operators: Formulator, Selector, Reasoner, and Synthesizer. These operators can be arbitrarily combined to form tailored execution pipelines, each with adjustable parameters. BookRAG dynamically configures and assembles these operators to adapt to the specific requirements of different query categories. This process involves two sequential steps: first, the agent performs",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 97,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Table 2: Three common query categories addressed in BookRAG.",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 98,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "table",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 99,
+        "img_path": "",
+        "table_caption": [
+            "cref='#/texts/95'"
+        ],
+        "table_footnote": [],
+        "table_body": "| Query Category     | Description                                                                                                 | Core Task                                                                                                     | Example Query                                                              |\n|--------------------|-------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|\n| Single-hop         | Queries with a single, distinct information target.                                                         | Scent-based Retrieval : Retrieve content related to a specific entity or section.                             | What is the definition of Information Scent?                               |\n| Multi-hop          | Queries that require synthesizing information from multiple blocks, often by decomposing into sub-problems. | Decomposing & Merging : Decompose into sub-problems, retrieve for each, and synthesize the final answer.      | How does Transformer differ from RNNs in handling long-range dependencies? |\n| Global Aggregation | Queries that require filtering across the entire document and performing calculations.                      | Filter & Aggregation : Apply filters across the document & perform aggregation operations (e.g., Count, Sum). | How many figures related to IFT are in Section 4?                          |",
+        "middle_json": {
+            "docling_label": "table"
+        }
+    },
+    {
+        "type": "text",
+        "text": "6",
+        "text_level": -1,
+        "page_idx": 5,
+        "pdf_id": 100,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "(a) Operator Set",
+        "text_level": 0,
+        "page_idx": 6,
+        "pdf_id": 101,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 4: The BookRAG Operator Library and an Execution Example from MMLongBench dataset: (a) a visual depiction of the four operator types (Formulator, Selector, Reasoner, and Synthesizer) and (b) an execution trace for a 'Single-hop' query, demonstrating the agent-based planning and step-by-step operator execution.",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 102,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "image",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 103,
+        "img_path": "/Volumes/ExtMac/Projects/Exorty/BOOKRag/e2e_test_output/docling/images/BOOKRAG_VLDB_2026_full-picture-4.png",
+        "image_caption": [
+            "cref='#/texts/98'"
+        ],
+        "image_footnote": [],
+        "middle_json": {
+            "docling_label": "picture"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Query Classification to determine the appropriate solution strategy, then generates a specific Operator Plan .",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 104,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Query Classification . To enable agent strategy selection, we focus on three representative query categories defined by their intrinsic complexity and operational demands (Table 2): Single-hop , Multi-hop , and Global Aggregation . This classification is crucial because each category requires a different solution strategy. For instance, a Single-hop query typically requires a single piece of information retrieved via a Scent-based Retrieval operation. In contrast, a Global Aggregation query often necessitates analyzing content under multiple filtering conditions, usually involving a sequence of Filter & Aggregation operations across various parts of the document. Furthermore, BookRAG is designed to be extensible, allowing for the resolution of a broader range of query types by integrating additional operators.",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 105,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· BookIndex Operators . To execute the strategies identified by classification, we designed a set of operators ( O ) tailored for the BookIndex 𝐵 = ( 𝑇,𝐺, 𝑀 ) . These operators, visually depicted in Figure 4(a) and detailed in Table 3, define the set of operations the agent can employ for diverse query categories. We group them into four types, which we describe in sequence:",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 106,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "❶ Formulator. These are LLM-based operators that prepare the query for execution. This category includes Decompose , which breaks a Complex query into a set of simpler, actionable sub-queries 𝑄 𝑠 . It also includes Extract , which employs an LLM to identify key entities 𝐸 𝑞 from the query text and link them to corresponding entities in the KG, 𝐺 :",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 107,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝑄 𝑠 = LLM ( 𝑃 𝐷𝑒𝑐 , 𝑞 ) = { 𝑞 , 𝑞 1 2 , . . . , 𝑞 𝑘 } (2)",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 108,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝐸 𝑞 = LLM ( 𝑃 𝐸𝑥𝑡 , 𝑞 ) = { 𝑒 1 , 𝑒 2 , . . . , 𝑒 𝑚 } (3)",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 109,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Here, 𝑞 is the original user query, while 𝑃 𝐷𝑒𝑐 and 𝑃 𝐸𝑥𝑡 represent the prompts used to guide the LLM for the decomposition and extraction tasks, respectively.",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 110,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "❷ Selector. These operators filter or select specific content ranges from the BookIndex. Filter_Modal and Filter_Range directly apply the explicit constraints 𝐶 (e.g., modal types, page ranges) generated during the plan. Operating on the Tree 𝑇 = ( 𝑁, 𝐸 𝑇 ) , these operators produce a filtered subset 𝑁 𝑓 where the predicate 𝐶 𝑛 ( ) holds true for each node:",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 111,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝑁 𝑓 = { 𝑛 ∈ 𝑁 | 𝐶 𝑛 ( )} (4)",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 112,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "In contrast, Select_by_Entity and Select_by_Section target contiguous document segments by retrieving subtrees rooted at specific section nodes. This process first identifies a set of target section nodes 𝑆 target ⊂ 𝑁 at a specified depth, where 𝑆 target consists of sections either linked to entities 𝐸 𝑞 via the GT-Link 𝑀 or selected by the LLM. It then retrieves all descendants of these targets to form the selected node set 𝑁 𝑠 :",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 113,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝑁 𝑠 = GLYPH<216> 𝑠 ∈ 𝑆 target Subtree ( 𝑠 ) (5)",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 114,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "❸ Reasoner. These operators analyze and refine selected tree nodes. Graph_Reasoning performs multi-hop inference on a subgraph 𝐺 ' ( 𝑉 , 𝐸 ' ' ) (extracted from selected nodes 𝑁 𝑠 ) starting from entity 𝑒 . Starting from the retrieved entities, it computes an entity importance vector 𝐼 𝐺 ∈ R | 𝑉 ' | over the subgraph 𝐺 ' using the PageRank algorithm [20]. These entity scores are then mapped to the tree nodes via the GT-Link matrix 𝑀 to derive the final tree node importance scores vector 𝑆 𝐺 ∈ R | 𝑁 𝑠 | :",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 115,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝐼 𝐺 = PageRank ( 𝐺 , 𝑒 ' ) (6)",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 116,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝑆 𝐺 = 𝐼 𝐺 × 𝑀 (7)",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 117,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Text_Ranker evaluates the semantic relevance of the tree node's content to the query 𝑞 , assigning a relevance score 𝑆 𝑇 to each node. Skyline_Ranker employs the Skyline operator to filter nodes based on these multiple criteria (e.g., 𝑆 𝐺 and 𝑆 𝑇 ), retaining only",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 118,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "7",
+        "text_level": -1,
+        "page_idx": 6,
+        "pdf_id": 119,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "those nodes that are not dominated by any others in terms of the specified scoring dimensions.",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 120,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "❹ Synthesizer. These operators are responsible for content generation. Map performs analysis on specific retrieved information segments to generate partial responses. Reduce synthesizes a final coherent answer by aggregating information from multiple sources, such as partial answers or a collection of retrieved evidence.",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 121,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Operator Plan . After classifying the query ( 𝑞 ) into its category ( 𝑐 ), the agent's final task is to generate an executable plan 𝑃 . This plan is a specific sequence of operators ⟨ 𝑜 , . . . , 𝑜 1 𝑛 ⟩ selected from our library O with parameters dynamically instantiated based on 𝑞 . This process is formulated as:",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 122,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝑃 = Agent Plan ( 𝑞, 𝑐, O) (8)",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 123,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "The plan follows a structured workflow tailored to each category:",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 124,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Single-hop : The agent first attempts to Extract an entity. If successful, it executes a 'scent-based' selection; otherwise, it falls back to a section-based strategy. Both paths then proceed to standard reasoning and generation, denoted as 𝑃 std .",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 125,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝑃 s = ( Extract success - - - - -→ Select_by_Entity → 𝑃 std Extract fail - -→ Select_by_Section → 𝑃 std (9)",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 126,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝑃 std = ( Graph ∥ Text ) → Skyline → Reduce (10)",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 127,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Complex : The agent first decomposes the problem, applies the Single-hop workflow 𝑃 s to each sub-problem, and finally synthesizes the results.",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 128,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝑃 complex = Decompose → 𝑃 s → Map → Reduce (11)",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 129,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Global Aggregation : The workflow involves applying a sequence of filters followed by synthesis.",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 130,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝑃 global = GLYPH<214> ( Filter_Modal | Filter_Range ) → Map → Reduce (12)",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 131,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Here, the symbol ˛ denotes the nested composition of filters, applying either a modal or range filter at each step.",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 132,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "5.3 Structured Execution",
+        "text_level": 0,
+        "page_idx": 7,
+        "pdf_id": 133,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Following the planning stage, BookRAG executes the generated workflow 𝑃 . This execution phase embodies the cognitive principles of Information Foraging Theory (IFT), effectively translating abstract textual queries into concrete operations. Specifically, the Selector operators mirror the act of 'navigating to information patches,' narrowing the vast document space down to relevant scopes. Subsequently, the Reasoner operators perform 'sensemaking within patches,' where they analyze and refine the information within these focused scopes. Finally, the Synthesizer generates the answer based on the processed evidence. This design minimizes the cost of attention by ensuring computational resources are focused solely on high-value data patches.",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 134,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Scent/Filter-based Retrieval. The execution begins by narrowing the scope. Aligning with IFT, Selector operators identify relevant 'patches' by following 'information scents' (e.g., key entities in question) or applying explicit filter constraints. This process reduces the full node set 𝑁 to a focused node subset 𝑁 𝑠 :",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 135,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝑁 𝑠 = Selector ( 𝑁, params sel ) (13)",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 136,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "This pre-selection minimizes noise and ensures that subsequent reasoning is applied only to highly relevant contexts, optimizing the foraging cost. Subsequently, within this focused scope, Reasoner operators evaluate nodes using multiple dimensions, such as graph topology and semantic relevance. We then employ the Skyline_Ranker to get the final retrieval set. Unlike fixed top𝑘 retrieval, the Skyline operator retains the Pareto frontier of nodes, retaining nodes that are valuable in at least one dimension while discarding dominated ones:",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 137,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝑁 𝑅 = Skyline_Ranker ({ 𝑆 𝐺 ( 𝑛 , 𝑆 ) 𝑇 ( 𝑛 ) | 𝑛 ∈ 𝑁 𝑠 }) (14)",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 138,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Analysis & Merging Generation. In the final stage, the Synthesizer operator generates the coherent answer by aggregating the refined evidence:",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 139,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝐴 = Synthesizer ( 𝑞, 𝑁 𝑅 ) (15)",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 140,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Table 3: Operators utilized in our BookRAG, categorized by their function.",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 141,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "table",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 142,
+        "img_path": "",
+        "table_caption": [
+            "cref='#/texts/136'"
+        ],
+        "table_footnote": [],
+        "table_body": "| Operator                      | Type                  | Description                                                                                                                                                                | Parameters                                  |\n|-------------------------------|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|\n| Decompose                     | Formulator Formulator | Decompose a complex query into simpler, actionable sub-queries. Identify and extract key entities from the query (links to 𝐺 ).                                            | (Self-contained) (Self-contained)           |\n| Extract Filter_Modal          | Selector              | Filter retrieved nodes by their modal type (e.g., Table, Figure).                                                                                                          | modal_type: str                             |\n| Filter_Range                  | Selector              | Filter nodes based on a specified range (e.g., pages, section).                                                                                                            | range: (start, end)                         |\n| Select_by_Entity              | Selector              | Selects all tree nodes ( 𝑁 ) in sections linked to a given entity ( 𝑉 ).                                                                                                   | entity_name: str                            |\n| Select_by_Section             | Selector              | Uses an LLM to select relevant sections and selects all tree nodes ( 𝑁 ) within them.                                                                                      | query: str, sections: List[str]             |\n| Graph_Reasoning               | Reasoner              | Performs multi-hop reasoning on subgraph ( 𝐺 ' ) and score tree nodes ( 𝑁 ) using graph importance and GT-links. Rerank retrieved tree nodes ( 𝑁 ) based on the relevance. | start_entity: str, subgraph: 𝐺 ' query: str |\n| Text_Reasoning Skyline_Ranker | Reasoner Reasoner     |                                                                                                                                                                            | criteria: List[str]                         |\n|                               |                       | Rerank nodes based on multiple criteria.                                                                                                                                   | (Input: List[str])                          |\n| Map                           | Synthesizer           | Uses partially retrieved information to generate a partial answer.                                                                                                         |                                             |\n| Reduce                        | Synthesizer           | Synthesizes the final answer from partial information or all sub-problem answers.                                                                                          | (Input: List[str])                          |",
+        "middle_json": {
+            "docling_label": "table"
+        }
+    },
+    {
+        "type": "text",
+        "text": "8",
+        "text_level": -1,
+        "page_idx": 7,
+        "pdf_id": 143,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "The Map operator performs fine-grained analysis on individual evidence blocks or sub-problems (from Decompose ) to generate intermediate insights. The Reduce operator then aggregates these partial results, such as answers to decomposed sub-queries or statistical counts from a global filter, to construct the final response. This separation ensures that the system can handle both detailed content extraction and high-level reasoning synthesis effectively.",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 144,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "To illustrate this end-to-end process, Figure 4(b) presents an execution trace for a 'Single-hop' query: 'What is the type of car in the Ranking Prompt example?'. In the planning phase, the agent classifies the query and generates a specific workflow. Subsequently, it identifies key entities (e.g., 'car') via Extract , retrieves relevant nodes via Select_by_Entity , refines them through reasoning and Skyline filtering, and finally synthesizes the answer using Reduce .",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 145,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "6 EXPERIMENTS",
+        "text_level": 0,
+        "page_idx": 8,
+        "pdf_id": 146,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "In our experiments, we evaluate BookRAG against several strong baseline methods, with an in-depth comparison of their efficiency and accuracy on document QA tasks.",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 147,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "6.1 Setup",
+        "text_level": 0,
+        "page_idx": 8,
+        "pdf_id": 148,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Table 4: Datasets used in our experiments. EM and F1 denote Exact Match and F1-score, respectively.",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 149,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "table",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 150,
+        "img_path": "",
+        "table_caption": [
+            "cref='#/texts/143'"
+        ],
+        "table_footnote": [],
+        "table_body": "| Dataset     | MMLongBench   | M3DocVQA   | Qasper       |\n|-------------|---------------|------------|--------------|\n| Questions   | 669           | 633        | 640          |\n| Documents   | 85            | 500        | 192          |\n| Avg. Pages  | 42.16         | 8.52       | 10.95        |\n| Avg. Images | 25.92         | 3.51       | 3.43         |\n| Tokens      | 2,816,155     | 3,553,774  | 2,265,349    |\n| Metrics     | EM, F1        | EM, F1     | Accuracy, F1 |",
+        "middle_json": {
+            "docling_label": "table"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Datasets & Question Synthesis. We use three widely adopted benchmarking datasets for complex document QA tasks: MMLongBench [33], M3DocVQA [11], and Qasper [14]. MMLongBench is a comprehensive benchmark designed to evaluate QA capabilities on long-form documents, covering diverse categories such as guidebooks, financial reports, and industry files. M3DocVQA is an open-domain benchmark designed to test RAG systems on a diverse collection of HTML-type documents sourced from Wikipedia pages 1 . Qasper is a QA dataset focused on scientific papers, where questions require retrieving evidence from the entire document. We filtered the datasets to remove documents with low clarity or incoherent structures. To address the scarcity of global-level questions in the original benchmarks, we synthesize additional QA pairs by having an LLM generate global questions from selected document elements (e.g., tables or figures). These questions are then answered and meticulously refined by human annotators via an outsourcing process, with this additional QA pairs constituting less than 20% of our final QA pairs. The statistics of these datasets are presented in Table 4.",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 151,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "1 https://www.wikipedia.org/",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 152,
+        "middle_json": {
+            "docling_label": "footnote"
+        }
+    },
+    {
+        "type": "text",
+        "text": "9",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 153,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Metrics. Weadheretotheofficial metrics specified by each dataset for QA. Our primary evaluation relies on Exact Match (EM), accuracy, and token-based F1-score. To assess efficiency, we also measure time cost and token usage during the response phase. Additionally, for methods including PDF parsing, we also evaluate retrieval recall. To establish the ground truth for this, we manually label the specific PDF blocks (e.g., texts, titles, tables, images, and formulas) required to answer each question. This labeling process is guided by the metadata of ground-truth evidence provided in each dataset; we filter candidate blocks using the given modality (all datasets), page numbers (MMLongBench), and evidence statements (Qasper). Any blocks that remained non-unique after this filtering process are manually annotated. In cases where a PDF parsing error made the ground-truth item unavailable, the retrieval recall for that query is recorded as 0.",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 154,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Baselines. Our experiments consider three model configurations:",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 155,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Conventional RAG: These methods are the most common pipeline for document analysis, where the raw text is first extracted and then chunked into segments of a specified size. We select strong and widely used retrieval models: BM25 [44] and Vanilla RAG. We also implement Layout+Vanilla, a variant that uses document layout analysis for semantic chunking.",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 156,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Graph-based RAG: These methods first extract textual content from documents and then leverage graph data during retrieval. We select RAPTOR [45] and GraphRAG [16]. Specifically, GraphRAG has two versions: GraphRAG-Global and GraphRAG-Local, which employ global and local search methods, respectively.",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 157,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· LayoutsegmentedRAG: This category encompasses methods that utilize layout analysis to segment document content into discrete structural units. We include: MM-Vanilla, which utilizes multi-modal embeddings for visual and textual content; a tree-based method inspired by PageIndex [39], denoted as TreeTraverse, where an LLM navigates the document's tree structure; DocETL [47], a declarative system for complex document processing; and GraphRanker, a graphbased method extended from HippoRAG [19] that applies Personalized PageRank [20] to rank the relevant nodes.",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 158,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Implementation details. For a fair comparison, both BookRAG and all baseline methods are powered by a unified set of state-of-theart (SOTA) and widely adopted backbone models from the Qwen family [4, 60, 63, 64]. We employ MinerU [52] for robust document layout parsing. We set the threshold of gradient 𝑔 as 0 6, and more . details are provided in the appendix of our technical report [57]. Our source code, prompts, and detailed configurations are available at github.com/sam234990/BookRAG.",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 159,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "6.2 Overall results",
+        "text_level": 0,
+        "page_idx": 8,
+        "pdf_id": 160,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "In this section, we present a comprehensive evaluation of BookRAG, analyzing its complex QA performance, retrieval effectiveness, and query efficiency compared to state-of-the-art baselines.",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 161,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· QA Performance of BookRAG . We compare the QA performance of BookRAG against three categories of baselines, as shown in Table 5. The results indicate that BookRAG achieves",
+        "text_level": -1,
+        "page_idx": 8,
+        "pdf_id": 162,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Table 5: Performance comparison of different methods across various datasets for solving complex document QA tasks. The best and second-best results are marked in bold and underlined, respectively.",
+        "text_level": -1,
+        "page_idx": 9,
+        "pdf_id": 163,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "table",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 9,
+        "pdf_id": 164,
+        "img_path": "",
+        "table_caption": [
+            "cref='#/texts/156'"
+        ],
+        "table_footnote": [],
+        "table_body": "| Baseline Type        | Method           | MMLongBench   | MMLongBench   | M3DocVQA      | M3DocVQA   | Qasper     | Qasper     |\n|----------------------|------------------|---------------|---------------|---------------|------------|------------|------------|\n|                      | Method           | (Exact Match) | (F1-score)    | (Exact Match) | (F1-score) | (Accuracy) | (F1-score) |\n| Conventional RAG     | BM25             | 18.3          | 20.2          | 34.6          | 37.8       | 38.1       | 42.5       |\n| Conventional RAG     | Vanilla RAG      | 16.5          | 18.0          | 36.5          | 40.2       | 40.6       | 44.4       |\n|                      | Layout + Vanilla | 18.1          | 19.8          | 36.9          | 40.2       | 40.7       | 44.6       |\n| Graph-based RAG      | RAPTOR           | 21.3          | 21.8          | 34.3          | 37.3       | 39.4       | 44.1       |\n| Graph-based RAG      | GraphRAG-Local   | 7.7           | 8.5           | 23.7          | 25.6       | 35.9       | 39.2       |\n| Graph-based RAG      | GraphRAG-Global  | 5.3           | 5.6           | 20.2          | 22.0       | 24.0       | 24.1       |\n| Layout segmented RAG | MM-Vanilla       | 6.8           | 8.4           | 25.1          | 27.7       | 27.9       | 29.3       |\n| Layout segmented RAG | Tree-Traverse    | 12.7          | 14.4          | 33.3          | 36.2       | 27.3       | 32.1       |\n| Layout segmented RAG | GraphRanker      | 21.2          | 22.7          | 43.0          | 47.8       | 32.9       | 37.6       |\n| Layout segmented RAG | DocETL           | 27.5          | 28.6          | 40.9          | 43.3       | 42.3       | 50.4       |\n| Our proposed         | BookRAG          | 43.8          | 44.9          | 61.0          | 66.2       | 55.2       | 61.1       |",
+        "middle_json": {
+            "docling_label": "table"
+        }
+    },
+    {
+        "type": "text",
+        "text": "state-of-the-art performance across all datasets, substantially outperforming the top-performing baseline by 18.0% in Exact Match on M3DocVQA. Layout + Vanilla consistently outperforms Vanilla RAG, confirming that layout parsing preserves essential structural information for better retrieval. Besides, the suboptimal results of Tree-Traverse and GraphRanker highlight the limitations of relying solely on hierarchical navigation or graph-based reasoning, which often miss cross-sectional context or drift into irrelevant scopes. In contrast, BookRAG's superiority stems from the synergy of its unified Tree-Graph BookIndex and Agent-based Planning. By effectively classifying queries and configuring optimal workflows, our BookRAG overcomes limitations of context fragmentation and static query workflow within existing baselines, ensuring precise evidence retrieval and accurate generation.",
+        "text_level": -1,
+        "page_idx": 9,
+        "pdf_id": 165,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Table 6: Retrieval recall comparison among layout-based methods. The best and second-best results are marked in bold and underlined, respectively.",
+        "text_level": -1,
+        "page_idx": 9,
+        "pdf_id": 166,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "table",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 9,
+        "pdf_id": 167,
+        "img_path": "",
+        "table_caption": [
+            "cref='#/texts/158'"
+        ],
+        "table_footnote": [],
+        "table_body": "| Method           |   MMLongBench |   M3DocVQA |   Qasper |\n|------------------|---------------|------------|----------|\n| Layout + Vanilla |          26.3 |       33.8 |     33.5 |\n| MM-Vanilla       |           7.5 |       19.7 |     14.9 |\n| Tree-Traverse    |          11.2 |       19.5 |     14.5 |\n| GraphRanker      |          26.4 |       44.5 |     28.6 |\n| BookRAG          |          57.6 |       71.2 |     63.5 |",
+        "middle_json": {
+            "docling_label": "table"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Retrieval performance of BookRAG. To validate our retrieval design, we evaluate the retrieval recall of BookRAG against other layout-based baselines on the ground-truth layout blocks. The experimental results demonstrate that BookRAG achieves the highest recall across all datasets, notably reaching 71.2% on M3DocVQA and significantly outperforming the next best baseline (GraphRanker, max44.5%). This performance advantage stems from our IFT-inspired Selector → Reasoner workflow: the Agent-based Planning first classifies the query, enabling the Selector to narrow the search to a precise information patch , followed by the Reasoner's analysis. Crucially, after the Skyline_Ranker process, the average number of retained nodes is 9.87, 6.86, and 8.6 across the three datasets,",
+        "text_level": -1,
+        "page_idx": 9,
+        "pdf_id": 168,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "which is comparable to the standard top𝑘 ( 𝑘 = 10) setting, ensuring high-quality retrieval without inflating the candidate size.",
+        "text_level": -1,
+        "page_idx": 9,
+        "pdf_id": 169,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 5: Comparison of query efficiency.",
+        "text_level": -1,
+        "page_idx": 9,
+        "pdf_id": 170,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "image",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 9,
+        "pdf_id": 171,
+        "img_path": "/Volumes/ExtMac/Projects/Exorty/BOOKRag/e2e_test_output/docling/images/BOOKRAG_VLDB_2026_full-picture-5.png",
+        "image_caption": [
+            "cref='#/texts/161'"
+        ],
+        "image_footnote": [],
+        "middle_json": {
+            "docling_label": "picture"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Efficiency of BookRAG. Wefurther evaluate the efficiency in terms of query time and token consumption, as illustrated in Figure 5. Overall, BookRAG maintains time and token costs comparable to existing Graph-based RAG methods. While purely text-based RAG approaches generally exhibit lower latency and token usage due to the absence of VLM processing for images, BookRAG maintains a balanced efficiency among multi-modal methods. In terms of token usage, BookRAG reduces consumption by an order of magnitude compared to the strongest baseline, DocETL. Notably,",
+        "text_level": -1,
+        "page_idx": 9,
+        "pdf_id": 172,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "10",
+        "text_level": -1,
+        "page_idx": 9,
+        "pdf_id": 173,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "on the MMLongBench dataset, DocETL consumes over 53 million tokens, whereas BookRAG requires less than 5 million. Regarding the query latency, our method also achieves a speedup of up to 2 × compared to DocETL.",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 174,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "6.3 Detailed Analysis",
+        "text_level": 0,
+        "page_idx": 10,
+        "pdf_id": 175,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "In this section, we provide a more in-depth examination of our BookRAG. We first conduct an ablation study to validate the contribution of each component, followed by an experiment on the impact of gradient-based ER and QA performance across different query types. Furthermore, we perform a comprehensive error analysis, compare the effectiveness of our entity resolution method, and present a case study.",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 176,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Ablation study. To evaluate the contribution of each core component in BookRAG, we design several variants by removing specific components:",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 177,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· w/o Gradient ER: Replaces the gradient-based entity resolution with a Basic ER by merging the same-name entities.",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 178,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· w/o Planning: Removes the Agent-based Planning, defaulting to a static, standard workflow for all queries.",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 179,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· w/o Selector : Removes the Selector operators, forcing Reasoners to score all candidate nodes.",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 180,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· w/o Graph_Reasoning : Removes the Graph_Reasoning operator. Consequently, the Skyline_Ranker is also disabled as scoring becomes single-dimensional.",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 181,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· w/o Text_Reasoning : Removes the Text_Reasoning operator. Similarly, the Skyline_Ranker is disabled, relying solely on graph-based scores.",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 182,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Table 7: Comparing the QA performance of different variants of BookRAG. EM and F1 denote Exact Match and F1-score, respectively.",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 183,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "table",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 184,
+        "img_path": "",
+        "table_caption": [
+            "cref='#/texts/220'"
+        ],
+        "table_footnote": [],
+        "table_body": "| Method variants     | MMLongBench   | MMLongBench   | Qasper   | Qasper   |\n|---------------------|---------------|---------------|----------|----------|\n|                     | EM            | F1            | Accuracy | F1       |\n| BookRAG (Full)      | 43.8          | 44.9          | 55.2     | 61.1     |\n| w/o gradient ER     | 40.1          | 42.8          | 48.9     | 57.3     |\n| w/o Planning        | 30.8          | 33.2          | 40.9     | 48.5     |\n| w/o Selector        | 42.5          | 43.1          | 52.5     | 59.1     |\n| w/o Graph_Reasoning | 39.8          | 41.5          | 51.4     | 58.4     |\n| w/o Text_Reasoning  | 39.0          | 40.3          | 47.2     | 52.5     |",
+        "middle_json": {
+            "docling_label": "table"
+        }
+    },
+    {
+        "type": "text",
+        "text": "The first variant evaluates the impact of KG quality on retrieval performance. The second and third variants assess the necessity of our Agent-based Planning and IFT-inspired selection mechanism, respectively. Finally, the last two variants validate the effectiveness of our multi-dimensional reasoning and dynamic Skyline filtering strategy. As shown in Table 7, the performance degradation across all variants confirms the essential role of each module in BookRAG. Specifically, the performance drop in the w/o Gradient ER variant highlights the critical role of a high-quality, connectivity-rich KG in supporting effective reasoning. Removing the Planning mechanism results in the most significant performance loss, confirming that a static workflow is insufficient for handling diverse types of queries. The w/o Selector variant, while maintaining competitive accuracy, incurs a prohibitive computational cost ( > 2 × tokens on Qasper),",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 185,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "11",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 186,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "validating the efficiency of our IFT-inspired \"narrow-then-reason\" strategy.",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 187,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 6: Comparison of graph statistics. Values are normalized to the Basic setting (Baseline=1.0). Absolute values for Basic are annotated. Note that density values are abbreviated (e.g., 3.6E-3 denotes 3 6 . × 10 -3 ).",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 188,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "image",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 189,
+        "img_path": "/Volumes/ExtMac/Projects/Exorty/BOOKRag/e2e_test_output/docling/images/BOOKRAG_VLDB_2026_full-picture-6.png",
+        "image_caption": [
+            "cref='#/texts/224'"
+        ],
+        "image_footnote": [],
+        "middle_json": {
+            "docling_label": "picture"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Impact of Gradient-based Entity Resolution. To evaluate the quality of our constructed KG, we compare the graph statistics of our Gradient-based ER against a Basic KG construction. The Basic setting employs simple exact name matching for entity merging, which is standard practice in many graph-based methods. Figure 6 presents the comparative results, normalizing the metrics (Entity count, Density, Diameter of the Largest Connected Component, and Number of Connected Components) against the Basic baseline. The results demonstrate that our Gradient-based ER significantly optimizes KG. Specifically, it reduces the number of entities (by 12%) while substantially boosting graph density (by over 20% across datasets). This structural shift indicates that our ER module effectively identifies the same conceptual entities that possess different names. Consequently, the resulting graphs are more compact and cohesive, as evidenced by the reduced diameter and fewer connected components, which mitigates graph fragmentation and facilitates better connectivity for graph reasoning.",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 190,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 7: QA performance breakdown by different query types (Single-hop, Multi-hop, and Global). The blue bars represent Exact Match (EM) for MMLongBench and Accuracy for Qasper, while the red bars represent the F1-score.",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 191,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "image",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 192,
+        "img_path": "/Volumes/ExtMac/Projects/Exorty/BOOKRag/e2e_test_output/docling/images/BOOKRAG_VLDB_2026_full-picture-7.png",
+        "image_caption": [
+            "cref='#/texts/259'"
+        ],
+        "image_footnote": [],
+        "middle_json": {
+            "docling_label": "picture"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· QA performance under different query types. Figure 7 breaks down the performance of BookRAG across Single-hop, Multihop, and Global aggregation query types. We observe that Multihop queries generally present a greater challenge compared to Single-hop ones, resulting in a slight performance decrease. This trend reflects the inherent difficulty of retrieving and reasoning over disjoint pieces of evidence. It further validates our agent-based planning strategy, which handles different query types separately.",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 193,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Error Response analysis. To diagnose the performance bottlenecks of BookRAG, we conduct a fine-grained error analysis on 200 sampled queries from each dataset, tracing the error propagation as shown in Figure 9. We categorize failures into four types:",
+        "text_level": -1,
+        "page_idx": 10,
+        "pdf_id": 194,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 8: Case study of responses across different query types from MMLongBench and Qasper. CYAN TEXT highlights correct content generated by BookRAG. GRAY TEXT describes the internal process, and </> marks omitted irrelevant parts.",
+        "text_level": -1,
+        "page_idx": 11,
+        "pdf_id": 195,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "image",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 11,
+        "pdf_id": 196,
+        "img_path": "/Volumes/ExtMac/Projects/Exorty/BOOKRag/e2e_test_output/docling/images/BOOKRAG_VLDB_2026_full-picture-8.png",
+        "image_caption": [
+            "cref='#/texts/282'"
+        ],
+        "image_footnote": [],
+        "middle_json": {
+            "docling_label": "picture"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 9: Error analysis on 200 sampled queries from MMLongBench and Qasper datasets.",
+        "text_level": -1,
+        "page_idx": 11,
+        "pdf_id": 197,
+        "middle_json": {
+            "docling_label": "caption"
+        }
+    },
+    {
+        "type": "image",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 11,
+        "pdf_id": 198,
+        "img_path": "/Volumes/ExtMac/Projects/Exorty/BOOKRag/e2e_test_output/docling/images/BOOKRAG_VLDB_2026_full-picture-9.png",
+        "image_caption": [
+            "cref='#/texts/348'"
+        ],
+        "image_footnote": [],
+        "middle_json": {
+            "docling_label": "picture"
+        }
+    },
+    {
+        "type": "text",
+        "text": "PDF Parsing, Plan, Retrieval, and Generation errors. The results identify Retrieval Error as the dominant failure mode, followed by Generation Error, reflecting the persistent challenge of locating and synthesizing multimodal evidence. Regarding Plan Error, our qualitative analysis reveals a specific failure pattern: the planner tends to over-decompose detailed single-hop queries into unnecessary multi-hop sub-tasks. This fragmentation leads to disjointed retrieval paths, effectively preventing the model from synthesizing a cohesive final answer from the scattered sub-responses.",
+        "text_level": -1,
+        "page_idx": 11,
+        "pdf_id": 199,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "· Case study. Figure 8 illustrates BookRAG's answering workflow across Single-hop, Multi-hop, and Global queries. The results demonstrate that by leveraging specific operators ( Select , Decompose , and Filter ), BookRAG effectively prunes search spaces. For example, in the Single-hop case, the reasoning space is significantly reduced from 134 to 24 nodes. This capability allows the system to efficiently isolate relevant evidence from noise, ensuring precise answer generation.",
+        "text_level": -1,
+        "page_idx": 11,
+        "pdf_id": 200,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "7 CONCLUSION",
+        "text_level": 0,
+        "page_idx": 11,
+        "pdf_id": 201,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "In this paper, we propose BookRAG, a novel method built upon Book Index, a document-native, structured Tree-Graph index specifically designed to capture the intricate relations of structural documents. By employing an agent-based method to dynamically configure retrieval and reasoning operators, our approach achieves state-ofthe-art performance on multiple benchmarks, demonstrating significant superiority over existing baselines in both retrieval precision and answer accuracy. In the future, we will explore an integrated document-native database system that supports data formatting, knowledge extraction, and intelligent querying.",
+        "text_level": -1,
+        "page_idx": 11,
+        "pdf_id": 202,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "12",
+        "text_level": -1,
+        "page_idx": 11,
+        "pdf_id": 203,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "REFERENCES",
+        "text_level": 0,
+        "page_idx": 12,
+        "pdf_id": 204,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[1] Simran Arora, Brandon Yang, Sabri Eyuboglu, Avanika Narayan, Andrew Hojel, Immanuel Trummer, and Christopher Ré. 2023. Language Models Enable Simple Systems for Generating Structured Views of Heterogeneous Data Lakes. Proceedings of the VLDB Endowment 17, 2 (2023), 92-105.",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 205,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[2] Akari Asai, Zeqiu Wu, Yizhong Wang, et al. 2024. Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection. In International Conference on Learning Representations (ICLR) .",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 206,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[3] Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi. 2023. Self-rag: Learning to retrieve, generate, and critique through self-reflection. arXiv preprint arXiv:2310.11511 (2023).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 207,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[4] Shuai Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Sibo Song, Kai Dang, Peng Wang, Shijie Wang, Jun Tang, et al. 2025. Qwen2.5-vl technical report. arXiv preprint arXiv:2502.13923 (2025).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 208,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[5] Camille Barboule, Benjamin Piwowarski, and Yoan Chabot. 2025. Survey on Question Answering over Visually Rich Documents: Methods, Challenges, and Trends. arXiv preprint arXiv:2501.02235 (2025).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 209,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[6] Yukun Cao, Zengyi Gao, Zhiyang Li, Xike Xie, S. Kevin Zhou, and Jianliang Xu. 2025. LEGO-GraphRAG: Modularizing Graph-Based Retrieval-Augmented Generation for Design Space Exploration. Proc. VLDB Endow. 18, 10 (June 2025), 3269-3283. https://doi.org/10.14778/3748191.3748194",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 210,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[7] Chengliang Chai, Jiajun Li, Yuhao Deng, Yuanhao Zhong, Ye Yuan, Guoren Wang, and Lei Cao. 2025. Doctopus: Budget-aware structural table extraction from unstructured documents. Proceedings of the VLDB Endowment 18, 11 (2025), 3695-3707.",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 211,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[8] Ilias Chalkidis, Manos Fergadiotis, Prodromos Malakasiotis, Nikolaos Aletras, and Ion Androutsopoulos. 2020. LEGAL-BERT: The muppets straight out of law school. arXiv preprint arXiv:2010.02559 (2020).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 212,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[9] Sibei Chen, Yeye He, Weiwei Cui, Ju Fan, Song Ge, Haidong Zhang, Dongmei Zhang, and Surajit Chaudhuri. 2024. Auto-Formula: Recommend Formulas in Spreadsheets using Contrastive Learning for Table Representations. Proceedings of the ACM on Management of Data 2, 3 (2024), 1-27.",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 213,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[10] Sibei Chen, Nan Tang, Ju Fan, Xuemi Yan, Chengliang Chai, Guoliang Li, and Xiaoyong Du. 2023. Haipipe: Combining human-generated and machine-generated pipelines for data preparation. Proceedings of the ACM on Management of Data 1, 1 (2023), 1-26.",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 214,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[11] Jaemin Cho, Debanjan Mahata, Ozan Irsoy, Yujie He, and Mohit Bansal. 2024. M3docrag: Multi-modal retrieval is what you need for multi-page multidocument understanding. arXiv preprint arXiv:2411.04952 (2024).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 215,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[12] Vassilis Christophides, Vasilis Efthymiou, Themis Palpanas, George Papadakis, and Kostas Stefanidis. 2020. An overview of end-to-end entity resolution for big data. ACM Computing Surveys (CSUR) 53, 6 (2020), 1-42.",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 216,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[13] Gheorghe Comanici, Eric Bieber, Mike Schaekermann, Ice Pasupat, Noveen Sachdeva, Inderjit Dhillon, Marcel Blistein, Ori Ram, Dan Zhang, Evan Rosen, et al. 2025. Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capabilities. arXiv preprint arXiv:2507.06261 (2025).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 217,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[14] Pradeep Dasigi, Kyle Lo, Iz Beltagy, Arman Cohan, Noah A Smith, and Matt Gardner. 2021. A dataset of information-seeking questions and answers anchored in research papers. arXiv preprint arXiv:2105.03011 (2021).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 218,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[15] Xavier Daull, Patrice Bellot, Emmanuel Bruno, Vincent Martin, and Elisabeth Murisasco. 2023. Complex QA and language models hybrid architectures, Survey. arXiv preprint arXiv:2302.09051 (2023).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 219,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[16] Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, and Jonathan Larson. 2024. From local to global: A graph rag approach to query-focused summarization. arXiv preprint arXiv:2404.16130 (2024).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 220,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[17] Yunfan Gao, Yun Xiong, Xinyu Gao, Kangxiang Jia, Jinliu Pan, Yuxi Bi, Yi Dai, Jiawei Sun, and Haofen Wang. 2023. Retrieval-augmented generation for large language models: A survey. arXiv preprint arXiv:2312.10997 (2023).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 221,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[18] Zirui Guo, Lianghao Xia, Yanhua Yu, Tu Ao, and Chao Huang. 2024. LightRAG: Simple and Fast Retrieval-Augmented Generation. arXiv e-prints (2024), arXiv2410.",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 222,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[19] Bernal Jiménez Gutiérrez, Yiheng Shu, Yu Gu, Michihiro Yasunaga, and Yu Su. 2024. HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models. arXiv preprint arXiv:2405.14831 (2024).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 223,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[20] Taher H Haveliwala. 2002. Topic-sensitive pagerank. In Proceedings of the 11th international conference on World Wide Web . 517-526.",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 224,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[21] Xiaoxin He, Yijun Tian, Yifei Sun, Nitesh V Chawla, Thomas Laurent, Yann LeCun, Xavier Bresson, and Bryan Hooi. 2024. G-retriever: Retrieval-augmented generation for textual graph understanding and question answering. arXiv preprint arXiv:2402.07630 (2024).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 225,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[22] Yucheng Hu and Yuxing Lu. 2024. Rag and rau: A survey on retrieval-augmented language model in natural language processing. arXiv preprint arXiv:2404.19543 (2024).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 226,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[23] Soyeong Jeong, Jinheon Baek, et al. 2024. Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity. arXiv preprint arXiv:2403.14403 (2024).",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 227,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "13",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 228,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "table",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 229,
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "| [24]   | Soyeong Jeong, Jinheon Baek, Sukmin Cho, Sung Ju Hwang, and Jong C Park. 2024. Adaptive-rag: Learning to adapt retrieval-augmented large language mod-                                                                                                                                                                                        |\n|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| [25]   | els through question complexity. arXiv preprint arXiv:2403.14403 (2024). Tengjun Jin, Yuxuan Zhu, and Daniel Kang. 2025. ELT-Bench: An End-to- End Benchmark for Evaluating AI Agents on ELT Pipelines. arXiv preprint                                                                                                                        |\n| [26]   | arXiv:2504.04808 (2025). Geewook Kim, Teakgyu Hong, Moonbin Yim, JeongYeon Nam, Jinyoung Park, Jinyeong Yim, Wonseok Hwang, Sangdoo Yun, Dongyoon Han, and Seunghyun Park. 2022. Ocr-free document understanding transformer. In European Confer-                                                                                             |\n| [27]   | ence on Computer Vision . Springer, 498-517. Dawei Li, Shu Yang, Zhen Tan, Jae Young Baik, Sukwon Yun, Joseph Lee, Aaron Chacko, Bojian Hou, Duy Duong-Tran, Ying Ding, et al. 2024. DALK: Dynamic Co-Augmentation of LLMs and KG to answer Alzheimer's Disease Questions with Scientific Literature. arXiv preprint arXiv:2405.04819 (2024). |\n| [28]   | Guoliang Li, Jiayi Wang, Chenyang Zhang, and Jiannan Wang. 2025. Data+ AI: LLM4Data and Data4LLM. In Companion of the 2025 International Conference on                                                                                                                                                                                        |\n| [29]   | Management of Data . 837-843. Yinheng Li, Shaofei Wang, Han Ding, and Hang Chen. 2023. Large language models in finance: A survey. In Proceedings of the fourth ACM international conference on AI in finance . 374-382.                                                                                                                      |\n| [30]   | Zhaodonghui Li, Haitao Yuan, Huiming Wang, Gao Cong, and Lidong Bing. 2025. LLM-R2: A Large Language Model Enhanced Rule-based Rewrite System for Boosting Query Efficiency. Proceedings of the VLDB Endowment 1, 18 (2025), 53-65.                                                                                                           |\n| [31]   | Haoyu Lu, Wen Liu, Bo Zhang, et al. 2024. DeepSeek-VL: Towards Real-World Vision-Language Understanding. arXiv preprint arXiv:2403.05525 (2024).                                                                                                                                                                                              |\n| [32]   | Shengjie Ma, Chengjin Xu, Xuhui Jiang, Muzhi Li, Huaren Qu, Cehao Yang, Jiaxin Mao, and Jian Guo. 2024. Think-on-Graph 2.0: Deep and Faithful Large Language Model Reasoning with Knowledge-guided Retrieval Augmented Generation. arXiv preprint arXiv:2407.10805 (2024).                                                                    |\n| [33]   | Yubo Ma, Yuhang Zang, Liangyu Chen, Meiqi Chen, Yizhu Jiao, Xinze Li, Xinyuan Lu, Ziyu Liu, Yan Ma, Xiaoyi Dong, et al. 2024. Mmlongbench-doc: Benchmarking long-context document understanding with visualizations. Advances in Neural Information Processing Systems 37 (2024), 95963-96010.                                                |\n| [34]   | Alex Mallen, Akari Asai, Victor Zhong, Rajarshi Das, Daniel Khashabi, and Hannaneh Hajishirzi. 2022. When not to trust language models: Investigat- ing effectiveness of parametric and non-parametric memories. arXiv preprint arXiv:2212.10511 (2022).                                                                                      |\n| [35]   | Zan Ahmad Naeem, Mohammad Shahmeer Ahmad, Mohamed Eltabakh, Mourad Ouzzani, and Nan Tang. 2024. RetClean: Retrieval-Based Data Cleaning Using LLMs and Data Lakes. Proceedings of the VLDB Endowment 17, 12 (2024), 4421- 4424.                                                                                                               |\n| [36]   | Avanika Narayan, Ines Chami, Laurel Orr, and Christopher Ré. 2022. Can Foun- dation Models Wrangle Your Data? Proceedings of the VLDB Endowment 16, 4 (2022), 738-746.                                                                                                                                                                        |\n| [37]   | Yuqi Nie, Yaxuan Kong, Xiaowen Dong, John M Mulvey, H Vincent Poor, Qing- song Wen, and Stefan Zohren. 2024. A Survey of Large Language Models for Financial Applications: Progress, Prospects and Challenges. arXiv preprint                                                                                                                 |\n| [38]   | arXiv:2406.11903 (2024). Arash Dargahi Nobari and Davood Rafiei. 2024. TabulaX: Leveraging Large Language Models for Multi-Class Table Transformations. arXiv preprint arXiv:2411.17110 (2024).                                                                                                                                               |\n| [39]   | PageIndex. 2025. PageIndex: Next-Generation Reasoning-based RAG. https: //pageindex.ai/.                                                                                                                                                                                                                                                      |\n| [40]   | Liana Patel, Siddharth Jha, Melissa Pan, Harshit Gupta, Parth Asawa, Carlos Guestrin, and Matei Zaharia. 2025. Semantic Operators and Their Optimization: Enabling LLM-Based Data Processing with Accuracy Guarantees in LOTUS.                                                                                                               |\n| [41]   | Proceedings of the VLDB Endowment 18, 11 (2025), 4171-4184. Boci Peng, Yun Zhu, Yongchao Liu, Xiaohe Bo, Haizhou Shi, Chuntao Hong, Yan Zhang, and Siliang Tang. 2024. Graph retrieval-augmented generation: A survey.                                                                                                                        |\n| [42]   | arXiv preprint arXiv:2408.08921 (2024). Peter Pirolli and Stuart Card. 1995. Information foraging in information access environments. In Proceedings of the SIGCHI conference on Human factors in computing systems . 51-58.                                                                                                                  |\n| [43]   | Yichen Qian, Yongyi He, Rong Zhu, Jintao Huang, Zhijian Ma, Haibin Wang, Framework for Data Manipulation with Large Language Models.                                                                                                                                                                                                          |\n|        | Yaohua Wang, Xiuyu Sun, Defu Lian, Bolin Ding, et al. 2024. UniDM: A Unified Proceedings of Machine Learning and Systems 6 (2024), 465-482.                                                                                                                                                                                                   |\n| [44]   | Stephen E Robertson and Steve Walker. 1994. Some simple effective approxi- mations to the 2-poisson model for probabilistic weighted retrieval. In SIGIR'94: Proceedings of the Seventeenth Annual International ACM-SIGIR Conference on Research and Development in Information Retrieval, organised by Dublin City                          |\n| [45]   | University . Springer, 232-241. Parth Sarthi, Salman Abdullah, Aditi Tuli, Shubh Khanna, Anna Goldie, and Christopher D Manning. 2024. Raptor: Recursive abstractive processing for                                                                                                                                                           |\n|        | tree-organized retrieval. arXiv preprint arXiv:2401.18059 (2024).                                                                                                                                                                                                                                                                             |",
+        "middle_json": {
+            "docling_label": "table"
+        }
+    },
+    {
+        "type": "text",
+        "text": "[46] Timo Schick, Jane Dwivedi-Yu, Roberto Dessì, Roberta Raileanu, Maria Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom. 2024.",
+        "text_level": -1,
+        "page_idx": 12,
+        "pdf_id": 230,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "table",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 13,
+        "pdf_id": 231,
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "|      | Toolformer: Language models can teach themselves to use tools. Advances in Neural Information Processing Systems 36 (2024).                                                                                                                                                                                                   |\n|------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| [47] | Shreya Shankar, Tristan Chambers, Tarak Shah, Aditya G Parameswaran, and Eugene Wu. 2024. Docetl: Agentic query rewriting and evaluation for complex document processing. arXiv preprint arXiv:2410.12189 (2024).                                                                                                             |\n| [48] | Shamane Siriwardhana, Rivindu Weerasekera, Elliott Wen, Tharindu Kalu- arachchi, Rajib Rana, and Suranga Nanayakkara. 2023. Improving the domain adaptation of retrieval augmented generation (RAG) models for open domain question answering. Transactions of the Association for Computational Linguistics 11 (2023), 1-17. |\n| [49] | Solutions Review Editors. 2019. 80 Percent of Your Data Will Be Unstructured in Five Years. https://solutionsreview.com/data-management/80-percent-of-your- datawill-be-unstructured-in-five-years/. Accessed: 2023-10-27.                                                                                                    |\n| [50] | Zhaoyan Sun, Xuanhe Zhou, and Guoliang Li. 2024. R-Bot: An LLM-based Query                                                                                                                                                                                                                                                    |\n| [51] | Rewrite System. arXiv preprint arXiv:2412.01661 (2024). Vincent A Traag, Ludo Waltman, and Nees Jan Van Eck. 2019. From Louvain to Leiden: guaranteeing well-connected communities. Scientific reports 9, 1 (2019), 1-12.                                                                                                     |\n| [52] | Bin Wang, Chao Xu, Xiaomeng Zhao, Linke Ouyang, Fan Wu, Zhiyuan Zhao, Rui Xu, Kaiwen Liu, Yuan Qu, Fukai Shang, et al. 2024. Mineru: An open-source solution for precise document content extraction. arXiv preprint arXiv:2409.18839 (2024).                                                                                 |\n| [53] | Jiayi Wang and Guoliang Li. 2025. Aop: Automated and interactive llm pipeline orchestration for answering complex queries. CIDR.                                                                                                                                                                                              |\n| [54] | Peng Wang, Shuai Bai, Sinan Tan, Shijie Wang, Zhihao Fan, Jinze Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, et al. 2024. Qwen2-vl: Enhancing vision-language model's perception of the world at any resolution. arXiv preprint arXiv:2409.12191 (2024).                                                             |\n| [55] | Shu Wang, Yixiang Fang, Yingli Zhou, Xilin Liu, and Yuchi Ma. 2025. ArchRAG: Attributed Community-based Hierarchical Retrieval-Augmented Generation. arXiv preprint arXiv:2502.09891 (2025).                                                                                                                                  |\n| [56] | Shen Wang, Tianlong Xu, Hang Li, Chaoli Zhang, Joleen Liang, Jiliang Tang, Philip S Yu, and Qingsong Wen. 2024. Large language models for education: A survey and outlook. arXiv preprint arXiv:2403.18105 (2024).                                                                                                            |",
+        "middle_json": {
+            "docling_label": "table"
+        }
+    },
+    {
+        "type": "table",
+        "text": "",
+        "text_level": -1,
+        "page_idx": 13,
+        "pdf_id": 232,
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "| [57]   | Shu Wang, Yingli Zhou, and Yixiang Fang. [n. d.]. BookRAG: A Hierarchical Structure-aware Index-based Approach for Complex Document Question An- swering. https://github.com/sam234990/BookRAG.                                                                                |\n|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| [58]   | Yu Wang, Nedim Lipka, Ryan A Rossi, Alexa Siu, Ruiyi Zhang, and Tyler Derr. 2024. Knowledge graph prompting for multi-document question answering. In Proceedings of the AAAI Conference on Artificial Intelligence , Vol. 38. 19206-19214.                                    |\n| [59]   | Shi-Qi Yan, Jia-Chen Gu, Yun Zhu, and Zhen-Hua Ling. 2024. Corrective Retrieval Augmented Generation. arXiv preprint arXiv:2401.15884 (2024).                                                                                                                                  |\n| [60]   | An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, et al. 2025. Qwen3 technical report. arXiv preprint arXiv:2505.09388 (2025).                                                                            |\n| [61]   | Murong Yue. 2025. A survey of large language model agents for question an- swering. arXiv preprint arXiv:2503.19213 (2025).                                                                                                                                                    |\n| [62]   | Qinggang Zhang, Shengyuan Chen, Yuanchen Bei, Zheng Yuan, Huachi Zhou, Zijin Hong, Hao Chen, Yilin Xiao, Chuang Zhou, Junnan Dong, et al. 2025. A survey of graph retrieval-augmented generation for customized large language models. arXiv preprint arXiv:2501.13958 (2025). |\n| [63]   | Xin Zhang, Yanzhao Zhang, Wen Xie, Mingxin Li, Ziqi Dai, Dingkun Long, Pengjun Xie, Meishan Zhang, Wenjie Li, and Min Zhang. 2024. GME: Im- proving Universal Multimodal Retrieval by Multimodal LLMs. arXiv preprint                                                          |\n| [64]   | Yanzhao Zhang, Mingxin Li, Dingkun Long, Xin Zhang, Huan Lin, Baosong Yang, Pengjun Xie, An Yang, Dayiheng Liu, Junyang Lin, et al. 2025. Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models. arXiv preprint arXiv:2506.05176 (2025).           |\n| [65]   | Wayne Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, et al. 2023. A survey of large language models. arXiv preprint arXiv:2303.18223 1, 2 (2023).                                                 |\n| [66]   | Yingli Zhou, Yaodong Su, Youran Sun, Shu Wang, Taotao Wang, Runyuan He, Yongwei Zhang, Sicong Liang, Xilin Liu, Yuchi Ma, et al. 2025. In-depth Analysis of Graph-based RAG in a Unified Framework. arXiv preprint arXiv:2503.04338 (2025).                                    |\n| [67]   | Yutao Zhu, Huaying Yuan, Shuting Wang, Jiongnan Liu, Wenhan Liu, Chenlong Deng, Haonan Chen, Zheng Liu, Zhicheng Dou, and Ji-Rong Wen. 2023. Large language models for information retrieval: A survey. ACM Transactions on Information Systems (2023).                        |",
+        "middle_json": {
+            "docling_label": "table"
+        }
+    },
+    {
+        "type": "text",
+        "text": "14",
+        "text_level": -1,
+        "page_idx": 13,
+        "pdf_id": 233,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "A EXPERIMENTAL DETAILS",
+        "text_level": 0,
+        "page_idx": 14,
+        "pdf_id": 234,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "A.1 Evaluation Metrics",
+        "text_level": 0,
+        "page_idx": 14,
+        "pdf_id": 235,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "In this section, we provide the detailed definitions and calculation procedures for the metrics used in our main experiments.",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 236,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "A.1.1 Answer Extraction and Normalization. Standard RAG models typically generate free-form natural language responses, which may contain extraneous conversational text (e.g., 'The answer is...'). Directly comparing these raw outputs with concise ground truth labels (e.g., 'Option A' or '12.5') can lead to false negatives.",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 237,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Following official evaluation protocols, we employ an LLM-based extraction step to align the model output with the ground truth format before calculation. Let 𝑦 𝑟𝑎𝑤 denote the raw response generated by the RAG system and 𝑦 𝑔𝑜𝑙𝑑 denote the ground truth. We define the extracted answer ˆ as: 𝑦",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 238,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "ˆ 𝑦 = LLMextract ( 𝑦 𝑟𝑎𝑤 , Instruction ) (16)",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 239,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "where LLMextract extracts the key information (e.g., the key entity for span extraction) from 𝑦 𝑟𝑎𝑤 . We further apply standard normalization N(·) (e.g., lowercasing, removing punctuation) to both ˆ 𝑦 and 𝑦 𝑔𝑜𝑙𝑑 .",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 240,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "A.1.2 QA Performance Metrics. Based on the ground truth 𝑦 𝑔𝑜𝑙𝑑 and the model's response (either raw 𝑦 𝑟𝑎𝑤 or extracted ˆ), we com𝑦 pute the following metrics:",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 241,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Accuracy (Inclusion-based). Following prior works [3, 34, 46], we utilize accuracy as a soft-match metric. We consider a prediction correct if the normalized gold answer is included in the model's generated response, rather than requiring a strict exact match. This accounts for the uncontrollable nature of LLM generation.",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 242,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "Accuracy = 1 𝑁 𝑁 ∑︁ 𝑖 = 1 I (N( 𝑦 𝑔𝑜𝑙𝑑,𝑖 ) ⊆ N( 𝑦 𝑟𝑎𝑤,𝑖 )) (17)",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 243,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "where ⊆ denotes the substring inclusion relation.",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 244,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Exact Match (EM).. Unlike accuracy, Exact Match is a strict metric. It measures whether the normalized extracted answer ˆ is character𝑦 for-character identical to the ground truth.",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 245,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "EM = 1 𝑁 𝑁 ∑︁ 𝑖 = 1 I (N( ˆ 𝑦 𝑖 ) = N( 𝑦 𝑔𝑜𝑙𝑑,𝑖 )) (18)",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 246,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "F1-score. For questions requiring text span answers, we utilize the token-level F1-score between the extracted answer ˆ and the 𝑦 ground truth 𝑦 𝑔𝑜𝑙𝑑 . Treating them as bags of tokens 𝑇 ˆ 𝑦 and 𝑇 𝑔𝑜𝑙𝑑 :",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 247,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "𝑃 = | 𝑇 ˆ 𝑦 ∩ 𝑇 𝑔𝑜𝑙𝑑 | | 𝑇 ˆ 𝑦 | , 𝑅 = | 𝑇 ˆ 𝑦 ∩ 𝑇 𝑔𝑜𝑙𝑑 | | 𝑇 𝑔𝑜𝑙𝑑 | , F1 = 2 · 𝑃 · 𝑅 𝑃 + 𝑅 (19)",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 248,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "15",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 249,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "A.1.3 Retrieval Recall. As described in the main text, we evaluate retrieval quality based on the granularity of parsed PDF blocks (e.g., paragraphs, tables, images). For a given query 𝑞 , let B 𝑔𝑜𝑙𝑑 be the set of manually labeled ground-truth blocks required to answer 𝑞 , and B 𝑟𝑒𝑡 be the set of unique blocks retrieved by the system. The Retrieval Recall is defined as:",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 250,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "equation",
+        "text": "Recall 𝑟𝑒𝑡 = ( 0 if parsing error occurs on B 𝑔𝑜𝑙𝑑 | B 𝑟𝑒𝑡 ∩B 𝑔𝑜𝑙𝑑 | | B 𝑔𝑜𝑙𝑑 | otherwise (20)",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 251,
+        "middle_json": {
+            "docling_label": "formula"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Specifically, if a ground-truth block is lost due to PDF parsing failures (i.e., it does not exist in the candidate pool), it is considered strictly unretrievable, resulting in a recall contribution of 0 for that specific block.",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 252,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "A.2 Implementation details",
+        "text_level": 0,
+        "page_idx": 14,
+        "pdf_id": 253,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Weimplement BookRAG in Python, utilizing MinerU [52] for robust document layout parsing. For a fair comparison, both BookRAG and all baseline methods are powered by a unified set of state-of-theart (SOTA) and widely adopted backbone models from the Qwen family [4, 60, 63, 64], including LLM, vision-language model (VLM), and embedding models. Specifically, we utilize Qwen3-8B [60] as the default LLM, Qwen2.5VL-30B [4] as the vision-language model (VLM), Qwen3-Embedding-0.6B [64] for text embedding, gme-Qwen2-VL-2B-Instruct [63] for multi-modal embedding, and Qwen3-Reranker-4B [64] for reranking. We primarily select models under the 10B parameter scale to balance efficiency and effectiveness. However, for the VLM, we adopt the 30B version, as the 8B counterpart exhibited significant performance deficits, frequently failing to answer correctly even when provided with ground-truth images. All experiments were conducted on a Linux operating system running on a high-performance server equipped with an Intel Xeon 2.0GHz CPU, 1024GB of memory, and 8 NVIDIA GeForce RTX A5000 GPUs, each with 24 GB of VRAM. Specifically, to ensure a fair comparison of efficiency, all methods were executed serially, and the reported time costs reflect this sequential processing mode. For methods involving document chunking and retrieval ranking, we standardize the chunk size at 500 tokens and set the retrieval top𝑘 to 10 to ensure consistent candidate pool sizes across baselines. For further reproducibility, our source code and detailed implementation configurations are publicly available at our repository: https://github.com/sam234990/BookRAG.",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 254,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "A.3 Prompts",
+        "text_level": 0,
+        "page_idx": 14,
+        "pdf_id": 255,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Specifically, we present the prompts designed for agent-based query classification (Figure 10), question decomposition (Figure 11), and filter operator generation (Figure 12). Additionally, we illustrate the prompt employed for entity resolution judgment (Figure 13) during the graph construction phase.",
+        "text_level": -1,
+        "page_idx": 14,
+        "pdf_id": 256,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "You are an expert query analyzer. Your only task is to classify the user's question into one of three categories: \"simple\", \"complex\", or \"global\". Respond only with the specified JSON object.",
+        "text_level": -1,
+        "page_idx": 15,
+        "pdf_id": 257,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Category Definitions:",
+        "text_level": 0,
+        "page_idx": 15,
+        "pdf_id": 258,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "1. single-hop: The question can be fully answered by retrieving information from a SINGLE, contiguous location in the document (e.g., one specific paragraph, one complete table, or one figure).",
+        "text_level": -1,
+        "page_idx": 15,
+        "pdf_id": 259,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "-This includes questions that require reasoning or comparison, as long as all the necessary data is present within that single retrieved location.",
+        "text_level": -1,
+        "page_idx": 15,
+        "pdf_id": 260,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "-Example: \"What is the title of Figure 2?\"",
+        "text_level": -1,
+        "page_idx": 15,
+        "pdf_id": 261,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "-Example: \"How do 5% of the Latinos see economic upward mobility for their children?\" -> This is SIMPLE because the answer can be found by looking at a single chart or paragraph.",
+        "text_level": -1,
+        "page_idx": 15,
+        "pdf_id": 262,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "2. multi-hop: The question requires decomposition into multiple simple sub-questions, where each sub-question must be answered by a separate retrieval action.",
+        "text_level": -1,
+        "page_idx": 15,
+        "pdf_id": 263,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "-It often contains a nested or indirect constraint that requires a preliminary step to resolve before the main question can be answered.",
+        "text_level": -1,
+        "page_idx": 15,
+        "pdf_id": 264,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "-Example: \"What is the color of the personality vector...?\" -> This is COMPLEX because it requires two separate retrieval actions.",
+        "text_level": -1,
+        "page_idx": 15,
+        "pdf_id": 265,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "3. global: The question requires an aggregation operation (e.g., counting, listing, summarizing) over a set of items that are identified by a clear structural filter.",
+        "text_level": -1,
+        "page_idx": 15,
+        "pdf_id": 266,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "-Example: \"How many tables are in the document?\" -> This is GLOBAL because the process is to filter for all items of type 'table'.",
+        "text_level": -1,
+        "page_idx": 15,
+        "pdf_id": 267,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "User Query: query",
+        "text_level": -1,
+        "page_idx": 15,
+        "pdf_id": 268,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 10: The prompt for query classification.",
+        "text_level": -1,
+        "page_idx": 15,
+        "pdf_id": 269,
+        "middle_json": {
+            "docling_label": "paragraph"
+        }
+    },
+    {
+        "type": "text",
+        "text": "16",
+        "text_level": -1,
+        "page_idx": 15,
+        "pdf_id": 270,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "You are a query decomposition expert. You have been given a \"complex\" question. Your task is to break it down into a series of simple, atomic sub-questions and classify each one by type. **Crucial Instructions:** 1. Each ' retrieval ' sub-question MUST be a direct information retrieval task that can be answered independently by looking up a specific fact, number, or value in the document. 2. ** ' retrieval ' sub-questions MUST NOT depend on the answer of another sub-question.** They should be parallelizable. All logic for combining their results must be placed in a final ' synthesis ' question. 3. A ' synthesis ' question requires comparing, calculating, or combining the answers of the previous ' retrieval ' questions. It does **NOT** require a new lookup in the document. You MUST provide your response in a JSON object with a single key 'sub_questions', which contains a list of objects. Each object must have a 'question' (string) and a 'type' (string: \"retrieval\" or \"synthesis\"). ---EXAMPLE 1 (Correct Decomposition with Independent Lookups) ---Complex Query: \"What is the color of the personality vector in the soft-labled personality embedding matrix that with the highest Receptiviti score for User A2GBIFL43U1LKJ?\" Expected JSON Output: {{ \"sub_questions\": [ {{\"question\": \"What are all the Receptiviti scores for each personality vector for User A2GBIFL43U1LKJ?\", \"type\": \"retrieval\"}}, {{\"question\": \"What is the mapping of personality vectors to their colors in the soft-labled personality embedding matrix?\", \"type\": \"retrieval\"}}, {{\"question\": \"From the gathered scores, identify the personality vector with the highest score, and then find its corresponding color from the vector-to-color mapping.\", \"type\": \"synthesis\"}} ] }} ---END EXAMPLE 1 ------EXAMPLE 2 (Decomposition with retrieval and synthesis steps) ---Complex Query: \"According to the report, which one is greater in population in the survey? Foreign born Latinos, or the Latinos interviewed by cellphone?\" Expected JSON Output: {{ \"sub_questions\": [ {{\"question\": \"According to the report, what is the population of foreign born Latinos in the survey?\", \"type\": \"retrieval\"}}, {{\"question\": \"According to the report, what is the population of Latinos interviewed by cellphone in the survey?\", \"type\": \"retrieval\"}}, {{\"question\": \"Which of the two population counts is greater?\", \"type\": \"synthesis\"}} ] }} ---END EXAMPLE 2 --Now, perform the decomposition for the following query. User Query: query",
+        "text_level": -1,
+        "page_idx": 16,
+        "pdf_id": 271,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 11: The prompt for query decomposition.",
+        "text_level": -1,
+        "page_idx": 16,
+        "pdf_id": 272,
+        "middle_json": {
+            "docling_label": "paragraph"
+        }
+    },
+    {
+        "type": "text",
+        "text": "17",
+        "text_level": -1,
+        "page_idx": 16,
+        "pdf_id": 273,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "You are a highly specialized AI assistant. Your only function is to analyze a \"Global Query\" and return a single, valid JSON object that specifies both the filtering steps and the final aggregation operation. You MUST NOT output any other text or explanation. ### INSTRUCTIONS \\& DEFINITIONS ### 1. **Filters**: You MUST determine the list of ' filters ' to apply. Even if the filter is for the whole document (e.g., all tables), the ' filters ' list must be present. -' filter_type ' : One of [\"section\", \"image\", \"table\", \"page\"]. -' section ' : Use for structural parts like chapters, sections, appendices, or references. -' image ' : Use for visual elements like figures, images, pictures, or plots. -' table ' : Use for tabular data. -' page ' : Use for specific page numbers or ranges. -' filter_value ' : (Optional) Can be provided for \"section\" (e.g., a section title) or \"page\" (e.g., '3-10' or '5'). **For \"image\" or \"table\", this value MUST be null.** 2. **Operation**: Determine the final aggregation operation. -' operation ' : One of [\"COUNT\", \"LIST\", \"SUMMARIZE\", \"ANALYZE\"]. ### EXAMPLES OF YOUR TASK ### User: \"How many figures are in this paper from Page 3 to Page 10?\" Assistant: {{\"filters\": [{{\"filter_type\": \"page\", \"filter_value\": \"3-10\"}}, {{\"filter_type\": \"image\"}}], \"operation\": \"COUNT\"}} User: \"Summarize the discussion about 'data augmentation' in the 'Methodology' section.\" Assistant: {{\"filters\": [{{\"filter_type\": \"section\", \"filter_value\": \"Methodology\"}}], \"operation\": \"SUMMARIZE\"}} User: \"How many chapters are in this report?\" Assistant: {{\"filters\": [{{\"filter_type\": \"section\"}}], \"operation\": \"COUNT\"}} ### YOUR CURRENT TASK ### User: \"{query}\" User Query: query",
+        "text_level": -1,
+        "page_idx": 17,
+        "pdf_id": 274,
+        "middle_json": {
+            "docling_label": "code"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 12: The prompt for Filter operator generation.",
+        "text_level": -1,
+        "page_idx": 17,
+        "pdf_id": 275,
+        "middle_json": {
+            "docling_label": "paragraph"
+        }
+    },
+    {
+        "type": "text",
+        "text": "18",
+        "text_level": -1,
+        "page_idx": 17,
+        "pdf_id": 276,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    },
+    {
+        "type": "text",
+        "text": "-Goal-",
+        "text_level": 0,
+        "page_idx": 18,
+        "pdf_id": 277,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "You are an expert Entity Resolution Adjudicator. Your task is to determine if a \"New Entity\" refers to the exact same real-world concept as one of the \"Candidate Entities\" provided from a knowledge graph. Your output must be a JSON object containing the ID of the matching candidate (or -1) and a brief explanation for your decision. -Context-",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 278,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "You will be given one \"New Entity\" recently extracted from a text. You will also be given a list of \"Candidate Entities\" that are semantically similar, retrieved from an existing knowledge base. Each candidate has a unique ' id ' for you to reference.",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 279,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "---",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 280,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "-Core Task & Rules-",
+        "text_level": 0,
+        "page_idx": 18,
+        "pdf_id": 281,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "1. **Analyze the \"New Entity\"**: Carefully read its name, type, and description to understand what it is.",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 282,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "2. **Field-by-Field Adjudication**: To determine a match, you must evaluate each field with a specific focus:",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 283,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "* ** ' entity_name ' (High Importance):** The names must be extremely similar, a direct abbreviation (e.g., \"LLM\" vs. \"Large Language Model\"), or a well-known alias. **If the names represent distinct, parallel concepts (like \"Event Detection\" and \"Named Entity Recognition\"), they are NOT a match, even if their descriptions are very similar.**",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 284,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "* ** ' entity_type ' (Medium Importance):** The types do not need to be identical, but they must be closely related and compatible (e.g., ' COMPANY ' and ' ORGANIZATION ' could describe the same entity).",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 285,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "* ** ' description ' (Contextual Importance):** The descriptions may differ as they are often extracted from different parts of a document. Your task is to look past surface-level text similarity and determine if they fundamentally describe the **same underlying object or concept**.",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 286,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "3. **Be Strict and Conservative**: Your standard for a match must be very high. An incorrect merge can corrupt the knowledge graph. A missed merge is less harmful.",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 287,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "* Surface-level similarities are not enough. The underlying concepts must be identical.",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 288,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "* For example, \"Apple\" (the fruit) and \"Apple Inc.\" (the company) are NOT a match.",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 289,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "* **When in doubt, you MUST output -1.**",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 290,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "* **Assume No Match by Default**: In a large knowledge graph, most new entities are genuinely new. You should start with the assumption that the \"New Entity\" is unique. You must find **strong, convincing evidence** across all fields, especially the ' entity_name ' , to overturn this assumption and declare a match.",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 291,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "4. **Format the Output**: **You must provide your answer in a valid JSON format. The JSON object should contain two keys:**",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 292,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "* ' select_id ' : An integer. The ' id ' of the candidate you've determined to be an exact match. If no exact match is",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 293,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "found, this value MUST be ' -1 ' .",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 294,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "* ' explanation ' : A brief, one-sentence string explaining your reasoning. For a match, explain why they are the same entity. For no match, explain the key difference.",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 295,
+        "middle_json": {
+            "docling_label": "list_item"
+        }
+    },
+    {
+        "type": "text",
+        "text": "---",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 296,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "-Output Schema & Format-",
+        "text_level": 0,
+        "page_idx": 18,
+        "pdf_id": 297,
+        "middle_json": {
+            "docling_label": "section_header"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Your response MUST be a single, valid JSON object that adheres to the following schema. Do not include any other text, explanation, or markdown formatting like ''' json.",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 298,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "''' json {{ \"select_id\": \"integer\", \"explanation\": \"string\" }} ''' ----Example-### Example 1: Match Found ### Example 2: No Match Found -----Task Execution-",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 299,
+        "middle_json": {
+            "docling_label": "code"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Now, perform the selection task based on the following data. Remember to output only a single integer.",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 300,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "-Input Data -",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 301,
+        "middle_json": {
+            "docling_label": "text"
+        }
+    },
+    {
+        "type": "text",
+        "text": "Figure 13: The prompt for entity resolution judgement, examples are omitted due to lack of space.",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 302,
+        "middle_json": {
+            "docling_label": "paragraph"
+        }
+    },
+    {
+        "type": "text",
+        "text": "19",
+        "text_level": -1,
+        "page_idx": 18,
+        "pdf_id": 303,
+        "middle_json": {
+            "docling_label": "page_footer"
+        }
+    }
+]

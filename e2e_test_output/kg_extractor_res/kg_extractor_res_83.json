@@ -1,0 +1,189 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 3",
+      "entity_type": "IMAGE",
+      "description": "figure 3 is an image illustrating the general workflow of agent based retrieval in bookrag",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "SOFTWARE",
+      "description": "bookrag is a system that utilizes agent based planning  retrieval  and generation processes",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "entity_name": "agent based retrieval",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "agent based retrieval is a workflow containing planning  retrieval  and generation processes used in bookrag",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "entity_name": "agent based planning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "agent based planning is a process component within the agent based retrieval workflow of bookrag",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "entity_name": "retrieval",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "retrieval is a process component within the agent based retrieval workflow of bookrag",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "entity_name": "generation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "generation is a process component within the agent based retrieval workflow of bookrag",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "entity_name": "workflow",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "workflow refers to the general process flow of agent based retrieval in bookrag",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "entity_name": "planning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "planning is a specific step within the agent based retrieval process",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "entity_name": "generation processes",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "generation processes are a component of the agent based retrieval workflow in bookrag",
+      "source_ids": [
+        83
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 3",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 3 depicts the workflow of bookrag",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "src_entity_name": "figure 3",
+      "tgt_entity_name": "agent based retrieval",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 3 illustrates the general workflow of agent based retrieval",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "agent based retrieval",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag contains the agent based retrieval workflow",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "src_entity_name": "agent based retrieval",
+      "tgt_entity_name": "agent based planning",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "agent based retrieval contains the agent based planning process",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "src_entity_name": "agent based retrieval",
+      "tgt_entity_name": "retrieval",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "agent based retrieval contains the retrieval process",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "src_entity_name": "agent based retrieval",
+      "tgt_entity_name": "generation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "agent based retrieval contains the generation process",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "src_entity_name": "figure 3",
+      "tgt_entity_name": "workflow",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 3 depicts the general workflow",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "src_entity_name": "agent based retrieval",
+      "tgt_entity_name": "workflow",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "agent based retrieval is described as a general workflow",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "src_entity_name": "agent based retrieval",
+      "tgt_entity_name": "planning",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "agent based retrieval includes planning as a process",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "src_entity_name": "agent based retrieval",
+      "tgt_entity_name": "generation processes",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "agent based retrieval includes generation processes as a component",
+      "source_ids": [
+        83
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "workflow",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag contains the general workflow of agent based retrieval",
+      "source_ids": [
+        83
+      ]
+    }
+  ],
+  "node_idx": 83
+}

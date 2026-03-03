@@ -1,0 +1,367 @@
+{
+  "entities": [
+    {
+      "entity_name": "rag",
+      "entity_type": "TECHNOLOGY",
+      "description": "rag refers to retrieval augmented generation approaches for document level qa mentioned in the text",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "ocr",
+      "entity_type": "TECHNOLOGY",
+      "description": "ocr stands for optical character recognition  a technology used to convert documents into plain text",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "graph based rag",
+      "entity_type": "TECHNOLOGY",
+      "description": "graph based rag is a text based rag method that uses graph data as an external knowledge source",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "graphrag",
+      "entity_type": "PRODUCT",
+      "description": "graphrag is a representative method that constructs a knowledge graph from a textual corpus",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "raptor",
+      "entity_type": "PRODUCT",
+      "description": "raptor is a representative method that builds a recursive tree structure by clustering document chunks",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "leiden community detection algorithm",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the leiden community detection algorithm is used by graphrag to obtain hierarchical clusters",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "figure 1",
+      "entity_type": "IMAGE",
+      "description": "figure 1 illustrates the two paradigms of existing rag approaches for document level qa",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "table 1",
+      "entity_type": "TABLE",
+      "description": "table 1 lists two representative methods  graphrag and raptor",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "document level qa",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "document level qa is the specific task for which existing rag approaches are designed",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "plain text",
+      "entity_type": "MATERIAL",
+      "description": "plain text is the output format produced by ocr when converting documents",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "text based rag method",
+      "entity_type": "TECHNOLOGY",
+      "description": "text based rag methods are a category of approaches applied after ocr conversion",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "graph data",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "graph data serves as an external knowledge source capturing semantic information and relational structures",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "knowledge graph",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "a knowledge graph  kg  is constructed from a textual corpus by graphrag",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "textual corpus",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "a textual corpus is the source material from which graphrag constructs a knowledge graph",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "hierarchical clusters",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "hierarchical clusters are the result of applying the leiden community detection algorithm",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "summaries",
+      "entity_type": "PRODUCT",
+      "description": "summaries are generated for each community to provide a global overview of the corpus",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "recursive tree structure",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a recursive tree structure is built by raptor through iterative clustering and summarization",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "document chunks",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "document chunks are the units iteratively clustered by raptor",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "fine grained semantic information",
+      "entity_type": "CONCEPT",
+      "description": "fine grained semantic information is a type of data captured by raptor across the corpus",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "entity_name": "high level semantic information",
+      "entity_type": "CONCEPT",
+      "description": "high level semantic information is a type of data captured by raptor across the corpus",
+      "source_ids": [
+        15
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "rag",
+      "tgt_entity_name": "ocr",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "rag approaches generally rely on ocr to convert documents into plain text before application",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "rag",
+      "tgt_entity_name": "graph based rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "state of the art rag methods increasingly adopt graph based rag approaches",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "graphrag",
+      "tgt_entity_name": "leiden community detection algorithm",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "graphrag applies the leiden community detection algorithm to obtain hierarchical clusters",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "graphrag",
+      "tgt_entity_name": "table 1",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graphrag is listed as a representative method in table 1",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "raptor",
+      "tgt_entity_name": "table 1",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "raptor is listed as a representative method in table 1",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "figure 1",
+      "tgt_entity_name": "rag",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "figure 1 illustrates the existing rag approaches for document level qa",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "rag",
+      "tgt_entity_name": "document level qa",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "rag approaches are designed for document level qa tasks",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "ocr",
+      "tgt_entity_name": "plain text",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "ocr converts documents into plain text",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "text based rag method",
+      "tgt_entity_name": "graph based rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graph based rag is a specific type of text based rag method",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "graph based rag",
+      "tgt_entity_name": "graph data",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graph based rag uses graph data as an external knowledge source",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "graphrag",
+      "tgt_entity_name": "knowledge graph",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "graphrag constructs a knowledge graph from a textual corpus",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "graphrag",
+      "tgt_entity_name": "textual corpus",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graphrag uses a textual corpus as the source for constructing a knowledge graph",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "leiden community detection algorithm",
+      "tgt_entity_name": "hierarchical clusters",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the leiden community detection algorithm produces hierarchical clusters",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "graphrag",
+      "tgt_entity_name": "summaries",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graphrag generates summaries for each community",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "raptor",
+      "tgt_entity_name": "recursive tree structure",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "raptor builds a recursive tree structure",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "raptor",
+      "tgt_entity_name": "document chunks",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "raptor iteratively clusters document chunks",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "raptor",
+      "tgt_entity_name": "fine grained semantic information",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "raptor captures fine grained semantic information across the corpus",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "raptor",
+      "tgt_entity_name": "high level semantic information",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "raptor captures high level semantic information across the corpus",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "table 1",
+      "tgt_entity_name": "graphrag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "table 1 lists graphrag as a representative method",
+      "source_ids": [
+        15
+      ]
+    },
+    {
+      "src_entity_name": "table 1",
+      "tgt_entity_name": "raptor",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "table 1 lists raptor as a representative method",
+      "source_ids": [
+        15
+      ]
+    }
+  ],
+  "node_idx": 15
+}

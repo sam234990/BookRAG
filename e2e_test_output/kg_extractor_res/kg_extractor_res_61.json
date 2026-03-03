@@ -1,0 +1,51 @@
+{
+  "entities": [
+    {
+      "entity_name": "4.3 graph construction",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'BOOKINDEX' and the second stage of the proposed BookIndex construction process, this section details the method for extracting fine-grained entity knowledge from hierarchical tree nodes and refining it using a novel gradient-based entity resolution technique.",
+      "source_ids": [
+        61
+      ]
+    },
+    {
+      "entity_name": "graph construction",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "The specific two-stage process step that follows Tree Construction, focusing on extracting entity knowledge and performing resolution within the BookIndex framework.",
+      "source_ids": [
+        61
+      ]
+    },
+    {
+      "entity_name": "gradient-based entity resolution",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A novel algorithmic method described in this section used to refine extracted entity knowledge by resolving ambiguities or duplicates based on gradient optimization.",
+      "source_ids": [
+        61
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "graph construction",
+      "tgt_entity_name": "4.3 graph construction",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'Graph Construction' is the primary topic and subject matter of section 4.3.",
+      "source_ids": [
+        61
+      ]
+    },
+    {
+      "src_entity_name": "gradient-based entity resolution",
+      "tgt_entity_name": "4.3 graph construction",
+      "relation_name": "",
+      "weight": 9.5,
+      "description": "The method 'Gradient-based Entity Resolution' is a key component and technique detailed within section 4.3.",
+      "source_ids": [
+        61
+      ]
+    }
+  ],
+  "node_idx": 61
+}

@@ -453,6 +453,7 @@ class TextEmbeddingProvider(BaseEmbedder):
         device: str = "auto",
         max_length: int = 8192,
         api_base: str = None,
+        api_key: str = "empty",
     ):
 
         self.model_name = model_name
@@ -486,7 +487,7 @@ class TextEmbeddingProvider(BaseEmbedder):
         elif self.backend == "ollama":
             self.device = "ollama_service"
         elif self.backend == "openai":
-            self.client = openai.OpenAI(api_key="empty", base_url=api_base)
+            self.client = openai.OpenAI(api_key=api_key, base_url=api_base)
         else:
             raise ValueError(
                 f"Unsupported backend: '{self.backend}'. Choose 'local' or 'ollama'."
@@ -615,13 +616,18 @@ class TextEmbeddingProvider(BaseEmbedder):
 
         elif self.backend == "openai":
             BATCH_SIZE = 8
-            n = len(texts)
+            # Sanitize: replace empty/whitespace-only texts with a placeholder
+            sanitized_texts = [
+                t if t and t.strip() else "<empty>"
+                for t in texts
+            ]
+            n = len(sanitized_texts)
             all_embeddings = []
             num_batches = math.ceil(n / BATCH_SIZE)
             for i in tqdm(
                 range(0, n, BATCH_SIZE), desc="Embedding texts", total=num_batches
             ):
-                chunk = texts[i : i + BATCH_SIZE]
+                chunk = sanitized_texts[i : i + BATCH_SIZE]
                 response = self.client.embeddings.create(
                     model=self.model_name,
                     input=chunk,

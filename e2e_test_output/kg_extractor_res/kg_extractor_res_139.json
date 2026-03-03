@@ -1,0 +1,121 @@
+{
+  "entities": [
+    {
+      "entity_name": "table 4",
+      "entity_type": "TABLE",
+      "description": "table 4 is a table listing datasets used in experiments",
+      "source_ids": [
+        139
+      ]
+    },
+    {
+      "entity_name": "em",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "em denotes exact match  an evaluation metric used in the experiments",
+      "source_ids": [
+        139
+      ]
+    },
+    {
+      "entity_name": "f1",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "f1 denotes f1 score  an evaluation metric used in the experiments",
+      "source_ids": [
+        139
+      ]
+    },
+    {
+      "entity_name": "exact match",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "exact match is the full name for the metric abbreviated as em",
+      "source_ids": [
+        139
+      ]
+    },
+    {
+      "entity_name": "f1 score",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "f1 score is the full name for the metric abbreviated as f1",
+      "source_ids": [
+        139
+      ]
+    },
+    {
+      "entity_name": "datasets",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "datasets refer to the collection of data used in the experiments mentioned in the text",
+      "source_ids": [
+        139
+      ]
+    },
+    {
+      "entity_name": "our",
+      "entity_type": "ORGANIZATION",
+      "description": "our refers to the research group or team conducting the experiments mentioned in the text",
+      "source_ids": [
+        139
+      ]
+    },
+    {
+      "entity_name": "experiments",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "experiments are the activities for which the datasets in table 4 were used",
+      "source_ids": [
+        139
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "table 4",
+      "tgt_entity_name": "datasets",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "table 4 lists the datasets used in the experiments",
+      "source_ids": [
+        139
+      ]
+    },
+    {
+      "src_entity_name": "em",
+      "tgt_entity_name": "exact match",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "em is the abbreviation for exact match",
+      "source_ids": [
+        139
+      ]
+    },
+    {
+      "src_entity_name": "f1",
+      "tgt_entity_name": "f1 score",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "f1 is the abbreviation for f1 score",
+      "source_ids": [
+        139
+      ]
+    },
+    {
+      "src_entity_name": "our",
+      "tgt_entity_name": "experiments",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "our group conducted the experiments referenced in the text",
+      "source_ids": [
+        139
+      ]
+    },
+    {
+      "src_entity_name": "datasets",
+      "tgt_entity_name": "experiments",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the datasets listed in table 4 were utilized in the experiments",
+      "source_ids": [
+        139
+      ]
+    }
+  ],
+  "node_idx": 139
+}

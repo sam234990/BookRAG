@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "graph reasoning",
+      "entity_type": "TECHNOLOGY",
+      "description": "graph reasoning is an operator that  when removed  disables the skyline ranker",
+      "source_ids": [
+        168
+      ]
+    },
+    {
+      "entity_name": "skyline ranker",
+      "entity_type": "SOFTWARE",
+      "description": "skyline ranker is a component that is disabled when the graph reasoning operator is removed  resulting in single dimensional scoring",
+      "source_ids": [
+        168
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "graph reasoning",
+      "tgt_entity_name": "skyline ranker",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the graph reasoning operator enables the skyline ranker  removing it disables the skyline ranker",
+      "source_ids": [
+        168
+      ]
+    }
+  ],
+  "node_idx": 168
+}

@@ -1,0 +1,115 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 6",
+      "entity_type": "IMAGE",
+      "description": "figure 6 is an image comparing graph statistics with values normalized to a basic setting",
+      "source_ids": [
+        174
+      ]
+    },
+    {
+      "entity_name": "basic setting",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the basic setting serves as the baseline  1 0  for normalizing graph statistics values",
+      "source_ids": [
+        174
+      ]
+    },
+    {
+      "entity_name": "3 6e 3",
+      "entity_type": "MEASUREMENT",
+      "description": "3 6e 3 is an abbreviated density value representing 3 6   10  3",
+      "source_ids": [
+        174
+      ]
+    },
+    {
+      "entity_name": "graph statistics",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "graph statistics are the subject of comparison in figure 6",
+      "source_ids": [
+        174
+      ]
+    },
+    {
+      "entity_name": "absolute values",
+      "entity_type": "MEASUREMENT",
+      "description": "absolute values for the basic setting are annotated in the text",
+      "source_ids": [
+        174
+      ]
+    },
+    {
+      "entity_name": "density values",
+      "entity_type": "MEASUREMENT",
+      "description": "density values are a specific type of metric mentioned that are abbreviated in the text",
+      "source_ids": [
+        174
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 6",
+      "tgt_entity_name": "basic setting",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 6 compares graph statistics by normalizing values to the basic setting",
+      "source_ids": [
+        174
+      ]
+    },
+    {
+      "src_entity_name": "figure 6",
+      "tgt_entity_name": "3 6e 3",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "figure 6 contains the density value 3 6e 3 as an example of abbreviated notation",
+      "source_ids": [
+        174
+      ]
+    },
+    {
+      "src_entity_name": "figure 6",
+      "tgt_entity_name": "graph statistics",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 6 is a comparison of graph statistics",
+      "source_ids": [
+        174
+      ]
+    },
+    {
+      "src_entity_name": "figure 6",
+      "tgt_entity_name": "absolute values",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "figure 6 includes annotations of absolute values for the basic setting",
+      "source_ids": [
+        174
+      ]
+    },
+    {
+      "src_entity_name": "figure 6",
+      "tgt_entity_name": "density values",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 6 illustrates how density values are abbreviated  using 3 6e 3 as an example",
+      "source_ids": [
+        174
+      ]
+    },
+    {
+      "src_entity_name": "basic setting",
+      "tgt_entity_name": "absolute values",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "absolute values are specifically annotated for the basic setting",
+      "source_ids": [
+        174
+      ]
+    }
+  ],
+  "node_idx": 174
+}

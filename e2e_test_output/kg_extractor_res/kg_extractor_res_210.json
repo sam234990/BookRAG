@@ -1,0 +1,105 @@
+{
+  "entities": [
+    {
+      "entity_name": "taher h haveliwala",
+      "entity_type": "PERSON",
+      "description": "taher h haveliwala is the author of the paper titled  topic sensitive pagerank",
+      "source_ids": [
+        210
+      ]
+    },
+    {
+      "entity_name": "2002",
+      "entity_type": "DATE",
+      "description": "2002 is the year the paper  topic sensitive pagerank  was published",
+      "source_ids": [
+        210
+      ]
+    },
+    {
+      "entity_name": "topic sensitive pagerank",
+      "entity_type": "TECHNOLOGY",
+      "description": "topic sensitive pagerank is the title of a paper presented at a conference",
+      "source_ids": [
+        210
+      ]
+    },
+    {
+      "entity_name": "11th international conference on world wide web",
+      "entity_type": "EVENT",
+      "description": "the 11th international conference on world wide web is the venue where the paper was presented",
+      "source_ids": [
+        210
+      ]
+    },
+    {
+      "entity_name": "world wide web",
+      "entity_type": "TECHNOLOGY",
+      "description": "world wide web is the technology platform associated with the conference where the paper was presented",
+      "source_ids": [
+        210
+      ]
+    },
+    {
+      "entity_name": "517 526",
+      "entity_type": "MEASUREMENT",
+      "description": "517 526 represents the page range of the paper in the conference proceedings",
+      "source_ids": [
+        210
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "taher h haveliwala",
+      "tgt_entity_name": "topic sensitive pagerank",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "taher h haveliwala is the author of the paper  topic sensitive pagerank",
+      "source_ids": [
+        210
+      ]
+    },
+    {
+      "src_entity_name": "topic sensitive pagerank",
+      "tgt_entity_name": "11th international conference on world wide web",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the paper  topic sensitive pagerank  was presented at the 11th international conference on world wide web",
+      "source_ids": [
+        210
+      ]
+    },
+    {
+      "src_entity_name": "taher h haveliwala",
+      "tgt_entity_name": "2002",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "taher h haveliwala published the paper in the year 2002",
+      "source_ids": [
+        210
+      ]
+    },
+    {
+      "src_entity_name": "11th international conference on world wide web",
+      "tgt_entity_name": "world wide web",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the conference is named after and focused on the world wide web technology",
+      "source_ids": [
+        210
+      ]
+    },
+    {
+      "src_entity_name": "topic sensitive pagerank",
+      "tgt_entity_name": "517 526",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the paper  topic sensitive pagerank  spans pages 517 to 526 in the proceedings",
+      "source_ids": [
+        210
+      ]
+    }
+  ],
+  "node_idx": 210
+}

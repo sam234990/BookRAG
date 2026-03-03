@@ -1,0 +1,87 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag: a hierarchical structure-aware index-based approach for retrieval-augmented generation on complex documents",
+      "entity_type": "SECTION_TITLE",
+      "description": "As the primary title of the document, this section introduces BookRAG, a novel approach designed to handle complex documents by utilizing hierarchical structure awareness and index-based mechanisms within a Retrieval-Augmented Generation framework.",
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "The specific name of the proposed model or architecture introduced in the document.",
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "entity_name": "hierarchical structure-aware index-based approach",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "The core methodology employed by BookRAG, focusing on leveraging document hierarchy and indexing strategies.",
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "entity_name": "retrieval-augmented generation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The broader AI task domain addressed by the proposed approach, involving combining retrieval systems with generative models.",
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "entity_name": "complex documents",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The target data type or corpus category that the system is specifically designed to process.",
+      "source_ids": [
+        1
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "bookrag: a hierarchical structure-aware index-based approach for retrieval-augmented generation on complex documents",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'BookRAG' is the primary subject defined in the main title.",
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "src_entity_name": "hierarchical structure-aware index-based approach",
+      "tgt_entity_name": "bookrag: a hierarchical structure-aware index-based approach for retrieval-augmented generation on complex documents",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The methodological approach is a key component described in the main title.",
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "src_entity_name": "retrieval-augmented generation",
+      "tgt_entity_name": "bookrag: a hierarchical structure-aware index-based approach for retrieval-augmented generation on complex documents",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The application domain or task is a central theme of the main title.",
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "src_entity_name": "complex documents",
+      "tgt_entity_name": "bookrag: a hierarchical structure-aware index-based approach for retrieval-augmented generation on complex documents",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The target data scope is explicitly mentioned as a focus area in the main title.",
+      "source_ids": [
+        1
+      ]
+    }
+  ],
+  "node_idx": 1
+}

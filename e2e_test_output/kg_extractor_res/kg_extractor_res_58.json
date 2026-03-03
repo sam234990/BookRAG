@@ -1,0 +1,267 @@
+{
+  "entities": [
+    {
+      "entity_name": "tree",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the tree is a definitive structure constructed from blocks  consisting of nodes and edges representing content and relationships",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "node set",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the node set is composed of all blocks from the filtering and re classification process  retaining content and final node types",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "edge set",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the edge set represents the parent child nesting relationships within the tree structure",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "text",
+      "entity_type": "PRODUCT",
+      "description": "text is identified as a final node type retained within the nodes of the tree",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "section",
+      "entity_type": "PRODUCT",
+      "description": "section is identified as a final node type retained within the nodes of the tree",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "table",
+      "entity_type": "PRODUCT",
+      "description": "table is identified as a final node type retained within the nodes of the tree",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "image",
+      "entity_type": "PRODUCT",
+      "description": "image is identified as a final node type retained within the nodes of the tree",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "filtering",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "filtering is a process mentioned as part of the generation of blocks for the node set",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "re classification",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "re classification is a process mentioned alongside filtering in the creation of the node set",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "hierarchical levels",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "hierarchical levels are determined values used to infer parent child relationships for section nodes",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "document order",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "document order is a sequential arrangement used to assemble the complete tree structure",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "parent child nesting relationships",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "parent child nesting relationships are the specific connections established by the edge set",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "content",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "content is an attribute retained by each node in the node set",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "final node type",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "final node type is an attribute retained by each node in the node set",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "entity_name": "node",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        58
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "tree",
+      "tgt_entity_name": "node set",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the tree is constructed using the node set  which contains all blocks from the filtering process",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "src_entity_name": "tree",
+      "tgt_entity_name": "edge set",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the tree includes the edge set  which establishes parent child nesting relationships",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "src_entity_name": "node set",
+      "tgt_entity_name": "text",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the node set retains nodes of the type text",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "src_entity_name": "node set",
+      "tgt_entity_name": "section",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the node set retains nodes of the type section",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "src_entity_name": "node set",
+      "tgt_entity_name": "table",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the node set retains nodes of the type table",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "src_entity_name": "node set",
+      "tgt_entity_name": "image",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the node set retains nodes of the type image",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "src_entity_name": "edge set",
+      "tgt_entity_name": "tree",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the edge set is established to define the structure of the tree",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "src_entity_name": "node set",
+      "tgt_entity_name": "filtering",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the node set is composed of blocks resulting from the filtering process",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "src_entity_name": "node set",
+      "tgt_entity_name": "re classification",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the node set is composed of blocks resulting from the re classification process",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "src_entity_name": "edge set",
+      "tgt_entity_name": "parent child nesting relationships",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the edge set represents the parent child nesting relationships",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "src_entity_name": "tree",
+      "tgt_entity_name": "hierarchical levels",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "hierarchical levels are used to infer relationships within the tree structure",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "src_entity_name": "tree",
+      "tgt_entity_name": "document order",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "document order is used to assemble the complete tree structure",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "src_entity_name": "node",
+      "tgt_entity_name": "content",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "each node retains its content",
+      "source_ids": [
+        58
+      ]
+    },
+    {
+      "src_entity_name": "node",
+      "tgt_entity_name": "final node type",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "each node retains its final node type",
+      "source_ids": [
+        58
+      ]
+    }
+  ],
+  "node_idx": 58
+}

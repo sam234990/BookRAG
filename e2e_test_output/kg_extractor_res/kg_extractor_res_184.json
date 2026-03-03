@@ -1,0 +1,285 @@
+{
+  "entities": [
+    {
+      "entity_name": "cref='#/texts/348'",
+      "entity_type": "IMAGE",
+      "description": "A figure containing two funnel diagrams comparing error analysis for the MMLongBench and Qasper datasets.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "(a) mmlongbench",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The left diagram illustrating the breakdown of query processing results for the MMLongBench dataset.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "(b) qasper",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The right diagram illustrating the breakdown of query processing results for the Qasper dataset.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "all queries (200)",
+      "entity_type": "MEASUREMENT",
+      "description": "The initial total number of queries processed in both the MMLongBench and Qasper experiments.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "successful parsing (194)",
+      "entity_type": "MEASUREMENT",
+      "description": "The count of queries that were successfully parsed within the MMLongBench experiment.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "retrieval error (52)",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The count of errors attributed to retrieval failures in the MMLongBench experiment.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "generation error (36)",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The count of errors attributed to generation failures in the MMLongBench experiment.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "plan error (27)",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The count of errors attributed to planning failures in the MMLongBench experiment.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "parsing error (6)",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The count of errors attributed to parsing failures in the MMLongBench experiment.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "correct (79)",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "The final count of correctly answered queries in the MMLongBench experiment.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "successful parsing (193)",
+      "entity_type": "MEASUREMENT",
+      "description": "The count of queries that were successfully parsed within the Qasper experiment.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "generation error (30)",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The count of errors attributed to generation failures in the Qasper experiment.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "retrieval error (26)",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The count of errors attributed to retrieval failures in the Qasper experiment.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "plan error (20)",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The count of errors attributed to planning failures in the Qasper experiment.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "parsing error (7)",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The count of errors attributed to parsing failures in the Qasper experiment.",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "entity_name": "correct (117)",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "The final count of correctly answered queries in the Qasper experiment.",
+      "source_ids": [
+        184
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "(a) mmlongbench",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to (a) MMLongBench",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "(b) qasper",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to (b) Qasper",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "all queries (200)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to All Queries (200)",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "successful parsing (194)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to Successful Parsing (194)",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "retrieval error (52)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to Retrieval Error (52)",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "generation error (36)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to Generation Error (36)",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "plan error (27)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to Plan Error (27)",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "parsing error (6)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to Parsing Error (6)",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "correct (79)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to Correct (79)",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "successful parsing (193)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to Successful Parsing (193)",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "generation error (30)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to Generation Error (30)",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "retrieval error (26)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to Retrieval Error (26)",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "plan error (20)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to Plan Error (20)",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "parsing error (7)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to Parsing Error (7)",
+      "source_ids": [
+        184
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/348'",
+      "tgt_entity_name": "correct (117)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/348' related to Correct (117)",
+      "source_ids": [
+        184
+      ]
+    }
+  ],
+  "node_idx": 184
+}

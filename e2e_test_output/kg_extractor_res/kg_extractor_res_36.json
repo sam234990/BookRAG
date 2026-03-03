@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "3.1 problem formulation",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'Preliminaries' within the BookRAG paper, this section formalizes the research problem of complex document Question Answering (QA) and establishes the foundational context for the proposed approach.",
+      "source_ids": [
+        36
+      ]
+    },
+    {
+      "entity_name": "complex document qa",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "Refers to the specific challenge of answering questions based on complex documents, which is the core research problem being formalized in section 3.1.",
+      "source_ids": [
+        36
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "complex document qa",
+      "tgt_entity_name": "3.1 problem formulation",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'Complex Document QA' is the primary topic and subject of the problem formulation detailed in section 3.1.",
+      "source_ids": [
+        36
+      ]
+    }
+  ],
+  "node_idx": 36
+}

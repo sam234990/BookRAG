@@ -1,0 +1,185 @@
+{
+  "entities": [
+    {
+      "entity_name": "table",
+      "entity_type": "PRODUCT",
+      "description": "table is a specific logical type mentioned in the text that requires preservation of structural semantics",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "entity_name": "formula",
+      "entity_type": "PRODUCT",
+      "description": "formula is a specific logical type mentioned in the text that requires preservation of structural semantics",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "entity_name": "v table",
+      "entity_type": "PRODUCT",
+      "description": "v table is a distinct  typed entity representing the table itself created to preserve structural semantics",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "entity_name": "row",
+      "entity_type": "PRODUCT",
+      "description": "row is a component of table nodes that is explicitly extracted as a distinct entity",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "entity_name": "column",
+      "entity_type": "PRODUCT",
+      "description": "column is a component of table nodes that is explicitly extracted as a distinct entity",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "entity_name": "header",
+      "entity_type": "PRODUCT",
+      "description": "header refers to row and column headers in table nodes that are explicitly extracted as distinct entities",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "entity_name": "structural semantics",
+      "entity_type": "CONCEPT",
+      "description": "structural semantics refers to the meaning preserved for specific logical types in the described process",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "entity_name": "logical types",
+      "entity_type": "CONCEPT",
+      "description": "logical types are categories of entities  such as table and formula  that require specific handling",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "entity_name": "node",
+      "entity_type": "CONCEPT",
+      "description": "node refers to a specific point in the data structure where content is extracted",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "entity_name": "vertex",
+      "entity_type": "CONCEPT",
+      "description": "vertex refers to the primary node  v table  to which other entities are linked",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "entity_name": "containedin",
+      "entity_type": "RELATIONSHIP_TYPE",
+      "description": "containedin is the specific relationship type used to link row and column headers to the table entity",
+      "source_ids": [
+        64
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "v table",
+      "tgt_entity_name": "table",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "v table is the distinct entity created to represent the table logical type",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "src_entity_name": "row",
+      "tgt_entity_name": "v table",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "row headers are linked to v table via a  containedin  relationship",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "src_entity_name": "column",
+      "tgt_entity_name": "v table",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "column headers are linked to v table via a  containedin  relationship",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "src_entity_name": "header",
+      "tgt_entity_name": "v table",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "row and column headers are explicitly extracted and linked to v table",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "src_entity_name": "structural semantics",
+      "tgt_entity_name": "logical types",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "structural semantics are preserved specifically for logical types like table and formula",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "src_entity_name": "v table",
+      "tgt_entity_name": "node",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "v table is created as a distinct entity from the content of a specific node",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "src_entity_name": "row",
+      "tgt_entity_name": "header",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "row headers are a specific type of header extracted from table nodes",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "src_entity_name": "column",
+      "tgt_entity_name": "header",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "column headers are a specific type of header extracted from table nodes",
+      "source_ids": [
+        64
+      ]
+    },
+    {
+      "src_entity_name": "row",
+      "tgt_entity_name": "column",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "row and column headers are both explicitly extracted components of table nodes",
+      "source_ids": [
+        64
+      ]
+    }
+  ],
+  "node_idx": 64
+}

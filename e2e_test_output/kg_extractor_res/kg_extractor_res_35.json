@@ -1,0 +1,123 @@
+{
+  "entities": [
+    {
+      "entity_name": "complex document qa",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "complex document qa is the research problem being formalized in the text",
+      "source_ids": [
+        35
+      ]
+    },
+    {
+      "entity_name": "information foraging theory",
+      "entity_type": "SCIENTIFIC_THEORY",
+      "description": "information foraging theory  ift  is a foundational theory introduced in the text",
+      "source_ids": [
+        35
+      ]
+    },
+    {
+      "entity_name": "ift",
+      "entity_type": "SCIENTIFIC_THEORY",
+      "description": "ift is an abbreviation for information foraging theory  a foundational theory introduced in the text",
+      "source_ids": [
+        35
+      ]
+    },
+    {
+      "entity_name": "rag systems",
+      "entity_type": "TECHNOLOGY",
+      "description": "rag systems are a type of technology whose general workflow is reviewed in the text",
+      "source_ids": [
+        35
+      ]
+    },
+    {
+      "entity_name": "research problem",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the research problem is the subject being formalized in the text",
+      "source_ids": [
+        35
+      ]
+    },
+    {
+      "entity_name": "general workflow",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the general workflow of rag systems is the subject being briefly reviewed in the text",
+      "source_ids": [
+        35
+      ]
+    },
+    {
+      "entity_name": "section",
+      "entity_type": "SECTION_TITLE",
+      "description": "the section is the part of the document that contains the formalization and review described in the text",
+      "source_ids": [
+        35
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "complex document qa",
+      "tgt_entity_name": "information foraging theory",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the text states that the research problem of complex document qa is formalized alongside the introduction of information foraging theory",
+      "source_ids": [
+        35
+      ]
+    },
+    {
+      "src_entity_name": "information foraging theory",
+      "tgt_entity_name": "ift",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "ift is the abbreviation used for information foraging theory in the text",
+      "source_ids": [
+        35
+      ]
+    },
+    {
+      "src_entity_name": "rag systems",
+      "tgt_entity_name": "complex document qa",
+      "relation_name": "",
+      "weight": 6.0,
+      "description": "the text mentions reviewing the workflow of rag systems in the context of formalizing the research problem of complex document qa",
+      "source_ids": [
+        35
+      ]
+    },
+    {
+      "src_entity_name": "section",
+      "tgt_entity_name": "research problem",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the section is the location where the research problem is formalized",
+      "source_ids": [
+        35
+      ]
+    },
+    {
+      "src_entity_name": "section",
+      "tgt_entity_name": "general workflow",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the section is the location where the general workflow is reviewed",
+      "source_ids": [
+        35
+      ]
+    },
+    {
+      "src_entity_name": "research problem",
+      "tgt_entity_name": "general workflow",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "both the research problem and the general workflow are discussed within the same section",
+      "source_ids": [
+        35
+      ]
+    }
+  ],
+  "node_idx": 35
+}

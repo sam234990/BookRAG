@@ -257,7 +257,11 @@ class GPTVLMController(BaseVLMController):
     ) -> str:
         content = self._prepare_messages(prompt_or_memory, images)
         completion = self.client.chat.completions.create(
-            model=self.model_name, messages=content, temperature=self.temperature
+            model=self.model_name, messages=content, temperature=self.temperature,
+            extra_body={
+                "enable_thinking": False,                          # DashScope
+                "chat_template_kwargs": {"enable_thinking": False},  # vLLM
+            },
         )
 
         if completion.usage:
@@ -299,6 +303,10 @@ class GPTVLMController(BaseVLMController):
             model=self.model_name,
             messages=messages,
             response_format={"type": "json_object"},  # Use modern JSON mode
+            extra_body={
+                "enable_thinking": False,                          # DashScope
+                "chat_template_kwargs": {"enable_thinking": False},  # vLLM
+            },
         )
 
         if completion.usage:

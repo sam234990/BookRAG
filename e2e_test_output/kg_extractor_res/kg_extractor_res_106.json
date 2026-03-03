@@ -1,0 +1,191 @@
+{
+  "entities": [
+    {
+      "entity_name": "reasoner",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "reasoner is described as a component that analyzes and refines selected tree nodes",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "entity_name": "graph reasoning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "graph reasoning is a method that performs multi hop inference on a subgraph starting from an entity",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "entity_name": "pagerank algorithm",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "pagerank algorithm is used to compute an entity importance vector over a subgraph",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "entity_name": "gt link matrix",
+      "entity_type": "SOFTWARE",
+      "description": "gt link matrix is a matrix used to map entity scores to tree nodes to derive importance scores",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "entity_name": "entity importance vector",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "entity importance vector is a vector computed over a subgraph representing the importance of entities",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "entity_name": "tree node importance scores vector",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "tree node importance scores vector is the final vector derived by mapping entity scores to tree nodes",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "entity_name": "subgraph",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "subgraph is a portion of a graph extracted from selected nodes on which inference is performed",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "entity_name": "entity",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "entity is the starting point for the multi hop inference process in graph reasoning",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "entity_name": "selected nodes",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "selected nodes are the nodes from which a subgraph is extracted for graph reasoning",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "entity_name": "20",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "20  is a citation reference associated with the pagerank algorithm",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "entity_name": "6",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "6  is the label for the equation defining the entity importance vector",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "entity_name": "7",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "7  is the label for the equation defining the tree node importance scores vector",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "entity_name": "selected tree nodes",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        106
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "reasoner",
+      "tgt_entity_name": "selected tree nodes",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "reasoner analyzes and refines selected tree nodes",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "src_entity_name": "graph reasoning",
+      "tgt_entity_name": "subgraph",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "graph reasoning performs multi hop inference on a subgraph",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "src_entity_name": "graph reasoning",
+      "tgt_entity_name": "entity",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graph reasoning starts its inference process from an entity",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "src_entity_name": "graph reasoning",
+      "tgt_entity_name": "pagerank algorithm",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "graph reasoning uses the pagerank algorithm to compute the entity importance vector",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "src_entity_name": "pagerank algorithm",
+      "tgt_entity_name": "entity importance vector",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the pagerank algorithm computes the entity importance vector",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "src_entity_name": "entity importance vector",
+      "tgt_entity_name": "gt link matrix",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the entity importance vector is mapped to tree nodes via the gt link matrix",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "src_entity_name": "gt link matrix",
+      "tgt_entity_name": "tree node importance scores vector",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the gt link matrix is used to derive the tree node importance scores vector",
+      "source_ids": [
+        106
+      ]
+    },
+    {
+      "src_entity_name": "subgraph",
+      "tgt_entity_name": "selected nodes",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the subgraph is extracted from selected nodes",
+      "source_ids": [
+        106
+      ]
+    }
+  ],
+  "node_idx": 106
+}

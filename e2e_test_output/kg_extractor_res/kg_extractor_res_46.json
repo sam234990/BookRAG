@@ -1,0 +1,69 @@
+{
+  "entities": [
+    {
+      "entity_name": "4 bookindex",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of the main paper 'BookRAG: A Hierarchical Structure-aware Index-based Approach for Retrieval-Augmented Generation on Complex Documents', this section details the novel index structure named BookIndex. It explains how the approach extracts a hierarchical tree from documents to serve as a table of contents, utilizes graphs to capture entity relationships, and maps entities to tree nodes.",
+      "source_ids": [
+        46
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "A novel index structure introduced in this work that builds a hierarchical tree from documents to act as a table of contents and uses graphs to capture intricate relationships between entities.",
+      "source_ids": [
+        46
+      ]
+    },
+    {
+      "entity_name": "hierarchical tree",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "The structural method used within BookIndex to organize document content from different granularity levels, serving the role of a table of contents.",
+      "source_ids": [
+        46
+      ]
+    },
+    {
+      "entity_name": "graph",
+      "entity_type": "TECHNOLOGY",
+      "description": "The data structure employed by BookIndex to capture and represent the intricate relationships between entities within the document hierarchy.",
+      "source_ids": [
+        46
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "4 bookindex",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'BookIndex' is the primary subject defined and detailed in section 4.",
+      "source_ids": [
+        46
+      ]
+    },
+    {
+      "src_entity_name": "hierarchical tree",
+      "tgt_entity_name": "4 bookindex",
+      "relation_name": "",
+      "weight": 9.5,
+      "description": "The 'hierarchical tree' is a core component and technique described within section 4 as part of the BookIndex implementation.",
+      "source_ids": [
+        46
+      ]
+    },
+    {
+      "src_entity_name": "graph",
+      "tgt_entity_name": "4 bookindex",
+      "relation_name": "",
+      "weight": 9.5,
+      "description": "The use of a 'graph' to capture entity relations is a key technical detail explained in section 4.",
+      "source_ids": [
+        46
+      ]
+    }
+  ],
+  "node_idx": 46
+}

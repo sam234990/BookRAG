@@ -1,0 +1,293 @@
+{
+  "entities": [
+    {
+      "entity_name": "kg",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "kg refers to a knowledge graph used to support effective reasoning in the bookrag system",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "agent based planning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "agent based planning is a mechanism assessed for its necessity in the system s performance",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "ift inspired selection mechanism",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "ift inspired selection mechanism is a strategy evaluated for its role in the system s efficiency",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "multi dimensional reasoning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "multi dimensional reasoning is a strategy validated for its effectiveness in the system",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "dynamic skyline filtering strategy",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "dynamic skyline filtering strategy is a method validated for its effectiveness in the system",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "table 7",
+      "entity_type": "TABLE",
+      "description": "table 7 is a reference in the text showing performance degradation across variants",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is the system being evaluated in the text",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "w o gradient er variant",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the w o gradient er variant is a specific configuration used to test the role of the knowledge graph",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "planning mechanism",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the planning mechanism is a component whose removal causes significant performance loss",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "w o selector variant",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the w o selector variant is a configuration used to validate the efficiency of the selection strategy",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "qasper",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "qasper is a dataset used to measure computational cost in tokens",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "tokens",
+      "entity_type": "MEASUREMENT",
+      "description": "tokens are the unit of measurement used to quantify computational cost",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "gradient er",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "gradient er is a specific component or technique whose removal in the w o variant highlights the role of the knowledge graph",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "selector",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the selector is a component whose removal in the w o variant validates the efficiency of the selection strategy",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "narrow then reason strategy",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the narrow then reason strategy is the specific approach inspired by ift that is being validated for efficiency",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "static workflow",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "a static workflow is described as insufficient for handling diverse types of queries  contrasting with the dynamic approach",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "queries",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "queries are the diverse types of tasks that the system is designed to handle",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "retrieval performance",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "retrieval performance is the metric used to evaluate the impact of kg quality",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "accuracy",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "accuracy is a metric maintained by the w o selector variant despite high computational costs",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "computational cost",
+      "entity_type": "MEASUREMENT",
+      "description": "computational cost is a metric measured in tokens to evaluate the efficiency of the variants",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "performance degradation",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "performance degradation is the observed outcome across all variants confirming the essential role of each module",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "entity_name": "performance loss",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "performance loss is the significant drop observed when the planning mechanism is removed",
+      "source_ids": [
+        172
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "kg",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the kg is a critical component within the bookrag system supporting effective reasoning",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "src_entity_name": "agent based planning",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "agent based planning is a mechanism assessed for its necessity within the bookrag system",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "src_entity_name": "ift inspired selection mechanism",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the ift inspired selection mechanism is a strategy evaluated for its efficiency in the bookrag system",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "src_entity_name": "multi dimensional reasoning",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "multi dimensional reasoning is a strategy validated for its effectiveness in the bookrag system",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "src_entity_name": "dynamic skyline filtering strategy",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the dynamic skyline filtering strategy is a method validated for its effectiveness in the bookrag system",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "src_entity_name": "table 7",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "table 7 presents data regarding the performance of the bookrag system variants",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "src_entity_name": "w o gradient er variant",
+      "tgt_entity_name": "kg",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the w o gradient er variant highlights the critical role of the kg in the system",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "src_entity_name": "planning mechanism",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the planning mechanism is a component of bookrag whose removal causes significant performance loss",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "src_entity_name": "w o selector variant",
+      "tgt_entity_name": "ift inspired selection mechanism",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the w o selector variant validates the efficiency of the ift inspired selection mechanism",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "src_entity_name": "w o selector variant",
+      "tgt_entity_name": "qasper",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the w o selector variant incurs a computational cost measured in tokens on the qasper dataset",
+      "source_ids": [
+        172
+      ]
+    },
+    {
+      "src_entity_name": "ift inspired selection mechanism",
+      "tgt_entity_name": "qasper",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the ift inspired selection mechanism s efficiency is validated using the qasper dataset",
+      "source_ids": [
+        172
+      ]
+    }
+  ],
+  "node_idx": 172
+}

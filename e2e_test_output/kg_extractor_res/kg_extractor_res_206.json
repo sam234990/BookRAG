@@ -1,0 +1,735 @@
+{
+  "entities": [
+    {
+      "entity_name": "darren edge",
+      "entity_type": "PERSON",
+      "description": "darren edge is listed as one of the authors of the 2024 arxiv preprint",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "ha trinh",
+      "entity_type": "PERSON",
+      "description": "ha trinh is listed as one of the authors of the 2024 arxiv preprint",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "newman cheng",
+      "entity_type": "PERSON",
+      "description": "newman cheng is listed as one of the authors of the 2024 arxiv preprint",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "joshua bradley",
+      "entity_type": "PERSON",
+      "description": "joshua bradley is listed as one of the authors of the 2024 arxiv preprint",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "alex chao",
+      "entity_type": "PERSON",
+      "description": "alex chao is listed as one of the authors of the 2024 arxiv preprint",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "apurva mody",
+      "entity_type": "PERSON",
+      "description": "apurva mody is listed as one of the authors of the 2024 arxiv preprint",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "steven truitt",
+      "entity_type": "PERSON",
+      "description": "steven truitt is listed as one of the authors of the 2024 arxiv preprint",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "jonathan larson",
+      "entity_type": "PERSON",
+      "description": "jonathan larson is listed as one of the authors of the 2024 arxiv preprint",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "2024",
+      "entity_type": "DATE",
+      "description": "2024 is the year the arxiv preprint was published",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "from local to global a graph rag approach to query focused summarization",
+      "entity_type": "BOOK",
+      "description": "from local to global  a graph rag approach to query focused summarization is the title of the arxiv preprint",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "arxiv",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv is the venue where the preprint arxiv 2404 16130 was published",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "arxiv 2404 16130",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv 2404 16130 is the specific identifier for the preprint document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "graph rag",
+      "entity_type": "TECHNOLOGY",
+      "description": "graph rag is a technology approach mentioned in the title of the paper as a method for query focused summarization",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "query focused summarization",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "query focused summarization is the specific task or problem addressed by the graph rag approach in the paper",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "local",
+      "entity_type": "CONCEPT",
+      "description": "local refers to a scope or scale mentioned in the paper s title  contrasting with global",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "entity_name": "global",
+      "entity_type": "CONCEPT",
+      "description": "global refers to a scope or scale mentioned in the paper s title  contrasting with local",
+      "source_ids": [
+        206
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "darren edge",
+      "tgt_entity_name": "ha trinh",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "darren edge",
+      "tgt_entity_name": "newman cheng",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "darren edge",
+      "tgt_entity_name": "joshua bradley",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "darren edge",
+      "tgt_entity_name": "alex chao",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "darren edge",
+      "tgt_entity_name": "apurva mody",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "darren edge",
+      "tgt_entity_name": "steven truitt",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "darren edge",
+      "tgt_entity_name": "jonathan larson",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "ha trinh",
+      "tgt_entity_name": "newman cheng",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "ha trinh",
+      "tgt_entity_name": "joshua bradley",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "ha trinh",
+      "tgt_entity_name": "alex chao",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "ha trinh",
+      "tgt_entity_name": "apurva mody",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "ha trinh",
+      "tgt_entity_name": "steven truitt",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "ha trinh",
+      "tgt_entity_name": "jonathan larson",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "newman cheng",
+      "tgt_entity_name": "joshua bradley",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "newman cheng",
+      "tgt_entity_name": "alex chao",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "newman cheng",
+      "tgt_entity_name": "apurva mody",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "newman cheng",
+      "tgt_entity_name": "steven truitt",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "newman cheng",
+      "tgt_entity_name": "jonathan larson",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "joshua bradley",
+      "tgt_entity_name": "alex chao",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "joshua bradley",
+      "tgt_entity_name": "apurva mody",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "joshua bradley",
+      "tgt_entity_name": "steven truitt",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "joshua bradley",
+      "tgt_entity_name": "jonathan larson",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "alex chao",
+      "tgt_entity_name": "apurva mody",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "alex chao",
+      "tgt_entity_name": "steven truitt",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "alex chao",
+      "tgt_entity_name": "jonathan larson",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "apurva mody",
+      "tgt_entity_name": "steven truitt",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "apurva mody",
+      "tgt_entity_name": "jonathan larson",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "steven truitt",
+      "tgt_entity_name": "jonathan larson",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "darren edge",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "darren edge is an author of a document published in 2024",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "ha trinh",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "ha trinh is an author of a document published in 2024",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "newman cheng",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "newman cheng is an author of a document published in 2024",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "joshua bradley",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "joshua bradley is an author of a document published in 2024",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "alex chao",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "alex chao is an author of a document published in 2024",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "apurva mody",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "apurva mody is an author of a document published in 2024",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "steven truitt",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "steven truitt is an author of a document published in 2024",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "jonathan larson",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jonathan larson is an author of a document published in 2024",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "darren edge",
+      "tgt_entity_name": "from local to global a graph rag approach to query focused summarization",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "darren edge is an author of the document titled  from local to global  a graph rag approach to query focused summarization",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "ha trinh",
+      "tgt_entity_name": "from local to global a graph rag approach to query focused summarization",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "ha trinh is an author of the document titled  from local to global  a graph rag approach to query focused summarization",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "newman cheng",
+      "tgt_entity_name": "from local to global a graph rag approach to query focused summarization",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "newman cheng is an author of the document titled  from local to global  a graph rag approach to query focused summarization",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "joshua bradley",
+      "tgt_entity_name": "from local to global a graph rag approach to query focused summarization",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "joshua bradley is an author of the document titled  from local to global  a graph rag approach to query focused summarization",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "alex chao",
+      "tgt_entity_name": "from local to global a graph rag approach to query focused summarization",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "alex chao is an author of the document titled  from local to global  a graph rag approach to query focused summarization",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "apurva mody",
+      "tgt_entity_name": "from local to global a graph rag approach to query focused summarization",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "apurva mody is an author of the document titled  from local to global  a graph rag approach to query focused summarization",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "steven truitt",
+      "tgt_entity_name": "from local to global a graph rag approach to query focused summarization",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "steven truitt is an author of the document titled  from local to global  a graph rag approach to query focused summarization",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "jonathan larson",
+      "tgt_entity_name": "from local to global a graph rag approach to query focused summarization",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "jonathan larson is an author of the document titled  from local to global  a graph rag approach to query focused summarization",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "darren edge",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "darren edge is an author of a document published in arxiv",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "ha trinh",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "ha trinh is an author of a document published in arxiv",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "newman cheng",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "newman cheng is an author of a document published in arxiv",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "joshua bradley",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "joshua bradley is an author of a document published in arxiv",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "alex chao",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "alex chao is an author of a document published in arxiv",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "apurva mody",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "apurva mody is an author of a document published in arxiv",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "steven truitt",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "steven truitt is an author of a document published in arxiv",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "jonathan larson",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jonathan larson is an author of a document published in arxiv",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "from local to global a graph rag approach to query focused summarization",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the document  from local to global  a graph rag approach to query focused summarization  is published in arxiv",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "from local to global a graph rag approach to query focused summarization",
+      "tgt_entity_name": "arxiv 2404 16130",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the document  from local to global  a graph rag approach to query focused summarization  is identified by the preprint number arxiv 2404 16130",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "2024",
+      "tgt_entity_name": "arxiv 2404 16130",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the preprint arxiv 2404 16130 was published in 2024",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "graph rag",
+      "tgt_entity_name": "query focused summarization",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "graph rag is the approach used to solve the task of query focused summarization",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "from local to global a graph rag approach to query focused summarization",
+      "tgt_entity_name": "graph rag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the paper title explicitly names graph rag as the core approach discussed",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "from local to global a graph rag approach to query focused summarization",
+      "tgt_entity_name": "query focused summarization",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the paper title explicitly names query focused summarization as the target task",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "graph rag",
+      "tgt_entity_name": "local",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the graph rag approach is described as a transition from local to global  implying it handles local data",
+      "source_ids": [
+        206
+      ]
+    },
+    {
+      "src_entity_name": "graph rag",
+      "tgt_entity_name": "global",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the graph rag approach is described as a transition from local to global  implying it handles global data",
+      "source_ids": [
+        206
+      ]
+    }
+  ],
+  "node_idx": 206
+}

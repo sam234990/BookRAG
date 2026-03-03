@@ -50,6 +50,7 @@ class GBC:
             max_length=config.graph.embedding_config.max_length,
             device=config.graph.embedding_config.device,
             api_base=config.graph.embedding_config.api_base,
+            api_key=config.graph.embedding_config.api_key,
         )
         self.entity_vdb: VectorStore = VectorStore(
             db_path=self.entity_vdb_path,

@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "apple",
+      "entity_type": "PRODUCT",
+      "description": "apple is mentioned as an example of a fruit",
+      "source_ids": [
+        272
+      ]
+    },
+    {
+      "entity_name": "apple inc",
+      "entity_type": "ORGANIZATION",
+      "description": "apple inc  is mentioned as an example of a company",
+      "source_ids": [
+        272
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "apple",
+      "tgt_entity_name": "apple inc",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "both are mentioned in the text as examples to illustrate that they are not a match despite sharing the same name",
+      "source_ids": [
+        272
+      ]
+    }
+  ],
+  "node_idx": 272
+}

@@ -1,0 +1,225 @@
+{
+  "entities": [
+    {
+      "entity_name": "er methods",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "er methods are conventional methods for entity resolution that are computationally expensive",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "entity_name": "dirty er",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "dirty er is a term used to describe batch processing across multiple data sources for entity resolution",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "entity_name": "llms",
+      "entity_type": "TECHNOLOGY",
+      "description": "llms are large language models used for high accuracy judgments in entity resolution",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "entity_name": "a",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a is an example entity used to illustrate the merging of multiple entities in the entity resolution process",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "entity_name": "b",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "b is an example entity used to illustrate the merging of multiple entities in the entity resolution process",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "entity_name": "c",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "c is an example entity used to illustrate the merging of multiple entities in the entity resolution process",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "entity_name": "12",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "12  is a citation reference mentioned in the text regarding entity resolution methods",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "entity_name": "a b",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a b is a specific pairwise comparison example between entities a and b",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "entity_name": "a c",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a c is a specific pairwise comparison example between entities a and c",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "entity_name": "b c",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "b c is a specific pairwise comparison example between entities b and c",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "entity_name": "o n 2",
+      "entity_type": "MEASUREMENT",
+      "description": "o n   2   represents the quadratic complexity of the number of pairwise comparisons required",
+      "source_ids": [
+        66
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "er methods",
+      "tgt_entity_name": "dirty er",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "er methods are often designed for batch processing across multiple data sources  commonly referred to as dirty er",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "src_entity_name": "er methods",
+      "tgt_entity_name": "llms",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "relying on llms for high accuracy judgments in er methods can lead to prohibitively slow and computationally expensive processes",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "src_entity_name": "er methods",
+      "tgt_entity_name": "a",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "er methods aim to merge entities like a  b  and c as the same concept",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "src_entity_name": "er methods",
+      "tgt_entity_name": "b",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "er methods aim to merge entities like a  b  and c as the same concept",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "src_entity_name": "er methods",
+      "tgt_entity_name": "c",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "er methods aim to merge entities like a  b  and c as the same concept",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "src_entity_name": "er methods",
+      "tgt_entity_name": "a b",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "er methods require finding all possible matching pairs  such as a b  to confirm equivalence",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "src_entity_name": "er methods",
+      "tgt_entity_name": "a c",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "er methods require finding all possible matching pairs  such as a c  to confirm equivalence",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "src_entity_name": "er methods",
+      "tgt_entity_name": "b c",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "er methods require finding all possible matching pairs  such as b c  to confirm equivalence",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "src_entity_name": "a",
+      "tgt_entity_name": "b",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "a and b are compared as a pair   a b   to confirm their equivalence",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "src_entity_name": "a",
+      "tgt_entity_name": "c",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "a and c are compared as a pair   a c   to confirm their equivalence",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "src_entity_name": "b",
+      "tgt_entity_name": "c",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "b and c are compared as a pair   b c   to confirm their equivalence",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "src_entity_name": "er methods",
+      "tgt_entity_name": "12",
+      "relation_name": "",
+      "weight": 6.0,
+      "description": "the text cites reference  12  in the context of ensuring accurate entity resolution",
+      "source_ids": [
+        66
+      ]
+    },
+    {
+      "src_entity_name": "er methods",
+      "tgt_entity_name": "o n 2",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the process of er methods leads to a quadratic o n   2   number of pairwise comparisons",
+      "source_ids": [
+        66
+      ]
+    }
+  ],
+  "node_idx": 66
+}

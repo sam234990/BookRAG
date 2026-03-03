@@ -1,0 +1,183 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a system or product being evaluated for its effectiveness and efficiency in retrieval and qa tasks",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "entity_name": "kg",
+      "entity_type": "PRODUCT",
+      "description": "kg refers to a high quality knowledge graph  identified as a key feature contributing to the system s performance",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "entity_name": "agent based retrieval mechanism",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the agent based retrieval mechanism is a key feature of the system validated for its critical contributions",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "entity_name": "retrieval recall",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "retrieval recall is a metric used to measure the performance of the system",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "entity_name": "qa accuracy",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "qa accuracy is a metric used to measure the performance of the system",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "entity_name": "three widely adopted datasets",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "three widely adopted datasets are the data sources used to conduct extensive experiments and validate the system",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "entity_name": "state of the art baselines",
+      "entity_type": "PRODUCT",
+      "description": "state of the art baselines are the existing systems against which bookrag is compared in the experiments",
+      "source_ids": [
+        23
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "kg",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag utilizes a high quality kg as a key feature contributing to its performance",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "agent based retrieval mechanism",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag employs an agent based retrieval mechanism as a key feature contributing to its performance",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "retrieval recall",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag achieves superior performance in retrieval recall as demonstrated by experimental results",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "qa accuracy",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag achieves superior performance in qa accuracy as demonstrated by experimental results",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "src_entity_name": "kg",
+      "tgt_entity_name": "retrieval recall",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the high quality kg is a feature that contributes to the performance in retrieval recall",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "src_entity_name": "agent based retrieval mechanism",
+      "tgt_entity_name": "qa accuracy",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the agent based retrieval mechanism is a feature that contributes to the performance in qa accuracy",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "three widely adopted datasets",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is extensively experimented upon using three widely adopted datasets to validate its effectiveness",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "state of the art baselines",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is compared against several state of the art baselines to demonstrate its superior performance",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "src_entity_name": "three widely adopted datasets",
+      "tgt_entity_name": "retrieval recall",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the three widely adopted datasets are used to measure the retrieval recall performance of the system",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "src_entity_name": "three widely adopted datasets",
+      "tgt_entity_name": "qa accuracy",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the three widely adopted datasets are used to measure the qa accuracy performance of the system",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "src_entity_name": "state of the art baselines",
+      "tgt_entity_name": "retrieval recall",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "state of the art baselines are evaluated on retrieval recall to compare against bookrag",
+      "source_ids": [
+        23
+      ]
+    },
+    {
+      "src_entity_name": "state of the art baselines",
+      "tgt_entity_name": "qa accuracy",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "state of the art baselines are evaluated on qa accuracy to compare against bookrag",
+      "source_ids": [
+        23
+      ]
+    }
+  ],
+  "node_idx": 23
+}

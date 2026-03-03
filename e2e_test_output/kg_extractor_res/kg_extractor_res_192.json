@@ -1,0 +1,231 @@
+{
+  "entities": [
+    {
+      "entity_name": "akari asai",
+      "entity_type": "PERSON",
+      "description": "akari asai is listed as an author of the paper titled  self rag",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "entity_name": "zeqiu wu",
+      "entity_type": "PERSON",
+      "description": "zeqiu wu is listed as an author of the paper titled  self rag",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "entity_name": "yizhong wang",
+      "entity_type": "PERSON",
+      "description": "yizhong wang is listed as an author of the paper titled  self rag",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "entity_name": "self rag",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "self rag is a method for learning to retrieve  generate  and critique through self reflection",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "entity_name": "international conference on learning representations",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "international conference on learning representations  iclr  is the venue where the paper was published",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "entity_name": "2024",
+      "entity_type": "DATE",
+      "description": "2024 is the year the paper was published",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "entity_name": "et al",
+      "entity_type": "PERSON",
+      "description": "et al  refers to additional authors of the paper not explicitly named in the text",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "entity_name": "iclr",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "iclr is the abbreviation for the international conference on learning representations where the paper was published",
+      "source_ids": [
+        192
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "akari asai",
+      "tgt_entity_name": "self rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "akari asai is an author of the paper describing the self rag model",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "zeqiu wu",
+      "tgt_entity_name": "self rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "zeqiu wu is an author of the paper describing the self rag model",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "yizhong wang",
+      "tgt_entity_name": "self rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "yizhong wang is an author of the paper describing the self rag model",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "et al",
+      "tgt_entity_name": "self rag",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "et al  refers to co authors of the paper describing the self rag model",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "self rag",
+      "tgt_entity_name": "international conference on learning representations",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the self rag paper was published at the international conference on learning representations",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "akari asai",
+      "tgt_entity_name": "international conference on learning representations",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "akari asai s paper was published at the international conference on learning representations",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "zeqiu wu",
+      "tgt_entity_name": "international conference on learning representations",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zeqiu wu s paper was published at the international conference on learning representations",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "yizhong wang",
+      "tgt_entity_name": "international conference on learning representations",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yizhong wang s paper was published at the international conference on learning representations",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "et al",
+      "tgt_entity_name": "international conference on learning representations",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the co authors referred to as et al  published their paper at the international conference on learning representations",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "akari asai",
+      "tgt_entity_name": "zeqiu wu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "akari asai and zeqiu wu are co authors on the same paper",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "akari asai",
+      "tgt_entity_name": "yizhong wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "akari asai and yizhong wang are co authors on the same paper",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "akari asai",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "akari asai is listed alongside other authors  et al   on the same paper",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "zeqiu wu",
+      "tgt_entity_name": "yizhong wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zeqiu wu and yizhong wang are co authors on the same paper",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "zeqiu wu",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "zeqiu wu is listed alongside other authors  et al   on the same paper",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "yizhong wang",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "yizhong wang is listed alongside other authors  et al   on the same paper",
+      "source_ids": [
+        192
+      ]
+    },
+    {
+      "src_entity_name": "international conference on learning representations",
+      "tgt_entity_name": "iclr",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "iclr is the abbreviation used for the international conference on learning representations in the text",
+      "source_ids": [
+        192
+      ]
+    }
+  ],
+  "node_idx": 192
+}

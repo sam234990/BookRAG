@@ -1,0 +1,249 @@
+{
+  "entities": [
+    {
+      "entity_name": "gradient based entity resolution",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "gradient based entity resolution is a method used to evaluate the quality of a constructed knowledge graph  kg",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "entity_name": "basic kg construction",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "basic kg construction is a standard practice using simple exact name matching for entity merging",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "entity_name": "figure 6",
+      "entity_type": "IMAGE",
+      "description": "figure 6 presents the comparative results of the evaluation between the two methods",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "entity_name": "entity count",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "entity count is a metric used to measure the number of entities in the graph",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "entity_name": "density",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "density is a metric used to measure the connectivity of the graph",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "entity_name": "diameter of the largest connected component",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "diameter of the largest connected component is a metric measuring the longest shortest path in the largest connected part of the graph",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "entity_name": "number of connected components",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "number of connected components is a metric counting the separate parts of the graph",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "entity_name": "basic baseline",
+      "entity_type": "BENCHMARK",
+      "description": "the basic baseline serves as the standard for comparison in the evaluation of the gradient based er method",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "entity_name": "er module",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the er module is the component responsible for identifying conceptual entities with different names",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "entity_name": "12",
+      "entity_type": "PERCENTAGE",
+      "description": "12  is the percentage reduction in the number of entities achieved by the gradient based er method",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "entity_name": "20",
+      "entity_type": "PERCENTAGE",
+      "description": "20  is the percentage increase in graph density achieved by the gradient based er method across datasets",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "entity_name": "many graph based methods",
+      "entity_type": "ORGANIZATION",
+      "description": "many graph based methods are a group of techniques that employ simple exact name matching for entity merging",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "entity_name": "datasets",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "datasets are the collections of data used to evaluate the performance of the gradient based er method",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "entity_name": "graph reasoning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "graph reasoning is a task facilitated by the improved connectivity of the resulting graphs",
+      "source_ids": [
+        176
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "gradient based entity resolution",
+      "tgt_entity_name": "basic kg construction",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "gradient based entity resolution is compared against basic kg construction to evaluate quality",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution",
+      "tgt_entity_name": "figure 6",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "figure 6 presents the results of the comparison involving gradient based entity resolution",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution",
+      "tgt_entity_name": "entity count",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "gradient based entity resolution reduces the entity count by 12  compared to the baseline",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution",
+      "tgt_entity_name": "density",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "gradient based entity resolution boosts graph density by over 20  across datasets",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution",
+      "tgt_entity_name": "diameter of the largest connected component",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gradient based entity resolution reduces the diameter of the largest connected component  indicating a more compact graph",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution",
+      "tgt_entity_name": "number of connected components",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gradient based entity resolution reduces the number of connected components  mitigating fragmentation",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution",
+      "tgt_entity_name": "er module",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the er module is the specific component of gradient based entity resolution that identifies entities",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution",
+      "tgt_entity_name": "basic baseline",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "gradient based entity resolution is evaluated against the basic baseline to demonstrate optimization",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution",
+      "tgt_entity_name": "12",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the gradient based er method achieves a 12  reduction in entity count",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution",
+      "tgt_entity_name": "20",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the gradient based er method achieves a boost of over 20  in graph density",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "src_entity_name": "basic kg construction",
+      "tgt_entity_name": "many graph based methods",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "basic kg construction is standard practice in many graph based methods",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution",
+      "tgt_entity_name": "datasets",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the gradient based er method s performance is evaluated across multiple datasets",
+      "source_ids": [
+        176
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution",
+      "tgt_entity_name": "graph reasoning",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the structural improvements from gradient based entity resolution facilitate better graph reasoning",
+      "source_ids": [
+        176
+      ]
+    }
+  ],
+  "node_idx": 176
+}

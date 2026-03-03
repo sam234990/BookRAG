@@ -1,0 +1,273 @@
+{
+  "entities": [
+    {
+      "entity_name": "pradeep dasigi",
+      "entity_type": "PERSON",
+      "description": "pradeep dasigi is one of the authors of the 2021 arxiv preprint",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "entity_name": "kyle lo",
+      "entity_type": "PERSON",
+      "description": "kyle lo is one of the authors of the 2021 arxiv preprint",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "entity_name": "iz beltagy",
+      "entity_type": "PERSON",
+      "description": "iz beltagy is one of the authors of the 2021 arxiv preprint",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "entity_name": "arman cohan",
+      "entity_type": "PERSON",
+      "description": "arman cohan is one of the authors of the 2021 arxiv preprint",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "entity_name": "noah a smith",
+      "entity_type": "PERSON",
+      "description": "noah a smith is one of the authors of the 2021 arxiv preprint",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "entity_name": "matt gardner",
+      "entity_type": "PERSON",
+      "description": "matt gardner is one of the authors of the 2021 arxiv preprint",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "entity_name": "a dataset of information seeking questions and answers anchored in research papers",
+      "entity_type": "PRODUCT",
+      "description": "a dataset of information seeking questions and answers anchored in research papers is the title of the work described in the text",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "entity_name": "arxiv preprint arxiv 2105 03011",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv preprint arxiv 2105 03011 is the specific publication venue and identifier for the work",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "entity_name": "2021",
+      "entity_type": "DATE",
+      "description": "2021 is the year the preprint was published",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "entity_name": "research papers",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "research papers are the source material from which the information seeking questions and answers are anchored",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "entity_name": "information seeking questions",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "information seeking questions are the specific type of queries included in the dataset",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "entity_name": "answers",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "answers are the responses paired with the questions in the dataset",
+      "source_ids": [
+        204
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "pradeep dasigi",
+      "tgt_entity_name": "a dataset of information seeking questions and answers anchored in research papers",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "pradeep dasigi is an author of the dataset work",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "kyle lo",
+      "tgt_entity_name": "a dataset of information seeking questions and answers anchored in research papers",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "kyle lo is an author of the dataset work",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "iz beltagy",
+      "tgt_entity_name": "a dataset of information seeking questions and answers anchored in research papers",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "iz beltagy is an author of the dataset work",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "arman cohan",
+      "tgt_entity_name": "a dataset of information seeking questions and answers anchored in research papers",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "arman cohan is an author of the dataset work",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "noah a smith",
+      "tgt_entity_name": "a dataset of information seeking questions and answers anchored in research papers",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "noah a smith is an author of the dataset work",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "matt gardner",
+      "tgt_entity_name": "a dataset of information seeking questions and answers anchored in research papers",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "matt gardner is an author of the dataset work",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "pradeep dasigi",
+      "tgt_entity_name": "arxiv preprint arxiv 2105 03011",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "pradeep dasigi is an author of the work published in this venue",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "kyle lo",
+      "tgt_entity_name": "arxiv preprint arxiv 2105 03011",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "kyle lo is an author of the work published in this venue",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "iz beltagy",
+      "tgt_entity_name": "arxiv preprint arxiv 2105 03011",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "iz beltagy is an author of the work published in this venue",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "arman cohan",
+      "tgt_entity_name": "arxiv preprint arxiv 2105 03011",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "arman cohan is an author of the work published in this venue",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "noah a smith",
+      "tgt_entity_name": "arxiv preprint arxiv 2105 03011",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "noah a smith is an author of the work published in this venue",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "matt gardner",
+      "tgt_entity_name": "arxiv preprint arxiv 2105 03011",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "matt gardner is an author of the work published in this venue",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "a dataset of information seeking questions and answers anchored in research papers",
+      "tgt_entity_name": "arxiv preprint arxiv 2105 03011",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the dataset work is published as the arxiv preprint arxiv 2105 03011",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "a dataset of information seeking questions and answers anchored in research papers",
+      "tgt_entity_name": "2021",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the dataset work was published in the year 2021",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "a dataset of information seeking questions and answers anchored in research papers",
+      "tgt_entity_name": "research papers",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the dataset is anchored in research papers  meaning it derives its content from them",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "a dataset of information seeking questions and answers anchored in research papers",
+      "tgt_entity_name": "information seeking questions",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the dataset consists of information seeking questions",
+      "source_ids": [
+        204
+      ]
+    },
+    {
+      "src_entity_name": "a dataset of information seeking questions and answers anchored in research papers",
+      "tgt_entity_name": "answers",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the dataset consists of answers corresponding to the questions",
+      "source_ids": [
+        204
+      ]
+    }
+  ],
+  "node_idx": 204
+}

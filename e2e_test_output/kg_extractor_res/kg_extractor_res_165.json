@@ -1,0 +1,79 @@
+{
+  "entities": [
+    {
+      "entity_name": "gradient er",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "gradient er is a gradient based entity resolution method mentioned in the text",
+      "source_ids": [
+        165
+      ]
+    },
+    {
+      "entity_name": "basic er",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "basic er is a method used to merge same name entities  replacing gradient er in the described scenario",
+      "source_ids": [
+        165
+      ]
+    },
+    {
+      "entity_name": "w o gradient er",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "w o gradient er is a scenario or condition described where the gradient based entity resolution is replaced",
+      "source_ids": [
+        165
+      ]
+    },
+    {
+      "entity_name": "same name entities",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "same name entities are the specific entities targeted for merging in the basic er process",
+      "source_ids": [
+        165
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "gradient er",
+      "tgt_entity_name": "basic er",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "basic er replaces gradient er by merging same name entities",
+      "source_ids": [
+        165
+      ]
+    },
+    {
+      "src_entity_name": "w o gradient er",
+      "tgt_entity_name": "gradient er",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the  w o gradient er  scenario involves the replacement of gradient er",
+      "source_ids": [
+        165
+      ]
+    },
+    {
+      "src_entity_name": "w o gradient er",
+      "tgt_entity_name": "basic er",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the  w o gradient er  scenario involves the use of basic er as the replacement method",
+      "source_ids": [
+        165
+      ]
+    },
+    {
+      "src_entity_name": "basic er",
+      "tgt_entity_name": "same name entities",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "basic er is the method used to merge same name entities",
+      "source_ids": [
+        165
+      ]
+    }
+  ],
+  "node_idx": 165
+}

@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "category definitions",
+      "entity_type": "SECTION_TITLE",
+      "description": "category definitions is the title of the section containing definitions for entity types",
+      "source_ids": [
+        242
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 242
+}

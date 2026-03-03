@@ -1,0 +1,131 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 2",
+      "entity_type": "IMAGE",
+      "description": "figure 2 is an image illustrating the bookindex construction process",
+      "source_ids": [
+        48
+      ]
+    },
+    {
+      "entity_name": "bookindex construction process",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the bookindex construction process is a phase involving tree construction and graph construction",
+      "source_ids": [
+        48
+      ]
+    },
+    {
+      "entity_name": "tree construction",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "tree construction is a component of the bookindex construction process derived from layout parsing and section filtering",
+      "source_ids": [
+        48
+      ]
+    },
+    {
+      "entity_name": "layout parsing",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "layout parsing is a method used to derive tree construction",
+      "source_ids": [
+        48
+      ]
+    },
+    {
+      "entity_name": "section filtering",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "section filtering is a method used to derive tree construction",
+      "source_ids": [
+        48
+      ]
+    },
+    {
+      "entity_name": "graph construction",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "graph construction is a component of the bookindex construction process involving kg construction and gradient based entity resolution",
+      "source_ids": [
+        48
+      ]
+    },
+    {
+      "entity_name": "kg construction",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "kg construction is a step involved in graph construction",
+      "source_ids": [
+        48
+      ]
+    },
+    {
+      "entity_name": "gradient based entity resolution",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "gradient based entity resolution is a method involved in graph construction",
+      "source_ids": [
+        48
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookindex construction process",
+      "tgt_entity_name": "tree construction",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the bookindex construction process includes tree construction as a phase",
+      "source_ids": [
+        48
+      ]
+    },
+    {
+      "src_entity_name": "bookindex construction process",
+      "tgt_entity_name": "graph construction",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the bookindex construction process includes graph construction as a phase",
+      "source_ids": [
+        48
+      ]
+    },
+    {
+      "src_entity_name": "tree construction",
+      "tgt_entity_name": "layout parsing",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "tree construction is derived from layout parsing",
+      "source_ids": [
+        48
+      ]
+    },
+    {
+      "src_entity_name": "tree construction",
+      "tgt_entity_name": "section filtering",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "tree construction is derived from section filtering",
+      "source_ids": [
+        48
+      ]
+    },
+    {
+      "src_entity_name": "graph construction",
+      "tgt_entity_name": "kg construction",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graph construction involves kg construction",
+      "source_ids": [
+        48
+      ]
+    },
+    {
+      "src_entity_name": "graph construction",
+      "tgt_entity_name": "gradient based entity resolution",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graph construction involves gradient based entity resolution",
+      "source_ids": [
+        48
+      ]
+    }
+  ],
+  "node_idx": 48
+}

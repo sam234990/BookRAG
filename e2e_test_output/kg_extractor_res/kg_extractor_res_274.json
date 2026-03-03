@@ -1,0 +1,25 @@
+{
+  "entities": [
+    {
+      "entity_name": "new entity",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "new entity is a concept representing a unique entity in a knowledge graph that requires strong evidence to match with existing entities",
+      "source_ids": [
+        274
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "new entity",
+      "tgt_entity_name": "new entity",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the concept of new entity is defined by the assumption that it is unique until proven otherwise",
+      "source_ids": [
+        274
+      ]
+    }
+  ],
+  "node_idx": 274
+}

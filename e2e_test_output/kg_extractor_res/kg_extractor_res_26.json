@@ -1,0 +1,115 @@
+{
+  "entities": [
+    {
+      "entity_name": "agent based retrieval",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "agent based retrieval is a proposed approach for dynamically classifying queries and configuring retrieval workflows",
+      "source_ids": [
+        26
+      ]
+    },
+    {
+      "entity_name": "information foraging theory",
+      "entity_type": "SCIENTIFIC_THEORY",
+      "description": "information foraging theory is the theoretical inspiration behind the proposed agent based retrieval approach",
+      "source_ids": [
+        26
+      ]
+    },
+    {
+      "entity_name": "queries",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "queries are the inputs that the agent based retrieval approach dynamically classifies",
+      "source_ids": [
+        26
+      ]
+    },
+    {
+      "entity_name": "retrieval workflows",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "retrieval workflows are the processes configured by the approach to locate evidence",
+      "source_ids": [
+        26
+      ]
+    },
+    {
+      "entity_name": "documents",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "documents are the source material within which highly relevant evidence is located",
+      "source_ids": [
+        26
+      ]
+    },
+    {
+      "entity_name": "evidence",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "evidence refers to the highly relevant information sought within the documents",
+      "source_ids": [
+        26
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "agent based retrieval",
+      "tgt_entity_name": "information foraging theory",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the agent based retrieval approach is explicitly inspired by information foraging theory",
+      "source_ids": [
+        26
+      ]
+    },
+    {
+      "src_entity_name": "agent based retrieval",
+      "tgt_entity_name": "queries",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent based retrieval approach dynamically classifies queries",
+      "source_ids": [
+        26
+      ]
+    },
+    {
+      "src_entity_name": "agent based retrieval",
+      "tgt_entity_name": "retrieval workflows",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent based retrieval approach configures optimal retrieval workflows",
+      "source_ids": [
+        26
+      ]
+    },
+    {
+      "src_entity_name": "agent based retrieval",
+      "tgt_entity_name": "documents",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the approach operates within documents to locate evidence",
+      "source_ids": [
+        26
+      ]
+    },
+    {
+      "src_entity_name": "agent based retrieval",
+      "tgt_entity_name": "evidence",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the goal of the approach is to locate highly relevant evidence within documents",
+      "source_ids": [
+        26
+      ]
+    },
+    {
+      "src_entity_name": "information foraging theory",
+      "tgt_entity_name": "agent based retrieval",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "information foraging theory serves as the inspiration for the agent based retrieval approach",
+      "source_ids": [
+        26
+      ]
+    }
+  ],
+  "node_idx": 26
+}

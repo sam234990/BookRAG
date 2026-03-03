@@ -52,6 +52,7 @@ class GBCRAG(BaseRAG):
         vlm: VLM,
         config: GBCRAGConfig,
         gbc_index: GBC,
+        lang: str = "en",
     ):
         super().__init__(
             llm,
@@ -71,15 +72,18 @@ class GBCRAG(BaseRAG):
             device=self.cfg.reranker_config.device,
             backend=self.cfg.reranker_config.backend,
             api_base=self.cfg.reranker_config.api_base,
+            api_key=self.cfg.reranker_config.api_key,
         )
         # GBC RAG config
         self.threshold_e = self.cfg.sim_threshold_e
         self.select_depth = self.cfg.select_depth
         self.max_retry = self.cfg.max_retry
 
+        self.lang = lang or "en"
+
         # Agents
         self.planner = TaskPlanner(llm=self.llm)
-        self.answer = AnswerAgent(llm=self.llm, vlm=self.vlm)
+        self.answer = AnswerAgent(llm=self.llm, vlm=self.vlm, lang=self.lang)
         self.retriever = Retriever(
             varient=self.varient,
             reranker=self.reranker,

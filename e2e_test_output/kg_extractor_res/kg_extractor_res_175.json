@@ -1,0 +1,357 @@
+{
+  "entities": [
+    {
+      "entity_name": "cref='#/texts/224'",
+      "entity_type": "IMAGE",
+      "description": "A figure containing two bar charts comparing 'Basic' and 'Gradient-based ER' performance metrics across '# Entity', 'Density', 'Diameter', and '# CC' for MMLongBench and Qasper datasets.",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "basic",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "The baseline method represented by blue bars in the legend, used as a comparison point against the Gradient-based ER approach.",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "gradient-based er",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "The proposed or specific method represented by red bars in the legend, evaluated on various metrics against the Basic model.",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "ratio",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "The Y-axis label indicating the metric being measured, representing the ratio of performance between the compared methods.",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "# entity",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "A metric measuring the number of entities, shown as the first category of bars in both charts.",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "density",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "A metric measuring graph density, showing significant variation between the Basic and Gradient-based ER methods.",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "diameter",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "A metric measuring the longest shortest path in the graph, presented as the third category of bars.",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "# cc",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "A metric likely representing the number of Connected Components, shown as the fourth category of bars.",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "mmlongbench",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The dataset or benchmark used for the evaluation in chart (a), located at the bottom left.",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "qasper",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The dataset or benchmark used for the evaluation in chart (b), located at the bottom right.",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "figure (a)",
+      "entity_type": "SECTION_TITLE",
+      "description": "The label identifying the left-hand chart which displays results for the MMLongBench dataset.",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "figure (b)",
+      "entity_type": "SECTION_TITLE",
+      "description": "The label identifying the right-hand chart which displays results for the Qasper dataset.",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "1327",
+      "entity_type": "MEASUREMENT",
+      "description": "A numerical value annotation above the '# Entity' bar for the Basic method in chart (a).",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "3.6e-3",
+      "entity_type": "MEASUREMENT",
+      "description": "A numerical value annotation above the 'Density' bar for the Basic method in chart (a).",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "14.8",
+      "entity_type": "MEASUREMENT",
+      "description": "A numerical value annotation above the 'Diameter' bar for the Basic method in chart (a).",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "169",
+      "entity_type": "MEASUREMENT",
+      "description": "A numerical value annotation above the '# CC' bar for the Basic method in chart (a).",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "531",
+      "entity_type": "MEASUREMENT",
+      "description": "A numerical value annotation above the '# Entity' bar for the Basic method in chart (b).",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "5.4e-3",
+      "entity_type": "MEASUREMENT",
+      "description": "A numerical value annotation above the 'Density' bar for the Basic method in chart (b).",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "15.0",
+      "entity_type": "MEASUREMENT",
+      "description": "A numerical value annotation above the 'Diameter' bar for the Basic method in chart (b).",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "entity_name": "106",
+      "entity_type": "MEASUREMENT",
+      "description": "A numerical value annotation above the '# CC' bar for the Basic method in chart (b).",
+      "source_ids": [
+        175
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "basic",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to Basic",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "gradient-based er",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to Gradient-based ER",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "ratio",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to Ratio",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "# entity",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to # Entity",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "density",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to Density",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "diameter",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to Diameter",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "# cc",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to # CC",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "mmlongbench",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to MMLongBench",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "qasper",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to Qasper",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "figure (a)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to Figure (a)",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "figure (b)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to Figure (b)",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "1327",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to 1327",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "3.6e-3",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to 3.6E-3",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "14.8",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to 14.8",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "169",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to 169",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "531",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to 531",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "5.4e-3",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to 5.4e-3",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "15.0",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to 15.0",
+      "source_ids": [
+        175
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/224'",
+      "tgt_entity_name": "106",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/224' related to 106",
+      "source_ids": [
+        175
+      ]
+    }
+  ],
+  "node_idx": 175
+}

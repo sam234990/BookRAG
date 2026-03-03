@@ -1,0 +1,195 @@
+{
+  "entities": [
+    {
+      "entity_name": "scent filter based retrieval",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "scent filter based retrieval is a process described as the execution that begins by narrowing the scope",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "entity_name": "ift",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "ift is a method or technique with which the execution aligns",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "entity_name": "selector operators",
+      "entity_type": "SOFTWARE",
+      "description": "selector operators are components that identify relevant  patches  by following  information scents  or applying explicit filter constraints",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "entity_name": "information scents",
+      "entity_type": "CONCEPT",
+      "description": "information scents are described as cues  such as key entities in a question  followed by selector operators",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "entity_name": "node set n",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "node set n represents the full set of nodes that is reduced by the process",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "entity_name": "focused node subset ns",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "focused node subset ns is the result of the reduction process applied to the full node set n",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "entity_name": "params sel",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "params sel are parameters used in the selector function to define the focused node subset",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "entity_name": "patches",
+      "entity_type": "PRODUCT",
+      "description": "patches are relevant units identified by selector operators within the retrieval process",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "entity_name": "question",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a question is mentioned as a source of key entities used to identify information scents",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "entity_name": "explicit filter constraints",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "explicit filter constraints are rules applied by selector operators to identify relevant patches",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "entity_name": "equation 13",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "equation 13 defines the mathematical relationship for the selector function reducing the node set",
+      "source_ids": [
+        125
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "scent filter based retrieval",
+      "tgt_entity_name": "ift",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the scent filter based retrieval process aligns with ift",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "src_entity_name": "scent filter based retrieval",
+      "tgt_entity_name": "selector operators",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "selector operators are the mechanism used within the scent filter based retrieval process to identify relevant patches",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "src_entity_name": "selector operators",
+      "tgt_entity_name": "information scents",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "selector operators identify relevant patches by following information scents",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "src_entity_name": "scent filter based retrieval",
+      "tgt_entity_name": "node set n",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the process reduces the full node set n to a focused subset",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "src_entity_name": "scent filter based retrieval",
+      "tgt_entity_name": "focused node subset ns",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the process results in the creation of the focused node subset ns",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "src_entity_name": "selector operators",
+      "tgt_entity_name": "params sel",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "selector operators utilize params sel in their function to reduce the node set",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "src_entity_name": "selector operators",
+      "tgt_entity_name": "patches",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "selector operators identify relevant patches",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "src_entity_name": "information scents",
+      "tgt_entity_name": "question",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "information scents include key entities found in a question",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "src_entity_name": "selector operators",
+      "tgt_entity_name": "explicit filter constraints",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "selector operators apply explicit filter constraints to identify patches",
+      "source_ids": [
+        125
+      ]
+    },
+    {
+      "src_entity_name": "scent filter based retrieval",
+      "tgt_entity_name": "equation 13",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "equation 13 describes the execution of the scent filter based retrieval process",
+      "source_ids": [
+        125
+      ]
+    }
+  ],
+  "node_idx": 125
+}

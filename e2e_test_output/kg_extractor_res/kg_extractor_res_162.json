@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "6.3 detailed analysis",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'Experiments' within the BookRAG paper, this section provides an in-depth comparative analysis of the proposed method against strong baseline methods, specifically focusing on efficiency and accuracy metrics for document QA tasks.",
+      "source_ids": [
+        162
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 162
+}

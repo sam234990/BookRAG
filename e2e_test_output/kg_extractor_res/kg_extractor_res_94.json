@@ -1,0 +1,537 @@
+{
+  "entities": [
+    {
+      "entity_name": "operator-set",
+      "entity_type": "IMAGE",
+      "description": "A diagram illustrating a framework for processing queries, divided into an 'Operators' section and an 'Execution example' section.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "extract",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The initial step in the operator set where questions are decomposed to identify entities.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "decompose",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A process within the Extract phase that breaks down a query into sub-queries.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "entities",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The output of the Extract phase, representing distinct items identified from the input text.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "sub-queries",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "Smaller queries generated during the decomposition process.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "formulator",
+      "entity_type": "SYSTEM_COMPONENT",
+      "description": "The component or agent responsible for the extraction and decomposition steps.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "filter",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "An operator that processes data structures like trees to select relevant information.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "select",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The action performed by the Filter operator to choose specific elements.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "selector",
+      "entity_type": "SYSTEM_COMPONENT",
+      "description": "The component responsible for filtering and selecting data based on criteria.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "reason",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "An operator that takes Graph and Text inputs to perform reasoning tasks.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "graph",
+      "entity_type": "DATA_STRUCTURE",
+      "description": "A visual representation of data used as input for the Reason operator.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "text",
+      "entity_type": "DATA_STRUCTURE",
+      "description": "Raw textual data used as input for the Reason operator.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "s:",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "A label indicating a score or similarity matrix with values such as 0.6, 0.5, 0.4.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "skyline",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "An operator that processes ranked lists (S1, S2) to find optimal solutions.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "reasoner",
+      "entity_type": "SYSTEM_COMPONENT",
+      "description": "The component executing the Reason and Skyline operations.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "map",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "An operator that transforms data using icons representing different formats.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "reduce",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "An operator that combines multiple inputs into a single result.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "synthesizer",
+      "entity_type": "SYSTEM_COMPONENT",
+      "description": "The final component that aggregates results into a coherent answer.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "execution example",
+      "entity_type": "SECTION_TITLE",
+      "description": "A subsection of the diagram showing a concrete application of the operator set.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "q: what is the type of car in the ranking prompt example?",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The specific user question being processed in the execution example.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "planning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The phase where a plan is formulated to solve the query.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "simple query...",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "A classification of the input query.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "operator plan",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The sequence of operators chosen to solve the problem: Extract->Select->Reason->Skyline->Map...",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "car",
+      "entity_type": "PRODUCT",
+      "description": "An entity extracted from the question.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "ranking prompt",
+      "entity_type": "BOOK",
+      "description": "An entity mentioned in the question context.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "method",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A node in the planning graph representing the method to be used.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "method and its descendants",
+      "entity_type": "SECTION_TITLE",
+      "description": "A grouping of nodes related to the Method in the execution flow.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "a: based on the provided information...",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The final answer generated by the system.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "mercedes-benz e-class sedan",
+      "entity_type": "VEHICLE",
+      "description": "The specific car type identified as the correct answer in the example.",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "entity_name": "image cref='#/texts/98'",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        94
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "operator-set",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Operator-Set",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "extract",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Extract",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "decompose",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Decompose",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "entities",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Entities",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "sub-queries",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Sub-queries",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "formulator",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Formulator",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "filter",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Filter",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "select",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Select",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "selector",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Selector",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "reason",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Reason",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "graph",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Graph",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "text",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Text",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "s:",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to S:",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "skyline",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Skyline",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "reasoner",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Reasoner",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "map",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Map",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "reduce",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Reduce",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "synthesizer",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Synthesizer",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "execution example",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Execution example",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "q: what is the type of car in the ranking prompt example?",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Q: What is the type of car in the Ranking Prompt example?",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "planning",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Planning",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "simple query...",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Simple query...",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "operator plan",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Operator Plan",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "car",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Car",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "ranking prompt",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Ranking Prompt",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "method",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Method",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "method and its descendants",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Method and its Descendants",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "a: based on the provided information...",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to A: Based on the provided information...",
+      "source_ids": [
+        94
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/98'",
+      "tgt_entity_name": "mercedes-benz e-class sedan",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/98' related to Mercedes-Benz E-Class Sedan",
+      "source_ids": [
+        94
+      ]
+    }
+  ],
+  "node_idx": 94
+}

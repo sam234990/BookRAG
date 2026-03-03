@@ -1,0 +1,51 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a method or system being compared against representative methods in the text",
+      "source_ids": [
+        16
+      ]
+    },
+    {
+      "entity_name": "table 1",
+      "entity_type": "TABLE",
+      "description": "table 1 is the section containing the comparison of methods and bookrag",
+      "source_ids": [
+        16
+      ]
+    },
+    {
+      "entity_name": "representative methods",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "representative methods are the existing techniques being compared against bookrag in the text",
+      "source_ids": [
+        16
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "table 1",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "table 1 contains the comparison data for bookrag",
+      "source_ids": [
+        16
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "representative methods",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is being compared to representative methods in the text",
+      "source_ids": [
+        16
+      ]
+    }
+  ],
+  "node_idx": 16
+}

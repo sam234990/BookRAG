@@ -1,0 +1,87 @@
+{
+  "entities": [
+    {
+      "entity_name": "pdf",
+      "entity_type": "FILE_TYPE",
+      "description": "pdf is a file format mentioned in the context of parsing failures",
+      "source_ids": [
+        236
+      ]
+    },
+    {
+      "entity_name": "ground truth block",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a ground truth block is a specific unit of data that may be lost during parsing",
+      "source_ids": [
+        236
+      ]
+    },
+    {
+      "entity_name": "candidate pool",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "the candidate pool is a collection of items from which blocks are retrieved",
+      "source_ids": [
+        236
+      ]
+    },
+    {
+      "entity_name": "recall",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "recall is an evaluation metric used to measure the contribution of retrieved blocks",
+      "source_ids": [
+        236
+      ]
+    },
+    {
+      "entity_name": "0",
+      "entity_type": "NUMBER",
+      "description": "0 is the specific numerical value representing the recall contribution when a block is lost",
+      "source_ids": [
+        236
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "ground truth block",
+      "tgt_entity_name": "pdf",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "a ground truth block can be lost due to pdf parsing failures",
+      "source_ids": [
+        236
+      ]
+    },
+    {
+      "src_entity_name": "ground truth block",
+      "tgt_entity_name": "candidate pool",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "a ground truth block is considered unretrievable if it does not exist in the candidate pool",
+      "source_ids": [
+        236
+      ]
+    },
+    {
+      "src_entity_name": "ground truth block",
+      "tgt_entity_name": "recall",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the loss of a ground truth block results in a recall contribution of 0",
+      "source_ids": [
+        236
+      ]
+    },
+    {
+      "src_entity_name": "recall",
+      "tgt_entity_name": "0",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the recall contribution is explicitly stated as 0 when a ground truth block is lost",
+      "source_ids": [
+        236
+      ]
+    }
+  ],
+  "node_idx": 236
+}

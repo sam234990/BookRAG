@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "table 3",
+      "entity_type": "TABLE",
+      "description": "table 3 is a table that categorizes operators utilized in bookrag by their function",
+      "source_ids": [
+        131
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a product or system that utilizes various operators categorized by function",
+      "source_ids": [
+        131
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "table 3",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "table 3 details the operators used within the bookrag system",
+      "source_ids": [
+        131
+      ]
+    }
+  ],
+  "node_idx": 131
+}

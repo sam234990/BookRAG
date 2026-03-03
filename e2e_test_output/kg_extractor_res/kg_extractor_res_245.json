@@ -1,0 +1,25 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 2",
+      "entity_type": "IMAGE",
+      "description": "figure 2 is an image referenced in the text  with its title being the subject of a question",
+      "source_ids": [
+        245
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 2",
+      "tgt_entity_name": "figure 2",
+      "relation_name": "",
+      "weight": 5.0,
+      "description": "the text asks for the title of figure 2  indicating a self referential query about the entity s attribute",
+      "source_ids": [
+        245
+      ]
+    }
+  ],
+  "node_idx": 245
+}

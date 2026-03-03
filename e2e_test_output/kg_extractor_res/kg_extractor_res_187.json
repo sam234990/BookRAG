@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "7 conclusion",
+      "entity_type": "SECTION_TITLE",
+      "description": "As the final substantive section of the paper 'BookRAG: A Hierarchical Structure-aware Index-based Approach for Retrieval-Augmented Generation on Complex Documents', this section summarizes the key contributions, specifically the BookRAG framework and BookIndex structure, and highlights the state-of-the-art performance achieved in retrieval recall and QA accuracy.",
+      "source_ids": [
+        187
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 187
+}

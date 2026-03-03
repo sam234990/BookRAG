@@ -1,0 +1,461 @@
+{
+  "entities": [
+    {
+      "entity_name": "financial auditing",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "financial auditing is a task where llms are applied but may face challenges with domain knowledge",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "legal compliance",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "legal compliance is a task where llms are applied but may face challenges with domain knowledge",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "scientific discovery",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "scientific discovery is a task where llms are applied but may face challenges with domain knowledge",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "llms",
+      "entity_type": "TECHNOLOGY",
+      "description": "llms are large language models that may lead to missing domain knowledge and generating outdated information",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "retrieval augmented generation",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "retrieval augmented generation  rag  is a method adopted to address llm limitations by retrieving relevant domain knowledge",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "rag",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "rag is an abbreviation for retrieval augmented generation  used to guide llms during response generation",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "enterprise scenarios",
+      "entity_type": "LOCATION",
+      "description": "enterprise scenarios are real world contexts where domain knowledge is stored in long form documents",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "technical handbooks",
+      "entity_type": "PRODUCT",
+      "description": "technical handbooks are long form documents where domain knowledge is often stored",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "api reference manuals",
+      "entity_type": "PRODUCT",
+      "description": "api reference manuals are long form documents where domain knowledge is often stored",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "operational guidebooks",
+      "entity_type": "PRODUCT",
+      "description": "operational guidebooks are long form documents where domain knowledge is often stored",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "books",
+      "entity_type": "PRODUCT",
+      "description": "books are a structure followed by long form documents  characterized by intricate layouts and logical hierarchies",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "tables of contents",
+      "entity_type": "PRODUCT",
+      "description": "tables of contents are explicit structural elements found in long form documents",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "nested chapters",
+      "entity_type": "PRODUCT",
+      "description": "nested chapters are structural elements found in long form documents",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "multi level sections",
+      "entity_type": "PRODUCT",
+      "description": "multi level sections are structural elements found in long form documents",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "rag system",
+      "entity_type": "SOFTWARE",
+      "description": "a rag system is designed in this paper for qa over long and highly structured documents",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "qa",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "qa refers to question answering  the specific task the rag system is designed for",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "external sources",
+      "entity_type": "LOCATION",
+      "description": "external sources are referenced as the origin of relevant domain knowledge retrieved by rag",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "response generation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "response generation is the process guided by rag to produce answers",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "domain knowledge",
+      "entity_type": "CONCEPT",
+      "description": "domain knowledge is the specific information retrieved from external sources to guide llms",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "long form documents",
+      "entity_type": "PRODUCT",
+      "description": "long form documents are the type of storage for domain knowledge in enterprise scenarios",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "intricate layouts",
+      "entity_type": "SHAPE",
+      "description": "intricate layouts are a feature of the structure of long form documents",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "logical hierarchies",
+      "entity_type": "CONCEPT",
+      "description": "logical hierarchies are a feature of the structure of long form documents",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "entity_name": "this paper",
+      "entity_type": "BOOK",
+      "description": "this paper is the document where the authors aim to design an effective rag system",
+      "source_ids": [
+        14
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "llms",
+      "tgt_entity_name": "financial auditing",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "llms are applied in financial auditing but may miss domain knowledge",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "llms",
+      "tgt_entity_name": "legal compliance",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "llms are applied in legal compliance but may miss domain knowledge",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "llms",
+      "tgt_entity_name": "scientific discovery",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "llms are applied in scientific discovery but may miss domain knowledge",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "retrieval augmented generation",
+      "tgt_entity_name": "llms",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "rag is used to guide llms during response generation to address their limitations",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "rag",
+      "tgt_entity_name": "llms",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "rag is used to guide llms during response generation to address their limitations",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "retrieval augmented generation",
+      "tgt_entity_name": "enterprise scenarios",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "rag is widely adopted in real world enterprise scenarios",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "enterprise scenarios",
+      "tgt_entity_name": "technical handbooks",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "domain knowledge in enterprise scenarios is often stored in technical handbooks",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "enterprise scenarios",
+      "tgt_entity_name": "api reference manuals",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "domain knowledge in enterprise scenarios is often stored in api reference manuals",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "enterprise scenarios",
+      "tgt_entity_name": "operational guidebooks",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "domain knowledge in enterprise scenarios is often stored in operational guidebooks",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "technical handbooks",
+      "tgt_entity_name": "books",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "technical handbooks follow the structure of books",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "api reference manuals",
+      "tgt_entity_name": "books",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "api reference manuals follow the structure of books",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "operational guidebooks",
+      "tgt_entity_name": "books",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "operational guidebooks follow the structure of books",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "books",
+      "tgt_entity_name": "tables of contents",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "books are characterized by explicit tables of contents",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "books",
+      "tgt_entity_name": "nested chapters",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "books are characterized by nested chapters",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "books",
+      "tgt_entity_name": "multi level sections",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "books are characterized by multi level sections",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "rag system",
+      "tgt_entity_name": "qa",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the rag system is designed for qa over long and highly structured documents",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "rag system",
+      "tgt_entity_name": "technical handbooks",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the rag system is designed to handle qa over documents like technical handbooks",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "rag system",
+      "tgt_entity_name": "api reference manuals",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the rag system is designed to handle qa over documents like api reference manuals",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "rag system",
+      "tgt_entity_name": "operational guidebooks",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the rag system is designed to handle qa over documents like operational guidebooks",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "retrieval augmented generation",
+      "tgt_entity_name": "external sources",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "rag retrieves relevant domain knowledge from external sources",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "retrieval augmented generation",
+      "tgt_entity_name": "response generation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "rag is used to guide the llm during response generation",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "retrieval augmented generation",
+      "tgt_entity_name": "domain knowledge",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "rag retrieves domain knowledge to address llm limitations",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "enterprise scenarios",
+      "tgt_entity_name": "long form documents",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "domain knowledge in enterprise scenarios is stored in long form documents",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "long form documents",
+      "tgt_entity_name": "intricate layouts",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "long form documents are characterized by intricate layouts",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "long form documents",
+      "tgt_entity_name": "logical hierarchies",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "long form documents are characterized by rigorous logical hierarchies",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "this paper",
+      "tgt_entity_name": "rag system",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "this paper aims to design an effective rag system",
+      "source_ids": [
+        14
+      ]
+    },
+    {
+      "src_entity_name": "rag system",
+      "tgt_entity_name": "long form documents",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the rag system is designed for qa over long and highly structured documents",
+      "source_ids": [
+        14
+      ]
+    }
+  ],
+  "node_idx": 14
+}

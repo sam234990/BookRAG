@@ -195,7 +195,9 @@ def _rewrite_query_sync(query: str, history: List[dict], config_path: str) -> st
     return query
 
 
-def _query_single_doc_sync(query: str, tenant_id: str, doc_id: str, config_path: str) -> str:
+def _query_single_doc_sync(
+    query: str, tenant_id: str, doc_id: str, config_path: str, lang: str = "en"
+) -> str:
     """Run GBC RAG query against a single document (sync, for thread pool).
 
     *query* should already be a self-contained, rewritten query when conversation
@@ -208,7 +210,7 @@ def _query_single_doc_sync(query: str, tenant_id: str, doc_id: str, config_path:
     llm = _get_llm(config_path)
     vlm = _get_vlm(config_path)
     rag_cfg = GBCRAGConfig()
-    rag = GBCRAG(llm=llm, vlm=vlm, config=rag_cfg, gbc_index=gbc_index)
+    rag = GBCRAG(llm=llm, vlm=vlm, config=rag_cfg, gbc_index=gbc_index, lang=lang)
     result = rag.get_GBC_info(query)
     return result if isinstance(result, str) else str(result)
 
@@ -268,42 +270,58 @@ async def handle_query(
                             {"role": "user", "content": query})
 
     # ── RAG retrieval ─────────────────────────────────────────────────────────
+
+    # ── Fetch per-doc metadata (dates + languages) — best-effort ──────────
+    doc_dates: dict[str, str] = {}
+    doc_langs: dict[str, str] = {}
+    try:
+        for did in doc_ids[:5]:
+            doc_record = await db.get_document(MONGO_URI, MONGO_DB_PREFIX, tenant_id, did)
+            if doc_record:
+                ddate = doc_record.get("document_date") or doc_record.get("created_at")
+                if ddate:
+                    doc_dates[did] = str(ddate)[:10]  # YYYY-MM-DD
+                dlang = doc_record.get("document_lang")
+                if dlang and dlang != "auto":
+                    doc_langs[did] = dlang
+    except Exception:
+        pass  # Non-fatal: metadata is best-effort
+
     if cross_doc or len(doc_ids) > 1:
         # Parallel per-doc queries, answers synthesised into one response
         target_docs = doc_ids[:5]   # cap to avoid GPU overload
         answers = await asyncio.gather(*[
             loop.run_in_executor(
-                _executor, _query_single_doc_sync, effective_query, tenant_id, did, config_path
+                _executor, _query_single_doc_sync,
+                effective_query, tenant_id, did, config_path,
+                doc_langs.get(did, "en"),
             )
             for did in target_docs
         ])
 
-        # ── Temporal awareness: fetch document dates for cross-doc synthesis ──
-        doc_dates: dict[str, str] = {}
-        try:
-            for did in target_docs:
-                doc_record = await db.get_document(MONGO_URI, MONGO_DB_PREFIX, tenant_id, did)
-                if doc_record:
-                    ddate = doc_record.get("document_date") or doc_record.get("created_at")
-                    if ddate:
-                        doc_dates[did] = str(ddate)[:10]  # YYYY-MM-DD
-        except Exception:
-            pass  # Non-fatal: temporal info is best-effort
-
-        # Build answer with temporal context
+        # Build answer with temporal + language context
         parts = []
         for did, ans in zip(target_docs, answers):
             date_str = f" (dated {doc_dates[did]})" if did in doc_dates else ""
-            parts.append(f"[Document: {did}{date_str}]\n{ans}")
+            lang_str = f" [lang: {doc_langs[did]}]" if did in doc_langs else ""
+            parts.append(f"[Document: {did}{date_str}{lang_str}]\n{ans}")
 
+        # Prepend contextual notes when metadata is present
+        notes = []
         if doc_dates:
-            # Prepend a temporal instruction for the combined answer
-            temporal_note = (
+            notes.append(
                 "NOTE: The answers below come from multiple documents with different dates. "
                 "When documents contain contradictory or overlapping information, "
-                "prefer the information from the more recently dated document.\n\n"
+                "prefer the information from the more recently dated document."
             )
-            answer = temporal_note + "\n\n---\n\n".join(parts)
+        unique_langs = set(doc_langs.values())
+        if len(unique_langs) > 1:
+            notes.append(
+                "NOTE: The answers below come from documents in different languages. "
+                "Each answer is in its document's language; synthesise accordingly."
+            )
+        if notes:
+            answer = "\n\n".join(notes) + "\n\n" + "\n\n---\n\n".join(parts)
         else:
             answer = "\n\n---\n\n".join(parts)
     else:
@@ -311,8 +329,10 @@ async def handle_query(
         if not doc_id:
             answer = "No accessible documents found for your query."
         else:
+            lang = doc_langs.get(doc_id, "en")
             answer = await loop.run_in_executor(
-                _executor, _query_single_doc_sync, effective_query, tenant_id, doc_id, config_path
+                _executor, _query_single_doc_sync,
+                effective_query, tenant_id, doc_id, config_path, lang,
             )
 
     # ── Persist assistant message ──────────────────────────────────────────────

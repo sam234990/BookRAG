@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (14)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the variable NR as a Skyline Ranker applied to a set of SG and T values. LaTeX: 𝑁 𝑅 = Skyline_Ranker ({ 𝑆 𝐺 ( 𝑛 , 𝑆 ) 𝑇 ( 𝑛 ) | 𝑛 ∈ 𝑁 𝑠 }) (14)",
+      "source_ids": [
+        128
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 128
+}

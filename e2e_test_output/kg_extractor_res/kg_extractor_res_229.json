@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "exact match",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "exact match is a strict metric that measures whether the normalized extracted answer is character for character identical to the ground truth",
+      "source_ids": [
+        229
+      ]
+    },
+    {
+      "entity_name": "accuracy",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "accuracy is mentioned as a metric that is contrasted with exact match  implying it is less strict",
+      "source_ids": [
+        229
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "exact match",
+      "tgt_entity_name": "accuracy",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "exact match is described as being stricter than accuracy",
+      "source_ids": [
+        229
+      ]
+    }
+  ],
+  "node_idx": 229
+}

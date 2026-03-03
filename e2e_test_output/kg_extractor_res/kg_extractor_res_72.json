@@ -1,0 +1,75 @@
+{
+  "entities": [
+    {
+      "entity_name": "case a",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "case a is a scenario described as involving a new conceptual entity",
+      "source_ids": [
+        72
+      ]
+    },
+    {
+      "entity_name": "new entity",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "new entity refers to a conceptual entity that is being evaluated for relevance against existing entities",
+      "source_ids": [
+        72
+      ]
+    },
+    {
+      "entity_name": "existing entities",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "existing entities are the set of entities against which the relevance of a new conceptual entity is measured",
+      "source_ids": [
+        72
+      ]
+    },
+    {
+      "entity_name": "relevance scores",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "relevance scores are the metrics used to measure the relationship between the new entity and existing entities",
+      "source_ids": [
+        72
+      ]
+    },
+    {
+      "entity_name": "gradient",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "gradient refers to a mathematical pattern or value that is absent in the relevance scores for new entities",
+      "source_ids": [
+        72
+      ]
+    },
+    {
+      "entity_name": "discriminative pattern",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "discriminative pattern refers to a distinguishing feature or trend that is not present in the relevance scores for new entities",
+      "source_ids": [
+        72
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "case a",
+      "tgt_entity_name": "new entity",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "case a describes the scenario where a new entity is introduced and evaluated",
+      "source_ids": [
+        72
+      ]
+    },
+    {
+      "src_entity_name": "new entity",
+      "tgt_entity_name": "existing entities",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the new entity s relevance scores are calculated against all existing entities",
+      "source_ids": [
+        72
+      ]
+    }
+  ],
+  "node_idx": 72
+}

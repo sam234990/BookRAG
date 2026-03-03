@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (12)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the global probability P as a composition of filtering and mapping operations. LaTeX: 𝑃 global = GLYPH<214> ( Filter_Modal | Filter_Range ) → Map → Reduce (12)",
+      "source_ids": [
+        121
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 121
+}

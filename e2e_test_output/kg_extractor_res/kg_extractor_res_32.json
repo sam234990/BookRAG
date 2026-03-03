@@ -1,0 +1,411 @@
+{
+  "entities": [
+    {
+      "entity_name": "llm",
+      "entity_type": "TECHNOLOGY",
+      "description": "llm refers to large language models  which are used for robust semantic reasoning in document analysis",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "html",
+      "entity_type": "FILE_TYPE",
+      "description": "html is an unstructured document format mentioned as a target for conversion into structured formats",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "pdf",
+      "entity_type": "FILE_TYPE",
+      "description": "pdf is an unstructured document format mentioned as a target for conversion into structured formats",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "raw text",
+      "entity_type": "FILE_TYPE",
+      "description": "raw text is an unstructured document format mentioned as a target for conversion into structured formats",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "relational tables",
+      "entity_type": "PRODUCT",
+      "description": "relational tables are structured formats that unstructured documents are converted into",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "evaporate",
+      "entity_type": "SOFTWARE",
+      "description": "evaporate is a system that utilizes llms to synthesize extraction code for converting semi structured web documents",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "lotus",
+      "entity_type": "SOFTWARE",
+      "description": "lotus is a system that extends the relational model with semantic operators for querying unstructured text corpora",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "docetl",
+      "entity_type": "SOFTWARE",
+      "description": "docetl is a system that introduces an agentic framework to optimize complex information extraction tasks",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "sql",
+      "entity_type": "PROGRAMMING_LANGUAGE",
+      "description": "sql is a query language referenced in the context of sql like queries executed by lotus",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "web documents",
+      "entity_type": "PRODUCT",
+      "description": "web documents are semi structured documents processed by systems like evaporate",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "document pages",
+      "entity_type": "IMAGE",
+      "description": "document pages are viewed as images in research to preserve layout and visual information",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "semantic operators",
+      "entity_type": "TECHNOLOGY",
+      "description": "semantic operators are features added by lotus to extend the relational model",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "predicates",
+      "entity_type": "TECHNOLOGY",
+      "description": "predicates are llm powered functions like filter and join used in lotus",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "filter",
+      "entity_type": "TECHNOLOGY",
+      "description": "filter is an example of an llm powered predicate used in lotus",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "join",
+      "entity_type": "TECHNOLOGY",
+      "description": "join is an example of an llm powered predicate used in lotus",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "agentic framework",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "an agentic framework is introduced by docetl to optimize information extraction",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "information extraction",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "information extraction is the complex task optimized by docetl",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "layout",
+      "entity_type": "CONCEPT",
+      "description": "layout refers to the visual structure of documents preserved when viewing pages as images",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "visual information",
+      "entity_type": "CONCEPT",
+      "description": "visual information refers to the content preserved when document pages are viewed as images",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "semi structured web documents",
+      "entity_type": "PRODUCT",
+      "description": "semi structured web documents are the input type for evaporate",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "structured databases",
+      "entity_type": "PRODUCT",
+      "description": "structured databases are the output format produced by evaporate",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "manual annotation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "manual annotation is a heavy process avoided by evaporate s cost effective conversion",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "entity_name": "unstructured text corpora",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        32
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "html",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "llms are used to convert html documents into structured formats",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "pdf",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "llms are used to convert pdf documents into structured formats",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "raw text",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "llms are used to convert raw text documents into structured formats",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "relational tables",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "llms facilitate the conversion of unstructured documents into relational tables",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "evaporate",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "evaporate utilizes llms to synthesize extraction code",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "evaporate",
+      "tgt_entity_name": "web documents",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "evaporate converts semi structured web documents into structured databases",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "lotus",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "lotus uses llm powered predicates to execute queries",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "lotus",
+      "tgt_entity_name": "sql",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "lotus allows users to execute sql like queries",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "lotus",
+      "tgt_entity_name": "unstructured text corpora",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "lotus allows queries to be executed over unstructured text corpora",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "docetl",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "docetl is an llm based system for optimizing information extraction tasks",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "document pages",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "research proposes using llms to analyze document pages viewed as images",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "lotus",
+      "tgt_entity_name": "semantic operators",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "lotus extends the relational model with semantic operators",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "lotus",
+      "tgt_entity_name": "predicates",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "lotus uses llm powered predicates for querying",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "predicates",
+      "tgt_entity_name": "filter",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "filter is an example of a predicate used in lotus",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "predicates",
+      "tgt_entity_name": "join",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "join is an example of a predicate used in lotus",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "docetl",
+      "tgt_entity_name": "agentic framework",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "docetl introduces an agentic framework",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "docetl",
+      "tgt_entity_name": "information extraction",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "docetl is designed to optimize complex information extraction tasks",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "document pages",
+      "tgt_entity_name": "layout",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "document pages are viewed as images to preserve critical layout information",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "document pages",
+      "tgt_entity_name": "visual information",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "document pages are viewed as images to preserve critical visual information",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "evaporate",
+      "tgt_entity_name": "semi structured web documents",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "evaporate converts semi structured web documents",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "evaporate",
+      "tgt_entity_name": "structured databases",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "evaporate converts documents into structured databases",
+      "source_ids": [
+        32
+      ]
+    },
+    {
+      "src_entity_name": "evaporate",
+      "tgt_entity_name": "manual annotation",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "evaporate avoids the need for heavy manual annotation",
+      "source_ids": [
+        32
+      ]
+    }
+  ],
+  "node_idx": 32
+}

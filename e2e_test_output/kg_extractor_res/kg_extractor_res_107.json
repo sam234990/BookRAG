@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (6)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the PageRank of a graph G with respect to a vector e'. LaTeX: 𝐼 𝐺 = PageRank ( 𝐺 , 𝑒 ' ) (6)",
+      "source_ids": [
+        107
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 107
+}

@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "5.1 overall workflow",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'Agent-Based Retrieval', this section introduces the general operational flow of the BookRAG system, outlining how it intelligently plans and executes operations on the BookIndex to handle complex document queries.",
+      "source_ids": [
+        80
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 80
+}

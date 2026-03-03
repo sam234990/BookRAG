@@ -1,0 +1,135 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "SOFTWARE",
+      "description": "bookrag is a software project hosted on github  containing source code and data",
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "entity_name": "github",
+      "entity_type": "ORGANIZATION",
+      "description": "github is the platform where the source code and data for bookrag are made available",
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "entity_name": "sam234990",
+      "entity_type": "PERSON",
+      "description": "sam234990 is the username or owner associated with the bookrag repository on github",
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "entity_name": "source code",
+      "entity_type": "PRODUCT",
+      "description": "source code is a digital artifact made available as part of the bookrag project",
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "entity_name": "data",
+      "entity_type": "PRODUCT",
+      "description": "data is a digital artifact made available as part of the bookrag project",
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "entity_name": "artifacts",
+      "entity_type": "PRODUCT",
+      "description": "artifacts are items made available alongside the source code and data for the bookrag project",
+      "source_ids": [
+        7
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "github",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is hosted on the github platform  as indicated by the provided url",
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "src_entity_name": "sam234990",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "sam234990 is the creator or owner of the bookrag repository",
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "source code",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag contains the source code that has been made available",
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "data",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag contains the data that has been made available",
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "artifacts",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag includes other artifacts that have been made available",
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "src_entity_name": "source code",
+      "tgt_entity_name": "github",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the source code is hosted on github",
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "src_entity_name": "data",
+      "tgt_entity_name": "github",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the data is hosted on github",
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "src_entity_name": "artifacts",
+      "tgt_entity_name": "github",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the artifacts are hosted on github",
+      "source_ids": [
+        7
+      ]
+    }
+  ],
+  "node_idx": 7
+}

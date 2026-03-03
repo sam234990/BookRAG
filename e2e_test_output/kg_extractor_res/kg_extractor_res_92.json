@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "operator set",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "operator set is a task or problem mentioned in the text  likely referring to a specific set of operators in a technical context",
+      "source_ids": [
+        92
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 92
+}

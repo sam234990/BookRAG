@@ -1,0 +1,277 @@
+{
+  "entities": [
+    {
+      "entity_name": "ilias chalkidis",
+      "entity_type": "PERSON",
+      "description": "ilias chalkidis is one of the authors of the 2020 arxiv preprint titled legal bert",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "entity_name": "manos fergadiotis",
+      "entity_type": "PERSON",
+      "description": "manos fergadiotis is one of the authors of the 2020 arxiv preprint titled legal bert",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "entity_name": "prodromos malakasiotis",
+      "entity_type": "PERSON",
+      "description": "prodromos malakasiotis is one of the authors of the 2020 arxiv preprint titled legal bert",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "entity_name": "nikolaos aletras",
+      "entity_type": "PERSON",
+      "description": "nikolaos aletras is one of the authors of the 2020 arxiv preprint titled legal bert",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "entity_name": "ion androutsopoulos",
+      "entity_type": "PERSON",
+      "description": "ion androutsopoulos is one of the authors of the 2020 arxiv preprint titled legal bert",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "entity_name": "legal bert",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "legal bert is a model described as the  muppets straight out of law school  in the text",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "entity_name": "arxiv preprint arxiv 2010 02559",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv preprint arxiv 2010 02559 is the specific publication venue and identifier for the paper",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "entity_name": "2020",
+      "entity_type": "DATE",
+      "description": "2020 is the year the paper was published",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "entity_name": "muppets",
+      "entity_type": "PRODUCT",
+      "description": "muppets is a metaphorical term used in the text to describe the legal bert model",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "entity_name": "law school",
+      "entity_type": "LOCATION",
+      "description": "law school is a location mentioned metaphorically to indicate the origin or training context of the legal bert model",
+      "source_ids": [
+        198
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "ilias chalkidis",
+      "tgt_entity_name": "legal bert",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "ilias chalkidis is an author of the paper introducing the legal bert model",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "manos fergadiotis",
+      "tgt_entity_name": "legal bert",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "manos fergadiotis is an author of the paper introducing the legal bert model",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "prodromos malakasiotis",
+      "tgt_entity_name": "legal bert",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "prodromos malakasiotis is an author of the paper introducing the legal bert model",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "nikolaos aletras",
+      "tgt_entity_name": "legal bert",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "nikolaos aletras is an author of the paper introducing the legal bert model",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "ion androutsopoulos",
+      "tgt_entity_name": "legal bert",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "ion androutsopoulos is an author of the paper introducing the legal bert model",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "legal bert",
+      "tgt_entity_name": "arxiv preprint arxiv 2010 02559",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "legal bert is the subject of the publication arxiv preprint arxiv 2010 02559",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "legal bert",
+      "tgt_entity_name": "2020",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "legal bert was published in the year 2020",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "ilias chalkidis",
+      "tgt_entity_name": "manos fergadiotis",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "ilias chalkidis",
+      "tgt_entity_name": "prodromos malakasiotis",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "ilias chalkidis",
+      "tgt_entity_name": "nikolaos aletras",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "ilias chalkidis",
+      "tgt_entity_name": "ion androutsopoulos",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "manos fergadiotis",
+      "tgt_entity_name": "prodromos malakasiotis",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "manos fergadiotis",
+      "tgt_entity_name": "nikolaos aletras",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "manos fergadiotis",
+      "tgt_entity_name": "ion androutsopoulos",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "prodromos malakasiotis",
+      "tgt_entity_name": "nikolaos aletras",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "prodromos malakasiotis",
+      "tgt_entity_name": "ion androutsopoulos",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "nikolaos aletras",
+      "tgt_entity_name": "ion androutsopoulos",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "legal bert",
+      "tgt_entity_name": "muppets",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "legal bert is described as being  straight out of  the muppets in the text",
+      "source_ids": [
+        198
+      ]
+    },
+    {
+      "src_entity_name": "legal bert",
+      "tgt_entity_name": "law school",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "legal bert is described as coming  straight out of  law school in the text",
+      "source_ids": [
+        198
+      ]
+    }
+  ],
+  "node_idx": 198
+}

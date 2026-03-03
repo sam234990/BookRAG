@@ -1,0 +1,861 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a system implemented in python for robust document layout parsing",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "python",
+      "entity_type": "PROGRAMMING_LANGUAGE",
+      "description": "python is the programming language used to implement bookrag",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "mineru",
+      "entity_type": "SOFTWARE",
+      "description": "mineru is a tool utilized for robust document layout parsing",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "qwen family",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "the qwen family is a set of state of the art backbone models used to power bookrag and baseline methods",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "llm refers to large language models  a type of model within the qwen family used in the experiments",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "vlm",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "vlm stands for vision language model  a type of model within the qwen family used in the experiments",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "embedding models",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "embedding models are a type of model within the qwen family used for text and multi modal embedding",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "qwen3 8b",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "qwen3 8b is the default llm used in the experiments",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "qwen2 5vl 30b",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "qwen2 5vl 30b is the vision language model  vlm  used in the experiments",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "qwen3 embedding 0 6b",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "qwen3 embedding 0 6b is the model used for text embedding",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "gme qwen2 vl 2b instruct",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "gme qwen2 vl 2b instruct is the model used for multi modal embedding",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "qwen3 reranker 4b",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "qwen3 reranker 4b is the model used for reranking",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "linux",
+      "entity_type": "SOFTWARE",
+      "description": "linux is the operating system on which the experiments were conducted",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "intel xeon 2 0ghz cpu",
+      "entity_type": "HARDWARE",
+      "description": "intel xeon 2 0ghz cpu is the processor used in the high performance server",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "nvidia geforce rtx a5000",
+      "entity_type": "HARDWARE",
+      "description": "nvidia geforce rtx a5000 is the gpu model used in the high performance server",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "1024gb",
+      "entity_type": "MEASUREMENT",
+      "description": "1024gb refers to the amount of memory in the server",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "24 gb",
+      "entity_type": "MEASUREMENT",
+      "description": "24 gb refers to the vram capacity of each gpu",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "500 tokens",
+      "entity_type": "MEASUREMENT",
+      "description": "500 tokens is the standardized chunk size used for document chunking",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "10",
+      "entity_type": "MEASUREMENT",
+      "description": "10 is the retrieval top k value set for consistent candidate pool sizes",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "10b parameter scale",
+      "entity_type": "MEASUREMENT",
+      "description": "10b parameter scale is the size range of models primarily selected to balance efficiency and effectiveness",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "30b version",
+      "entity_type": "MEASUREMENT",
+      "description": "the 30b version refers to the specific size of the vlm adopted due to performance deficits in the 8b counterpart",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "8b counterpart",
+      "entity_type": "MEASUREMENT",
+      "description": "the 8b counterpart refers to the smaller version of the vlm that exhibited significant performance deficits",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "github repository",
+      "entity_type": "LOCATION",
+      "description": "the github repository is the location where source code and implementation configurations are publicly available",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "https github com sam234990 bookrag",
+      "entity_type": "LOCATION",
+      "description": "https   github com sam234990 bookrag is the specific url of the repository",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "sam234990",
+      "entity_type": "PERSON",
+      "description": "sam234990 is the username associated with the github repository where the source code is hosted",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "baseline methods",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "baseline methods refer to the existing methods used for fair comparison against bookrag",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "ground truth images",
+      "entity_type": "IMAGE",
+      "description": "ground truth images are the correct reference images provided to the models during evaluation",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "document chunking",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "document chunking is a technique used to split documents into smaller parts for processing",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "retrieval ranking",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "retrieval ranking is a technique used to order retrieved candidates based on relevance",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "sequential processing mode",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "sequential processing mode is the execution mode used to ensure fair comparison of efficiency",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "candidate pool",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the candidate pool refers to the set of items retrieved for ranking  standardized across baselines",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "efficiency",
+      "entity_type": "CONCEPT",
+      "description": "efficiency is a key metric balanced against effectiveness in model selection and execution",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "effectiveness",
+      "entity_type": "CONCEPT",
+      "description": "effectiveness is a key metric balanced against efficiency in model selection and execution",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "performance deficits",
+      "entity_type": "CONCEPT",
+      "description": "performance deficits describe the failure of the 8b vlm counterpart to answer correctly",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "reproducibility",
+      "entity_type": "CONCEPT",
+      "description": "reproducibility is the goal achieved by making source code and configurations publicly available",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "fair comparison",
+      "entity_type": "CONCEPT",
+      "description": "fair comparison is the objective driving the use of unified models and standardized parameters",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "robust document layout parsing",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "robust document layout parsing is the specific task that mineru is utilized for",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "text embedding",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "text embedding is the task performed by the qwen3 embedding 0 6b model",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "multi modal embedding",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "multi modal embedding is the task performed by the gme qwen2 vl 2b instruct model",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "reranking",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "reranking is the task performed by the qwen3 reranker 4b model",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "high performance server",
+      "entity_type": "LOCATION",
+      "description": "the high performance server is the physical location where all experiments were conducted",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "source code",
+      "entity_type": "PRODUCT",
+      "description": "source code refers to the implementation files of bookrag made available for download",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "implementation configurations",
+      "entity_type": "PRODUCT",
+      "description": "implementation configurations refer to the detailed settings used to run the experiments",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "reference 52",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "reference  52  is the citation for the mineru tool",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "reference 4",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "reference  4  is the citation for the qwen2 5vl 30b model",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "reference 60",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "reference  60  is the citation for the qwen3 8b model",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "reference 63",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "reference  63  is the citation for the gme qwen2 vl 2b instruct model",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "entity_name": "reference 64",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "reference  64  is the citation for the qwen3 embedding 0 6b and qwen3 reranker 4b models",
+      "source_ids": [
+        238
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "python",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is implemented in python",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "mineru",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag utilizes mineru for robust document layout parsing",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "qwen family",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is powered by models from the qwen family",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen family",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the qwen family includes llms used in the experiments",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen family",
+      "tgt_entity_name": "vlm",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the qwen family includes vlms used in the experiments",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen family",
+      "tgt_entity_name": "embedding models",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the qwen family includes embedding models used in the experiments",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen family",
+      "tgt_entity_name": "qwen3 8b",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "qwen3 8b is a specific model from the qwen family used as the default llm",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen family",
+      "tgt_entity_name": "qwen2 5vl 30b",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "qwen2 5vl 30b is a specific model from the qwen family used as the vlm",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen family",
+      "tgt_entity_name": "qwen3 embedding 0 6b",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "qwen3 embedding 0 6b is a specific model from the qwen family used for text embedding",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen family",
+      "tgt_entity_name": "gme qwen2 vl 2b instruct",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "gme qwen2 vl 2b instruct is a specific model from the qwen family used for multi modal embedding",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen family",
+      "tgt_entity_name": "qwen3 reranker 4b",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "qwen3 reranker 4b is a specific model from the qwen family used for reranking",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "linux",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "experiments for bookrag were conducted on a linux operating system",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "linux",
+      "tgt_entity_name": "intel xeon 2 0ghz cpu",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the linux operating system runs on a server equipped with an intel xeon 2 0ghz cpu",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "linux",
+      "tgt_entity_name": "nvidia geforce rtx a5000",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the linux operating system runs on a server equipped with nvidia geforce rtx a5000 gpus",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "intel xeon 2 0ghz cpu",
+      "tgt_entity_name": "1024gb",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the server with the intel xeon 2 0ghz cpu has 1024gb of memory",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "nvidia geforce rtx a5000",
+      "tgt_entity_name": "24 gb",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "each nvidia geforce rtx a5000 gpu has 24 gb of vram",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "500 tokens",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag standardizes the chunk size at 500 tokens for document chunking",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "10",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag sets the retrieval top k to 10 for consistent candidate pool sizes",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "10b parameter scale",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag primarily selects models under the 10b parameter scale",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "30b version",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag adopts the 30b version of the vlm due to performance issues with the 8b counterpart",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "8b counterpart",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the 8b counterpart of the vlm exhibited significant performance deficits  leading to the adoption of the 30b version",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "https github com sam234990 bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the source code and configurations for bookrag are available at the specified github url",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "sam234990",
+      "tgt_entity_name": "https github com sam234990 bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "sam234990 is the owner of the github repository url",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "baseline methods",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is compared against baseline methods to ensure a fair comparison",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen3 8b",
+      "tgt_entity_name": "ground truth images",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the 8b counterpart  related to qwen3 8b context  failed to answer correctly even with ground truth images",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "document chunking",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag involves document chunking as part of its processing pipeline",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "retrieval ranking",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag involves retrieval ranking as part of its processing pipeline",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "sequential processing mode",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag methods were executed in sequential processing mode to ensure fair efficiency comparison",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "candidate pool",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag standardizes the candidate pool size across baselines",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "efficiency",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag balances efficiency and effectiveness in model selection",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "effectiveness",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag balances efficiency and effectiveness in model selection",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "8b counterpart",
+      "tgt_entity_name": "performance deficits",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the 8b counterpart exhibited performance deficits",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "reproducibility",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag aims for reproducibility by making code and configs public",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "fair comparison",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is designed to enable a fair comparison with other methods",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "mineru",
+      "tgt_entity_name": "robust document layout parsing",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "mineru is utilized for robust document layout parsing",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen3 embedding 0 6b",
+      "tgt_entity_name": "text embedding",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "qwen3 embedding 0 6b is used for text embedding",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "gme qwen2 vl 2b instruct",
+      "tgt_entity_name": "multi modal embedding",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "gme qwen2 vl 2b instruct is used for multi modal embedding",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen3 reranker 4b",
+      "tgt_entity_name": "reranking",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "qwen3 reranker 4b is used for reranking",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "linux",
+      "tgt_entity_name": "high performance server",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the linux operating system runs on the high performance server",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "source code",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the source code for bookrag is available at the repository",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "implementation configurations",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the implementation configurations for bookrag are available at the repository",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "mineru",
+      "tgt_entity_name": "reference 52",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "mineru is cited in reference  52",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen2 5vl 30b",
+      "tgt_entity_name": "reference 4",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "qwen2 5vl 30b is cited in reference  4",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen3 8b",
+      "tgt_entity_name": "reference 60",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "qwen3 8b is cited in reference  60",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "gme qwen2 vl 2b instruct",
+      "tgt_entity_name": "reference 63",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "gme qwen2 vl 2b instruct is cited in reference  63",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen3 embedding 0 6b",
+      "tgt_entity_name": "reference 64",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "qwen3 embedding 0 6b is cited in reference  64",
+      "source_ids": [
+        238
+      ]
+    },
+    {
+      "src_entity_name": "qwen3 reranker 4b",
+      "tgt_entity_name": "reference 64",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "qwen3 reranker 4b is cited in reference  64",
+      "source_ids": [
+        238
+      ]
+    }
+  ],
+  "node_idx": 238
+}

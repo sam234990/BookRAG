@@ -1,0 +1,153 @@
+{
+  "entities": [
+    {
+      "entity_name": "table 7",
+      "entity_type": "TABLE",
+      "description": "table 7 is a table comparing the qa performance of different variants of bookrag",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a product or system whose variants are being evaluated for qa performance",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "entity_name": "em",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "em stands for exact match  an evaluation metric used to measure qa performance",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "entity_name": "f1",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "f1 denotes f1 score  an evaluation metric used to measure qa performance",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "entity_name": "qa",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "qa refers to question answering  the specific task being evaluated in the text",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "entity_name": "exact match",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "exact match is the full name for the metric abbreviated as em",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "entity_name": "f1 score",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "f1 score is the full name for the metric abbreviated as f1",
+      "source_ids": [
+        170
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "table 7",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "table 7 compares the performance of different variants of bookrag",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "src_entity_name": "table 7",
+      "tgt_entity_name": "em",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "table 7 uses em  exact match  as a metric to evaluate qa performance",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "src_entity_name": "table 7",
+      "tgt_entity_name": "f1",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "table 7 uses f1  f1 score  as a metric to evaluate qa performance",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "src_entity_name": "em",
+      "tgt_entity_name": "f1",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "em and f1 are both evaluation metrics used together to compare qa performance in table 7",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "src_entity_name": "qa",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "qa is the task performed by the different variants of bookrag being compared",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "src_entity_name": "exact match",
+      "tgt_entity_name": "em",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "exact match is the definition of the abbreviation em",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "src_entity_name": "f1 score",
+      "tgt_entity_name": "f1",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "f1 score is the definition of the abbreviation f1",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "src_entity_name": "qa",
+      "tgt_entity_name": "em",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "em is used to measure the performance of the qa task",
+      "source_ids": [
+        170
+      ]
+    },
+    {
+      "src_entity_name": "qa",
+      "tgt_entity_name": "f1",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "f1 is used to measure the performance of the qa task",
+      "source_ids": [
+        170
+      ]
+    }
+  ],
+  "node_idx": 170
+}

@@ -1,0 +1,123 @@
+{
+  "entities": [
+    {
+      "entity_name": "a.1.3 retrieval recall",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'Experimental Details' within the 'BookRAG' paper, this section defines the Retrieval Recall metric used to evaluate retrieval quality based on parsed PDF block granularity (paragraphs, tables, images).",
+      "source_ids": [
+        234
+      ]
+    },
+    {
+      "entity_name": "retrieval quality",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "The specific aspect of system performance being measured in this section, assessed via the granularity of retrieved blocks.",
+      "source_ids": [
+        234
+      ]
+    },
+    {
+      "entity_name": "pdf blocks",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The fundamental units of data (paragraphs, tables, images) from which ground-truth and retrieved sets are constructed for evaluation.",
+      "source_ids": [
+        234
+      ]
+    },
+    {
+      "entity_name": "query q",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "The input query variable used to define the set of required ground-truth blocks.",
+      "source_ids": [
+        234
+      ]
+    },
+    {
+      "entity_name": "b_gold",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "The set of manually labeled ground-truth blocks required to answer a given query.",
+      "source_ids": [
+        234
+      ]
+    },
+    {
+      "entity_name": "b_ret",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "The set of unique blocks retrieved by the system for a given query.",
+      "source_ids": [
+        234
+      ]
+    },
+    {
+      "entity_name": "recall_ret",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "The specific mathematical formula defined in this section to calculate retrieval recall, handling parsing errors.",
+      "source_ids": [
+        234
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "retrieval quality",
+      "tgt_entity_name": "a.1.3 retrieval recall",
+      "relation_name": "",
+      "weight": 9.5,
+      "description": "Retrieval Quality is the primary concept evaluated within section A.1.3.",
+      "source_ids": [
+        234
+      ]
+    },
+    {
+      "src_entity_name": "pdf blocks",
+      "tgt_entity_name": "a.1.3 retrieval recall",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "PDF Blocks serve as the granular units of analysis for the evaluation described in section A.1.3.",
+      "source_ids": [
+        234
+      ]
+    },
+    {
+      "src_entity_name": "query q",
+      "tgt_entity_name": "a.1.3 retrieval recall",
+      "relation_name": "",
+      "weight": 8.5,
+      "description": "The variable 'Query q' is a key parameter defined in the context of section A.1.3.",
+      "source_ids": [
+        234
+      ]
+    },
+    {
+      "src_entity_name": "b_gold",
+      "tgt_entity_name": "a.1.3 retrieval recall",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "The variable 'B_gold' represents the ground truth set utilized in the definition provided in section A.1.3.",
+      "source_ids": [
+        234
+      ]
+    },
+    {
+      "src_entity_name": "b_ret",
+      "tgt_entity_name": "a.1.3 retrieval recall",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "The variable 'B_ret' represents the retrieved set utilized in the definition provided in section A.1.3.",
+      "source_ids": [
+        234
+      ]
+    },
+    {
+      "src_entity_name": "recall_ret",
+      "tgt_entity_name": "a.1.3 retrieval recall",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The metric 'Recall_ret' is the central formula and subject explicitly defined in section A.1.3.",
+      "source_ids": [
+        234
+      ]
+    }
+  ],
+  "node_idx": 234
+}

@@ -28,6 +28,7 @@ class TextRerankerProvider:
         torch_dtype: torch.dtype = torch.bfloat16,
         backend: str = "local",
         api_base: str = None,
+        api_key: str = None,
     ):
         """
         初始化Reranker Provider。
@@ -38,12 +39,14 @@ class TextRerankerProvider:
             max_length (int): 模型的最大序列长度。
             use_flash_attention (bool): 是否尝试使用Flash Attention 2以提升性能。
             torch_dtype (torch.dtype): 模型加载时使用的数据类型，如 torch.bfloat16。
-            backend (str): 后端类型，支持 'local' 和 'vllm'。
+            backend (str): 后端类型，支持 'local', 'vllm', 'jina'。
             api_base (str): 如果使用 'vllm' 后端，必须提供API基础URL。
+            api_key (str): API key for cloud backends (e.g., Jina).
         """
         self.model_name = model_name
         self.max_length = max_length
         self.backend = backend.lower()
+        self.api_key = api_key
 
         # ==========================================================
         # vLLM 后端逻辑
@@ -97,9 +100,23 @@ class TextRerankerProvider:
 
             log.info("Reranker model loaded successfully.")
 
+        # ==========================================================
+        # Jina Reranker API 后端
+        # ==========================================================
+        elif self.backend == "jina":
+            if not api_key:
+                raise ValueError("api_key must be provided for the 'jina' backend.")
+            self.rerank_url = api_base or "https://api.jina.ai/v1/rerank"
+            self.session = requests.Session()
+            self.session.headers.update({
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {self.api_key}",
+            })
+            log.info(f"Using Jina reranker backend. Model: {self.model_name}, Endpoint: {self.rerank_url}")
+
         else:
             raise ValueError(
-                f"Unsupported backend: {self.backend}. Choose 'local' or 'vllm'."
+                f"Unsupported backend: {self.backend}. Choose 'local', 'vllm', or 'jina'."
             )
         self._define_prompt_template()
 
@@ -111,7 +128,7 @@ class TextRerankerProvider:
                 torch.cuda.empty_cache()
             log.info("Cache cleaned.")
         else:
-            log.info(f"{self.backend} backend requires no local cache cleaning.")
+            log.debug(f"{self.backend} backend requires no local cache cleaning.")
 
     def close(self) -> None:
         """
@@ -132,10 +149,10 @@ class TextRerankerProvider:
             gc.collect()
             log.info("Local reranker resources released.")
 
-        elif self.backend == "vllm":
+        elif self.backend in ("vllm", "jina"):
             if hasattr(self, "session"):
-                self.session.close()  # 关闭 requests session
-            log.info("vLLM backend session closed.")
+                self.session.close()
+            log.info(f"{self.backend} backend session closed.")
 
         log.info("TextRerankerProvider closed.")
 
@@ -332,6 +349,65 @@ class TextRerankerProvider:
                 log.error(f"Error calling vLLM reranker API: {e}")
                 raise e
 
+
+        elif self.backend == "jina":
+            # Jina Reranker API: simple REST call, no prompt template needed.
+            # The instruction is prepended to the query for context.
+            if instruction:
+                full_query = f"{instruction}\n\n{query}"
+            else:
+                full_query = query
+
+            all_results = []
+            num_docs = len(documents)
+            num_batches = math.ceil(num_docs / batch_size)
+
+            try:
+                for i in tqdm(
+                    range(0, num_docs, batch_size),
+                    desc="Reranking Batches (Jina)",
+                    total=num_batches,
+                    disable=num_docs < batch_size,
+                ):
+                    batch_docs = documents[i : i + batch_size]
+                    payload = {
+                        "model": self.model_name,
+                        "query": full_query,
+                        "documents": batch_docs,
+                        "top_n": len(batch_docs),
+                    }
+
+                    response = self.session.post(self.rerank_url, json=payload)
+                    response.raise_for_status()
+
+                    data = response.json()
+                    results = data.get("results")
+
+                    if results is None or not isinstance(results, list):
+                        log.error(
+                            f"Unexpected response from Jina reranker: {data}"
+                        )
+                        raise ValueError("Failed to parse 'results' from Jina response.")
+
+                    # Map results back to global indices
+                    for r in results:
+                        r["global_index"] = i + r.get("index", 0)
+                    all_results.extend(results)
+
+                # Sort by global index to return scores in original document order
+                all_results.sort(key=lambda r: r.get("global_index", 0))
+
+                # Jina scores can be negative; normalize to [0, 1] using sigmoid
+                all_scores = [
+                    1.0 / (1.0 + math.exp(-r["relevance_score"]))
+                    for r in all_results
+                ]
+
+                return all_scores
+
+            except requests.exceptions.RequestException as e:
+                log.error(f"Error calling Jina reranker API: {e}")
+                raise e
 
         elif self.backend == "local":
             # 1. 创建所有的查询-文档对

@@ -1,0 +1,225 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a system that utilizes specific operators to answer queries and prune search spaces",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "figure 8",
+      "entity_type": "IMAGE",
+      "description": "figure 8 is an illustration depicting bookrag s answering workflow across different query types",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "single hop",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "single hop refers to a type of query case where the reasoning space is reduced from 134 to 24 nodes",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "multi hop",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "multi hop is a type of query case handled by bookrag s answering workflow",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "global queries",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "global queries are a type of query case processed by bookrag s answering workflow",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "select",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "select is a specific operator leveraged by bookrag to prune search spaces",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "decompose",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "decompose is a specific operator leveraged by bookrag to prune search spaces",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "filter",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "filter is a specific operator leveraged by bookrag to prune search spaces",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "134",
+      "entity_type": "MEASUREMENT",
+      "description": "134 represents the initial number of nodes in the reasoning space for the single hop case",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "24",
+      "entity_type": "MEASUREMENT",
+      "description": "24 represents the reduced number of nodes in the reasoning space for the single hop case",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "case study",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "case study is the context or type of analysis being presented in the text",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "answering workflow",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "answering workflow is the process illustrated by figure 8 that bookrag uses to handle queries",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "search spaces",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "search spaces are the areas that bookrag prunes using specific operators to improve efficiency",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "relevant evidence",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "relevant evidence is the specific information that bookrag isolates from noise",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "noise",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "noise refers to irrelevant data from which bookrag isolates relevant evidence",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "entity_name": "precise answer generation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "precise answer generation is the outcome ensured by bookrag s ability to isolate relevant evidence",
+      "source_ids": [
+        186
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "figure 8",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 8 illustrates the answering workflow of bookrag",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "single hop",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag processes single hop queries  reducing the reasoning space significantly",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "multi hop",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag processes multi hop queries as part of its answering workflow",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "global queries",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag processes global queries as part of its answering workflow",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "select",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag leverages the select operator to prune search spaces",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "decompose",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag leverages the decompose operator to prune search spaces",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "filter",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag leverages the filter operator to prune search spaces",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "134",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the single hop case starts with a reasoning space of 134 nodes",
+      "source_ids": [
+        186
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "24",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the single hop case reduces the reasoning space to 24 nodes",
+      "source_ids": [
+        186
+      ]
+    }
+  ],
+  "node_idx": 186
+}

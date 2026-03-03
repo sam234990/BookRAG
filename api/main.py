@@ -1,4 +1,7 @@
 """BookRAG FastAPI application entry point."""
+from dotenv import load_dotenv
+load_dotenv()  # load .env before any os.getenv / os.environ calls
+
 import logging
 import os
 import uuid as _uuid

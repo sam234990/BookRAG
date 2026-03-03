@@ -515,3 +515,43 @@ SYNTHESIS_USER_PROMPT = """
 --- Provided Analyses from Different Sources ---
 {partial_answers_str}
 """
+
+
+# ── Language-aware prompt helpers ─────────────────────────────────────────────
+
+_LANG_NAMES = {
+    "en": "English",
+    "id": "Bahasa Indonesia",
+    "zh": "Chinese",
+    "ja": "Japanese",
+    "ko": "Korean",
+    "ms": "Malay",
+    "th": "Thai",
+    "vi": "Vietnamese",
+    "de": "German",
+    "fr": "French",
+    "es": "Spanish",
+    "pt": "Portuguese",
+    "ar": "Arabic",
+}
+
+
+def get_lang_instruction(lang: str) -> str:
+    """Return a short instruction telling the LLM which language to respond in.
+
+    Returns an empty string for English (default) to keep prompts minimal.
+    """
+    if not lang or lang == "en":
+        return ""
+    lang_name = _LANG_NAMES.get(lang, lang)
+    return f" Respond in {lang_name}."
+
+
+def get_iter_generation_sys_prompt(lang: str = "en") -> str:
+    """V2 iterative generation system prompt, with optional language instruction."""
+    return ITER_GENERATION_SYS_PROMPT + get_lang_instruction(lang)
+
+
+def get_synthesis_sys_prompt(lang: str = "en") -> str:
+    """V2 synthesis system prompt, with optional language instruction."""
+    return SYNTHESIS_SYS_PROMPT.rstrip() + get_lang_instruction(lang) + "\n"

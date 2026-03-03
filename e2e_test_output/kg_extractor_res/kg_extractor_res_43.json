@@ -1,0 +1,179 @@
+{
+  "entities": [
+    {
+      "entity_name": "experts",
+      "entity_type": "PERSON",
+      "description": "experts are individuals seeking a solution to a specific problem within a large technical handbook",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "entity_name": "large technical handbook",
+      "entity_type": "BOOK",
+      "description": "the large technical handbook is the source material containing the problem and information patches",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "entity_name": "key terms",
+      "entity_type": "CONCEPT",
+      "description": "key terms are extracted by experts to act as information scent",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "entity_name": "information scent",
+      "entity_type": "CONCEPT",
+      "description": "information scent is the guidance provided by key terms that leads experts to promising sections",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "entity_name": "information patches",
+      "entity_type": "CONCEPT",
+      "description": "information patches are the promising sections within the handbook that experts navigate to",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "entity_name": "final answer",
+      "entity_type": "CONCEPT",
+      "description": "the final answer is the result formulated by experts after analyzing the content within the information patches",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "entity_name": "problem",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a specific problem is the target issue that experts are seeking to solve within the handbook",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "entity_name": "diverse content",
+      "entity_type": "CONCEPT",
+      "description": "diverse content refers to the varied information found within the information patches that experts analyze",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "entity_name": "precise knowledge",
+      "entity_type": "CONCEPT",
+      "description": "precise knowledge is the specific information extracted from the diverse content to help formulate the answer",
+      "source_ids": [
+        43
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "experts",
+      "tgt_entity_name": "large technical handbook",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "experts seek a solution within the large technical handbook",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "src_entity_name": "experts",
+      "tgt_entity_name": "key terms",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "experts extract key terms from the handbook",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "src_entity_name": "key terms",
+      "tgt_entity_name": "information scent",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "key terms act as information scent",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "src_entity_name": "information scent",
+      "tgt_entity_name": "information patches",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "information scent guides experts to navigate towards information patches",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "src_entity_name": "experts",
+      "tgt_entity_name": "information patches",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "experts navigate to and analyze content within information patches",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "src_entity_name": "experts",
+      "tgt_entity_name": "final answer",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "experts formulate a final answer based on the analysis of information patches",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "src_entity_name": "experts",
+      "tgt_entity_name": "problem",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "experts are seeking a solution to the specific problem",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "src_entity_name": "experts",
+      "tgt_entity_name": "diverse content",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "experts analyze the diverse content within the information patches",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "src_entity_name": "diverse content",
+      "tgt_entity_name": "precise knowledge",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "experts extract precise knowledge from the diverse content",
+      "source_ids": [
+        43
+      ]
+    },
+    {
+      "src_entity_name": "precise knowledge",
+      "tgt_entity_name": "final answer",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "precise knowledge is used to formulate the final answer",
+      "source_ids": [
+        43
+      ]
+    }
+  ],
+  "node_idx": 43
+}

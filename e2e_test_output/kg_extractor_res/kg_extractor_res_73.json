@@ -1,0 +1,187 @@
+{
+  "entities": [
+    {
+      "entity_name": "case b",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "case b refers to a scenario involving an existing entity where an alias is being evaluated for relevance",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "entity_name": "reranker",
+      "entity_type": "TECHNOLOGY",
+      "description": "the reranker is a system or component described as having inherent discriminative limitations",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "entity_name": "existing entity",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "existing entity refers to an entity that is already present in the system being discussed",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "entity_name": "alias",
+      "entity_type": "CONCEPT",
+      "description": "alias is a term used to describe an alternative name for an existing entity",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "entity_name": "scores",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "scores are the numerical values indicating the relevance of an alias to a true match",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "entity_name": "true match",
+      "entity_type": "CONCEPT",
+      "description": "true match refers to the correct entity that an alias is being compared against",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "entity_name": "equivalent aliases",
+      "entity_type": "CONCEPT",
+      "description": "equivalent aliases refers to a small set of aliases that are considered the same as the true match",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "entity_name": "gradient",
+      "entity_type": "MEASUREMENT",
+      "description": "gradient refers to the sharp decline in relevance scores mentioned in the text",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "entity_name": "irrelevant entities",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "irrelevant entities are the entities that follow the sharp decline in relevance scores",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "entity_name": "",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        73
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "",
+      "tgt_entity_name": "case b",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "is the specific alias being discussed within the scenario defined as case b",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "src_entity_name": "",
+      "tgt_entity_name": "reranker",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the scores of     are influenced by the inherent discriminative limitations of the reranker",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "src_entity_name": "case b",
+      "tgt_entity_name": "existing entity",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "case b is defined by the scenario involving an existing entity",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "src_entity_name": "case b",
+      "tgt_entity_name": "alias",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "case b specifically addresses the situation where an alias is being evaluated",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "src_entity_name": "alias",
+      "tgt_entity_name": "true match",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the alias is evaluated for its relevance to the true match",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "src_entity_name": "scores",
+      "tgt_entity_name": "true match",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "scores indicate the relevance of the alias to the true match",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "src_entity_name": "scores",
+      "tgt_entity_name": "equivalent aliases",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "scores show high relevance to the true match or a set of equivalent aliases",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "src_entity_name": "reranker",
+      "tgt_entity_name": "scores",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the reranker s limitations affect the initial set of high relevance scores",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "src_entity_name": "scores",
+      "tgt_entity_name": "gradient",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the scores exhibit a sharp decline  gradient  after the initial high relevance set",
+      "source_ids": [
+        73
+      ]
+    },
+    {
+      "src_entity_name": "gradient",
+      "tgt_entity_name": "irrelevant entities",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the gradient precedes the transition to irrelevant entities",
+      "source_ids": [
+        73
+      ]
+    }
+  ],
+  "node_idx": 73
+}

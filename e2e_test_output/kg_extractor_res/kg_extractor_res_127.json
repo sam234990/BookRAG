@@ -1,0 +1,293 @@
+{
+  "entities": [
+    {
+      "entity_name": "reasoner operators",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "reasoner operators are components that evaluate nodes using multiple dimensions such as graph topology and semantic relevance",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "skyline ranker",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "skyline ranker is a method employed to obtain the final retrieval set by retaining the pareto frontier of nodes",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "skyline operator",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the skyline operator is a mechanism that retains valuable nodes in at least one dimension while discarding dominated ones",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "n r",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "n r represents the final retrieval set derived from the skyline ranker process",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "s g n s",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "s g   n   s   is a function or metric used within the skyline ranker equation to evaluate nodes",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "t n",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "t   n   is a function or metric used within the skyline ranker equation to evaluate nodes",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "n s",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "n s represents the set of nodes from which the final retrieval set is derived",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "equation 14",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "equation  14  defines the mathematical relationship for calculating the final retrieval set n r using the skyline ranker",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "graph topology",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "graph topology is a dimension used by reasoner operators to evaluate nodes",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "semantic relevance",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "semantic relevance is a dimension used by reasoner operators to evaluate nodes",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "pareto frontier",
+      "entity_type": "CONCEPT",
+      "description": "the pareto frontier is the set of nodes retained by the skyline operator that are valuable in at least one dimension",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "fixed top retrieval",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "fixed top  retrieval is a method contrasted with the skyline operator for its inability to retain the pareto frontier",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "noise",
+      "entity_type": "CONCEPT",
+      "description": "noise is a factor minimized by the pre selection process to optimize foraging cost",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "foraging cost",
+      "entity_type": "MEASUREMENT",
+      "description": "foraging cost is the metric optimized by minimizing noise and focusing on relevant contexts",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "pre selection",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "pre selection is a process that minimizes noise and ensures reasoning is applied only to highly relevant contexts",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "nodes",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "entity_name": "final retrieval set",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        127
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "reasoner operators",
+      "tgt_entity_name": "nodes",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "reasoner operators evaluate nodes using multiple dimensions like graph topology and semantic relevance",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "final retrieval set",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the skyline ranker is employed to generate the final retrieval set",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "skyline operator",
+      "tgt_entity_name": "nodes",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the skyline operator retains nodes that are valuable in at least one dimension and discards dominated ones",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "equation 14",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "equation  14  mathematically defines the operation of the skyline ranker",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "n r",
+      "tgt_entity_name": "skyline ranker",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "n r is the output variable resulting from the skyline ranker operation",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "s g n s",
+      "tgt_entity_name": "skyline ranker",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "s g   n   s   is an input component used within the skyline ranker equation",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "t n",
+      "tgt_entity_name": "skyline ranker",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "t   n   is an input component used within the skyline ranker equation",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "n s",
+      "tgt_entity_name": "skyline ranker",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "n s is the set of nodes provided as input to the skyline ranker equation",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "reasoner operators",
+      "tgt_entity_name": "graph topology",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "reasoner operators use graph topology as a dimension for evaluation",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "reasoner operators",
+      "tgt_entity_name": "semantic relevance",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "reasoner operators use semantic relevance as a dimension for evaluation",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "skyline operator",
+      "tgt_entity_name": "pareto frontier",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the skyline operator retains the pareto frontier of nodes",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "skyline operator",
+      "tgt_entity_name": "fixed top retrieval",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the skyline operator is contrasted with fixed top  retrieval in the text",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "pre selection",
+      "tgt_entity_name": "noise",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "pre selection minimizes noise",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "pre selection",
+      "tgt_entity_name": "foraging cost",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "pre selection optimizes the foraging cost",
+      "source_ids": [
+        127
+      ]
+    },
+    {
+      "src_entity_name": "n r",
+      "tgt_entity_name": "nodes",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "n r represents the set of retained nodes",
+      "source_ids": [
+        127
+      ]
+    }
+  ],
+  "node_idx": 127
+}

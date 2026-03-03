@@ -1,0 +1,323 @@
+{
+  "entities": [
+    {
+      "entity_name": "jaemin cho",
+      "entity_type": "PERSON",
+      "description": "jaemin cho is an author of the 2024 arxiv preprint titled m3docrag",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "entity_name": "debanjan mahata",
+      "entity_type": "PERSON",
+      "description": "debanjan mahata is an author of the 2024 arxiv preprint titled m3docrag",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "entity_name": "ozan irsoy",
+      "entity_type": "PERSON",
+      "description": "ozan irsoy is an author of the 2024 arxiv preprint titled m3docrag",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "entity_name": "yujie he",
+      "entity_type": "PERSON",
+      "description": "yujie he is an author of the 2024 arxiv preprint titled m3docrag",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "entity_name": "mohit bansal",
+      "entity_type": "PERSON",
+      "description": "mohit bansal is an author of the 2024 arxiv preprint titled m3docrag",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "entity_name": "m3docrag",
+      "entity_type": "PRODUCT",
+      "description": "m3docrag is a multi modal retrieval system designed for multi page multidocument understanding",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "entity_name": "arxiv",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv is the platform where the preprint m3docrag was published",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "entity_name": "2024",
+      "entity_type": "DATE",
+      "description": "2024 is the year the m3docrag preprint was published",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "entity_name": "arxiv 2411 04952",
+      "entity_type": "FILE_TYPE",
+      "description": "arxiv 2411 04952 is the specific identifier for the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "entity_name": "multi modal retrieval",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "multi modal retrieval is the technique described as what is needed for multi page multidocument understanding in the m3docrag paper",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "entity_name": "multi page multidocument understanding",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "multi page multidocument understanding is the specific task or problem that the m3docrag system addresses",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "entity_name": "arxiv preprint",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv preprint is the type of publication venue where the m3docrag paper was released",
+      "source_ids": [
+        201
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "jaemin cho",
+      "tgt_entity_name": "m3docrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "jaemin cho is an author of the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "debanjan mahata",
+      "tgt_entity_name": "m3docrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "debanjan mahata is an author of the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "ozan irsoy",
+      "tgt_entity_name": "m3docrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "ozan irsoy is an author of the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "yujie he",
+      "tgt_entity_name": "m3docrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yujie he is an author of the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "mohit bansal",
+      "tgt_entity_name": "m3docrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "mohit bansal is an author of the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "m3docrag",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "m3docrag was published as a preprint on arxiv",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "m3docrag",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "m3docrag was published in the year 2024",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "m3docrag",
+      "tgt_entity_name": "arxiv 2411 04952",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "m3docrag is identified by the file type arxiv 2411 04952",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "jaemin cho",
+      "tgt_entity_name": "debanjan mahata",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jaemin cho and debanjan mahata are co authors on the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "jaemin cho",
+      "tgt_entity_name": "ozan irsoy",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jaemin cho and ozan irsoy are co authors on the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "jaemin cho",
+      "tgt_entity_name": "yujie he",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jaemin cho and yujie he are co authors on the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "jaemin cho",
+      "tgt_entity_name": "mohit bansal",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jaemin cho and mohit bansal are co authors on the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "debanjan mahata",
+      "tgt_entity_name": "ozan irsoy",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "debanjan mahata and ozan irsoy are co authors on the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "debanjan mahata",
+      "tgt_entity_name": "yujie he",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "debanjan mahata and yujie he are co authors on the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "debanjan mahata",
+      "tgt_entity_name": "mohit bansal",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "debanjan mahata and mohit bansal are co authors on the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "ozan irsoy",
+      "tgt_entity_name": "yujie he",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "ozan irsoy and yujie he are co authors on the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "ozan irsoy",
+      "tgt_entity_name": "mohit bansal",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "ozan irsoy and mohit bansal are co authors on the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "yujie he",
+      "tgt_entity_name": "mohit bansal",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yujie he and mohit bansal are co authors on the m3docrag preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "m3docrag",
+      "tgt_entity_name": "multi modal retrieval",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "m3docrag utilizes multi modal retrieval as its core technique",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "m3docrag",
+      "tgt_entity_name": "multi page multidocument understanding",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "m3docrag is designed to solve the problem of multi page multidocument understanding",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "m3docrag",
+      "tgt_entity_name": "arxiv preprint",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "m3docrag was published as an arxiv preprint",
+      "source_ids": [
+        201
+      ]
+    },
+    {
+      "src_entity_name": "multi modal retrieval",
+      "tgt_entity_name": "multi page multidocument understanding",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "multi modal retrieval is identified as the necessary method for achieving multi page multidocument understanding",
+      "source_ids": [
+        201
+      ]
+    }
+  ],
+  "node_idx": 201
+}

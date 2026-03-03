@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (11)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation describing a decomposition process involving mapping and reduction. LaTeX: 𝑃 complex = Decompose → 𝑃 s → Map → Reduce (11)",
+      "source_ids": [
+        119
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 119
+}

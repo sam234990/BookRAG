@@ -1,0 +1,217 @@
+{
+  "entities": [
+    {
+      "entity_name": "agent based query classification",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "agent based query classification is a task for which prompts are designed  as illustrated in figure 10",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "entity_name": "question decomposition",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "question decomposition is a task for which prompts are designed  as illustrated in figure 11",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "entity_name": "filter operator generation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "filter operator generation is a task for which prompts are designed  as illustrated in figure 12",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "entity_name": "entity resolution judgment",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "entity resolution judgment is a task for which a prompt is employed during the graph construction phase  as illustrated in figure 13",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "entity_name": "graph construction phase",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "graph construction phase is the specific phase during which entity resolution judgment is performed",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "entity_name": "prompts",
+      "entity_type": "PRODUCT",
+      "description": "prompts are the specific designed items mentioned in the text for various tasks",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "entity_name": "figure 10",
+      "entity_type": "IMAGE",
+      "description": "figure 10 is a visual element illustrating prompts for agent based query classification",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "entity_name": "figure 11",
+      "entity_type": "IMAGE",
+      "description": "figure 11 is a visual element illustrating prompts for question decomposition",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "entity_name": "figure 12",
+      "entity_type": "IMAGE",
+      "description": "figure 12 is a visual element illustrating prompts for filter operator generation",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "entity_name": "figure 13",
+      "entity_type": "IMAGE",
+      "description": "figure 13 is a visual element illustrating the prompt for entity resolution judgment",
+      "source_ids": [
+        240
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "agent based query classification",
+      "tgt_entity_name": "figure 10",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 10 illustrates the prompts designed for agent based query classification",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "src_entity_name": "question decomposition",
+      "tgt_entity_name": "figure 11",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 11 illustrates the prompts designed for question decomposition",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "src_entity_name": "filter operator generation",
+      "tgt_entity_name": "figure 12",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 12 illustrates the prompts designed for filter operator generation",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "src_entity_name": "entity resolution judgment",
+      "tgt_entity_name": "figure 13",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 13 illustrates the prompt employed for entity resolution judgment",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "src_entity_name": "entity resolution judgment",
+      "tgt_entity_name": "graph construction phase",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "entity resolution judgment is performed during the graph construction phase",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "src_entity_name": "prompts",
+      "tgt_entity_name": "agent based query classification",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "prompts are designed specifically for agent based query classification",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "src_entity_name": "prompts",
+      "tgt_entity_name": "question decomposition",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "prompts are designed specifically for question decomposition",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "src_entity_name": "prompts",
+      "tgt_entity_name": "filter operator generation",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "prompts are designed specifically for filter operator generation",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "src_entity_name": "prompts",
+      "tgt_entity_name": "entity resolution judgment",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "a prompt is employed for entity resolution judgment",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "src_entity_name": "figure 10",
+      "tgt_entity_name": "agent based query classification",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 10 presents the prompts for agent based query classification",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "src_entity_name": "figure 11",
+      "tgt_entity_name": "question decomposition",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 11 presents the prompts for question decomposition",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "src_entity_name": "figure 12",
+      "tgt_entity_name": "filter operator generation",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 12 presents the prompts for filter operator generation",
+      "source_ids": [
+        240
+      ]
+    },
+    {
+      "src_entity_name": "figure 13",
+      "tgt_entity_name": "entity resolution judgment",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 13 illustrates the prompt for entity resolution judgment",
+      "source_ids": [
+        240
+      ]
+    }
+  ],
+  "node_idx": 240
+}

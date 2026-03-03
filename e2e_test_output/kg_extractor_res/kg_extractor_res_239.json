@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "a.3 prompts",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'Experimental Details' within the BookRAG paper, this section details the specific text prompts engineered and utilized to guide the Retrieval-Augmented Generation (RAG) system in processing complex documents.",
+      "source_ids": [
+        239
+      ]
+    },
+    {
+      "entity_name": "prompts",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "Refers to the structured input instructions provided to the language model to elicit specific behaviors or outputs, as defined in section A.3.",
+      "source_ids": [
+        239
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "prompts",
+      "tgt_entity_name": "a.3 prompts",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'Prompts' is the primary topic of section A.3.",
+      "source_ids": [
+        239
+      ]
+    }
+  ],
+  "node_idx": 239
+}

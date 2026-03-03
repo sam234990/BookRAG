@@ -1,0 +1,25 @@
+{
+  "entities": [
+    {
+      "entity_name": "be strict and conservative",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "be strict and conservative is a guideline or instruction regarding the standard for matching  emphasizing high standards to avoid corrupting the knowledge graph",
+      "source_ids": [
+        270
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "be strict and conservative",
+      "tgt_entity_name": "be strict and conservative",
+      "relation_name": "",
+      "weight": 1.0,
+      "description": "the entity refers to itself as a guideline for maintaining high standards in matching",
+      "source_ids": [
+        270
+      ]
+    }
+  ],
+  "node_idx": 270
+}

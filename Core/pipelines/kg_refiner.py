@@ -55,6 +55,7 @@ class KGRefiner:
             max_length=graph_config.embedding_config.max_length,
             device=graph_config.embedding_config.device,
             api_base=graph_config.embedding_config.api_base,
+            api_key=graph_config.embedding_config.api_key,
         )
         self.reranker = TextRerankerProvider(
             model_name=graph_config.reranker_config.model_name,
@@ -62,6 +63,7 @@ class KGRefiner:
             max_length=graph_config.reranker_config.max_length,
             backend=graph_config.reranker_config.backend,
             api_base=graph_config.reranker_config.api_base,
+            api_key=graph_config.reranker_config.api_key,
         )
         # delete the old vector database if exists
         self.vdb_path = os.path.join(save_path, "kg_vdb")

@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "table 2",
+      "entity_type": "TABLE",
+      "description": "table 2 is a table that lists three common query categories addressed in bookrag",
+      "source_ids": [
+        89
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a product or system that addresses three common query categories",
+      "source_ids": [
+        89
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "table 2",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "table 2 details query categories that are addressed within the bookrag system",
+      "source_ids": [
+        89
+      ]
+    }
+  ],
+  "node_idx": 89
+}

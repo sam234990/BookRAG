@@ -1,0 +1,353 @@
+{
+  "entities": [
+    {
+      "entity_name": "zirui guo",
+      "entity_type": "PERSON",
+      "description": "zirui guo is listed as an author of the paper titled lightrag",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "entity_name": "lianghao xia",
+      "entity_type": "PERSON",
+      "description": "lianghao xia is listed as an author of the paper titled lightrag",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "entity_name": "yanhua yu",
+      "entity_type": "PERSON",
+      "description": "yanhua yu is listed as an author of the paper titled lightrag",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "entity_name": "tu ao",
+      "entity_type": "PERSON",
+      "description": "tu ao is listed as an author of the paper titled lightrag",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "entity_name": "chao huang",
+      "entity_type": "PERSON",
+      "description": "chao huang is listed as an author of the paper titled lightrag",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "entity_name": "lightrag",
+      "entity_type": "PRODUCT",
+      "description": "lightrag is a retrieval augmented generation system described as simple and fast",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "entity_name": "arxiv e prints",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv e prints is the publication venue where the paper was released in 2024",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "entity_name": "2024",
+      "entity_type": "DATE",
+      "description": "2024 is the year the paper was published and the date associated with the arxiv identifier",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "entity_name": "arxiv2410",
+      "entity_type": "FILE_TYPE",
+      "description": "arxiv2410 is the specific identifier for the paper on arxiv",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "entity_name": "retrieval augmented generation",
+      "entity_type": "TECHNOLOGY",
+      "description": "retrieval augmented generation is the technology category that lightrag belongs to  as described in the text",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "entity_name": "simple",
+      "entity_type": "CONCEPT",
+      "description": "simple is an attribute used to describe the lightrag system",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "entity_name": "fast",
+      "entity_type": "CONCEPT",
+      "description": "fast is an attribute used to describe the lightrag system",
+      "source_ids": [
+        208
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "zirui guo",
+      "tgt_entity_name": "lightrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "zirui guo is an author of the lightrag paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "lianghao xia",
+      "tgt_entity_name": "lightrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "lianghao xia is an author of the lightrag paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "yanhua yu",
+      "tgt_entity_name": "lightrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yanhua yu is an author of the lightrag paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "tu ao",
+      "tgt_entity_name": "lightrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "tu ao is an author of the lightrag paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "chao huang",
+      "tgt_entity_name": "lightrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "chao huang is an author of the lightrag paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "lightrag",
+      "tgt_entity_name": "arxiv e prints",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "lightrag was published in arxiv e prints",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "lightrag",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "lightrag was published in the year 2024",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "lightrag",
+      "tgt_entity_name": "arxiv2410",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "lightrag is identified by the arxiv identifier arxiv2410",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "zirui guo",
+      "tgt_entity_name": "lianghao xia",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zirui guo and lianghao xia are co authors on the same paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "zirui guo",
+      "tgt_entity_name": "tu ao",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zirui guo and tu ao are co authors on the same paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "zirui guo",
+      "tgt_entity_name": "chao huang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zirui guo and chao huang are co authors on the same paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "lianghao xia",
+      "tgt_entity_name": "yanhua yu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "lianghao xia and yanhua yu are co authors on the same paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "lianghao xia",
+      "tgt_entity_name": "tu ao",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "lianghao xia and tu ao are co authors on the same paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "lianghao xia",
+      "tgt_entity_name": "chao huang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "lianghao xia and chao huang are co authors on the same paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "yanhua yu",
+      "tgt_entity_name": "tu ao",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yanhua yu and tu ao are co authors on the same paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "yanhua yu",
+      "tgt_entity_name": "chao huang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yanhua yu and chao huang are co authors on the same paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "tu ao",
+      "tgt_entity_name": "chao huang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "tu ao and chao huang are co authors on the same paper",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "lightrag",
+      "tgt_entity_name": "retrieval augmented generation",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "lightrag is a type of retrieval augmented generation system",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "lightrag",
+      "tgt_entity_name": "simple",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "lightrag is described as being simple",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "lightrag",
+      "tgt_entity_name": "fast",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "lightrag is described as being fast",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "zirui guo",
+      "tgt_entity_name": "retrieval augmented generation",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "zirui guo is an author of a paper about retrieval augmented generation",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "lianghao xia",
+      "tgt_entity_name": "retrieval augmented generation",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "lianghao xia is an author of a paper about retrieval augmented generation",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "yanhua yu",
+      "tgt_entity_name": "retrieval augmented generation",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "yanhua yu is an author of a paper about retrieval augmented generation",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "tu ao",
+      "tgt_entity_name": "retrieval augmented generation",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "tu ao is an author of a paper about retrieval augmented generation",
+      "source_ids": [
+        208
+      ]
+    },
+    {
+      "src_entity_name": "chao huang",
+      "tgt_entity_name": "retrieval augmented generation",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "chao huang is an author of a paper about retrieval augmented generation",
+      "source_ids": [
+        208
+      ]
+    }
+  ],
+  "node_idx": 208
+}

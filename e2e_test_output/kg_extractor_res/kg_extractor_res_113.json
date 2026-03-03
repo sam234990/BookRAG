@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (8)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the variable P as a function of Agent Plan with inputs q, c, and O. LaTeX: 𝑃 = Agent Plan ( 𝑞, 𝑐, O) (8)",
+      "source_ids": [
+        113
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 113
+}

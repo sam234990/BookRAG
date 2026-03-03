@@ -1,0 +1,171 @@
+{
+  "entities": [
+    {
+      "entity_name": "single hop",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "single hop is a task where an agent first attempts to extract an entity",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "entity_name": "agent",
+      "entity_type": "PERSON",
+      "description": "the agent is an entity that attempts to extract an entity and executes selection strategies",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "entity_name": "scent based",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "scent based is a selection strategy used by the agent if entity extraction is successful",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "entity_name": "section based",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "section based is a fallback strategy used by the agent if entity extraction fails",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "entity_name": "standard reasoning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "standard reasoning is a process that both selection paths proceed to",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "entity_name": "generation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "generation is a process that both selection paths proceed to",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "entity_name": "p std",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "p std denotes the standard reasoning and generation process",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "entity_name": "entity",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "entity is the object that the agent attempts to extract in the single hop process",
+      "source_ids": [
+        115
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "single hop",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent performs the single hop task by attempting to extract an entity",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "scent based",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the agent executes the scent based selection strategy if entity extraction is successful",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "section based",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the agent falls back to the section based strategy if entity extraction fails",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "src_entity_name": "scent based",
+      "tgt_entity_name": "standard reasoning",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the scent based path proceeds to standard reasoning and generation",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "src_entity_name": "section based",
+      "tgt_entity_name": "standard reasoning",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the section based path proceeds to standard reasoning and generation",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "src_entity_name": "standard reasoning",
+      "tgt_entity_name": "generation",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "standard reasoning and generation are linked processes denoted as p std",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "src_entity_name": "scent based",
+      "tgt_entity_name": "generation",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the scent based path proceeds to generation as part of p std",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "src_entity_name": "section based",
+      "tgt_entity_name": "generation",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the section based path proceeds to generation as part of p std",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "entity",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent attempts to extract the entity as the first step of the single hop process",
+      "source_ids": [
+        115
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "entity",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the single hop task involves the extraction of an entity",
+      "source_ids": [
+        115
+      ]
+    }
+  ],
+  "node_idx": 115
+}

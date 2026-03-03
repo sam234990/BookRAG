@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (18)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the Error Metric (EM) as the average of indicator functions comparing predicted and ground truth labels. LaTeX: EM = 1 𝑁 𝑁 ∑︁ 𝑖 = 1 I (N( ˆ 𝑦 𝑖 ) = N( 𝑦 𝑔𝑜𝑙𝑑,𝑖 )) (18)",
+      "source_ids": [
+        230
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 230
+}

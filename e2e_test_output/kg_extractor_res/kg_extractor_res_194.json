@@ -1,0 +1,501 @@
+{
+  "entities": [
+    {
+      "entity_name": "shuai bai",
+      "entity_type": "PERSON",
+      "description": "shuai bai is listed as one of the authors of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "keqin chen",
+      "entity_type": "PERSON",
+      "description": "keqin chen is listed as one of the authors of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "xuejing liu",
+      "entity_type": "PERSON",
+      "description": "xuejing liu is listed as one of the authors of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "jialin wang",
+      "entity_type": "PERSON",
+      "description": "jialin wang is listed as one of the authors of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "wenbin ge",
+      "entity_type": "PERSON",
+      "description": "wenbin ge is listed as one of the authors of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "sibo song",
+      "entity_type": "PERSON",
+      "description": "sibo song is listed as one of the authors of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "kai dang",
+      "entity_type": "PERSON",
+      "description": "kai dang is listed as one of the authors of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "peng wang",
+      "entity_type": "PERSON",
+      "description": "peng wang is listed as one of the authors of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "shijie wang",
+      "entity_type": "PERSON",
+      "description": "shijie wang is listed as one of the authors of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "jun tang",
+      "entity_type": "PERSON",
+      "description": "jun tang is listed as one of the authors of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "qwen2 5 vl technical report",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "qwen2 5 vl technical report is the title of the document authored by the listed individuals",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "arxiv",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv is the preprint server where the qwen2 5 vl technical report was published",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "2025",
+      "entity_type": "DATE",
+      "description": "2025 is the year the qwen2 5 vl technical report was published",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "arxiv 2502 13923",
+      "entity_type": "FILE_TYPE",
+      "description": "arxiv 2502 13923 is the specific identifier for the preprint document",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "et al",
+      "entity_type": "PERSON",
+      "description": "et al  indicates additional authors not explicitly listed in the text",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "qwen2 5 vl",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "qwen2 5 vl is the specific model or architecture discussed in the technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "technical report",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "technical report describes the type of document being referenced",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "entity_name": "preprint",
+      "entity_type": "FILE_TYPE",
+      "description": "preprint indicates the document is a preliminary version of a research paper",
+      "source_ids": [
+        194
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "shuai bai",
+      "tgt_entity_name": "qwen2 5 vl technical report",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "shuai bai is an author of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "keqin chen",
+      "tgt_entity_name": "qwen2 5 vl technical report",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "keqin chen is an author of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "xuejing liu",
+      "tgt_entity_name": "qwen2 5 vl technical report",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "xuejing liu is an author of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "jialin wang",
+      "tgt_entity_name": "qwen2 5 vl technical report",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "jialin wang is an author of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "wenbin ge",
+      "tgt_entity_name": "qwen2 5 vl technical report",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "wenbin ge is an author of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "sibo song",
+      "tgt_entity_name": "qwen2 5 vl technical report",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "sibo song is an author of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "kai dang",
+      "tgt_entity_name": "qwen2 5 vl technical report",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "kai dang is an author of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "peng wang",
+      "tgt_entity_name": "qwen2 5 vl technical report",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "peng wang is an author of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "shijie wang",
+      "tgt_entity_name": "qwen2 5 vl technical report",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "shijie wang is an author of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "jun tang",
+      "tgt_entity_name": "qwen2 5 vl technical report",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "jun tang is an author of the qwen2 5 vl technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "qwen2 5 vl technical report",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the qwen2 5 vl technical report was published as a preprint on arxiv",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "qwen2 5 vl technical report",
+      "tgt_entity_name": "2025",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the qwen2 5 vl technical report was published in the year 2025",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "qwen2 5 vl technical report",
+      "tgt_entity_name": "arxiv 2502 13923",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the qwen2 5 vl technical report is identified by the preprint number arxiv 2502 13923",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "shuai bai",
+      "tgt_entity_name": "keqin chen",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "shuai bai and keqin chen are co authors of the same document",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "shuai bai",
+      "tgt_entity_name": "xuejing liu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "shuai bai and xuejing liu are co authors of the same document",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "shuai bai",
+      "tgt_entity_name": "jialin wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "shuai bai and jialin wang are co authors of the same document",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "shuai bai",
+      "tgt_entity_name": "wenbin ge",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "shuai bai and wenbin ge are co authors of the same document",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "shuai bai",
+      "tgt_entity_name": "sibo song",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "shuai bai and sibo song are co authors of the same document",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "shuai bai",
+      "tgt_entity_name": "kai dang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "shuai bai and kai dang are co authors of the same document",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "shuai bai",
+      "tgt_entity_name": "peng wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "shuai bai and peng wang are co authors of the same document",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "shuai bai",
+      "tgt_entity_name": "shijie wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "shuai bai and shijie wang are co authors of the same document",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "shuai bai",
+      "tgt_entity_name": "jun tang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "shuai bai and jun tang are co authors of the same document",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "qwen2 5 vl technical report",
+      "tgt_entity_name": "qwen2 5 vl",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the report is about the qwen2 5 vl model architecture",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "qwen2 5 vl technical report",
+      "tgt_entity_name": "technical report",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the document is identified as a technical report",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "arxiv",
+      "tgt_entity_name": "preprint",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "arxiv is a platform for preprints",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "shuai bai",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "shuai bai is the first author listed before et al",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "keqin chen",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "keqin chen is listed as an author before et al",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "xuejing liu",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "xuejing liu is listed as an author before et al",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "jialin wang",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "jialin wang is listed as an author before et al",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "wenbin ge",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "wenbin ge is listed as an author before et al",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "sibo song",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "sibo song is listed as an author before et al",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "kai dang",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "kai dang is listed as an author before et al",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "peng wang",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "peng wang is listed as an author before et al",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "shijie wang",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "shijie wang is listed as an author before et al",
+      "source_ids": [
+        194
+      ]
+    },
+    {
+      "src_entity_name": "jun tang",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "jun tang is listed as an author before et al",
+      "source_ids": [
+        194
+      ]
+    }
+  ],
+  "node_idx": 194
+}

@@ -1,0 +1,231 @@
+{
+  "entities": [
+    {
+      "entity_name": "layoutsegmentedrag",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "layoutsegmentedrag is a category of methods that utilize layout analysis to segment document content into discrete structural units",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "entity_name": "mm vanilla",
+      "entity_type": "PRODUCT",
+      "description": "mm vanilla is a method that utilizes multi modal embeddings for visual and textual content",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "entity_name": "pageindex",
+      "entity_type": "PRODUCT",
+      "description": "pageindex is a method or system referenced as an inspiration for a tree based method",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "entity_name": "treetraverse",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "treetraverse is a tree based method inspired by pageindex where an llm navigates the document s tree structure",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "entity_name": "docetl",
+      "entity_type": "SOFTWARE",
+      "description": "docetl is a declarative system for complex document processing",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "entity_name": "graphranker",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "graphranker is a graph based method extended from hipporag that applies personalized pagerank to rank relevant nodes",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "entity_name": "hipporag",
+      "entity_type": "METHOD_OR_ARCHITECTURE",
+      "description": "hipporag is a method or architecture from which graphranker is extended",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "entity_name": "personalized pagerank",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "personalized pagerank is a technique applied by graphranker to rank relevant nodes",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "TECHNOLOGY",
+      "description": "llm is a technology used by treetraverse to navigate the document s tree structure",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "entity_name": "page 39",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "page 39 is a citation reference associated with the pageindex method",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "entity_name": "page 47",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "page 47 is a citation reference associated with the docetl system",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "entity_name": "page 19",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "page 19 is a citation reference associated with the hipporag method",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "entity_name": "page 20",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "page 20 is a citation reference associated with the personalized pagerank technique",
+      "source_ids": [
+        148
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "layoutsegmentedrag",
+      "tgt_entity_name": "mm vanilla",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "mm vanilla is included as a method within the layoutsegmentedrag category",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "src_entity_name": "layoutsegmentedrag",
+      "tgt_entity_name": "treetraverse",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "treetraverse is included as a method within the layoutsegmentedrag category",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "src_entity_name": "layoutsegmentedrag",
+      "tgt_entity_name": "docetl",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "docetl is included as a method within the layoutsegmentedrag category",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "src_entity_name": "layoutsegmentedrag",
+      "tgt_entity_name": "graphranker",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graphranker is included as a method within the layoutsegmentedrag category",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "src_entity_name": "treetraverse",
+      "tgt_entity_name": "pageindex",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "treetraverse is inspired by pageindex",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "src_entity_name": "treetraverse",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "treetraverse uses an llm to navigate the document s tree structure",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "src_entity_name": "graphranker",
+      "tgt_entity_name": "hipporag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graphranker is extended from hipporag",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "src_entity_name": "graphranker",
+      "tgt_entity_name": "personalized pagerank",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graphranker applies personalized pagerank to rank relevant nodes",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "src_entity_name": "pageindex",
+      "tgt_entity_name": "page 39",
+      "relation_name": "",
+      "weight": 5.0,
+      "description": "pageindex is referenced in citation page 39",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "src_entity_name": "docetl",
+      "tgt_entity_name": "page 47",
+      "relation_name": "",
+      "weight": 5.0,
+      "description": "docetl is referenced in citation page 47",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "src_entity_name": "hipporag",
+      "tgt_entity_name": "page 19",
+      "relation_name": "",
+      "weight": 5.0,
+      "description": "hipporag is referenced in citation page 19",
+      "source_ids": [
+        148
+      ]
+    },
+    {
+      "src_entity_name": "personalized pagerank",
+      "tgt_entity_name": "page 20",
+      "relation_name": "",
+      "weight": 5.0,
+      "description": "personalized pagerank is referenced in citation page 20",
+      "source_ids": [
+        148
+      ]
+    }
+  ],
+  "node_idx": 148
+}

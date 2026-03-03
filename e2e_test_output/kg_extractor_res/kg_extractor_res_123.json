@@ -1,0 +1,69 @@
+{
+  "entities": [
+    {
+      "entity_name": "5.3 structured execution",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'Agent-Based Retrieval', this section details the retrieval process within the BookRAG framework, specifically focusing on operations executed under the principles of In-Context Few-Shot Training (IFT) and generation.",
+      "source_ids": [
+        123
+      ]
+    },
+    {
+      "entity_name": "retrieval process",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "Refers to the specific mechanism for retrieving information from the BookIndex as described in section 5.3.",
+      "source_ids": [
+        123
+      ]
+    },
+    {
+      "entity_name": "ift principles",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "Refers to the In-Context Few-Shot Training principles that guide the execution logic detailed in section 5.3.",
+      "source_ids": [
+        123
+      ]
+    },
+    {
+      "entity_name": "generation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "Refers to the generative component integrated into the structured execution workflow mentioned in section 5.3.",
+      "source_ids": [
+        123
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "retrieval process",
+      "tgt_entity_name": "5.3 structured execution",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'Retrieval Process' is a primary topic of section 5.3.",
+      "source_ids": [
+        123
+      ]
+    },
+    {
+      "src_entity_name": "ift principles",
+      "tgt_entity_name": "5.3 structured execution",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'IFT Principles' is a primary topic of section 5.3.",
+      "source_ids": [
+        123
+      ]
+    },
+    {
+      "src_entity_name": "generation",
+      "tgt_entity_name": "5.3 structured execution",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'Generation' is a primary topic of section 5.3.",
+      "source_ids": [
+        123
+      ]
+    }
+  ],
+  "node_idx": 123
+}

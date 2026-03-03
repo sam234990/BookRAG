@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "a.1 evaluation metrics",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'Experimental Details' within the paper 'BookRAG', this section defines the specific quantitative measures used to assess the performance of the retrieval-augmented generation system.",
+      "source_ids": [
+        221
+      ]
+    },
+    {
+      "entity_name": "accuracy",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "A primary metric discussed in section A.1, defined as the proportion of cases where the set of named entities in the model's response is a subset of those in the ground truth.",
+      "source_ids": [
+        221
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "accuracy",
+      "tgt_entity_name": "a.1 evaluation metrics",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'Accuracy' is a specific evaluation metric detailed as a topic within section A.1.",
+      "source_ids": [
+        221
+      ]
+    }
+  ],
+  "node_idx": 221
+}

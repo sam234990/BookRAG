@@ -1,0 +1,159 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookindex operators",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "bookindex operators are a set of strategies designed to execute tasks identified by classification",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "entity_name": "o",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "o represents the set of operators tailored for the bookindex",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "PRODUCT",
+      "description": "bookindex is a system defined by the tuple  t  g  m  for which operators are designed",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "entity_name": "figure 4 a",
+      "entity_type": "IMAGE",
+      "description": "figure 4 a  is a visual depiction of the operators",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "entity_name": "table 3",
+      "entity_type": "TABLE",
+      "description": "table 3 provides detailed information about the operators",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "entity_name": "agent",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the agent is the entity that employs the operators for diverse query categories",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "entity_name": "classification",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "classification is the method used to identify the strategies executed by the operators",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "entity_name": "query categories",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "query categories are the diverse groups of queries for which the agent employs the operators",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "entity_name": "figure 4",
+      "entity_type": "IMAGE",
+      "description": "figure 4 is a visual element referenced in the text  specifically part  a",
+      "source_ids": [
+        97
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookindex operators",
+      "tgt_entity_name": "o",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookindex operators are represented by the set o tailored for the bookindex",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "src_entity_name": "bookindex operators",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookindex operators are designed specifically for the bookindex system",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "src_entity_name": "bookindex operators",
+      "tgt_entity_name": "figure 4 a",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookindex operators are visually depicted in figure 4 a",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "src_entity_name": "bookindex operators",
+      "tgt_entity_name": "table 3",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookindex operators are detailed in table 3",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "src_entity_name": "bookindex operators",
+      "tgt_entity_name": "agent",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent employs the bookindex operators for diverse query categories",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "src_entity_name": "bookindex operators",
+      "tgt_entity_name": "classification",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookindex operators are designed to execute strategies identified by classification",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "query categories",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the agent employs operators for diverse query categories",
+      "source_ids": [
+        97
+      ]
+    },
+    {
+      "src_entity_name": "bookindex operators",
+      "tgt_entity_name": "figure 4",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "bookindex operators are visually depicted in figure 4",
+      "source_ids": [
+        97
+      ]
+    }
+  ],
+  "node_idx": 97
+}

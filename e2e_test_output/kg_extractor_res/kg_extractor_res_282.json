@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "selection task",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the selection task is the activity described in the text that requires processing the provided data",
+      "source_ids": [
+        282
+      ]
+    },
+    {
+      "entity_name": "integer",
+      "entity_type": "MEASUREMENT",
+      "description": "an integer is the specific type of output requested for the selection task",
+      "source_ids": [
+        282
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "selection task",
+      "tgt_entity_name": "integer",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the selection task requires the output to be a single integer",
+      "source_ids": [
+        282
+      ]
+    }
+  ],
+  "node_idx": 282
+}

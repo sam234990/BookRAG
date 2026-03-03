@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (19)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining Precision, Recall, and F1 score metrics using set intersections. LaTeX: 𝑃 = | 𝑇 ˆ 𝑦 ∩ 𝑇 𝑔𝑜𝑙𝑑 | | 𝑇 ˆ 𝑦 | , 𝑅 = | 𝑇 ˆ 𝑦 ∩ 𝑇 𝑔𝑜𝑙𝑑 | | 𝑇 𝑔𝑜𝑙𝑑 | , F1 = 2 · 𝑃 · 𝑅 𝑃 + 𝑅 (19)",
+      "source_ids": [
+        232
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 232
+}

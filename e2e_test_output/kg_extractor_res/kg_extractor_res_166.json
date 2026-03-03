@@ -1,0 +1,49 @@
+{
+  "entities": [
+    {
+      "entity_name": "agent based planning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "agent based planning is a method that is removed in the scenario described  leading to a default workflow",
+      "source_ids": [
+        166
+      ]
+    },
+    {
+      "entity_name": "static standard workflow",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "static  standard workflow is the default process used for all queries when agent based planning is removed",
+      "source_ids": [
+        166
+      ]
+    },
+    {
+      "entity_name": "planning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "planning is the specific task or problem component that is removed in the described scenario",
+      "source_ids": [
+        166
+      ]
+    },
+    {
+      "entity_name": "queries",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "queries are the inputs for which the workflow is applied  either with or without planning",
+      "source_ids": [
+        166
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "agent based planning",
+      "tgt_entity_name": "static standard workflow",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "removing agent based planning results in the system defaulting to a static  standard workflow",
+      "source_ids": [
+        166
+      ]
+    }
+  ],
+  "node_idx": 166
+}

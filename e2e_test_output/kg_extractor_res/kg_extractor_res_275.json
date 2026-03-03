@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "json",
+      "entity_type": "FILE_TYPE",
+      "description": "json is a file format mentioned as the required output format for the answer",
+      "source_ids": [
+        275
+      ]
+    },
+    {
+      "entity_name": "output",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        275
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "json",
+      "tgt_entity_name": "output",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the text specifies that the answer must be provided in a valid json format",
+      "source_ids": [
+        275
+      ]
+    }
+  ],
+  "node_idx": 275
+}

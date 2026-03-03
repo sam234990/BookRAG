@@ -1,0 +1,89 @@
+{
+  "entities": [
+    {
+      "entity_name": "llm",
+      "entity_type": "TECHNOLOGY",
+      "description": "llm is a technology mentioned in the context of document analysis",
+      "source_ids": [
+        31
+      ]
+    },
+    {
+      "entity_name": "rag approaches",
+      "entity_type": "TECHNOLOGY",
+      "description": "rag approaches are modern representative technologies reviewed in the text",
+      "source_ids": [
+        31
+      ]
+    },
+    {
+      "entity_name": "document analysis",
+      "entity_type": "RESEARCH_FIELD",
+      "description": "document analysis is the field of study where llms and rag approaches are applied",
+      "source_ids": [
+        31
+      ]
+    },
+    {
+      "entity_name": "related works",
+      "entity_type": "SECTION_TITLE",
+      "description": "related works is the section of the text where the review of llm and rag approaches takes place",
+      "source_ids": [
+        31
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "rag approaches",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "both llm and rag approaches are reviewed together as related works in document analysis",
+      "source_ids": [
+        31
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "document analysis",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "llm is used in the field of document analysis",
+      "source_ids": [
+        31
+      ]
+    },
+    {
+      "src_entity_name": "rag approaches",
+      "tgt_entity_name": "document analysis",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "rag approaches are used in the field of document analysis",
+      "source_ids": [
+        31
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "related works",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "llm is reviewed within the related works section",
+      "source_ids": [
+        31
+      ]
+    },
+    {
+      "src_entity_name": "rag approaches",
+      "tgt_entity_name": "related works",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "rag approaches are reviewed within the related works section",
+      "source_ids": [
+        31
+      ]
+    }
+  ],
+  "node_idx": 31
+}

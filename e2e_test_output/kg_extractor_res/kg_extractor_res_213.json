@@ -1,0 +1,187 @@
+{
+  "entities": [
+    {
+      "entity_name": "soyeong jeong",
+      "entity_type": "PERSON",
+      "description": "soyeong jeong is an author of the 2024 arxiv preprint titled adaptive rag",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "entity_name": "jinheon baek",
+      "entity_type": "PERSON",
+      "description": "jinheon baek is an author of the 2024 arxiv preprint titled adaptive rag",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "entity_name": "adaptive rag",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "adaptive rag is a model described as learning to adapt retrieval augmented large language models through question complexity",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "entity_name": "retrieval augmented large language models",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "retrieval augmented large language models are the subject of adaptation in the adaptive rag study",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "entity_name": "arxiv",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv is the venue where the preprint arxiv 2403 14403 was published",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "entity_name": "2024",
+      "entity_type": "DATE",
+      "description": "2024 is the year the preprint was published and the year associated with the authors  work",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "entity_name": "arxiv 2403 14403",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv 2403 14403 is the specific identifier for the preprint document",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "entity_name": "et al",
+      "entity_type": "PERSON",
+      "description": "et al  refers to additional authors of the paper not explicitly named in the text",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "entity_name": "question complexity",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "question complexity is the factor through which adaptive rag learns to adapt models",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "entity_name": "learning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "learning is the process by which adaptive rag adapts to question complexity",
+      "source_ids": [
+        213
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "soyeong jeong",
+      "tgt_entity_name": "adaptive rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "soyeong jeong is an author of the work on adaptive rag",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "src_entity_name": "jinheon baek",
+      "tgt_entity_name": "adaptive rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "jinheon baek is an author of the work on adaptive rag",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "src_entity_name": "adaptive rag",
+      "tgt_entity_name": "retrieval augmented large language models",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "adaptive rag is designed to adapt retrieval augmented large language models",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "src_entity_name": "soyeong jeong",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "soyeong jeong s work was published on arxiv",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "src_entity_name": "jinheon baek",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jinheon baek s work was published on arxiv",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "src_entity_name": "adaptive rag",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the adaptive rag preprint is hosted on arxiv",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "src_entity_name": "soyeong jeong",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "soyeong jeong is listed alongside et al  as authors of the paper",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "src_entity_name": "jinheon baek",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "jinheon baek is listed alongside et al  as authors of the paper",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "src_entity_name": "adaptive rag",
+      "tgt_entity_name": "question complexity",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "adaptive rag adapts specifically through the lens of question complexity",
+      "source_ids": [
+        213
+      ]
+    },
+    {
+      "src_entity_name": "adaptive rag",
+      "tgt_entity_name": "learning",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "adaptive rag utilizes learning to adapt its retrieval mechanisms",
+      "source_ids": [
+        213
+      ]
+    }
+  ],
+  "node_idx": 213
+}

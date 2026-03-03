@@ -1,0 +1,575 @@
+{
+  "entities": [
+    {
+      "entity_name": "xiaoxin he",
+      "entity_type": "PERSON",
+      "description": "xiaoxin he is listed as one of the authors of the paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "yijun tian",
+      "entity_type": "PERSON",
+      "description": "yijun tian is listed as one of the authors of the paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "yifei sun",
+      "entity_type": "PERSON",
+      "description": "yifei sun is listed as one of the authors of the paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "nitesh v chawla",
+      "entity_type": "PERSON",
+      "description": "nitesh v chawla is listed as one of the authors of the paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "thomas laurent",
+      "entity_type": "PERSON",
+      "description": "thomas laurent is listed as one of the authors of the paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "yann lecun",
+      "entity_type": "PERSON",
+      "description": "yann lecun is listed as one of the authors of the paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "xavier bresson",
+      "entity_type": "PERSON",
+      "description": "xavier bresson is listed as one of the authors of the paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "bryan hooi",
+      "entity_type": "PERSON",
+      "description": "bryan hooi is listed as one of the authors of the paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "g retriever",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "g retriever is a retrieval augmented generation model for textual graph understanding and question answering",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "2024",
+      "entity_type": "DATE",
+      "description": "2024 is the year the paper was published and the year associated with the arxiv preprint",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "arxiv 2402 07630",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv 2402 07630 is the identifier for the preprint publication",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "arxiv",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv is the platform where the preprint is hosted",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "retrieval augmented generation",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "retrieval augmented generation is the technique used by g retriever for textual graph understanding",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "textual graph understanding",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "textual graph understanding is a specific task addressed by the g retriever model",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "question answering",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "question answering is a specific task addressed by the g retriever model",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "entity_name": "arxiv preprint",
+      "entity_type": "FILE_TYPE",
+      "description": "arxiv preprint is the type of document in which the work was published",
+      "source_ids": [
+        211
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "xiaoxin he",
+      "tgt_entity_name": "yijun tian",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "xiaoxin he",
+      "tgt_entity_name": "yifei sun",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "xiaoxin he",
+      "tgt_entity_name": "nitesh v chawla",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "xiaoxin he",
+      "tgt_entity_name": "thomas laurent",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "xiaoxin he",
+      "tgt_entity_name": "yann lecun",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "xiaoxin he",
+      "tgt_entity_name": "xavier bresson",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "xiaoxin he",
+      "tgt_entity_name": "bryan hooi",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yijun tian",
+      "tgt_entity_name": "yifei sun",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yijun tian",
+      "tgt_entity_name": "nitesh v chawla",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yijun tian",
+      "tgt_entity_name": "thomas laurent",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yijun tian",
+      "tgt_entity_name": "yann lecun",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yijun tian",
+      "tgt_entity_name": "xavier bresson",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yijun tian",
+      "tgt_entity_name": "bryan hooi",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yifei sun",
+      "tgt_entity_name": "nitesh v chawla",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yifei sun",
+      "tgt_entity_name": "thomas laurent",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yifei sun",
+      "tgt_entity_name": "yann lecun",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yifei sun",
+      "tgt_entity_name": "xavier bresson",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yifei sun",
+      "tgt_entity_name": "bryan hooi",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "nitesh v chawla",
+      "tgt_entity_name": "thomas laurent",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "nitesh v chawla",
+      "tgt_entity_name": "yann lecun",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "nitesh v chawla",
+      "tgt_entity_name": "xavier bresson",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "nitesh v chawla",
+      "tgt_entity_name": "bryan hooi",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "thomas laurent",
+      "tgt_entity_name": "yann lecun",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "thomas laurent",
+      "tgt_entity_name": "xavier bresson",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "thomas laurent",
+      "tgt_entity_name": "bryan hooi",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yann lecun",
+      "tgt_entity_name": "xavier bresson",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yann lecun",
+      "tgt_entity_name": "bryan hooi",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "xavier bresson",
+      "tgt_entity_name": "bryan hooi",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "g retriever",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "g retriever was published in the year 2024",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "g retriever",
+      "tgt_entity_name": "arxiv 2402 07630",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "g retriever is identified by the preprint number arxiv 2402 07630",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "g retriever",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "g retriever is published on the arxiv platform",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "xiaoxin he",
+      "tgt_entity_name": "g retriever",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "xiaoxin he is an author of the paper describing g retriever",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yijun tian",
+      "tgt_entity_name": "g retriever",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yijun tian is an author of the paper describing g retriever",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yifei sun",
+      "tgt_entity_name": "g retriever",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yifei sun is an author of the paper describing g retriever",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "nitesh v chawla",
+      "tgt_entity_name": "g retriever",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "nitesh v chawla is an author of the paper describing g retriever",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "thomas laurent",
+      "tgt_entity_name": "g retriever",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "thomas laurent is an author of the paper describing g retriever",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "yann lecun",
+      "tgt_entity_name": "g retriever",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yann lecun is an author of the paper describing g retriever",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "xavier bresson",
+      "tgt_entity_name": "g retriever",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "xavier bresson is an author of the paper describing g retriever",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "bryan hooi",
+      "tgt_entity_name": "g retriever",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bryan hooi is an author of the paper describing g retriever",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "g retriever",
+      "tgt_entity_name": "retrieval augmented generation",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "g retriever utilizes the retrieval augmented generation method",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "g retriever",
+      "tgt_entity_name": "textual graph understanding",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "g retriever is designed to solve the problem of textual graph understanding",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "g retriever",
+      "tgt_entity_name": "question answering",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "g retriever is designed to solve the problem of question answering",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "arxiv 2402 07630",
+      "tgt_entity_name": "arxiv preprint",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "arxiv 2402 07630 is an instance of an arxiv preprint",
+      "source_ids": [
+        211
+      ]
+    },
+    {
+      "src_entity_name": "g retriever",
+      "tgt_entity_name": "arxiv preprint",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "g retriever is published as an arxiv preprint",
+      "source_ids": [
+        211
+      ]
+    }
+  ],
+  "node_idx": 211
+}

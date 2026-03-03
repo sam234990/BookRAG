@@ -1,0 +1,159 @@
+{
+  "entities": [
+    {
+      "entity_name": "cref='#/texts/259'",
+      "entity_type": "IMAGE",
+      "description": "A figure containing two bar charts comparing EM/Accuracy and F1-score across Single, Multi, and Global configurations for MMLongBench and Qasper datasets.",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "entity_name": "em / accuracy",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "Evaluation metric represented by blue bars in the chart, standing for Exact Match or Accuracy.",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "entity_name": "f1-score",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "Evaluation metric represented by red bars in the chart, representing the harmonic mean of precision and recall.",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "entity_name": "score",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "The Y-axis label indicating the numerical value being measured in both charts.",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "entity_name": "single",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "A configuration category on the X-axis representing a single-task or single-passage setting.",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "entity_name": "multi",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "A configuration category on the X-axis representing a multi-task or multi-passage setting.",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "entity_name": "global",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "A configuration category on the X-axis representing a global or holistic setting.",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "entity_name": "(a) mmlongbench",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The first dataset evaluated in the left chart, focusing on long-context benchmarks.",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "entity_name": "(b) qasper",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The second dataset evaluated in the right chart, likely referring to the Question Answering in Scientific Papers with Reasoning dataset.",
+      "source_ids": [
+        178
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "cref='#/texts/259'",
+      "tgt_entity_name": "em / accuracy",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/259' related to EM / Accuracy",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/259'",
+      "tgt_entity_name": "f1-score",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/259' related to F1-score",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/259'",
+      "tgt_entity_name": "score",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/259' related to Score",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/259'",
+      "tgt_entity_name": "single",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/259' related to Single",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/259'",
+      "tgt_entity_name": "multi",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/259' related to Multi",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/259'",
+      "tgt_entity_name": "global",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/259' related to Global",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/259'",
+      "tgt_entity_name": "(a) mmlongbench",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/259' related to (a) MMLongBench",
+      "source_ids": [
+        178
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/259'",
+      "tgt_entity_name": "(b) qasper",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/259' related to (b) Qasper",
+      "source_ids": [
+        178
+      ]
+    }
+  ],
+  "node_idx": 178
+}

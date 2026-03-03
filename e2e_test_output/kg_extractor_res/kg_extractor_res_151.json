@@ -1,0 +1,115 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a system being evaluated for its qa performance  retrieval effectiveness  and query efficiency",
+      "source_ids": [
+        151
+      ]
+    },
+    {
+      "entity_name": "state of the art baselines",
+      "entity_type": "PRODUCT",
+      "description": "state of the art baselines are the existing systems used for comparison in the evaluation of bookrag",
+      "source_ids": [
+        151
+      ]
+    },
+    {
+      "entity_name": "qa",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "qa refers to the question answering task being evaluated for performance",
+      "source_ids": [
+        151
+      ]
+    },
+    {
+      "entity_name": "retrieval",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "retrieval refers to the effectiveness of retrieving information  which is being evaluated",
+      "source_ids": [
+        151
+      ]
+    },
+    {
+      "entity_name": "query efficiency",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "query efficiency is a metric being analyzed to determine the system s performance",
+      "source_ids": [
+        151
+      ]
+    },
+    {
+      "entity_name": "evaluation",
+      "entity_type": "EVENT",
+      "description": "evaluation is the comprehensive process of analyzing bookrag s performance described in the text",
+      "source_ids": [
+        151
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "state of the art baselines",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is being compared against state of the art baselines to analyze its performance",
+      "source_ids": [
+        151
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "qa",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is being analyzed for its complex qa performance",
+      "source_ids": [
+        151
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "retrieval",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is being analyzed for its retrieval effectiveness",
+      "source_ids": [
+        151
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "query efficiency",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is being analyzed for its query efficiency",
+      "source_ids": [
+        151
+      ]
+    },
+    {
+      "src_entity_name": "evaluation",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the evaluation is the process being conducted on bookrag",
+      "source_ids": [
+        151
+      ]
+    },
+    {
+      "src_entity_name": "evaluation",
+      "tgt_entity_name": "state of the art baselines",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the evaluation involves comparing bookrag to state of the art baselines",
+      "source_ids": [
+        151
+      ]
+    }
+  ],
+  "node_idx": 151
+}

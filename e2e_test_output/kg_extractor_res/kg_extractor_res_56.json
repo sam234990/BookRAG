@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "the output",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the output is described as a sequence of primitive",
+      "source_ids": [
+        56
+      ]
+    },
+    {
+      "entity_name": "primitive",
+      "entity_type": "CONCEPT",
+      "description": "primitive is a term used to describe the components of the output sequence",
+      "source_ids": [
+        56
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "the output",
+      "tgt_entity_name": "primitive",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the output consists of a sequence of primitives",
+      "source_ids": [
+        56
+      ]
+    }
+  ],
+  "node_idx": 56
+}

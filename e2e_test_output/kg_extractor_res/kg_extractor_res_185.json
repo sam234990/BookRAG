@@ -1,0 +1,331 @@
+{
+  "entities": [
+    {
+      "entity_name": "pdf parsing",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "pdf parsing is identified as a task or problem area within the context of the study",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "plan",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "plan refers to the planning aspect of the process  where errors are analyzed",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "retrieval",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "retrieval is a task or problem area where errors are identified as the dominant failure mode",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "generation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "generation is a task or problem area where errors are identified as the second most common failure mode",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "retrieval error",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "retrieval error is the dominant failure mode identified in the results",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "generation error",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "generation error is the second most common failure mode identified in the results",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "plan error",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "plan error is a specific failure pattern where the planner over decomposes queries",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "multimodal evidence",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "multimodal evidence is the type of information that is challenging to locate and synthesize",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "single hop queries",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "single hop queries are detailed queries that are incorrectly decomposed by the planner",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "multi hop sub tasks",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "multi hop sub tasks are unnecessary tasks created by the over decomposition of single hop queries",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "disjointed retrieval paths",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "disjointed retrieval paths are the result of fragmentation  preventing cohesive synthesis",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "cohesive final answer",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "cohesive final answer is the desired outcome that is prevented by disjointed retrieval paths",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "model",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the model is the entity attempting to synthesize answers from sub responses",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "planner",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the planner is the component that tends to over decompose queries",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "qualitative analysis",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "qualitative analysis is the method used to reveal specific failure patterns",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "results",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the results are the findings that identify retrieval error as the dominant failure mode",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "fragmentation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "fragmentation is the process leading to disjointed retrieval paths",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "entity_name": "scattered sub responses",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "scattered sub responses are the outputs that fail to form a cohesive answer",
+      "source_ids": [
+        185
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "retrieval error",
+      "tgt_entity_name": "retrieval",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "retrieval error is the dominant failure mode associated with the retrieval task",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "generation error",
+      "tgt_entity_name": "generation",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "generation error is the second most common failure mode associated with the generation task",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "plan error",
+      "tgt_entity_name": "plan",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "plan error is a specific failure pattern occurring within the plan task",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "retrieval error",
+      "tgt_entity_name": "multimodal evidence",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "retrieval error reflects the challenge of locating multimodal evidence",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "generation error",
+      "tgt_entity_name": "multimodal evidence",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "generation error reflects the challenge of synthesizing multimodal evidence",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "plan error",
+      "tgt_entity_name": "single hop queries",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "plan error involves the over decomposition of single hop queries",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "plan error",
+      "tgt_entity_name": "multi hop sub tasks",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "plan error leads to the creation of unnecessary multi hop sub tasks",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "plan error",
+      "tgt_entity_name": "disjointed retrieval paths",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "plan error causes fragmentation leading to disjointed retrieval paths",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "disjointed retrieval paths",
+      "tgt_entity_name": "cohesive final answer",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "disjointed retrieval paths prevent the model from synthesizing a cohesive final answer",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "planner",
+      "tgt_entity_name": "plan error",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the planner is the agent responsible for the plan error failure pattern",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "planner",
+      "tgt_entity_name": "single hop queries",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the planner acts upon single hop queries by over decomposing them",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "qualitative analysis",
+      "tgt_entity_name": "plan error",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "qualitative analysis reveals the specific failure pattern of plan error",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "results",
+      "tgt_entity_name": "retrieval error",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the results identify retrieval error as the dominant failure mode",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "results",
+      "tgt_entity_name": "generation error",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the results identify generation error as the second most common failure mode",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "fragmentation",
+      "tgt_entity_name": "disjointed retrieval paths",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "fragmentation leads directly to disjointed retrieval paths",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "model",
+      "tgt_entity_name": "cohesive final answer",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the model attempts to synthesize a cohesive final answer but is prevented from doing so",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "model",
+      "tgt_entity_name": "scattered sub responses",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the model receives scattered sub responses which it fails to synthesize",
+      "source_ids": [
+        185
+      ]
+    },
+    {
+      "src_entity_name": "retrieval error",
+      "tgt_entity_name": "generation error",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "retrieval error is the dominant failure mode  followed by generation error",
+      "source_ids": [
+        185
+      ]
+    }
+  ],
+  "node_idx": 185
+}

@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (1)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the variable A as a function of D and q. LaTeX: 𝐴 = S( 𝐷,𝑞 ) (1)",
+      "source_ids": [
+        39
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 39
+}

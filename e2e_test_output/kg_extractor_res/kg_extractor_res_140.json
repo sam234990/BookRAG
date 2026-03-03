@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "table: cref='#/texts/143'...",
+      "entity_type": "TABLE",
+      "description": "A data table described as: cref='#/texts/143'",
+      "source_ids": [
+        140
+      ]
+    },
+    {
+      "entity_name": "texts/143",
+      "entity_type": "SECTION_TITLE",
+      "description": "A reference identifier extracted from the description string 'cref='#/texts/143'', likely pointing to a specific section or text element within a document structure.",
+      "source_ids": [
+        140
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "table: cref='#/texts/143'...",
+      "tgt_entity_name": "texts/143",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Table 'Table: cref='#/texts/143'...' contains data about 'texts/143'.",
+      "source_ids": [
+        140
+      ]
+    }
+  ],
+  "node_idx": 140
+}

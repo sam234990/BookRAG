@@ -1,0 +1,655 @@
+{
+  "entities": [
+    {
+      "entity_name": "yunfan gao",
+      "entity_type": "PERSON",
+      "description": "yunfan gao is one of the authors of the 2023 survey on retrieval augmented generation",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "yun xiong",
+      "entity_type": "PERSON",
+      "description": "yun xiong is one of the authors of the 2023 survey on retrieval augmented generation",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "xinyu gao",
+      "entity_type": "PERSON",
+      "description": "xinyu gao is one of the authors of the 2023 survey on retrieval augmented generation",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "kangxiang jia",
+      "entity_type": "PERSON",
+      "description": "kangxiang jia is one of the authors of the 2023 survey on retrieval augmented generation",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "jinliu pan",
+      "entity_type": "PERSON",
+      "description": "jinliu pan is one of the authors of the 2023 survey on retrieval augmented generation",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "yuxi bi",
+      "entity_type": "PERSON",
+      "description": "yuxi bi is one of the authors of the 2023 survey on retrieval augmented generation",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "yi dai",
+      "entity_type": "PERSON",
+      "description": "yi dai is one of the authors of the 2023 survey on retrieval augmented generation",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "jiawei sun",
+      "entity_type": "PERSON",
+      "description": "jiawei sun is one of the authors of the 2023 survey on retrieval augmented generation",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "haofen wang",
+      "entity_type": "PERSON",
+      "description": "haofen wang is one of the authors of the 2023 survey on retrieval augmented generation",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "2023",
+      "entity_type": "DATE",
+      "description": "2023 is the year the survey was published and the year associated with the arxiv preprint",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "retrieval augmented generation for large language models a survey",
+      "entity_type": "BOOK",
+      "description": "retrieval augmented generation for large language models  a survey is the title of the document authored by the listed individuals",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "arxiv preprint arxiv 2312 10997",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv preprint arxiv 2312 10997 is the specific identifier and venue where the survey was published",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "retrieval augmented generation",
+      "entity_type": "TECHNOLOGY",
+      "description": "retrieval augmented generation is the specific technology discussed in the survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "large language models",
+      "entity_type": "TECHNOLOGY",
+      "description": "large language models are the subject of the survey and the technology being augmented",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "arxiv",
+      "entity_type": "ORGANIZATION",
+      "description": "arxiv is the organization or platform hosting the preprint",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "entity_name": "2312 10997",
+      "entity_type": "FILE_TYPE",
+      "description": "2312 10997 is the unique identifier code for the preprint document",
+      "source_ids": [
+        207
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "yunfan gao",
+      "tgt_entity_name": "retrieval augmented generation for large language models a survey",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yunfan gao is an author of the survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yun xiong",
+      "tgt_entity_name": "retrieval augmented generation for large language models a survey",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yun xiong is an author of the survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "xinyu gao",
+      "tgt_entity_name": "retrieval augmented generation for large language models a survey",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "xinyu gao is an author of the survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "kangxiang jia",
+      "tgt_entity_name": "retrieval augmented generation for large language models a survey",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "kangxiang jia is an author of the survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "jinliu pan",
+      "tgt_entity_name": "retrieval augmented generation for large language models a survey",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "jinliu pan is an author of the survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yuxi bi",
+      "tgt_entity_name": "retrieval augmented generation for large language models a survey",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yuxi bi is an author of the survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yi dai",
+      "tgt_entity_name": "retrieval augmented generation for large language models a survey",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yi dai is an author of the survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "jiawei sun",
+      "tgt_entity_name": "retrieval augmented generation for large language models a survey",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "jiawei sun is an author of the survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "haofen wang",
+      "tgt_entity_name": "retrieval augmented generation for large language models a survey",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "haofen wang is an author of the survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "retrieval augmented generation for large language models a survey",
+      "tgt_entity_name": "2023",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the survey was published in the year 2023",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "retrieval augmented generation for large language models a survey",
+      "tgt_entity_name": "arxiv preprint arxiv 2312 10997",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the survey is identified as the arxiv preprint with the number 2312 10997",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yunfan gao",
+      "tgt_entity_name": "yun xiong",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yunfan gao and yun xiong are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yunfan gao",
+      "tgt_entity_name": "xinyu gao",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yunfan gao and xinyu gao are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yunfan gao",
+      "tgt_entity_name": "kangxiang jia",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yunfan gao and kangxiang jia are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yunfan gao",
+      "tgt_entity_name": "jinliu pan",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yunfan gao and jinliu pan are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yunfan gao",
+      "tgt_entity_name": "yuxi bi",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yunfan gao and yuxi bi are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yunfan gao",
+      "tgt_entity_name": "yi dai",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yunfan gao and yi dai are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yunfan gao",
+      "tgt_entity_name": "jiawei sun",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yunfan gao and jiawei sun are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yunfan gao",
+      "tgt_entity_name": "haofen wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yunfan gao and haofen wang are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yun xiong",
+      "tgt_entity_name": "xinyu gao",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yun xiong and xinyu gao are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yun xiong",
+      "tgt_entity_name": "kangxiang jia",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yun xiong and kangxiang jia are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yun xiong",
+      "tgt_entity_name": "jinliu pan",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yun xiong and jinliu pan are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yun xiong",
+      "tgt_entity_name": "yuxi bi",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yun xiong and yuxi bi are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yun xiong",
+      "tgt_entity_name": "yi dai",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yun xiong and yi dai are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yun xiong",
+      "tgt_entity_name": "jiawei sun",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yun xiong and jiawei sun are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yun xiong",
+      "tgt_entity_name": "haofen wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yun xiong and haofen wang are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "xinyu gao",
+      "tgt_entity_name": "kangxiang jia",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "xinyu gao and kangxiang jia are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "xinyu gao",
+      "tgt_entity_name": "jinliu pan",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "xinyu gao and jinliu pan are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "xinyu gao",
+      "tgt_entity_name": "yuxi bi",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "xinyu gao and yuxi bi are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "xinyu gao",
+      "tgt_entity_name": "yi dai",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "xinyu gao and yi dai are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "xinyu gao",
+      "tgt_entity_name": "jiawei sun",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "xinyu gao and jiawei sun are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "xinyu gao",
+      "tgt_entity_name": "haofen wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "xinyu gao and haofen wang are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "kangxiang jia",
+      "tgt_entity_name": "jinliu pan",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "kangxiang jia and jinliu pan are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "kangxiang jia",
+      "tgt_entity_name": "yuxi bi",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "kangxiang jia and yuxi bi are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "kangxiang jia",
+      "tgt_entity_name": "yi dai",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "kangxiang jia and yi dai are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "kangxiang jia",
+      "tgt_entity_name": "jiawei sun",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "kangxiang jia and jiawei sun are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "kangxiang jia",
+      "tgt_entity_name": "haofen wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "kangxiang jia and haofen wang are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "jinliu pan",
+      "tgt_entity_name": "yuxi bi",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jinliu pan and yuxi bi are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "jinliu pan",
+      "tgt_entity_name": "yi dai",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jinliu pan and yi dai are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "jinliu pan",
+      "tgt_entity_name": "jiawei sun",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jinliu pan and jiawei sun are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "jinliu pan",
+      "tgt_entity_name": "haofen wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jinliu pan and haofen wang are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yuxi bi",
+      "tgt_entity_name": "yi dai",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yuxi bi and yi dai are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yuxi bi",
+      "tgt_entity_name": "jiawei sun",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yuxi bi and jiawei sun are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yuxi bi",
+      "tgt_entity_name": "haofen wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yuxi bi and haofen wang are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yi dai",
+      "tgt_entity_name": "jiawei sun",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yi dai and jiawei sun are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "yi dai",
+      "tgt_entity_name": "haofen wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yi dai and haofen wang are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "jiawei sun",
+      "tgt_entity_name": "haofen wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jiawei sun and haofen wang are co authors of the same survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "retrieval augmented generation",
+      "tgt_entity_name": "large language models",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "retrieval augmented generation is applied to large language models as described in the survey",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "retrieval augmented generation for large language models a survey",
+      "tgt_entity_name": "retrieval augmented generation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the survey is about the technology of retrieval augmented generation",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "retrieval augmented generation for large language models a survey",
+      "tgt_entity_name": "large language models",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the survey covers the topic of large language models",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "arxiv preprint arxiv 2312 10997",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the preprint is hosted by arxiv",
+      "source_ids": [
+        207
+      ]
+    },
+    {
+      "src_entity_name": "arxiv preprint arxiv 2312 10997",
+      "tgt_entity_name": "2312 10997",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "2312 10997 is the specific identifier for the arxiv preprint",
+      "source_ids": [
+        207
+      ]
+    }
+  ],
+  "node_idx": 207
+}

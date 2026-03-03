@@ -1,0 +1,215 @@
+{
+  "entities": [
+    {
+      "entity_name": "retrieval process",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "retrieval process is a stage guided by an operator plan that executes scent filter based retrieval",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "entity_name": "scent filter based retrieval",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "scent filter based retrieval is the specific method executed during the retrieval process to find information",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "bookindex is a data structure represented as b    t  g  m  that is navigated during the retrieval process",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "SOFTWARE",
+      "description": "bookrag is the system that obtains the retrieval set of highly relevant information blocks after reasoning",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "entity_name": "t",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "t is a component of the bookindex structure",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "entity_name": "g",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "g is a component of the bookindex structure containing relevant entities",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "entity_name": "m",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "m is a component of the bookindex structure",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "entity_name": "operator plan",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "operator plan is the guiding document or set of instructions for the retrieval process",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "entity_name": "modal type",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "modal type is a specific filter used to refine the selection of information during retrieval",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "entity_name": "relevant entities",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "relevant entities are the items found in g that are followed during scent based retrieval",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "entity_name": "information blocks",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "information blocks are the highly relevant units of data retrieved by bookrag",
+      "source_ids": [
+        85
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "retrieval process",
+      "tgt_entity_name": "scent filter based retrieval",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the retrieval process executes the scent filter based retrieval method",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "src_entity_name": "retrieval process",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the retrieval process navigates the bookindex to find information",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "src_entity_name": "scent filter based retrieval",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "scent filter based retrieval utilizes the bookindex to find information",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "t",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "t is a component of the bookindex structure",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "g",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "g is a component of the bookindex structure",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "m",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "m is a component of the bookindex structure",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag gets the retrieval set from the bookindex",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "src_entity_name": "retrieval process",
+      "tgt_entity_name": "operator plan",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the retrieval process is guided by the operator plan",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "src_entity_name": "scent filter based retrieval",
+      "tgt_entity_name": "modal type",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "scent filter based retrieval employs modal type as a filter to refine selection",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "src_entity_name": "scent filter based retrieval",
+      "tgt_entity_name": "relevant entities",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "scent based retrieval follows relevant entities in g to find information",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "information blocks",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag obtains the retrieval set of highly relevant information blocks",
+      "source_ids": [
+        85
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "relevant entities",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "relevant entities are contained within the g component of the bookindex",
+      "source_ids": [
+        85
+      ]
+    }
+  ],
+  "node_idx": 85
+}

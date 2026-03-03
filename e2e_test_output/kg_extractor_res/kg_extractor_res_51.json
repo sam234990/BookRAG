@@ -1,0 +1,381 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookindex",
+      "entity_type": "PRODUCT",
+      "description": "bookindex is a formally defined triplet structure used to represent document hierarchy and entities",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "tree structure",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "tree structure represents the set of nodes derived from the document s explicit logical hierarchy",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "knowledge graph",
+      "entity_type": "SOFTWARE",
+      "description": "knowledge graph is a structure that captures fine grained entities and their relations within the document",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "graph tree link",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "graph tree link  gt link  is a mechanism that links entities to specific tree nodes from which they were extracted",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "document",
+      "entity_type": "PRODUCT",
+      "description": "document is the source material containing logical hierarchy  entities  and relations",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "titles",
+      "entity_type": "SECTION_TITLE",
+      "description": "titles are examples of nodes in the document s explicit logical hierarchy",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "sections",
+      "entity_type": "SECTION_TITLE",
+      "description": "sections are examples of nodes in the document s explicit logical hierarchy",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "tables",
+      "entity_type": "TABLE",
+      "description": "tables are examples of nodes in the document s explicit logical hierarchy",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "n",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "n represents the set of nodes in the tree structure",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "e t",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "e t denotes the nesting relationships in the tree structure",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "v",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "v represents the fine grained entities in the knowledge graph",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "e g",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "e g denotes the relations in the knowledge graph",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "m v",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "m v is the graph tree link function linking entities to tree nodes",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "p",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "p      represents the power set of nodes in the tree structure  used in the graph tree link definition",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "information patches",
+      "entity_type": "CONCEPT",
+      "description": "information patches are hierarchical tree nodes serving as native contexts for information seeking",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "information scent",
+      "entity_type": "CONCEPT",
+      "description": "information scent is the rich information provided by entities and relations to guide navigation",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "entity_name": "navigation",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        51
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "tree structure",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookindex is defined as a triplet that includes the tree structure as one of its components",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "knowledge graph",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookindex is defined as a triplet that includes the knowledge graph as one of its components",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "graph tree link",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookindex is defined as a triplet that includes the graph tree link as one of its components",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "tree structure",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the tree structure is derived from the document s explicit logical hierarchy",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "knowledge graph",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the knowledge graph captures entities and relations scattered throughout the document",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "graph tree link",
+      "tgt_entity_name": "tree structure",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the graph tree link connects entities to specific tree nodes within the tree structure",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "graph tree link",
+      "tgt_entity_name": "knowledge graph",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the graph tree link connects entities from the knowledge graph to the tree structure",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "titles",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "titles are part of the document s explicit logical hierarchy",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "sections",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "sections are part of the document s explicit logical hierarchy",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "tables",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "tables are part of the document s explicit logical hierarchy",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "tree structure",
+      "tgt_entity_name": "titles",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "titles are examples of nodes included in the tree structure",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "tree structure",
+      "tgt_entity_name": "sections",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "sections are examples of nodes included in the tree structure",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "tree structure",
+      "tgt_entity_name": "tables",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "tables are examples of nodes included in the tree structure",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "knowledge graph",
+      "tgt_entity_name": "v",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "v represents the entities contained within the knowledge graph",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "knowledge graph",
+      "tgt_entity_name": "e g",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "e g represents the relations contained within the knowledge graph",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "tree structure",
+      "tgt_entity_name": "n",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "n represents the set of nodes contained within the tree structure",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "tree structure",
+      "tgt_entity_name": "e t",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "e t represents the nesting relationships contained within the tree structure",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "is the first component of the bookindex triplet definition",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "",
+      "tgt_entity_name": "",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "is the set of nodes that constitutes the tree structure",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "",
+      "tgt_entity_name": "p",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "maps entities to the power set of nodes p",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "tree structure",
+      "tgt_entity_name": "information patches",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the hierarchical tree nodes in the tree structure serve as information patches",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "knowledge graph",
+      "tgt_entity_name": "information scent",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the entities and relations in the knowledge graph act as information scent",
+      "source_ids": [
+        51
+      ]
+    },
+    {
+      "src_entity_name": "information scent",
+      "tgt_entity_name": "navigation",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "information scent guides navigation between and within information patches",
+      "source_ids": [
+        51
+      ]
+    }
+  ],
+  "node_idx": 51
+}

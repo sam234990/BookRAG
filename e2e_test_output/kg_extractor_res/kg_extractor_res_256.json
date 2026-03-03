@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 11",
+      "entity_type": "IMAGE",
+      "description": "figure 11 is an image in the text that displays a prompt for query decomposition",
+      "source_ids": [
+        256
+      ]
+    },
+    {
+      "entity_name": "query decomposition",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "query decomposition is the task or problem for which the prompt in figure 11 is designed",
+      "source_ids": [
+        256
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 11",
+      "tgt_entity_name": "query decomposition",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 11 contains the prompt specifically for the task of query decomposition",
+      "source_ids": [
+        256
+      ]
+    }
+  ],
+  "node_idx": 256
+}

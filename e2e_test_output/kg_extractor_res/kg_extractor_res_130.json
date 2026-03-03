@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (15)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the variable A as the output of a Synthesizer function. LaTeX: 𝐴 = Synthesizer ( 𝑞, 𝑁 𝑅 ) (15)",
+      "source_ids": [
+        130
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 130
+}

@@ -1,0 +1,87 @@
+{
+  "entities": [
+    {
+      "entity_name": "4.2.1 layout parsing",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'Tree Construction' within the 'BOOKINDEX' chapter, this section details the initial phase of transforming raw documents into structured hierarchical trees using layout analysis and recognition models to identify and organize diverse content blocks.",
+      "source_ids": [
+        55
+      ]
+    },
+    {
+      "entity_name": "layout analysis",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A specific technique employed in section 4.2.1 to understand the spatial arrangement of elements within document pages.",
+      "source_ids": [
+        55
+      ]
+    },
+    {
+      "entity_name": "recognition models",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "The computational models utilized in section 4.2.1 to recognize and classify different types of content blocks such as text, tables, and images.",
+      "source_ids": [
+        55
+      ]
+    },
+    {
+      "entity_name": "document d",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The input data object (a collection of pages) that serves as the target for processing in section 4.2.1.",
+      "source_ids": [
+        55
+      ]
+    },
+    {
+      "entity_name": "content blocks",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The diverse structural units (e.g., text, tables, images) identified and extracted from the document pages as described in section 4.2.1.",
+      "source_ids": [
+        55
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "layout analysis",
+      "tgt_entity_name": "4.2.1 layout parsing",
+      "relation_name": "",
+      "weight": 9.5,
+      "description": "Layout Analysis is a core methodological component discussed within section 4.2.1.",
+      "source_ids": [
+        55
+      ]
+    },
+    {
+      "src_entity_name": "recognition models",
+      "tgt_entity_name": "4.2.1 layout parsing",
+      "relation_name": "",
+      "weight": 9.5,
+      "description": "Recognition Models are the primary tools used in the process detailed in section 4.2.1.",
+      "source_ids": [
+        55
+      ]
+    },
+    {
+      "src_entity_name": "document d",
+      "tgt_entity_name": "4.2.1 layout parsing",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "Document D is the specific input entity being processed in section 4.2.1.",
+      "source_ids": [
+        55
+      ]
+    },
+    {
+      "src_entity_name": "content blocks",
+      "tgt_entity_name": "4.2.1 layout parsing",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "Content Blocks represent the output entities identified and organized within section 4.2.1.",
+      "source_ids": [
+        55
+      ]
+    }
+  ],
+  "node_idx": 55
+}

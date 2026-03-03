@@ -1,0 +1,329 @@
+{
+  "entities": [
+    {
+      "entity_name": "l1",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "l1 is a limitation of existing works described as the failure to capture the deep connection of document structure and semantics",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "l2",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "l2 is a limitation of existing works described as the static nature of query workflows",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "text based approaches",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "text based approaches are methods that cannot capture the structural layout of the document",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "layout segmented methods",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "layout segmented methods are approaches that preserve document structure but fail to capture relationships between different blocks",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "real world qa scenarios",
+      "entity_type": "EVENT",
+      "description": "real world qa scenarios are contexts where user queries are highly heterogeneous",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "static or manually predefined workflows",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "static or manually predefined workflows are uniform strategies applied to diverse query needs",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "question decomposition",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "question decomposition is a method required for complex queries",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "document",
+      "entity_type": "PRODUCT",
+      "description": "document is the object whose structure and semantics are being analyzed in the text",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "tables",
+      "entity_type": "TABLE",
+      "description": "tables are examples of hierarchical blocks nested within a specific section of a document",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "section",
+      "entity_type": "SECTION_TITLE",
+      "description": "section is a part of a document where tables may be nested",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "user queries",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "user queries are inputs in real world qa scenarios that range from simple to complex",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "keyword lookups",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "keyword lookups are simple types of user queries mentioned in the text",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "multi hop questions",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "multi hop questions are complex queries requiring evidence synthesis across different document parts",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "evidence",
+      "entity_type": "CONCEPT",
+      "description": "evidence refers to information scattered across different parts of a document needed for multi hop reasoning",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "hierarchical blocks",
+      "entity_type": "CONCEPT",
+      "description": "hierarchical blocks are structural elements of a document containing relationships",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "multi hop reasoning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "multi hop reasoning is the capability limited by methods that cannot capture relationships between document blocks",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "overall performance",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "overall performance is the metric affected by the limitations of existing methods",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "complex queries",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "entity_name": "simple queries",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        19
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "l1",
+      "tgt_entity_name": "text based approaches",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "l1 is caused by text based approaches failing to capture document structure",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "l2",
+      "tgt_entity_name": "static or manually predefined workflows",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "l2 is caused by the application of static or manually predefined workflows to diverse query needs",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "text based approaches",
+      "tgt_entity_name": "l1",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "text based approaches suffer from the limitation l1",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "layout segmented methods",
+      "tgt_entity_name": "l2",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "layout segmented methods contribute to the limitation l2 by failing to capture relationships between blocks",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "real world qa scenarios",
+      "tgt_entity_name": "static or manually predefined workflows",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "real world qa scenarios involve diverse queries that make static or manually predefined workflows inefficient",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "complex queries",
+      "tgt_entity_name": "question decomposition",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "complex queries often require question decomposition",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "l1",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "l1 concerns the failure to capture the deep connection of document structure and semantics",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "text based approaches",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "text based approaches analyze the document but fail to capture its structural layout",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "tables",
+      "tgt_entity_name": "section",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "tables are nested within a specific section of the document",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "layout segmented methods",
+      "tgt_entity_name": "hierarchical blocks",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "layout segmented methods preserve hierarchical blocks but fail to capture relationships between them",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "layout segmented methods",
+      "tgt_entity_name": "multi hop reasoning",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "layout segmented methods limit the capability for multi hop reasoning across blocks",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "user queries",
+      "tgt_entity_name": "real world qa scenarios",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "user queries are the inputs found within real world qa scenarios",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "user queries",
+      "tgt_entity_name": "keyword lookups",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "keyword lookups are a type of user query mentioned in the text",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "user queries",
+      "tgt_entity_name": "multi hop questions",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "multi hop questions are a type of user query mentioned in the text",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "multi hop questions",
+      "tgt_entity_name": "evidence",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "multi hop questions require synthesizing evidence scattered across the document",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "static or manually predefined workflows",
+      "tgt_entity_name": "overall performance",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "applying static workflows to diverse needs affects the overall performance negatively",
+      "source_ids": [
+        19
+      ]
+    },
+    {
+      "src_entity_name": "simple queries",
+      "tgt_entity_name": "question decomposition",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "simple queries do not require question decomposition",
+      "source_ids": [
+        19
+      ]
+    }
+  ],
+  "node_idx": 19
+}

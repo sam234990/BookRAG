@@ -1,0 +1,285 @@
+{
+  "entities": [
+    {
+      "entity_name": "bernal jim nez guti rrez",
+      "entity_type": "PERSON",
+      "description": "bernal jim nez guti rrez is one of the authors of the paper titled hipporag",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "entity_name": "yiheng shu",
+      "entity_type": "PERSON",
+      "description": "yiheng shu is one of the authors of the paper titled hipporag",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "entity_name": "yu gu",
+      "entity_type": "PERSON",
+      "description": "yu gu is one of the authors of the paper titled hipporag",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "entity_name": "michihiro yasunaga",
+      "entity_type": "PERSON",
+      "description": "michihiro yasunaga is one of the authors of the paper titled hipporag",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "entity_name": "yu su",
+      "entity_type": "PERSON",
+      "description": "yu su is one of the authors of the paper titled hipporag",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "entity_name": "hipporag",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "hipporag is a neurobiologically inspired long term memory system designed for large language models",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "entity_name": "arxiv",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv is the venue where the preprint of the paper was published",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "entity_name": "2024",
+      "entity_type": "DATE",
+      "description": "2024 is the year the paper was published",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "entity_name": "arxiv 2405 14831",
+      "entity_type": "FILE_TYPE",
+      "description": "arxiv 2405 14831 is the specific identifier for the preprint document",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "entity_name": "large language models",
+      "entity_type": "PRODUCT",
+      "description": "large language models are the target systems for which hipporag is designed as a memory solution",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "entity_name": "neurobiologically inspired long term memory",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "neurobiologically inspired long term memory is the specific problem domain or concept that hipporag addresses",
+      "source_ids": [
+        209
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bernal jim nez guti rrez",
+      "tgt_entity_name": "hipporag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bernal jim nez guti rrez is an author of the paper describing hipporag",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "yiheng shu",
+      "tgt_entity_name": "hipporag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "yiheng shu is an author of the paper describing hipporag",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "yu gu",
+      "tgt_entity_name": "hipporag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "yu gu is an author of the paper describing hipporag",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "michihiro yasunaga",
+      "tgt_entity_name": "hipporag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "michihiro yasunaga is an author of the paper describing hipporag",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "yu su",
+      "tgt_entity_name": "hipporag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "yu su is an author of the paper describing hipporag",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "hipporag",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the paper describing hipporag was published as a preprint on arxiv",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "hipporag",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the paper describing hipporag was published in the year 2024",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "bernal jim nez guti rrez",
+      "tgt_entity_name": "yiheng shu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "bernal jim nez guti rrez",
+      "tgt_entity_name": "yu gu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "bernal jim nez guti rrez",
+      "tgt_entity_name": "michihiro yasunaga",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "bernal jim nez guti rrez",
+      "tgt_entity_name": "yu su",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "yiheng shu",
+      "tgt_entity_name": "yu gu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "yiheng shu",
+      "tgt_entity_name": "michihiro yasunaga",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "yiheng shu",
+      "tgt_entity_name": "yu su",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "yu gu",
+      "tgt_entity_name": "michihiro yasunaga",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "yu gu",
+      "tgt_entity_name": "yu su",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "michihiro yasunaga",
+      "tgt_entity_name": "yu su",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "listed as co authors on the same document",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "hipporag",
+      "tgt_entity_name": "large language models",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "hipporag is explicitly designed to provide long term memory capabilities for large language models",
+      "source_ids": [
+        209
+      ]
+    },
+    {
+      "src_entity_name": "hipporag",
+      "tgt_entity_name": "neurobiologically inspired long term memory",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "hipporag is defined as a system for neurobiologically inspired long term memory",
+      "source_ids": [
+        209
+      ]
+    }
+  ],
+  "node_idx": 209
+}

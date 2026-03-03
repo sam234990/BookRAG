@@ -1,0 +1,261 @@
+{
+  "entities": [
+    {
+      "entity_name": "shu wang",
+      "entity_type": "PERSON",
+      "description": "shu wang is one of the authors of the paper titled bookrag",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "entity_name": "yingli zhou",
+      "entity_type": "PERSON",
+      "description": "yingli zhou is one of the authors of the paper titled bookrag",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "entity_name": "yixiang fang",
+      "entity_type": "PERSON",
+      "description": "yixiang fang is one of the authors of the paper titled bookrag",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a hierarchical structure aware index based approach for retrieval augmented generation on complex documents",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "entity_name": "pvldb",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "pvldb is the publication venue where the paper was published in 2025",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "entity_name": "2025",
+      "entity_type": "DATE",
+      "description": "2025 is the year the paper was published in pvldb",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "entity_name": "19",
+      "entity_type": "MEASUREMENT",
+      "description": "19 is the volume number of the pvldb publication where the paper appeared",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "entity_name": "1",
+      "entity_type": "MEASUREMENT",
+      "description": "1 is the issue number of the pvldb publication where the paper appeared",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "entity_name": "xxx xxx",
+      "entity_type": "MEASUREMENT",
+      "description": "xxx xxx represents the page range of the paper in the publication",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "entity_name": "xx xx xxx xx",
+      "entity_type": "MEASUREMENT",
+      "description": "xx xx xxx xx is the doi identifier for the paper",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "entity_name": "retrieval augmented generation",
+      "entity_type": "TECHNOLOGY",
+      "description": "retrieval augmented generation is the technology domain addressed by the bookrag approach",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "entity_name": "hierarchical structure aware index based approach",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "hierarchical structure aware index based approach is the specific method used by bookrag",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "entity_name": "complex documents",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "complex documents are the type of documents that the bookrag approach is designed to handle",
+      "source_ids": [
+        5
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "shu wang",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "shu wang is an author of the bookrag paper",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "yingli zhou",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yingli zhou is an author of the bookrag paper",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "yixiang fang",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yixiang fang is an author of the bookrag paper",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "pvldb",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag was published in the pvldb journal",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "pvldb",
+      "tgt_entity_name": "2025",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "pvldb published the bookrag paper in the year 2025",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "shu wang",
+      "tgt_entity_name": "yingli zhou",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "shu wang and yingli zhou are co authors on the bookrag paper",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "shu wang",
+      "tgt_entity_name": "yixiang fang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "shu wang and yixiang fang are co authors on the bookrag paper",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "yingli zhou",
+      "tgt_entity_name": "yixiang fang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yingli zhou and yixiang fang are co authors on the bookrag paper",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "retrieval augmented generation",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is an approach for retrieval augmented generation",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "hierarchical structure aware index based approach",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is defined as a hierarchical structure aware index based approach",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "complex documents",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is designed for processing complex documents",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "pvldb",
+      "tgt_entity_name": "19",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "pvldb volume 19 contains the paper",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "pvldb",
+      "tgt_entity_name": "1",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "pvldb issue 1 contains the paper",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "pvldb",
+      "tgt_entity_name": "xxx xxx",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the paper appears on pages xxx xxx in pvldb",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "src_entity_name": "pvldb",
+      "tgt_entity_name": "xx xx xxx xx",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the paper in pvldb has the doi xx xx xxx xx",
+      "source_ids": [
+        5
+      ]
+    }
+  ],
+  "node_idx": 5
+}

@@ -1,0 +1,701 @@
+{
+  "entities": [
+    {
+      "entity_name": "sibei chen",
+      "entity_type": "PERSON",
+      "description": "sibei chen is listed as an author of the paper titled auto formula",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "yeye he",
+      "entity_type": "PERSON",
+      "description": "yeye he is listed as an author of the paper titled auto formula",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "weiwei cui",
+      "entity_type": "PERSON",
+      "description": "weiwei cui is listed as an author of the paper titled auto formula",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "ju fan",
+      "entity_type": "PERSON",
+      "description": "ju fan is listed as an author of the paper titled auto formula",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "song ge",
+      "entity_type": "PERSON",
+      "description": "song ge is listed as an author of the paper titled auto formula",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "haidong zhang",
+      "entity_type": "PERSON",
+      "description": "haidong zhang is listed as an author of the paper titled auto formula",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "dongmei zhang",
+      "entity_type": "PERSON",
+      "description": "dongmei zhang is listed as an author of the paper titled auto formula",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "surajit chaudhuri",
+      "entity_type": "PERSON",
+      "description": "surajit chaudhuri is listed as an author of the paper titled auto formula",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "auto formula",
+      "entity_type": "PRODUCT",
+      "description": "auto formula is a system or method recommended in the paper for recommending formulas in spreadsheets using contrastive learning",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "proceedings of the acm on management of data",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "proceedings of the acm on management of data is the venue where the paper was published in 2024",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "2024",
+      "entity_type": "DATE",
+      "description": "2024 is the year the paper was published",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "1 27",
+      "entity_type": "MEASUREMENT",
+      "description": "1 27 represents the page range of the article in the publication",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "table representations",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "table representations is the subject of the contrastive learning method used in the paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "contrastive learning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "contrastive learning is the technique used to recommend formulas in spreadsheets",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "spreadsheets",
+      "entity_type": "PRODUCT",
+      "description": "spreadsheets are the application domain where the auto formula system recommends formulas",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "formulas",
+      "entity_type": "PRODUCT",
+      "description": "formulas are the specific items being recommended by the auto formula system",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "2",
+      "entity_type": "MEASUREMENT",
+      "description": "2 is the volume number of the publication",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "entity_name": "3",
+      "entity_type": "MEASUREMENT",
+      "description": "3 is the issue number of the publication",
+      "source_ids": [
+        199
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "sibei chen",
+      "tgt_entity_name": "auto formula",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "sibei chen is an author of the paper describing the auto formula system",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "yeye he",
+      "tgt_entity_name": "auto formula",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "yeye he is an author of the paper describing the auto formula system",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "weiwei cui",
+      "tgt_entity_name": "auto formula",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "weiwei cui is an author of the paper describing the auto formula system",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "ju fan",
+      "tgt_entity_name": "auto formula",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "ju fan is an author of the paper describing the auto formula system",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "song ge",
+      "tgt_entity_name": "auto formula",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "song ge is an author of the paper describing the auto formula system",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "haidong zhang",
+      "tgt_entity_name": "auto formula",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "haidong zhang is an author of the paper describing the auto formula system",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "dongmei zhang",
+      "tgt_entity_name": "auto formula",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "dongmei zhang is an author of the paper describing the auto formula system",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "surajit chaudhuri",
+      "tgt_entity_name": "auto formula",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "surajit chaudhuri is an author of the paper describing the auto formula system",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "sibei chen",
+      "tgt_entity_name": "proceedings of the acm on management of data",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "sibei chen is an author of a paper published in this venue",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "yeye he",
+      "tgt_entity_name": "proceedings of the acm on management of data",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yeye he is an author of a paper published in this venue",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "weiwei cui",
+      "tgt_entity_name": "proceedings of the acm on management of data",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "weiwei cui is an author of a paper published in this venue",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "ju fan",
+      "tgt_entity_name": "proceedings of the acm on management of data",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "ju fan is an author of a paper published in this venue",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "song ge",
+      "tgt_entity_name": "proceedings of the acm on management of data",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "song ge is an author of a paper published in this venue",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "haidong zhang",
+      "tgt_entity_name": "proceedings of the acm on management of data",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "haidong zhang is an author of a paper published in this venue",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "dongmei zhang",
+      "tgt_entity_name": "proceedings of the acm on management of data",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "dongmei zhang is an author of a paper published in this venue",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "surajit chaudhuri",
+      "tgt_entity_name": "proceedings of the acm on management of data",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "surajit chaudhuri is an author of a paper published in this venue",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "auto formula",
+      "tgt_entity_name": "proceedings of the acm on management of data",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "auto formula is the subject of a paper published in this venue",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "auto formula",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the paper about auto formula was published in 2024",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "sibei chen",
+      "tgt_entity_name": "yeye he",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "sibei chen and yeye he are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "sibei chen",
+      "tgt_entity_name": "weiwei cui",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "sibei chen and weiwei cui are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "sibei chen",
+      "tgt_entity_name": "ju fan",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "sibei chen and ju fan are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "sibei chen",
+      "tgt_entity_name": "song ge",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "sibei chen and song ge are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "sibei chen",
+      "tgt_entity_name": "haidong zhang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "sibei chen and haidong zhang are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "sibei chen",
+      "tgt_entity_name": "dongmei zhang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "sibei chen and dongmei zhang are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "sibei chen",
+      "tgt_entity_name": "surajit chaudhuri",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "sibei chen and surajit chaudhuri are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "yeye he",
+      "tgt_entity_name": "weiwei cui",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yeye he and weiwei cui are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "yeye he",
+      "tgt_entity_name": "ju fan",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yeye he and ju fan are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "yeye he",
+      "tgt_entity_name": "song ge",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yeye he and song ge are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "yeye he",
+      "tgt_entity_name": "haidong zhang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yeye he and haidong zhang are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "yeye he",
+      "tgt_entity_name": "dongmei zhang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yeye he and dongmei zhang are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "yeye he",
+      "tgt_entity_name": "surajit chaudhuri",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yeye he and surajit chaudhuri are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "weiwei cui",
+      "tgt_entity_name": "ju fan",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "weiwei cui and ju fan are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "weiwei cui",
+      "tgt_entity_name": "song ge",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "weiwei cui and song ge are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "weiwei cui",
+      "tgt_entity_name": "haidong zhang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "weiwei cui and haidong zhang are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "weiwei cui",
+      "tgt_entity_name": "dongmei zhang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "weiwei cui and dongmei zhang are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "weiwei cui",
+      "tgt_entity_name": "surajit chaudhuri",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "weiwei cui and surajit chaudhuri are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "ju fan",
+      "tgt_entity_name": "song ge",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "ju fan and song ge are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "ju fan",
+      "tgt_entity_name": "haidong zhang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "ju fan and haidong zhang are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "ju fan",
+      "tgt_entity_name": "dongmei zhang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "ju fan and dongmei zhang are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "ju fan",
+      "tgt_entity_name": "surajit chaudhuri",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "ju fan and surajit chaudhuri are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "song ge",
+      "tgt_entity_name": "haidong zhang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "song ge and haidong zhang are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "song ge",
+      "tgt_entity_name": "dongmei zhang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "song ge and dongmei zhang are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "song ge",
+      "tgt_entity_name": "surajit chaudhuri",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "song ge and surajit chaudhuri are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "haidong zhang",
+      "tgt_entity_name": "dongmei zhang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "haidong zhang and dongmei zhang are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "haidong zhang",
+      "tgt_entity_name": "surajit chaudhuri",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "haidong zhang and surajit chaudhuri are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "dongmei zhang",
+      "tgt_entity_name": "surajit chaudhuri",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "dongmei zhang and surajit chaudhuri are co authors on the same paper",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "auto formula",
+      "tgt_entity_name": "contrastive learning",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "auto formula uses contrastive learning as its core method",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "auto formula",
+      "tgt_entity_name": "spreadsheets",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "auto formula operates within the context of spreadsheets",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "auto formula",
+      "tgt_entity_name": "formulas",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "auto formula is designed to recommend formulas",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "auto formula",
+      "tgt_entity_name": "table representations",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "auto formula relies on table representations for its learning process",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "proceedings of the acm on management of data",
+      "tgt_entity_name": "2",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the publication volume is 2",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "proceedings of the acm on management of data",
+      "tgt_entity_name": "3",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the publication issue is 3",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "proceedings of the acm on management of data",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the publication year is 2024",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "proceedings of the acm on management of data",
+      "tgt_entity_name": "1 27",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the publication page range is 1 27",
+      "source_ids": [
+        199
+      ]
+    },
+    {
+      "src_entity_name": "contrastive learning",
+      "tgt_entity_name": "table representations",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "contrastive learning is applied to table representations",
+      "source_ids": [
+        199
+      ]
+    }
+  ],
+  "node_idx": 199
+}

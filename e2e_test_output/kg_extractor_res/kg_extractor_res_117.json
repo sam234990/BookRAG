@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (10)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the standard probability P as a process involving graph and text inputs leading to a skyline reduction. LaTeX: 𝑃 std = ( Graph ∥ Text ) → Skyline → Reduce (10)",
+      "source_ids": [
+        117
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 117
+}

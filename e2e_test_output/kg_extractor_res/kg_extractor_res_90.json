@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "table: cref='#/texts/95'...",
+      "entity_type": "TABLE",
+      "description": "A data table described as: cref='#/texts/95'",
+      "source_ids": [
+        90
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 90
+}

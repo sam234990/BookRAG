@@ -1,0 +1,79 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 1",
+      "entity_type": "IMAGE",
+      "description": "figure 1 is an image that presents a comparison of existing methods and bookrag for complex document qa",
+      "source_ids": [
+        12
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a product or method being compared against existing methods for complex document qa",
+      "source_ids": [
+        12
+      ]
+    },
+    {
+      "entity_name": "existing methods",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "existing methods refers to current techniques used for complex document qa  which are being compared to bookrag",
+      "source_ids": [
+        12
+      ]
+    },
+    {
+      "entity_name": "complex document qa",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "complex document qa is the specific task or problem domain where the comparison between methods and bookrag is taking place",
+      "source_ids": [
+        12
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 1",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 1 displays a comparison involving bookrag",
+      "source_ids": [
+        12
+      ]
+    },
+    {
+      "src_entity_name": "figure 1",
+      "tgt_entity_name": "existing methods",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 1 displays a comparison involving existing methods",
+      "source_ids": [
+        12
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "complex document qa",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag is a solution or method applied to the task of complex document qa",
+      "source_ids": [
+        12
+      ]
+    },
+    {
+      "src_entity_name": "existing methods",
+      "tgt_entity_name": "complex document qa",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "existing methods are techniques used for the task of complex document qa",
+      "source_ids": [
+        12
+      ]
+    }
+  ],
+  "node_idx": 12
+}

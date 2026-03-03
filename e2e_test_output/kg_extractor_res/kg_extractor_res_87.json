@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "5.2 agent-based planning",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'Agent-Based Retrieval' (Section 5), this section details the strategy formulation mechanism within the BookRAG framework, explaining how an agent intelligently plans operations for complex document queries.",
+      "source_ids": [
+        87
+      ]
+    },
+    {
+      "entity_name": "agent-based planning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "Refers to the specific methodology described in section 5.2 where an agent formulates strategies to handle complex retrieval tasks involving modal filtering and multi-hop reasoning.",
+      "source_ids": [
+        87
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "agent-based planning",
+      "tgt_entity_name": "5.2 agent-based planning",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'Agent-based Planning' is the primary topic and subject matter of section 5.2.",
+      "source_ids": [
+        87
+      ]
+    }
+  ],
+  "node_idx": 87
+}

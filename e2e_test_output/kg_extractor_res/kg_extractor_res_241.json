@@ -1,0 +1,105 @@
+{
+  "entities": [
+    {
+      "entity_name": "expert query analyzer",
+      "entity_type": "PERSON",
+      "description": "an expert query analyzer is a role described as someone tasked with classifying user questions into specific categories",
+      "source_ids": [
+        241
+      ]
+    },
+    {
+      "entity_name": "simple",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "simple is one of the three categories used to classify user questions",
+      "source_ids": [
+        241
+      ]
+    },
+    {
+      "entity_name": "complex",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "complex is one of the three categories used to classify user questions",
+      "source_ids": [
+        241
+      ]
+    },
+    {
+      "entity_name": "global",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "global is one of the three categories used to classify user questions",
+      "source_ids": [
+        241
+      ]
+    },
+    {
+      "entity_name": "user",
+      "entity_type": "PERSON",
+      "description": "the user is the entity whose questions are being classified by the expert query analyzer",
+      "source_ids": [
+        241
+      ]
+    },
+    {
+      "entity_name": "json object",
+      "entity_type": "FILE_TYPE",
+      "description": "the json object is the required format for the response from the expert query analyzer",
+      "source_ids": [
+        241
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "expert query analyzer",
+      "tgt_entity_name": "simple",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the expert query analyzer classifies questions into the simple category",
+      "source_ids": [
+        241
+      ]
+    },
+    {
+      "src_entity_name": "expert query analyzer",
+      "tgt_entity_name": "complex",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the expert query analyzer classifies questions into the complex category",
+      "source_ids": [
+        241
+      ]
+    },
+    {
+      "src_entity_name": "expert query analyzer",
+      "tgt_entity_name": "global",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the expert query analyzer classifies questions into the global category",
+      "source_ids": [
+        241
+      ]
+    },
+    {
+      "src_entity_name": "expert query analyzer",
+      "tgt_entity_name": "user",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the expert query analyzer processes questions submitted by the user",
+      "source_ids": [
+        241
+      ]
+    },
+    {
+      "src_entity_name": "expert query analyzer",
+      "tgt_entity_name": "json object",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the expert query analyzer must respond using the specified json object format",
+      "source_ids": [
+        241
+      ]
+    }
+  ],
+  "node_idx": 241
+}

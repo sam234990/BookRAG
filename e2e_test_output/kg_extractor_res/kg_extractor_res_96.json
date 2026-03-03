@@ -1,0 +1,267 @@
+{
+  "entities": [
+    {
+      "entity_name": "query classification",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "query classification is a task focused on enabling agent strategy selection by categorizing queries based on complexity",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "single hop",
+      "entity_type": "EVENT",
+      "description": "single hop is a query category requiring a single piece of information retrieved via a scent based retrieval operation",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "multi hop",
+      "entity_type": "EVENT",
+      "description": "multi hop is a query category defined by its intrinsic complexity and operational demands",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "global aggregation",
+      "entity_type": "EVENT",
+      "description": "global aggregation is a query category necessitating analysis under multiple filtering conditions",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "table 2",
+      "entity_type": "TABLE",
+      "description": "table 2 is a reference in the text that defines the three representative query categories",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "scent based retrieval",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "scent based retrieval is a method used to retrieve a single piece of information for single hop queries",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "filter aggregation",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "filter   aggregation is a sequence of operations used to analyze content under multiple filtering conditions for global aggregation queries",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "SOFTWARE",
+      "description": "bookrag is a system designed to be extensible for resolving a broader range of query types",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "agent strategy selection",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "agent strategy selection is a process enabled by query classification to determine the appropriate solution strategy",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "intrinsic complexity",
+      "entity_type": "CONCEPT",
+      "description": "intrinsic complexity is an attribute used to define the query categories",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "operational demands",
+      "entity_type": "CONCEPT",
+      "description": "operational demands are factors used to define the query categories alongside intrinsic complexity",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "solution strategy",
+      "entity_type": "CONCEPT",
+      "description": "solution strategy refers to the different approaches required for each query category",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "filtering conditions",
+      "entity_type": "CONCEPT",
+      "description": "filtering conditions are multiple criteria used in the analysis of global aggregation queries",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "document",
+      "entity_type": "OBJECT",
+      "description": "document refers to the source material where content is analyzed during global aggregation queries",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "entity_name": "additional operators",
+      "entity_type": "SOFTWARE",
+      "description": "additional operators are components integrated into bookrag to extend its capabilities",
+      "source_ids": [
+        96
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "query classification",
+      "tgt_entity_name": "single hop",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "query classification defines single hop as one of its three representative categories",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "src_entity_name": "query classification",
+      "tgt_entity_name": "multi hop",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "query classification defines multi hop as one of its three representative categories",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "src_entity_name": "query classification",
+      "tgt_entity_name": "global aggregation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "query classification defines global aggregation as one of its three representative categories",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "scent based retrieval",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "single hop queries typically require a scent based retrieval operation",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "src_entity_name": "global aggregation",
+      "tgt_entity_name": "filter aggregation",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "global aggregation queries usually involve a sequence of filter   aggregation operations",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "query classification",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "bookrag is designed to resolve a broader range of query types  including those defined by the classification",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "src_entity_name": "query classification",
+      "tgt_entity_name": "agent strategy selection",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "query classification enables agent strategy selection",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "intrinsic complexity",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "single hop is defined by its intrinsic complexity and operational demands",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "src_entity_name": "multi hop",
+      "tgt_entity_name": "intrinsic complexity",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "multi hop is defined by its intrinsic complexity and operational demands",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "src_entity_name": "global aggregation",
+      "tgt_entity_name": "intrinsic complexity",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "global aggregation is defined by its intrinsic complexity and operational demands",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "src_entity_name": "query classification",
+      "tgt_entity_name": "solution strategy",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "each category defined by query classification requires a different solution strategy",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "src_entity_name": "global aggregation",
+      "tgt_entity_name": "filtering conditions",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "global aggregation necessitates analyzing content under multiple filtering conditions",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "src_entity_name": "global aggregation",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "global aggregation involves analyzing content across various parts of the document",
+      "source_ids": [
+        96
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "additional operators",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag resolves broader query types by integrating additional operators",
+      "source_ids": [
+        96
+      ]
+    }
+  ],
+  "node_idx": 96
+}

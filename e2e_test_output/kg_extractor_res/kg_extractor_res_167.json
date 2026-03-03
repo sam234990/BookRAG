@@ -1,0 +1,69 @@
+{
+  "entities": [
+    {
+      "entity_name": "selector",
+      "entity_type": "TECHNOLOGY",
+      "description": "selector is a component or operator mentioned in the context of removing it to force reasoners to score all candidate nodes",
+      "source_ids": [
+        167
+      ]
+    },
+    {
+      "entity_name": "reasoners",
+      "entity_type": "TECHNOLOGY",
+      "description": "reasoners are systems or components that score candidate nodes  affected by the removal of selector operators",
+      "source_ids": [
+        167
+      ]
+    },
+    {
+      "entity_name": "candidate nodes",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "candidate nodes are the items being scored by reasoners when the selector operators are removed",
+      "source_ids": [
+        167
+      ]
+    },
+    {
+      "entity_name": "selector operators",
+      "entity_type": "TECHNOLOGY",
+      "description": "selector operators are specific components that can be removed to alter the behavior of reasoners",
+      "source_ids": [
+        167
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "selector",
+      "tgt_entity_name": "reasoners",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the removal of selector operators forces reasoners to score all candidate nodes  indicating a direct operational dependency",
+      "source_ids": [
+        167
+      ]
+    },
+    {
+      "src_entity_name": "selector operators",
+      "tgt_entity_name": "reasoners",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "removing selector operators directly changes how reasoners operate by forcing them to score all candidate nodes",
+      "source_ids": [
+        167
+      ]
+    },
+    {
+      "src_entity_name": "reasoners",
+      "tgt_entity_name": "candidate nodes",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "reasoners perform the action of scoring candidate nodes  especially when selector operators are absent",
+      "source_ids": [
+        167
+      ]
+    }
+  ],
+  "node_idx": 167
+}

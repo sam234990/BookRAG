@@ -1,0 +1,145 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "bookrag is a novel method introduced in the text that constructs a document native bookindex",
+      "source_ids": [
+        25
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "PRODUCT",
+      "description": "bookindex is a document native index constructed by the bookrag method",
+      "source_ids": [
+        25
+      ]
+    },
+    {
+      "entity_name": "hierarchical tree",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "a hierarchical tree of document layout blocks is integrated by bookrag to construct the bookindex",
+      "source_ids": [
+        25
+      ]
+    },
+    {
+      "entity_name": "kg",
+      "entity_type": "SOFTWARE",
+      "description": "kg refers to a knowledge graph storing fine grained entity relations used in the bookrag method",
+      "source_ids": [
+        25
+      ]
+    },
+    {
+      "entity_name": "document layout blocks",
+      "entity_type": "MATERIAL",
+      "description": "document layout blocks are the structural components of a document that are organized into a hierarchical tree",
+      "source_ids": [
+        25
+      ]
+    },
+    {
+      "entity_name": "entity relations",
+      "entity_type": "CONCEPT",
+      "description": "entity relations are the fine grained connections between entities stored within the knowledge graph",
+      "source_ids": [
+        25
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag constructs the bookindex by integrating other components",
+      "source_ids": [
+        25
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "hierarchical tree",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag integrates a hierarchical tree of document layout blocks",
+      "source_ids": [
+        25
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "kg",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag integrates a kg storing fine grained entity relations",
+      "source_ids": [
+        25
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "hierarchical tree",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the bookindex is constructed using a hierarchical tree of document layout blocks",
+      "source_ids": [
+        25
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "kg",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the bookindex is constructed using a kg storing fine grained entity relations",
+      "source_ids": [
+        25
+      ]
+    },
+    {
+      "src_entity_name": "hierarchical tree",
+      "tgt_entity_name": "document layout blocks",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the hierarchical tree is composed of document layout blocks",
+      "source_ids": [
+        25
+      ]
+    },
+    {
+      "src_entity_name": "kg",
+      "tgt_entity_name": "entity relations",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the kg stores fine grained entity relations",
+      "source_ids": [
+        25
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "document layout blocks",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag integrates document layout blocks via a hierarchical tree",
+      "source_ids": [
+        25
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "entity relations",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag utilizes a kg that stores entity relations",
+      "source_ids": [
+        25
+      ]
+    }
+  ],
+  "node_idx": 25
+}

@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "6.2 overall results",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'Experiments' within the BookRAG paper, this section presents the aggregate performance metrics comparing the proposed method against baseline approaches on document QA tasks.",
+      "source_ids": [
+        150
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 150
+}

@@ -1,0 +1,375 @@
+{
+  "entities": [
+    {
+      "entity_name": "cref='#/texts/14'",
+      "entity_type": "IMAGE",
+      "description": "A diagram comparing three RAG (Retrieval-Augmented Generation) architectures: Text-Only RAG, Layout Segmented RAG, and BookRAG.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "complex query",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The input task represented by a user icon with a question mark, initiating the process.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "complex multi-page document",
+      "entity_type": "PRODUCT",
+      "description": "The source document containing multiple pages that serves as the input data.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "text-only rag",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "Section (a) of the diagram illustrating a Retrieval-Augmented Generation approach using plain text extraction.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "plain text extraction (ocr)",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "The first step in Text-Only RAG where text is extracted from the document images.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "unstructured chunks",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The output of OCR processing, representing fragmented text segments without structural context.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "text index (vector/graph/tree)",
+      "entity_type": "SYSTEM_COMPONENT",
+      "description": "The indexing structure created to store and organize the unstructured chunks for retrieval.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "fixed/ graph retrieval",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "The retrieval mechanism used to find relevant information from the index.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "Large Language Model depicted as a robot head, which generates the final answer based on retrieved information.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "fails on structural dependencies",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "A limitation identified in the Text-Only RAG approach regarding its inability to handle complex structures.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "layout segmented rag",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "Section (b) of the diagram illustrating a RAG approach that segments content based on layout analysis.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "layout analysis & parsing",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "The initial step in this section where the document's visual layout is analyzed and parsed.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "flattened chunks",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "Chunks derived from layout analysis but flattened, losing some hierarchical relationships.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "flattened vector index",
+      "entity_type": "SYSTEM_COMPONENT",
+      "description": "An index built upon the flattened chunks.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "fixed retrieval",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "The retrieval method used in the Layout Segmented RAG pipeline.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "loses complex relationships",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "A drawback noted for the Layout Segmented RAG approach due to flattening the data.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "bookrag (natively structure-aware)",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "Section (c) of the diagram presenting the proposed solution, a structure-aware RAG architecture.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "hierarchical chunks",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "Chunks that preserve the hierarchical structure of the document.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "SYSTEM_COMPONENT",
+      "description": "A graph-based index representing the hierarchical relationships between chunks.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "agent-based retrieval",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A retrieval strategy utilizing an agent to navigate the BookIndex graph effectively.",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "entity_name": "accurate, structured-grounded",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "The positive outcome achieved by the BookRAG system, indicating high accuracy and structural awareness.",
+      "source_ids": [
+        13
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "complex query",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Complex Query",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "complex multi-page document",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Complex Multi-page Document",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "text-only rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Text-Only RAG",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "plain text extraction (ocr)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Plain Text Extraction (OCR)",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "unstructured chunks",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Unstructured Chunks",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "text index (vector/graph/tree)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Text Index (Vector/Graph/Tree)",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "fixed/ graph retrieval",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Fixed/ Graph Retrieval",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to LLM",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "fails on structural dependencies",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Fails on Structural dependencies",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "layout segmented rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Layout Segmented RAG",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "layout analysis & parsing",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Layout Analysis & Parsing",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "flattened chunks",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Flattened Chunks",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "flattened vector index",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Flattened Vector Index",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "fixed retrieval",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Fixed Retrieval",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "loses complex relationships",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Loses complex relationships",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "bookrag (natively structure-aware)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to BookRAG (Natively Structure-aware)",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "hierarchical chunks",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Hierarchical Chunks",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to BookIndex",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "agent-based retrieval",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Agent-based Retrieval",
+      "source_ids": [
+        13
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/14'",
+      "tgt_entity_name": "accurate, structured-grounded",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/14' related to Accurate, structured-grounded",
+      "source_ids": [
+        13
+      ]
+    }
+  ],
+  "node_idx": 13
+}

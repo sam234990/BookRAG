@@ -1,0 +1,381 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a retrieval system evaluated for its performance against other baselines",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "m3docvqa",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "m3docvqa is a dataset used to evaluate the retrieval recall of bookrag",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "graphranker",
+      "entity_type": "PRODUCT",
+      "description": "graphranker is a layout based baseline system compared against bookrag",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "ift inspired selector reasoner workflow",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the ift inspired selector   reasoner workflow is the process used by bookrag to classify queries and analyze information",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "agent based planning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "agent based planning is a component of the workflow that classifies the query",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "selector",
+      "entity_type": "SOFTWARE",
+      "description": "the selector is a component that narrows the search to a precise information patch",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "reasoner",
+      "entity_type": "SOFTWARE",
+      "description": "the reasoner is a component that performs analysis on the selected information",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "skyline ranker",
+      "entity_type": "SOFTWARE",
+      "description": "skyline ranker is a process that retains a specific number of nodes after analysis",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "71 2",
+      "entity_type": "PERCENTAGE",
+      "description": "71 2  is the retrieval recall achieved by bookrag on the m3docvqa dataset",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "44 5",
+      "entity_type": "PERCENTAGE",
+      "description": "44 5  is the maximum retrieval recall achieved by the graphranker baseline",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "9 87",
+      "entity_type": "MEASUREMENT",
+      "description": "9 87 is the average number of retained nodes on one of the three datasets after the skyline ranker process",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "6 86",
+      "entity_type": "MEASUREMENT",
+      "description": "6 86 is the average number of retained nodes on another of the three datasets after the skyline ranker process",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "8 6",
+      "entity_type": "MEASUREMENT",
+      "description": "8 6 is the average number of retained nodes on the third dataset after the skyline ranker process",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "10",
+      "entity_type": "MEASUREMENT",
+      "description": "10 is the value of k used in the standard top k setting for comparison",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "retrieval performance",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "retrieval performance is the specific metric being evaluated to validate the retrieval design of bookrag",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "retrieval recall",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "retrieval recall is the specific performance metric used to compare bookrag against other baselines",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "ground truth layout blocks",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "ground truth layout blocks are the reference data used to evaluate the retrieval recall",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "layout based baselines",
+      "entity_type": "PRODUCT",
+      "description": "layout based baselines are the group of systems against which bookrag is compared",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "query",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the query is the input that is classified by the agent based planning component",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "information patch",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the information patch is the precise data segment targeted by the selector component",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "candidate size",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "candidate size is the variable representing the number of candidates  which is kept from inflating by the skyline ranker process",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "three datasets",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "three datasets are the collective group of data used to measure the average number of retained nodes",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "entity_name": "standard top k setting",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the standard top k setting is the baseline configuration used for comparison with the skyline ranker results",
+      "source_ids": [
+        157
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "m3docvqa",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag achieves a 71 2  recall on the m3docvqa dataset",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "graphranker",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag significantly outperforms graphranker in retrieval recall",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "ift inspired selector reasoner workflow",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the performance advantage of bookrag stems from its ift inspired selector   reasoner workflow",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "ift inspired selector reasoner workflow",
+      "tgt_entity_name": "agent based planning",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the workflow includes agent based planning which classifies the query",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "ift inspired selector reasoner workflow",
+      "tgt_entity_name": "selector",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the workflow uses the selector to narrow the search to a precise information patch",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "ift inspired selector reasoner workflow",
+      "tgt_entity_name": "reasoner",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the workflow uses the reasoner for analysis after the selector",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "9 87",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the skyline ranker process results in an average of 9 87 retained nodes on one dataset",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "6 86",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the skyline ranker process results in an average of 6 86 retained nodes on another dataset",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "8 6",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the skyline ranker process results in an average of 8 6 retained nodes on the third dataset",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "10",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the number of retained nodes by skyline ranker is comparable to the standard top k setting where k 10",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "retrieval performance",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag s retrieval performance is the subject of the validation described in the text",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "retrieval recall",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag s retrieval recall is the specific metric measured to demonstrate its performance",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "ground truth layout blocks",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag is evaluated against ground truth layout blocks to validate its design",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "layout based baselines",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is evaluated against layout based baselines to demonstrate its superiority",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "ift inspired selector reasoner workflow",
+      "tgt_entity_name": "query",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the workflow s agent based planning component classifies the query",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "selector",
+      "tgt_entity_name": "information patch",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the selector narrows the search to a precise information patch",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "candidate size",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the skyline ranker process ensures high quality retrieval without inflating the candidate size",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "three datasets",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the average number of retained nodes by skyline ranker is measured across three datasets",
+      "source_ids": [
+        157
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "standard top k setting",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the results of the skyline ranker process are compared to the standard top k setting",
+      "source_ids": [
+        157
+      ]
+    }
+  ],
+  "node_idx": 157
+}

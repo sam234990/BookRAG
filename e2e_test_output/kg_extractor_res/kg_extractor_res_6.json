@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "pvldb",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "pvldb is a publication venue mentioned in the context of artifact availability",
+      "source_ids": [
+        6
+      ]
+    },
+    {
+      "entity_name": "artifact availability",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "artifact availability refers to the status or process of making artifacts available  as discussed in the text",
+      "source_ids": [
+        6
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "pvldb",
+      "tgt_entity_name": "artifact availability",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "pvldb is the venue where the topic of artifact availability is addressed",
+      "source_ids": [
+        6
+      ]
+    }
+  ],
+  "node_idx": 6
+}

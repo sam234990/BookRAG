@@ -1,0 +1,177 @@
+{
+  "entities": [
+    {
+      "entity_name": "graph based rag",
+      "entity_type": "TECHNOLOGY",
+      "description": "graph based rag is a method that extracts textual content from documents and leverages graph data during retrieval",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "entity_name": "raptor",
+      "entity_type": "TECHNOLOGY",
+      "description": "raptor is a specific technology selected as an example of graph based rag methods",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "entity_name": "graphrag",
+      "entity_type": "TECHNOLOGY",
+      "description": "graphrag is a specific technology selected as an example of graph based rag methods",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "entity_name": "graphrag global",
+      "entity_type": "TECHNOLOGY",
+      "description": "graphrag global is a version of graphrag that employs global search methods",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "entity_name": "graphrag local",
+      "entity_type": "TECHNOLOGY",
+      "description": "graphrag local is a version of graphrag that employs local search methods",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "entity_name": "documents",
+      "entity_type": "PRODUCT",
+      "description": "documents are the textual content from which graph based rag methods extract information",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "entity_name": "graph data",
+      "entity_type": "TECHNOLOGY",
+      "description": "graph data is the type of data leveraged during the retrieval process in graph based rag methods",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "entity_name": "retrieval",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "retrieval is the process performed by graph based rag methods after extracting textual content",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "entity_name": "global search methods",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "global search methods are employed by the graphrag global version",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "entity_name": "local search methods",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "local search methods are employed by the graphrag local version",
+      "source_ids": [
+        147
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "graph based rag",
+      "tgt_entity_name": "raptor",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "raptor is selected as a specific instance of graph based rag methods",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "src_entity_name": "graph based rag",
+      "tgt_entity_name": "graphrag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graphrag is selected as a specific instance of graph based rag methods",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "src_entity_name": "graphrag",
+      "tgt_entity_name": "graphrag global",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "graphrag global is a version of graphrag that uses global search methods",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "src_entity_name": "graphrag",
+      "tgt_entity_name": "graphrag local",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "graphrag local is a version of graphrag that uses local search methods",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "src_entity_name": "graph based rag",
+      "tgt_entity_name": "documents",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graph based rag extracts textual content from documents",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "src_entity_name": "graph based rag",
+      "tgt_entity_name": "graph data",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graph based rag leverages graph data during retrieval",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "src_entity_name": "graph based rag",
+      "tgt_entity_name": "retrieval",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "graph based rag performs retrieval as part of its process",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "src_entity_name": "graphrag global",
+      "tgt_entity_name": "global search methods",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "graphrag global employs global search methods",
+      "source_ids": [
+        147
+      ]
+    },
+    {
+      "src_entity_name": "graphrag local",
+      "tgt_entity_name": "local search methods",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "graphrag local employs local search methods",
+      "source_ids": [
+        147
+      ]
+    }
+  ],
+  "node_idx": 147
+}

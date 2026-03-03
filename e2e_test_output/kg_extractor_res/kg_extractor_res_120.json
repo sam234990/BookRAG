@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "global aggregation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "global aggregation is a workflow involving a sequence of filters followed by synthesis",
+      "source_ids": [
+        120
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 120
+}

@@ -1,0 +1,297 @@
+{
+  "entities": [
+    {
+      "entity_name": "selector",
+      "entity_type": "TECHNOLOGY",
+      "description": "selector is an operator that filters or selects specific content ranges from the bookindex",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "PRODUCT",
+      "description": "bookindex is the source of content ranges that the selector operators filter",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "filter modal",
+      "entity_type": "TECHNOLOGY",
+      "description": "filter modal is an operator that applies explicit constraints to the bookindex",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "filter range",
+      "entity_type": "TECHNOLOGY",
+      "description": "filter range is an operator that applies explicit constraints to the bookindex",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "c",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "c represents explicit constraints such as modal types and page ranges generated during a plan",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "tree",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "tree is the data structure t    n  e t  on which the operators operate",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "n",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "n represents the set of nodes in the tree",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "e t",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "e t represents the set of edges in the tree",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "n f",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "n f is the filtered subset of nodes produced by the operators",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "c n",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "c n is a predicate that holds true for each node in the filtered subset",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "modal types",
+      "entity_type": "CONCEPT",
+      "description": "modal types are a specific type of explicit constraint c mentioned in the text",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "page ranges",
+      "entity_type": "CONCEPT",
+      "description": "page ranges are a specific type of explicit constraint c mentioned in the text",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "plan",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the plan is the process during which explicit constraints c are generated",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "nodes",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "nodes are the individual elements within the tree t that are evaluated by the predicate",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "entity_name": "edges",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "edges are the connections within the tree t  denoted as e t",
+      "source_ids": [
+        102
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "selector",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "selector operators filter content ranges directly from the bookindex",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "filter modal",
+      "tgt_entity_name": "c",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "filter modal applies the explicit constraints c generated during the plan",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "filter range",
+      "tgt_entity_name": "c",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "filter range applies the explicit constraints c generated during the plan",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "selector",
+      "tgt_entity_name": "tree",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the selector operators operate on the tree t    n  e t  to produce a filtered subset",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "filter modal",
+      "tgt_entity_name": "tree",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "filter modal operates on the tree to produce a filtered subset",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "filter range",
+      "tgt_entity_name": "tree",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "filter range operates on the tree to produce a filtered subset",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "selector",
+      "tgt_entity_name": "n f",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the selector operators produce the filtered subset n f",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "filter modal",
+      "tgt_entity_name": "n f",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "filter modal contributes to the production of the filtered subset n f",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "filter range",
+      "tgt_entity_name": "n f",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "filter range contributes to the production of the filtered subset n f",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "n f",
+      "tgt_entity_name": "c n",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the filtered subset n f consists of nodes where the predicate c n holds true",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "c",
+      "tgt_entity_name": "modal types",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "modal types are examples of the explicit constraints c",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "c",
+      "tgt_entity_name": "page ranges",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "page ranges are examples of the explicit constraints c",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "c",
+      "tgt_entity_name": "plan",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the constraints c are generated during the plan",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "tree",
+      "tgt_entity_name": "nodes",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the tree t is composed of the set of nodes n",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "tree",
+      "tgt_entity_name": "edges",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the tree t is composed of the set of edges e t",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "n f",
+      "tgt_entity_name": "nodes",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the filtered subset n f is a subset of the nodes n",
+      "source_ids": [
+        102
+      ]
+    },
+    {
+      "src_entity_name": "c n",
+      "tgt_entity_name": "nodes",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the predicate c n is evaluated for each node in the set",
+      "source_ids": [
+        102
+      ]
+    }
+  ],
+  "node_idx": 102
+}

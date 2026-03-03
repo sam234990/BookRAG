@@ -1,0 +1,127 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a method or system being evaluated in the experiments against baseline methods",
+      "source_ids": [
+        137
+      ]
+    },
+    {
+      "entity_name": "document qa tasks",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "document qa tasks are the specific problems on which the efficiency and accuracy of bookrag and baseline methods are compared",
+      "source_ids": [
+        137
+      ]
+    },
+    {
+      "entity_name": "baseline methods",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "baseline methods are the strong existing approaches used for comparison against bookrag in the experiments",
+      "source_ids": [
+        137
+      ]
+    },
+    {
+      "entity_name": "efficiency",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "efficiency is a metric used to evaluate the performance of bookrag and baseline methods",
+      "source_ids": [
+        137
+      ]
+    },
+    {
+      "entity_name": "accuracy",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "accuracy is a metric used to evaluate the performance of bookrag and baseline methods",
+      "source_ids": [
+        137
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "document qa tasks",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is evaluated for its efficiency and accuracy specifically on document qa tasks",
+      "source_ids": [
+        137
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "baseline methods",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is compared against several strong baseline methods in the experiments",
+      "source_ids": [
+        137
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "efficiency",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the efficiency of bookrag is evaluated and compared in the experiments",
+      "source_ids": [
+        137
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "accuracy",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the accuracy of bookrag is evaluated and compared in the experiments",
+      "source_ids": [
+        137
+      ]
+    },
+    {
+      "src_entity_name": "baseline methods",
+      "tgt_entity_name": "efficiency",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the efficiency of baseline methods is evaluated and compared in the experiments",
+      "source_ids": [
+        137
+      ]
+    },
+    {
+      "src_entity_name": "baseline methods",
+      "tgt_entity_name": "accuracy",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the accuracy of baseline methods is evaluated and compared in the experiments",
+      "source_ids": [
+        137
+      ]
+    },
+    {
+      "src_entity_name": "document qa tasks",
+      "tgt_entity_name": "efficiency",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "efficiency is measured specifically on document qa tasks",
+      "source_ids": [
+        137
+      ]
+    },
+    {
+      "src_entity_name": "document qa tasks",
+      "tgt_entity_name": "accuracy",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "accuracy is measured specifically on document qa tasks",
+      "source_ids": [
+        137
+      ]
+    }
+  ],
+  "node_idx": 137
+}

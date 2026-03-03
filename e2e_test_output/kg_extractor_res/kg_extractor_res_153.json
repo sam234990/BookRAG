@@ -1,0 +1,229 @@
+{
+  "entities": [
+    {
+      "entity_name": "table 5",
+      "entity_type": "TABLE",
+      "description": "table 5 is a performance comparison table showing results of different methods on document qa tasks",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "entity_name": "performance comparison",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "performance comparison refers to the evaluation of different methods across various datasets",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "entity_name": "different methods",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "different methods are the various approaches being compared in the table for solving document qa tasks",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "entity_name": "datasets",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "datasets are the various collections of data used to evaluate the performance of the methods",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "entity_name": "complex document qa tasks",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "complex document qa tasks are the specific problems being solved by the methods in the comparison",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "entity_name": "best results",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "best results refer to the top performing outcomes marked in bold in the table",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "entity_name": "second best results",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "second best results refer to the runner up outcomes marked in underlined in the table",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "entity_name": "bold",
+      "entity_type": "COLOR",
+      "description": "bold refers to the text formatting style used to mark the best results in the table",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "entity_name": "underlined",
+      "entity_type": "SHAPE",
+      "description": "underlined refers to the text formatting style used to mark the second best results in the table",
+      "source_ids": [
+        153
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "table 5",
+      "tgt_entity_name": "performance comparison",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "table 5 presents the performance comparison of different methods",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "table 5",
+      "tgt_entity_name": "different methods",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "table 5 compares the performance of different methods",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "table 5",
+      "tgt_entity_name": "datasets",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "table 5 evaluates methods across various datasets",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "table 5",
+      "tgt_entity_name": "complex document qa tasks",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "table 5 focuses on solving complex document qa tasks",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "table 5",
+      "tgt_entity_name": "best results",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "table 5 marks the best results in bold",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "table 5",
+      "tgt_entity_name": "second best results",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "table 5 marks the second best results in underlined",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "performance comparison",
+      "tgt_entity_name": "different methods",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the performance comparison involves evaluating different methods",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "performance comparison",
+      "tgt_entity_name": "datasets",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the performance comparison is conducted across various datasets",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "performance comparison",
+      "tgt_entity_name": "complex document qa tasks",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the performance comparison is aimed at solving complex document qa tasks",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "different methods",
+      "tgt_entity_name": "complex document qa tasks",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "different methods are used to solve complex document qa tasks",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "datasets",
+      "tgt_entity_name": "complex document qa tasks",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "datasets are used to evaluate methods for complex document qa tasks",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "best results",
+      "tgt_entity_name": "bold",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the best results are identified by being marked in bold",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "second best results",
+      "tgt_entity_name": "underlined",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the second best results are identified by being marked as underlined",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "table 5",
+      "tgt_entity_name": "bold",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "table 5 uses bold formatting to highlight specific results",
+      "source_ids": [
+        153
+      ]
+    },
+    {
+      "src_entity_name": "table 5",
+      "tgt_entity_name": "underlined",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "table 5 uses underlined formatting to highlight specific results",
+      "source_ids": [
+        153
+      ]
+    }
+  ],
+  "node_idx": 153
+}

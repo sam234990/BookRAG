@@ -1,0 +1,97 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a system whose performance bottlenecks are being diagnosed through error analysis",
+      "source_ids": [
+        180
+      ]
+    },
+    {
+      "entity_name": "figure 9",
+      "entity_type": "IMAGE",
+      "description": "figure 9 is a visual representation showing the error propagation traced during the analysis",
+      "source_ids": [
+        180
+      ]
+    },
+    {
+      "entity_name": "error response analysis",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "error response analysis is the specific task conducted to diagnose performance bottlenecks",
+      "source_ids": [
+        180
+      ]
+    },
+    {
+      "entity_name": "200 sampled queries",
+      "entity_type": "MEASUREMENT",
+      "description": "200 sampled queries refers to the quantity of queries from each dataset used for the analysis",
+      "source_ids": [
+        180
+      ]
+    },
+    {
+      "entity_name": "four types",
+      "entity_type": "MEASUREMENT",
+      "description": "four types refers to the number of categories into which failures are classified",
+      "source_ids": [
+        180
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "figure 9",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 9 illustrates the error propagation traced while diagnosing the performance bottlenecks of bookrag",
+      "source_ids": [
+        180
+      ]
+    },
+    {
+      "src_entity_name": "error response analysis",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "error response analysis is performed on bookrag to diagnose its performance bottlenecks",
+      "source_ids": [
+        180
+      ]
+    },
+    {
+      "src_entity_name": "error response analysis",
+      "tgt_entity_name": "200 sampled queries",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the analysis is conducted on 200 sampled queries from each dataset",
+      "source_ids": [
+        180
+      ]
+    },
+    {
+      "src_entity_name": "error response analysis",
+      "tgt_entity_name": "figure 9",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the analysis traces error propagation as shown in figure 9",
+      "source_ids": [
+        180
+      ]
+    },
+    {
+      "src_entity_name": "error response analysis",
+      "tgt_entity_name": "four types",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the analysis categorizes failures into four types",
+      "source_ids": [
+        180
+      ]
+    }
+  ],
+  "node_idx": 180
+}

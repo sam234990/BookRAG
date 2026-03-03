@@ -1,0 +1,25 @@
+{
+  "entities": [
+    {
+      "entity_name": "explanation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "explanation is a task or problem described as a brief  one sentence string explaining reasoning for entity matching",
+      "source_ids": [
+        277
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "explanation",
+      "tgt_entity_name": "explanation",
+      "relation_name": "",
+      "weight": 5.0,
+      "description": "the entity  explanation  is defined by its role in explaining reasoning for matches or differences between entities",
+      "source_ids": [
+        277
+      ]
+    }
+  ],
+  "node_idx": 277
+}

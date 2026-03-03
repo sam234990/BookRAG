@@ -1,0 +1,141 @@
+{
+  "entities": [
+    {
+      "entity_name": "yucheng hu",
+      "entity_type": "PERSON",
+      "description": "yucheng hu is one of the authors of the 2024 survey on retrieval augmented language models",
+      "source_ids": [
+        212
+      ]
+    },
+    {
+      "entity_name": "yuxing lu",
+      "entity_type": "PERSON",
+      "description": "yuxing lu is one of the authors of the 2024 survey on retrieval augmented language models",
+      "source_ids": [
+        212
+      ]
+    },
+    {
+      "entity_name": "rag and rau a survey on retrieval augmented language model in natural language processing",
+      "entity_type": "BOOK",
+      "description": "rag and rau is the title of a survey paper published in 2024",
+      "source_ids": [
+        212
+      ]
+    },
+    {
+      "entity_name": "arxiv",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv is the preprint server where the survey paper was published",
+      "source_ids": [
+        212
+      ]
+    },
+    {
+      "entity_name": "2024",
+      "entity_type": "DATE",
+      "description": "2024 is the year the survey paper was published",
+      "source_ids": [
+        212
+      ]
+    },
+    {
+      "entity_name": "natural language processing",
+      "entity_type": "RESEARCH_FIELD",
+      "description": "natural language processing is the field of study addressed by the survey paper",
+      "source_ids": [
+        212
+      ]
+    },
+    {
+      "entity_name": "arxiv 2404 19543",
+      "entity_type": "PRODUCT",
+      "description": "arxiv 2404 19543 is the specific identifier for the preprint paper mentioned in the text",
+      "source_ids": [
+        212
+      ]
+    },
+    {
+      "entity_name": "retrieval augmented language model",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "retrieval augmented language model is the specific technology subject of the survey",
+      "source_ids": [
+        212
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "yucheng hu",
+      "tgt_entity_name": "rag and rau a survey on retrieval augmented language model in natural language processing",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yucheng hu is an author of the survey paper",
+      "source_ids": [
+        212
+      ]
+    },
+    {
+      "src_entity_name": "yuxing lu",
+      "tgt_entity_name": "rag and rau a survey on retrieval augmented language model in natural language processing",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yuxing lu is an author of the survey paper",
+      "source_ids": [
+        212
+      ]
+    },
+    {
+      "src_entity_name": "rag and rau a survey on retrieval augmented language model in natural language processing",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the survey paper was published on the arxiv preprint server",
+      "source_ids": [
+        212
+      ]
+    },
+    {
+      "src_entity_name": "rag and rau a survey on retrieval augmented language model in natural language processing",
+      "tgt_entity_name": "2024",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the survey paper was published in the year 2024",
+      "source_ids": [
+        212
+      ]
+    },
+    {
+      "src_entity_name": "rag and rau a survey on retrieval augmented language model in natural language processing",
+      "tgt_entity_name": "natural language processing",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the survey paper focuses on the research field of natural language processing",
+      "source_ids": [
+        212
+      ]
+    },
+    {
+      "src_entity_name": "rag and rau a survey on retrieval augmented language model in natural language processing",
+      "tgt_entity_name": "arxiv 2404 19543",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the survey paper is identified by the preprint number arxiv 2404 19543",
+      "source_ids": [
+        212
+      ]
+    },
+    {
+      "src_entity_name": "rag and rau a survey on retrieval augmented language model in natural language processing",
+      "tgt_entity_name": "retrieval augmented language model",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the survey paper is about the retrieval augmented language model technology",
+      "source_ids": [
+        212
+      ]
+    }
+  ],
+  "node_idx": 212
+}

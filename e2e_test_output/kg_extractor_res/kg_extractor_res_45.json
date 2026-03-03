@@ -1,0 +1,213 @@
+{
+  "entities": [
+    {
+      "entity_name": "retrieval augmented generation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "retrieval augmented generation is a system framework described as operating in a two phase process",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "entity_name": "offline indexing phase",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "offline indexing phase is the first phase where unstructured corpus data is organized into a structured index",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "entity_name": "online retrieval phase",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "online retrieval phase is the second phase where the system retrieves relevant components based on a user query",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "entity_name": "vector databases",
+      "entity_type": "SOFTWARE",
+      "description": "vector databases are mentioned as a possible form of structured index in the offline indexing phase",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "entity_name": "kg",
+      "entity_type": "SOFTWARE",
+      "description": "kg  knowledge graph  is mentioned as a possible form of structured index in the offline indexing phase",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "SOFTWARE",
+      "description": "llm is the component that generates output informed by retrieved components in the online retrieval phase",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "entity_name": "user query",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "user query is the input used in the online retrieval phase to retrieve relevant components",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "entity_name": "document s native tree topology",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "document s native tree topology is the logical structure that the proposed approach seeks to integrate with retrieval structures",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "entity_name": "unstructured corpus data",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "unstructured corpus data is the input material organized into a structured index during the offline indexing phase",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "entity_name": "text chunks",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "text chunks are examples of relevant components retrieved during the online retrieval phase",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "entity_name": "subgraphs",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "subgraphs are examples of relevant components retrieved during the online retrieval phase",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "entity_name": "document",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the document is the source of the original logical hierarchy and native tree topology referenced in the text",
+      "source_ids": [
+        45
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "retrieval augmented generation",
+      "tgt_entity_name": "offline indexing phase",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "retrieval augmented generation systems operate in the offline indexing phase as their first step",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "src_entity_name": "retrieval augmented generation",
+      "tgt_entity_name": "online retrieval phase",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "retrieval augmented generation systems operate in the online retrieval phase as their second step",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "src_entity_name": "offline indexing phase",
+      "tgt_entity_name": "vector databases",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "vector databases are a form of structured index created during the offline indexing phase",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "src_entity_name": "offline indexing phase",
+      "tgt_entity_name": "kg",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "kg is a form of structured index created during the offline indexing phase",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "src_entity_name": "online retrieval phase",
+      "tgt_entity_name": "user query",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the online retrieval phase uses the user query to retrieve relevant components",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "src_entity_name": "online retrieval phase",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the online retrieval phase informs the llm s generation with retrieved components",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "src_entity_name": "retrieval augmented generation",
+      "tgt_entity_name": "document s native tree topology",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the proposed approach for retrieval augmented generation seeks to integrate retrieval structures with the document s native tree topology",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "src_entity_name": "offline indexing phase",
+      "tgt_entity_name": "unstructured corpus data",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the offline indexing phase organizes unstructured corpus data into a structured index",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "src_entity_name": "online retrieval phase",
+      "tgt_entity_name": "text chunks",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "text chunks are retrieved as relevant components during the online retrieval phase",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "src_entity_name": "online retrieval phase",
+      "tgt_entity_name": "subgraphs",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "subgraphs are retrieved as relevant components during the online retrieval phase",
+      "source_ids": [
+        45
+      ]
+    },
+    {
+      "src_entity_name": "retrieval augmented generation",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the retrieval augmented generation approach seeks to integrate structures with the document s native topology",
+      "source_ids": [
+        45
+      ]
+    }
+  ],
+  "node_idx": 45
+}
