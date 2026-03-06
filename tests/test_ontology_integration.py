@@ -3,8 +3,13 @@ import json
 import yaml
 
 from Core.Index.Graph import Entity, Graph, Relationship
+from Core.configs.entity_resolution_config import EntityResolutionConfig
 from Core.configs.ontology_config import OntologyConfig
 from Core.configs.system_config import load_system_config
+from Core.utils.entity_resolution_utils import (
+    build_global_entity_metadata,
+    should_resolve_entity_globally,
+)
 from Core.utils.ontology_utils import (
     align_entities_to_ontology,
     find_best_graph_ontology_node,
@@ -138,6 +143,64 @@ def test_align_entities_to_ontology_drops_unmatched_entities_when_provisional_di
 
     assert [entity.entity_name for entity in aligned_entities] == ["bookrag"]
     assert aligned_relationships == []
+
+
+def test_load_system_config_resolves_relative_entity_resolution_dir(tmp_path):
+    config_path = tmp_path / "config.yaml"
+    config_path.write_text(
+        yaml.safe_dump(
+            {
+                "mineru": {
+                    "backend": "vlm-sglang-client",
+                    "method": "vlm",
+                    "lang": "en",
+                },
+                "rag": {"strategy": "gbc"},
+                "entity_resolution": {
+                    "enabled": True,
+                    "global_vdb_dir": "tenant_global_indices",
+                    "canonical_only": True,
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    cfg = load_system_config(str(config_path))
+
+    assert cfg.entity_resolution.enabled is True
+    assert cfg.entity_resolution.canonical_only is True
+    assert cfg.entity_resolution.global_vdb_dir == str(
+        (tmp_path / "tenant_global_indices").resolve()
+    )
+
+
+def test_global_entity_resolution_helpers_preserve_ontology_metadata():
+    resolution_cfg = EntityResolutionConfig(enabled=True, canonical_only=True)
+    canonical_entity = Entity(
+        entity_name="bookrag",
+        entity_type="PRODUCT",
+        description="Canonical product entity.",
+        entity_id="product:bookrag",
+        canonical_id="product:bookrag",
+        entity_role="canonical",
+        aliases=["bookrag", "book rag"],
+        mapping_confidence=1.0,
+        ontology_source="config",
+    )
+    provisional_entity = Entity(entity_name="retriever", entity_type="SYSTEM")
+
+    metadata = build_global_entity_metadata(
+        canonical_entity, tenant_id="tenant-a", doc_id="doc-1"
+    )
+
+    assert should_resolve_entity_globally(canonical_entity, resolution_cfg) is True
+    assert should_resolve_entity_globally(provisional_entity, resolution_cfg) is False
+    assert metadata["entity_id"] == "product:bookrag"
+    assert metadata["canonical_id"] == "product:bookrag"
+    assert metadata["tenant_id"] == "tenant-a"
+    assert metadata["doc_id"] == "doc-1"
+    assert json.loads(metadata["aliases_json"]) == ["bookrag", "book rag"]
 
 
 def test_graph_update_entity_rewrites_edge_payload_names_and_tree_links(tmp_path):

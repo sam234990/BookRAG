@@ -3,6 +3,7 @@ import os
 import yaml
 from Core.configs.mineru_config import MinerU
 from Core.configs.docling_config import DoclingConfig
+from Core.configs.entity_resolution_config import EntityResolutionConfig
 from Core.configs.llm_config import LLMConfig
 from Core.configs.tree_config import TreeConfig
 from Core.configs.graph_config import GraphConfig
@@ -37,6 +38,7 @@ class SystemConfig(BaseModel):
     graph: GraphConfig = Field(default_factory=GraphConfig)
     vdb: VDBConfig = Field(default_factory=VDBConfig)
     ontology: OntologyConfig = Field(default_factory=OntologyConfig)
+    entity_resolution: EntityResolutionConfig = Field(default_factory=EntityResolutionConfig)
 
     # Other Index selection
     index_type: Optional[str] = "gbc"  # Options: "gbc", "tree", "vanilla", "bm25", "raptor", "pdf_vanilla"
@@ -91,6 +93,14 @@ def load_system_config(path: str = "../configs/default.yaml") -> SystemConfig:
         if not os.path.isabs(ontology_path):
             ontology_data["path"] = os.path.abspath(
                 os.path.join(os.path.dirname(path), ontology_path)
+            )
+
+    entity_resolution_data = raw_config.get("entity_resolution")
+    if isinstance(entity_resolution_data, dict) and entity_resolution_data.get("global_vdb_dir"):
+        global_vdb_dir = entity_resolution_data["global_vdb_dir"]
+        if not os.path.isabs(global_vdb_dir):
+            entity_resolution_data["global_vdb_dir"] = os.path.abspath(
+                os.path.join(os.path.dirname(path), global_vdb_dir)
             )
 
     cfg = SystemConfig(**raw_config)

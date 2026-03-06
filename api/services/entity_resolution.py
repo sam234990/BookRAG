@@ -2,23 +2,19 @@
 Phase 3: Cross-document entity resolution pipeline.
 
 After a document is indexed, this service:
-1. Embeds each new entity using the tenant's embedding model.
-2. Searches the global VDB (ChromaDB collection per tenant) for cosine-similar entities.
-3. For matches above threshold, asks the LLM to verify canonical equivalence.
-4. Merges verified matches into the global FalkorDB graph with HAS_MENTION edges.
+1. Loads document-level graph entities.
+2. Searches the tenant-global VDB for cosine-similar canonical candidates.
+3. Reuses an existing tenant-global canonical when the similarity gate is met.
+4. Persists unmatched entities plus ontology metadata into the tenant-global stores.
 """
 import asyncio
 import logging
 import os
-from typing import List
 
 from api.dependencies import THREAD_POOL
 
 log = logging.getLogger(__name__)
 _executor = THREAD_POOL
-
-RESOLUTION_THRESHOLD = float(os.getenv("BOOKRAG_ENTITY_RESOLUTION_THRESHOLD", "0.85"))
-GLOBAL_VDB_DIR = os.getenv("BOOKRAG_GLOBAL_VDB_DIR", "./indices")
 
 
 def _resolve_entities_sync(
@@ -37,34 +33,38 @@ def _resolve_entities_sync(
       5. If no match: add as new canonical entity in global VDB + global graph.
     """
     from Core.configs.system_config import load_system_config
-    from Core.configs.falkordb_config import FalkorDBConfig
     from Core.Index.GBCIndex import GBC
     from Core.provider.vdb import VectorStore
-    from api.dependencies import (
-        FALKORDB_HOST, FALKORDB_PORT, FALKORDB_USERNAME, FALKORDB_PASSWORD, INDEX_SAVE_DIR,
+    from Core.utils.entity_resolution_utils import (
+        build_global_entity_metadata,
+        should_resolve_entity_globally,
     )
+    from api.dependencies import INDEX_SAVE_DIR
 
     cfg = load_system_config(config_path)
+    resolution_cfg = cfg.entity_resolution
+    if not resolution_cfg.enabled:
+        log.info("Entity resolution disabled by config; skipping Phase 3 sync.")
+        return
+
     cfg.tenant_id = tenant_id
     cfg.doc_id = doc_id
     cfg.save_path = os.path.join(INDEX_SAVE_DIR, tenant_id, doc_id)
 
-    fdb_host = os.getenv("BOOKRAG_FALKORDB_HOST", "")
     falkordb_cfg = None
-    if fdb_host:
-        falkordb_cfg = FalkorDBConfig(host=FALKORDB_HOST, port=FALKORDB_PORT, username=FALKORDB_USERNAME, password=FALKORDB_PASSWORD)
-        cfg.falkordb = falkordb_cfg
+    if resolution_cfg.sync_to_global_graph and getattr(cfg.falkordb, "host", ""):
+        falkordb_cfg = cfg.falkordb
 
     gbc = GBC.load_gbc_index(cfg)
     graph = gbc.GraphIndex
     embedder = gbc.embedder
 
     # Open global VDB for tenant
-    global_vdb_path = os.path.join(GLOBAL_VDB_DIR, tenant_id, "global_vdb")
+    global_vdb_path = os.path.join(resolution_cfg.global_vdb_dir, tenant_id, "global_vdb")
     global_vdb = VectorStore(
         db_path=global_vdb_path,
         embedding_model=embedder,
-        collection_name="global_kg_collection",
+        collection_name=resolution_cfg.collection_name,
     )
 
     nodes = graph.get_all_nodes()
@@ -73,30 +73,26 @@ def _resolve_entities_sync(
 
     for node_name in nodes:
         entity = graph.get_entity_by_node_name(node_name)
+        if not should_resolve_entity_globally(entity, resolution_cfg):
+            continue
+
         # Search global VDB for similar entity
-        hits = global_vdb.search(node_name, top_k=1)
+        hits = global_vdb.search(node_name, top_k=resolution_cfg.top_k)
         merged = False
-        if hits and hits[0]["distance"] < (1.0 - RESOLUTION_THRESHOLD):
+        if hits and hits[0]["distance"] < (1.0 - resolution_cfg.similarity_threshold):
             # Cosine distance is 1 - similarity; low distance = high similarity
             canonical_name = hits[0]["content"]
             log.info(
                 f"Entity '{entity.entity_name}' similar to canonical '{canonical_name}' "
                 f"(dist={hits[0]['distance']:.3f}). Merging."
             )
-            # Add HAS_MENTION edge in global FalkorDB graph
-            if falkordb_cfg:
-                graph.save_to_global_graph(falkordb_cfg, tenant_id)
             merged = True
 
         if not merged:
             new_canonical_texts.append(node_name)
-            new_canonical_meta.append({
-                "entity_name": entity.entity_name,
-                "entity_type": entity.entity_type,
-                "description": entity.description,
-                "doc_id": doc_id,
-                "tenant_id": tenant_id,
-            })
+            new_canonical_meta.append(
+                build_global_entity_metadata(entity, tenant_id=tenant_id, doc_id=doc_id)
+            )
 
     if new_canonical_texts:
         global_vdb.add_texts(texts=new_canonical_texts, metadatas=new_canonical_meta)

@@ -82,6 +82,15 @@ ontology:
         - "book rag"
         - "book-rag"
 
+entity_resolution:
+  enabled: false
+  similarity_threshold: 0.85
+  top_k: 1
+  global_vdb_dir: "./indices"
+  collection_name: "global_kg_collection"
+  canonical_only: false
+  sync_to_global_graph: false
+
 falkordb:
   host: "r-6jissuruar.instance-yc6en3ndn.hc-dx5io0svq.asia-south1.gcp.f2e0a955bb84.cloud"
   port: 60480
