@@ -1,9 +1,12 @@
+import os
+
 import yaml
 from Core.configs.mineru_config import MinerU
 from Core.configs.docling_config import DoclingConfig
 from Core.configs.llm_config import LLMConfig
 from Core.configs.tree_config import TreeConfig
 from Core.configs.graph_config import GraphConfig
+from Core.configs.ontology_config import OntologyConfig
 from Core.configs.vlm_config import VLMConfig
 from Core.configs.rag_config import RAGConfig
 from Core.configs.vdb_config import VDBConfig
@@ -33,6 +36,7 @@ class SystemConfig(BaseModel):
     tree: TreeConfig = Field(default_factory=TreeConfig)
     graph: GraphConfig = Field(default_factory=GraphConfig)
     vdb: VDBConfig = Field(default_factory=VDBConfig)
+    ontology: OntologyConfig = Field(default_factory=OntologyConfig)
 
     # Other Index selection
     index_type: Optional[str] = "gbc"  # Options: "gbc", "tree", "vanilla", "bm25", "raptor", "pdf_vanilla"
@@ -72,12 +76,6 @@ class SystemConfig(BaseModel):
     falkordb: Any = Field(default_factory=FalkorDBConfig)
     mongodb: Any = Field(default_factory=MongoDBConfig)
 
-    # # 新增: 专门用于存放评估结果的根目录
-    # evaluation_output_path: Optional[str] = Field(
-    #     default="/home/wangshu/multimodal/GBC-RAG/test/tree_index/evaluation_results",
-    #     description="Root directory to save evaluation results."
-    # )
-
 
 def load_system_config(path: str = "../configs/default.yaml") -> SystemConfig:
     with open(path, "r") as f:
@@ -86,6 +84,14 @@ def load_system_config(path: str = "../configs/default.yaml") -> SystemConfig:
     if "rag" in raw_config:
         rag_data = raw_config["rag"]
         raw_config["rag"] = {"strategy_config": rag_data}
+
+    ontology_data = raw_config.get("ontology")
+    if isinstance(ontology_data, dict) and ontology_data.get("path"):
+        ontology_path = ontology_data["path"]
+        if not os.path.isabs(ontology_path):
+            ontology_data["path"] = os.path.abspath(
+                os.path.join(os.path.dirname(path), ontology_path)
+            )
 
     cfg = SystemConfig(**raw_config)
     return cfg

@@ -18,6 +18,12 @@ class Entity(BaseModel):
     entity_name: str  # Primary key for entity
     entity_type: str = Field(default="")  # Entity type
     description: str = Field(default="")  # The description of this entity
+    entity_id: str = Field(default="")  # Stable ontology/canonical identifier
+    canonical_id: str = Field(default="")  # Points to canonical ontology identifier
+    entity_role: str = Field(default="provisional")  # canonical / provisional
+    aliases: List[str] = Field(default_factory=list)  # Known aliases for resolution
+    mapping_confidence: float = Field(default=0.0)  # Ontology mapping confidence
+    ontology_source: str = Field(default="")  # Source of ontology metadata
     source_ids: Set[int] = Field(
         default_factory=set
     )  # Set of source IDs from which this entity is derived
@@ -38,6 +44,20 @@ class Entity(BaseModel):
                 other.entity_type,
             )
         return False
+
+    def to_vdb_metadata(self) -> dict:
+        aliases = list(dict.fromkeys(self.aliases))
+        return {
+            "entity_name": self.entity_name,
+            "entity_type": self.entity_type,
+            "description": self.description,
+            "entity_id": self.entity_id,
+            "canonical_id": self.canonical_id,
+            "entity_role": self.entity_role,
+            "mapping_confidence": float(self.mapping_confidence or 0.0),
+            "ontology_source": self.ontology_source,
+            "aliases_json": json.dumps(aliases, ensure_ascii=False),
+        }
 
 
 class Relationship(BaseModel):
@@ -125,7 +145,6 @@ class Graph:
         node_name = self.get_node_name_from_entity(entity)
 
         self.kg.add_node(node_name, **entity.model_dump())
-        # self.name_to_nodes[entity.entity_name].add(node_name)
 
     def add_kg_edge(self, rel: Relationship, src_type: str, tgt_type: str) -> None:
         """Add a relation/edge between two KG entities with all its attributes."""
@@ -159,10 +178,19 @@ class Graph:
             entities = [entities]
         for entity in entities:
             node_name = self.get_node_name_from_entity(entity)
-            # node_name = f"{entity.entity_name} ({entity.entity_type})"
             if node_name not in self.kg:
                 self.add_kg_node(entity)
             self.link(tree_node_id, entity.entity_name, entity.entity_type)
+
+    def _rewrite_edge_entity_names(
+        self, edge_data: Optional[dict], old_entity_name: str, new_entity_name: str
+    ) -> dict:
+        updated_edge_data = dict(edge_data or {})
+        if updated_edge_data.get("src_entity_name") == old_entity_name:
+            updated_edge_data["src_entity_name"] = new_entity_name
+        if updated_edge_data.get("tgt_entity_name") == old_entity_name:
+            updated_edge_data["tgt_entity_name"] = new_entity_name
+        return updated_edge_data
 
     def update_entity(
         self, old_entity_name: str, old_entity_type: str, new_entity: Entity
@@ -184,9 +212,17 @@ class Graph:
         if new_node_name != old_node_name:
             # 1. Add new node and copy all edges
             self.kg.add_node(new_node_name, **new_entity.model_dump())
-            for neighbor in list(self.kg.neighbors(old_node_name)):
+            for neighbor in self.kg.neighbors(old_node_name):
                 edge_data = self.kg.get_edge_data(old_node_name, neighbor)
-                self.kg.add_edge(new_node_name, neighbor, **edge_data)
+                self.kg.add_edge(
+                    new_node_name,
+                    neighbor,
+                    **self._rewrite_edge_entity_names(
+                        edge_data=edge_data,
+                        old_entity_name=old_entity_name,
+                        new_entity_name=new_entity.entity_name,
+                    ),
+                )
             # 2.1 update tree2kg
             for tree_id in new_source_ids:
                 # If the old node is in the tree2kg, remove the old name
@@ -216,7 +252,6 @@ class Graph:
         node_name = self.get_node_name_from_str(
             entity_name=entity_name, entity_type=entity_type
         )
-        # node_name = f"{entity_name} ({entity_type})"
         if node_name not in self.kg.nodes:
             raise KeyError(f"Entity '{node_name}' not found in knowledge graph.")
         return Entity(**self.kg.nodes[node_name])
@@ -236,10 +271,8 @@ class Graph:
         return Entity(**self.kg.nodes[node_name])
 
     def get_subgraph_data(self, entities: List[str]) -> dict:
-        # Return the subgraph entities data, excluding description and source_ids in entities
-        # If the relation connects two entities in the subgraph, it will be included
+        """Return lightweight node data for the subgraph induced by `entities`."""
         subgraph = self.kg.subgraph(entities)
-        # data = {"nodes": [], "edges": []}
         data = {"nodes": []}
         for node in subgraph.nodes(data=True):
             node_data = {
@@ -247,44 +280,29 @@ class Graph:
                 "entity_type": node[1]["entity_type"],
             }
             data["nodes"].append(node_data)
-        # for edge in subgraph.edges(data=True):
-        #     edge_data = {
-        #         "src_entity_name": edge[2]["src_entity_name"],
-        #         "tgt_entity_name": edge[2]["tgt_entity_name"],
-        #         "relation_name": edge[2]["relation_name"],
-        #         "weight": edge[2]["weight"],
-        #     }
-        #     data["edges"].append(edge_data)
         return data
 
-    def Entities2TreeNodes(self, entities: List[Entity]) -> List[int]:
+    def entities_to_tree_nodes(self, entities: List[Entity]) -> List[int]:
         """
         Given KG node names, return all tree node IDs that link to them.
         """
         result = set()
         for ent in entities:
-            source_ids = ent.source_ids
-            result.union(source_ids)
-        result = list(result)
-        return result
+            result.update(ent.source_ids)
+        return sorted(result)
 
-    def Entity2TreeNodes(self, ent: Entity) -> List[int]:
+    def entity_to_tree_nodes(self, ent: Entity) -> List[int]:
         """
         Given an Entity object, return all tree node IDs that link to it.
         """
-        res = ent.source_ids
-        res = list(res)
-        return res
+        return sorted(ent.source_ids)
 
-    def NodeName2TreeNodes(self, node_name: str) -> Set[int]:
+    def node_name_to_tree_nodes(self, node_name: str) -> List[int]:
         """
         Given a node name (entity_name (entity_type)), return all tree node IDs that link to it.
         """
         ent = self.get_entity_by_node_name(node_name)
-        res = ent.source_ids
-        res = list(res)
-
-        return res
+        return sorted(ent.source_ids)
 
     def remove_self_loops(self) -> int:
         """
@@ -330,6 +348,10 @@ class Graph:
     def _save_to_falkordb(self) -> None:
         """Persist the in-memory NetworkX graph to FalkorDB."""
         g = self._get_fdb_graph()
+
+        def _esc(value) -> str:
+            return str(value or "").replace("\\", "\\\\").replace("'", "\\'")
+
         # Clear existing data for idempotent saves
         try:
             g.query("MATCH (n) DETACH DELETE n")
@@ -339,15 +361,27 @@ class Graph:
         # Write nodes
         for node_name, data in self.kg.nodes(data=True):
             source_ids_list = list(data.get("source_ids", set()))
-            desc = data.get("description", "").replace("'", "\\'")
-            ename = data.get("entity_name", "").replace("'", "\\'")
-            etype = data.get("entity_type", "").replace("'", "\\'")
-            nname = node_name.replace("\\", "\\\\").replace("'", "\\'")
+            desc = _esc(data.get("description", ""))
+            ename = _esc(data.get("entity_name", ""))
+            etype = _esc(data.get("entity_type", ""))
+            entity_id = _esc(data.get("entity_id", ""))
+            canonical_id = _esc(data.get("canonical_id", ""))
+            entity_role = _esc(data.get("entity_role", "provisional"))
+            ontology_source = _esc(data.get("ontology_source", ""))
+            aliases_json = _esc(json.dumps(data.get("aliases", []), ensure_ascii=False))
+            mapping_confidence = float(data.get("mapping_confidence", 0.0) or 0.0)
+            nname = _esc(node_name)
             cypher = (
                 f"CREATE (n:Entity {{"
                 f"node_name: '{nname}', "
                 f"entity_name: '{ename}', "
                 f"entity_type: '{etype}', "
+                f"entity_id: '{entity_id}', "
+                f"canonical_id: '{canonical_id}', "
+                f"entity_role: '{entity_role}', "
+                f"aliases_json: '{aliases_json}', "
+                f"mapping_confidence: {mapping_confidence}, "
+                f"ontology_source: '{ontology_source}', "
                 f"description: '{desc}', "
                 f"source_ids: {source_ids_list}"
                 f"}})"
@@ -387,9 +421,20 @@ class Graph:
             props = node.properties
             source_ids = set(props.get("source_ids", []))
             node_name = props["node_name"]
+            aliases_json = props.get("aliases_json", "[]")
+            try:
+                aliases = json.loads(aliases_json) if isinstance(aliases_json, str) else list(aliases_json or [])
+            except json.JSONDecodeError:
+                aliases = []
             self.kg.add_node(node_name,
                              entity_name=props.get("entity_name", ""),
                              entity_type=props.get("entity_type", ""),
+                             entity_id=props.get("entity_id", ""),
+                             canonical_id=props.get("canonical_id", ""),
+                             entity_role=props.get("entity_role", "provisional"),
+                             aliases=aliases,
+                             mapping_confidence=float(props.get("mapping_confidence", 0.0) or 0.0),
+                             ontology_source=props.get("ontology_source", ""),
                              description=props.get("description", ""),
                              source_ids=source_ids)
             for tid in source_ids:
@@ -431,9 +476,20 @@ class Graph:
             node = rec[0]
             props = node.properties
             node_name = props["node_name"]
+            aliases_json = props.get("aliases_json", "[]")
+            try:
+                aliases = json.loads(aliases_json) if isinstance(aliases_json, str) else list(aliases_json or [])
+            except json.JSONDecodeError:
+                aliases = []
             subgraph.add_node(node_name,
                               entity_name=props.get("entity_name", ""),
                               entity_type=props.get("entity_type", ""),
+                              entity_id=props.get("entity_id", ""),
+                              canonical_id=props.get("canonical_id", ""),
+                              entity_role=props.get("entity_role", "provisional"),
+                              aliases=aliases,
+                              mapping_confidence=float(props.get("mapping_confidence", 0.0) or 0.0),
+                              ontology_source=props.get("ontology_source", ""),
                               description=props.get("description", ""),
                               source_ids=set(props.get("source_ids", [])))
 
@@ -525,13 +581,19 @@ class Graph:
         with open(load_path, "r", encoding="utf-8") as f:
             loaded_data = json.load(f)
 
-        graph_instance = cls(save_path=load_dir)
+        graph_instance = cls(save_path=load_dir, variant=variant)
         # Pass edges="links" to match the key used when saving with node_link_data(edges="links")
         graph_instance.kg = json_graph.node_link_graph(loaded_data["graph"], edges="links")
 
         for _, node_data in graph_instance.kg.nodes(data=True):
             if "source_ids" in node_data and isinstance(node_data["source_ids"], list):
                 node_data["source_ids"] = set(node_data["source_ids"])
+            node_data.setdefault("entity_id", "")
+            node_data.setdefault("canonical_id", "")
+            node_data.setdefault("entity_role", "provisional")
+            node_data.setdefault("aliases", [])
+            node_data.setdefault("mapping_confidence", 0.0)
+            node_data.setdefault("ontology_source", "")
 
         for _, _, edge_data in graph_instance.kg.edges(data=True):
             if "source_ids" in edge_data and isinstance(edge_data["source_ids"], list):
@@ -571,16 +633,28 @@ class Graph:
             log.error(f"Failed to connect to FalkorDB global graph: {e}")
             raise
 
+        def _esc(value) -> str:
+            return str(value or "").replace("\\", "\\\\").replace("'", "\\'")
+
         for node_name, data in self.kg.nodes(data=True):
-            ename = data.get("entity_name", "").replace("'", "\\'")
-            etype = data.get("entity_type", "").replace("'", "\\'")
-            desc = data.get("description", "").replace("'", "\\'")
-            nname = node_name.replace("\\", "\\\\").replace("'", "\\'")
-            doc_id_esc = self.doc_id.replace("'", "\\'") if self.doc_id else ""
+            ename = _esc(data.get("entity_name", ""))
+            etype = _esc(data.get("entity_type", ""))
+            desc = _esc(data.get("description", ""))
+            entity_id = _esc(data.get("entity_id", ""))
+            canonical_id = _esc(data.get("canonical_id", ""))
+            entity_role = _esc(data.get("entity_role", "provisional"))
+            ontology_source = _esc(data.get("ontology_source", ""))
+            aliases_json = _esc(json.dumps(data.get("aliases", []), ensure_ascii=False))
+            mapping_confidence = float(data.get("mapping_confidence", 0.0) or 0.0)
+            nname = _esc(node_name)
+            doc_id_esc = _esc(self.doc_id)
             # MERGE canonical entity node
             global_graph.query(
                 f"MERGE (n:Entity {{node_name: '{nname}'}}) "
-                f"ON CREATE SET n.entity_name='{ename}', n.entity_type='{etype}', n.description='{desc}' "
+                f"ON CREATE SET n.entity_name='{ename}', n.entity_type='{etype}', n.description='{desc}', "
+                f"n.entity_id='{entity_id}', n.canonical_id='{canonical_id}', n.entity_role='{entity_role}', "
+                f"n.aliases_json='{aliases_json}', n.mapping_confidence={mapping_confidence}, "
+                f"n.ontology_source='{ontology_source}' "
                 f"CREATE (n)-[:HAS_MENTION {{doc_id: '{doc_id_esc}'}}]->(n)"
             )
         log.info(f"Merged {self.kg.number_of_nodes()} nodes into global graph for tenant '{tenant_id}'.")
@@ -620,9 +694,20 @@ class Graph:
             node = rec[0]
             props = node.properties
             node_name = props["node_name"]
+            aliases_json = props.get("aliases_json", "[]")
+            try:
+                aliases = json.loads(aliases_json) if isinstance(aliases_json, str) else list(aliases_json or [])
+            except json.JSONDecodeError:
+                aliases = []
             subgraph.add_node(node_name,
                               entity_name=props.get("entity_name", ""),
                               entity_type=props.get("entity_type", ""),
+                              entity_id=props.get("entity_id", ""),
+                              canonical_id=props.get("canonical_id", ""),
+                              entity_role=props.get("entity_role", "provisional"),
+                              aliases=aliases,
+                              mapping_confidence=float(props.get("mapping_confidence", 0.0) or 0.0),
+                              ontology_source=props.get("ontology_source", ""),
                               description=props.get("description", ""))
         return subgraph
 

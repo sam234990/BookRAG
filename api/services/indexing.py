@@ -18,7 +18,7 @@ def _build_index_sync(
     """Synchronous index build — runs in a thread pool."""
     from Core.configs.system_config import load_system_config
     from Core.configs.falkordb_config import FalkorDBConfig
-    from Core.pipelines.doc_tree_builder import construct_GBC_index
+    from Core.construct_index import construct_gbc_index
 
     cfg = load_system_config(config_path)
     cfg.pdf_path = pdf_path
@@ -39,7 +39,7 @@ def _build_index_sync(
             host=FALKORDB_HOST, port=FALKORDB_PORT,
             username=FALKORDB_USERNAME, password=FALKORDB_PASSWORD,
         )
-    construct_GBC_index(cfg)
+    construct_gbc_index(cfg)
 
 
 async def run_indexing(

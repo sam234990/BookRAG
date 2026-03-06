@@ -21,7 +21,7 @@ from Core.provider.TokenTracker import TokenTracker
 from Core.utils.file_utils import save_indexing_stats
 
 
-def construct_GBC_index(cfg: SystemConfig, tree_only: bool = False):
+def construct_gbc_index(cfg: SystemConfig, tree_only: bool = False):
     """
     Construct the GBC index from the document tree and knowledge graph.
 
@@ -57,7 +57,7 @@ def construct_GBC_index(cfg: SystemConfig, tree_only: bool = False):
     graph_index = build_knowledge_graph(tree_index, cfg)
 
     # The 'kg_extraction' stage is recorded inside build_knowledge_graph
-    gbc_index = GBC(config=cfg, graph_index=graph_index, TreeIndex=tree_index)
+    gbc_index = GBC(config=cfg, graph_index=graph_index, tree_index=tree_index)
     gbc_index.save_gbc_index()
 
     # rebuild vdb
@@ -143,32 +143,9 @@ def compute_mm_reranker(cfg: SystemConfig, group: pd.DataFrame):
     tree_index = build_tree_from_pdf(cfg)
 
     compute_mm_embedding(cfg, tree_index)
-    
+
     compute_mm_embedding_question(cfg, group)
 
 
 if __name__ == "__main__":
-    print("test")
-
-    # parser = argparse.ArgumentParser(description="Extract text content from PDF files.")
-    # parser.add_argument(
-    #     "--config_path",
-    #     type=str,
-    #     default="/home/wangshu/multimodal/GBC-RAG/config/gbc.yaml",
-    #     help="Path to the configuration file.",
-    # )
-
-    # args = parser.parse_args()
-
-    # cfg = load_system_config(args.config_path)
-
-    # if not os.path.exists(cfg.save_path):
-    #     os.makedirs(cfg.save_path)
-    #     log.info(f"Created directory: {cfg.save_path}")
-    # else:
-    #     log.info(f"Directory already exists: {cfg.save_path}")
-
-    # construct_vdb(cfg)
-
-    # gbc_index = construct_GBC_index(cfg)
-    # log.info("GBC index construction completed successfully.")
+    print("Use main.py to run indexing workflows.")

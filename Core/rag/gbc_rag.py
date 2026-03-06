@@ -1,14 +1,11 @@
 from collections import defaultdict
-from typing import Any, List, Tuple, Dict, Optional
-
-from regex import F
+from typing import Any, List, Dict, Optional
 
 from Core.Index.Tree import TreeNode, NodeType
 from Core.rag.base_rag import BaseRAG
 from Core.provider.llm import LLM
 from Core.provider.vlm import VLM
 from Core.provider.rerank import TextRerankerProvider
-from Core.provider.embedding import MMRerankerProvider
 from Core.configs.rag.gbc_config import GBCRAGConfig
 from Core.Index.GBCIndex import GBC
 from Core.prompts.gbc_prompt import (
@@ -28,6 +25,11 @@ from Core.rag.gbc_utils import (
     GBCRAGContext,
     SubStep,
     filter_tree_nodes,
+)
+from Core.utils.ontology_utils import (
+    find_best_graph_ontology_node,
+    normalize_entity_name,
+    normalize_entity_type,
 )
 
 
@@ -87,7 +89,6 @@ class GBCRAG(BaseRAG):
         self.retriever = Retriever(
             varient=self.varient,
             reranker=self.reranker,
-            # mm_reranker=self.mm_reranker,
             embedder=self.embedder,
             alpha=self.cfg.alpha,
             topk_ent=self.cfg.topk_ent,
@@ -99,37 +100,42 @@ class GBCRAG(BaseRAG):
         return f"Name: {entity.entity_name}\nType: {entity.entity_type}"
 
     def _entity_map(
-        self, entities: List[str], force_one: bool = False
+        self, entities: List[QuestionEntity], force_one: bool = False
     ) -> Dict[str, List[str]]:
         """
         Maps entities to their corresponding IDs in the GBC index.
         Use vdb to find the entity in GBC index.
         """
         entities_str = [self._get_entity_embed_text(entity) for entity in entities]
-        Qent_GBCent_map = defaultdict(list)
+        query_to_gbc_entity_map = defaultdict(list)
         res_list = []
         for ent_str in entities_str:
             query_res = self.gbc_index.entity_vdb.search(query_text=ent_str, top_k=2)
+            if not query_res:
+                continue
             min_distance = query_res[0]["distance"] if query_res else float("inf")
-            retrieve_name = query_res[0]["metadata"].get("entity_name")
-            retrieve_type = query_res[0]["metadata"].get("entity_type")
+            metadata = query_res[0].get("metadata") or {}
+            retrieve_name = metadata.get("entity_name")
+            retrieve_type = metadata.get("entity_type")
+            if not retrieve_name:
+                continue
             node_name = self.gbc_index.GraphIndex.get_node_name_from_str(
                 retrieve_name, retrieve_type
             )
             if min_distance < self.threshold_e:
-                Qent_GBCent_map[ent_str].append(node_name)
+                query_to_gbc_entity_map[ent_str].append(node_name)
                 log.info(f"Entity '{ent_str}' mapped to GBC entity: {node_name}")
             else:
                 res_list.append((ent_str, node_name, min_distance))
 
-        if force_one and len(Qent_GBCent_map) == 0 and len(res_list) > 0:
+        if force_one and len(query_to_gbc_entity_map) == 0 and len(res_list) > 0:
             # force map the closest entity if no entity is mapped
             res_list = sorted(res_list, key=lambda x: x[2])
             ent_str, node_name, min_distance = res_list[0]
-            Qent_GBCent_map[ent_str].append(node_name)
+            query_to_gbc_entity_map[ent_str].append(node_name)
             log.info(f"Force map entity '{ent_str}' to GBC entity: {node_name}")
 
-        return Qent_GBCent_map
+        return query_to_gbc_entity_map
 
     def _get_query_entity(self, query: str) -> Dict[str, List[str]]:
         """
@@ -141,8 +147,11 @@ class GBCRAG(BaseRAG):
         retrieval_node_names = set()
         retrieval_nodes = []
         for ent_info in retrieval_ents:
-            ent_name = ent_info["metadata"].get("entity_name")
-            ent_type = ent_info["metadata"].get("entity_type")
+            metadata = ent_info.get("metadata") or {}
+            ent_name = metadata.get("entity_name")
+            ent_type = metadata.get("entity_type")
+            if not ent_name:
+                continue
             node_dict = {
                 "entity_name": ent_name,
                 "entity_type": ent_type,
@@ -180,28 +189,45 @@ class GBCRAG(BaseRAG):
             log.info("Use the question as the entity.")
             res_entities = [Entity(entity_name=query, entity_type="Question")]
 
-        Qent_GBCent_map = defaultdict(list)
+        query_to_gbc_entity_map = defaultdict(list)
         remain_ents = []
         for res_ent in res_entities:
-            res_ent.entity_name = res_ent.entity_name.lower()
-            res_ent.entity_type = res_ent.entity_type.upper()
-            res_ent.entity_type = res_ent.entity_type.replace(" ", "_")
+            res_ent.entity_name = normalize_entity_name(res_ent.entity_name)
+            res_ent.entity_type = normalize_entity_type(res_ent.entity_type)
+            ent_str = self._get_entity_embed_text(res_ent)
+
+            ontology_cfg = getattr(self.gbc_index.config, "ontology", None)
+            ontology_node_name = None
+            if ontology_cfg and ontology_cfg.use_query_resolution:
+                ontology_node_name = find_best_graph_ontology_node(
+                    graph=self.gbc_index.GraphIndex,
+                    entity_name=res_ent.entity_name,
+                    entity_type=res_ent.entity_type,
+                    threshold=ontology_cfg.mapping_threshold,
+                )
+            if ontology_node_name:
+                query_to_gbc_entity_map[ent_str].append(ontology_node_name)
+                log.info(
+                    f"Entity '{ent_str}' mapped to ontology-backed GBC entity: {ontology_node_name}"
+                )
+                continue
+
             ent_node_name = self.gbc_index.GraphIndex.get_node_name_from_entity(res_ent)
             if ent_node_name in retrieval_node_names:
-                Qent_GBCent_map[ent_node_name].append(ent_node_name)
+                query_to_gbc_entity_map[ent_str].append(ent_node_name)
                 log.info(
                     f"Entity '{ent_node_name}' mapped to GBC entity: {ent_node_name}"
                 )
             else:
                 remain_ents.append(res_ent)
 
-        should_force_one = (len(Qent_GBCent_map) == 0)
+        should_force_one = len(query_to_gbc_entity_map) == 0
         if remain_ents:
             remain_map = self._entity_map(remain_ents, force_one=should_force_one)
             for k, v in remain_map.items():
-                Qent_GBCent_map[k].extend(v)
+                query_to_gbc_entity_map[k].extend(v)
 
-        return Qent_GBCent_map
+        return query_to_gbc_entity_map
 
     def link_tree_node(self, entities_map: Dict[str, List[str]]) -> List[dict]:
         """
@@ -218,7 +244,7 @@ class GBCRAG(BaseRAG):
             return []
 
         for node_name in all_map_nodenames:
-            tree_node_set = self.gbc_index.GraphIndex.NodeName2TreeNodes(node_name)
+            tree_node_set = self.gbc_index.GraphIndex.node_name_to_tree_nodes(node_name)
             for node_id in tree_node_set:
                 tree_node_cnt[node_id].append(node_name)
 
@@ -270,7 +296,7 @@ class GBCRAG(BaseRAG):
         query,
         link_nodes: List[TreeNode] = None,
         remain_nodes: List[TreeNode] = None,
-        sec_entity_map: Dict[int, List[str]] = None,
+        sec_entity_map: Optional[Dict[int, List[str]]] = None,
     ) -> str:
         """
         Prepare the prompt for section selection.
@@ -278,7 +304,7 @@ class GBCRAG(BaseRAG):
         """
 
         def prep_nodes_json(
-            nodes: List[TreeNode], sec_entity_map: Dict[int, List[str]] = None
+            nodes: List[TreeNode], sec_entity_map: Optional[Dict[int, List[str]]] = None
         ) -> str:
             node_infos = []
             for node in nodes:
@@ -433,8 +459,8 @@ class GBCRAG(BaseRAG):
 
         log.info(f"After skyline filtering, select {len(tree_node_ids)} TreeNodes")
 
-        Graph_data = self.gbc_index.GraphIndex.get_subgraph_data(res_entities)
-        iter_context.iteration_graph_nodes = Graph_data.get("nodes", [])
+        graph_data = self.gbc_index.GraphIndex.get_subgraph_data(res_entities)
+        iter_context.iteration_graph_nodes = graph_data.get("nodes", [])
 
         tree_data = self.gbc_index.TreeIndex.get_nodes_data(tree_node_ids)
         self._process_retrieved_nodes(tree_data, iter_context)
@@ -454,10 +480,10 @@ class GBCRAG(BaseRAG):
         iter_context: IterationStep, Iteration context for the current step.
         """
 
-        Qent_GBCent_map = self._get_query_entity(query)
-        iter_context.gbc_entity_map = Qent_GBCent_map
+        query_to_gbc_entity_map = self._get_query_entity(query)
+        iter_context.gbc_entity_map = query_to_gbc_entity_map
 
-        tree_nodes = self.link_tree_node(Qent_GBCent_map)
+        tree_nodes = self.link_tree_node(query_to_gbc_entity_map)
         iter_context.linked_tree_nodes = tree_nodes
 
         # 3. Use LLM to select the most relevant section or supplementary sections
@@ -570,7 +596,8 @@ class GBCRAG(BaseRAG):
             context.final_answer = "I'm sorry, I cannot process this query."
 
     def _create_augmented_prompt(self, query: str) -> str:
-        pass
+        """Current GBC flow builds prompts via answer agents, so return the raw query."""
+        return query
 
     def generation(self, query: str, query_output_dir: str):
         context = GBCRAGContext(query=query)
@@ -625,6 +652,4 @@ class GBCRAG(BaseRAG):
     def close(self):
         self.embedder.close()
         self.reranker.close()
-        # if hasattr(self, 'mm_reranker'):
-        #     self.mm_reranker.close()
         return super().close()

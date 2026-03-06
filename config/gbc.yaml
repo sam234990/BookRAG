@@ -68,6 +68,20 @@ vdb:
     model_name: Alibaba-NLP/gme-Qwen2-VL-2B-Instruct
     device: "cuda:1"
 
+ontology:
+  enabled: false
+  mapping_threshold: 1.0
+  allow_provisional_entities: true
+  use_query_resolution: true
+  entities:
+    - ontology_id: "product:bookrag"
+      canonical_name: "bookrag"
+      entity_type: "PRODUCT"
+      description: "The BookRAG application and retrieval pipeline."
+      aliases:
+        - "book rag"
+        - "book-rag"
+
 falkordb:
   host: "r-6jissuruar.instance-yc6en3ndn.hc-dx5io0svq.asia-south1.gcp.f2e0a955bb84.cloud"
   port: 60480
