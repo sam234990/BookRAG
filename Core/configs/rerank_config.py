@@ -16,13 +16,13 @@ class RerankerConfig:
     api_key: str = ""
 
     def __post_init__(self):
-        if self.backend not in ["local", "vllm", "jina"]:
+        if self.backend not in ["local", "vllm", "jina", "openai"]:
             raise ValueError(f"Unsupported reranker backend: {self.backend}")
-        # Resolve 'env' placeholder → read from JINA_API_KEY environment variable
+        # Resolve 'env' placeholder → read from RERANKER_API_KEY or JINA_API_KEY environment variable
         if self.api_key == "env":
-            self.api_key = os.environ.get("JINA_API_KEY", "")
+            self.api_key = os.environ.get("RERANKER_API_KEY", "") or os.environ.get("JINA_API_KEY", "")
             if not self.api_key:
                 raise ValueError(
-                    "RerankerConfig.api_key is 'env' but JINA_API_KEY "
-                    "environment variable is not set."
+                    "RerankerConfig.api_key is 'env' but neither RERANKER_API_KEY "
+                    "nor JINA_API_KEY environment variable is set."
                 )

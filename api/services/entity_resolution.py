@@ -41,7 +41,7 @@ def _resolve_entities_sync(
     from Core.Index.GBCIndex import GBC
     from Core.provider.vdb import VectorStore
     from api.dependencies import (
-        FALKORDB_HOST, FALKORDB_PORT, FALKORDB_PASSWORD, INDEX_SAVE_DIR,
+        FALKORDB_HOST, FALKORDB_PORT, FALKORDB_USERNAME, FALKORDB_PASSWORD, INDEX_SAVE_DIR,
     )
 
     cfg = load_system_config(config_path)
@@ -52,7 +52,7 @@ def _resolve_entities_sync(
     fdb_host = os.getenv("BOOKRAG_FALKORDB_HOST", "")
     falkordb_cfg = None
     if fdb_host:
-        falkordb_cfg = FalkorDBConfig(host=FALKORDB_HOST, port=FALKORDB_PORT, password=FALKORDB_PASSWORD)
+        falkordb_cfg = FalkorDBConfig(host=FALKORDB_HOST, port=FALKORDB_PORT, username=FALKORDB_USERNAME, password=FALKORDB_PASSWORD)
         cfg.falkordb = falkordb_cfg
 
     gbc = GBC.load_gbc_index(cfg)

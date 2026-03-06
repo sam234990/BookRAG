@@ -114,9 +114,24 @@ class TextRerankerProvider:
             })
             log.info(f"Using Jina reranker backend. Model: {self.model_name}, Endpoint: {self.rerank_url}")
 
+        # ==========================================================
+        # OpenAI-compatible chat completions backend (e.g., Starcore)
+        # Uses logprobs on yes/no tokens for scoring.
+        # ==========================================================
+        elif self.backend == "openai":
+            if not api_base:
+                raise ValueError("api_base must be provided for the 'openai' backend.")
+            self.chat_url = f"{api_base.rstrip('/')}/chat/completions"
+            self.session = requests.Session()
+            self.session.headers.update({
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {self.api_key}" if self.api_key else "",
+            })
+            log.info(f"Using OpenAI-compatible reranker backend. Model: {self.model_name}, Endpoint: {self.chat_url}")
+
         else:
             raise ValueError(
-                f"Unsupported backend: {self.backend}. Choose 'local', 'vllm', or 'jina'."
+                f"Unsupported backend: {self.backend}. Choose 'local', 'vllm', 'jina', or 'openai'."
             )
         self._define_prompt_template()
 
@@ -149,7 +164,7 @@ class TextRerankerProvider:
             gc.collect()
             log.info("Local reranker resources released.")
 
-        elif self.backend in ("vllm", "jina"):
+        elif self.backend in ("vllm", "jina", "openai"):
             if hasattr(self, "session"):
                 self.session.close()
             log.info(f"{self.backend} backend session closed.")
@@ -178,6 +193,61 @@ class TextRerankerProvider:
             self.suffix_tokens = self.tokenizer.encode(
                 self.suffix, add_special_tokens=False
             )
+
+    def _extract_score_from_logprobs(self, data: dict) -> float:
+        """
+        Extract relevance score from OpenAI chat completion logprobs.
+        Looks for 'yes'/'no' token probabilities and returns P(yes).
+        Falls back to 0.5 if logprobs are unavailable.
+        """
+        try:
+            choices = data.get("choices", [])
+            if not choices:
+                return 0.5
+
+            logprobs_data = choices[0].get("logprobs")
+            if not logprobs_data:
+                # No logprobs; try to parse from content
+                content = choices[0].get("message", {}).get("content", "").lower().strip()
+                if "yes" in content:
+                    return 0.9
+                elif "no" in content:
+                    return 0.1
+                return 0.5
+
+            content_logprobs = logprobs_data.get("content", [])
+            if not content_logprobs:
+                return 0.5
+
+            # Search through top_logprobs for yes/no tokens
+            top_logprobs = content_logprobs[0].get("top_logprobs", [])
+
+            yes_logprob = None
+            no_logprob = None
+            for entry in top_logprobs:
+                token = entry.get("token", "").lower().strip()
+                if token == "yes":
+                    yes_logprob = entry["logprob"]
+                elif token == "no":
+                    no_logprob = entry["logprob"]
+
+            if yes_logprob is not None and no_logprob is not None:
+                # Compute P(yes) using softmax over yes/no logprobs
+                import math as _math
+                max_lp = max(yes_logprob, no_logprob)
+                yes_exp = _math.exp(yes_logprob - max_lp)
+                no_exp = _math.exp(no_logprob - max_lp)
+                return yes_exp / (yes_exp + no_exp)
+            elif yes_logprob is not None:
+                return _math.exp(yes_logprob) if yes_logprob > -5 else 0.5
+            elif no_logprob is not None:
+                return 1.0 - (_math.exp(no_logprob) if no_logprob > -5 else 0.5)
+
+            return 0.5
+
+        except Exception as e:
+            log.warning(f"Failed to extract score from logprobs: {e}")
+            return 0.5
 
     def _format_instruction(
         self, query: str, doc: str, instruction: Optional[str]
@@ -407,6 +477,68 @@ class TextRerankerProvider:
 
             except requests.exceptions.RequestException as e:
                 log.error(f"Error calling Jina reranker API: {e}")
+                raise e
+
+        elif self.backend == "openai":
+            # OpenAI-compatible chat completions backend.
+            # Uses logprobs on yes/no tokens to compute relevance scores.
+            if instruction is None:
+                instruction = "Given a web search query, retrieve relevant passages that answer the query"
+
+            all_scores = []
+            num_docs = len(documents)
+            num_batches = math.ceil(num_docs / batch_size)
+
+            try:
+                for i in tqdm(
+                    range(0, num_docs, batch_size),
+                    desc="Reranking Batches (OpenAI)",
+                    total=num_batches,
+                    disable=num_docs < batch_size,
+                ):
+                    batch_docs = documents[i : i + batch_size]
+                    batch_scores = []
+
+                    for doc in batch_docs:
+                        # Format as Qwen3-Reranker expects
+                        prompt = (
+                            f"<Instruct>: {instruction}\n"
+                            f"<Query>: {query}\n"
+                            f"<Document>: {doc}"
+                        )
+                        system_msg = (
+                            'Judge whether the Document meets the requirements based on '
+                            'the Query and the Instruct provided. Note that the answer '
+                            'can only be "yes" or "no".'
+                        )
+
+                        payload = {
+                            "model": self.model_name,
+                            "messages": [
+                                {"role": "system", "content": system_msg},
+                                {"role": "user", "content": prompt},
+                            ],
+                            "max_tokens": 1,
+                            "logprobs": True,
+                            "top_logprobs": 20,
+                            "temperature": 0.0,
+                            "chat_template_kwargs": {"enable_thinking": False},
+                        }
+
+                        response = self.session.post(self.chat_url, json=payload)
+                        response.raise_for_status()
+                        data = response.json()
+
+                        # Extract score from logprobs
+                        score = self._extract_score_from_logprobs(data)
+                        batch_scores.append(score)
+
+                    all_scores.extend(batch_scores)
+
+                return all_scores
+
+            except requests.exceptions.RequestException as e:
+                log.error(f"Error calling OpenAI reranker API: {e}")
                 raise e
 
         elif self.backend == "local":

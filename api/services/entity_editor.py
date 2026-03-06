@@ -18,7 +18,7 @@ from difflib import SequenceMatcher
 from typing import Dict, List, Optional
 
 from api.dependencies import (
-    FALKORDB_HOST, FALKORDB_PORT, FALKORDB_PASSWORD,
+    FALKORDB_HOST, FALKORDB_PORT, FALKORDB_USERNAME, FALKORDB_PASSWORD,
     INDEX_SAVE_DIR, MONGO_URI, MONGO_DB_PREFIX,
     THREAD_POOL,
 )
@@ -71,6 +71,7 @@ def _load_graph_sync(tenant_id: str, doc_id: str, config_path: str):
         falkordb_cfg = FalkorDBConfig(
             host=FALKORDB_HOST,
             port=FALKORDB_PORT,
+            username=FALKORDB_USERNAME,
             password=FALKORDB_PASSWORD,
         )
         graph.falkordb_cfg = falkordb_cfg
@@ -97,7 +98,8 @@ def _rebuild_vdb_sync(tenant_id: str, doc_id: str, config_path: str) -> None:
         fdb_host = os.getenv("BOOKRAG_FALKORDB_HOST", "")
         if fdb_host:
             cfg.falkordb = FalkorDBConfig(
-                host=FALKORDB_HOST, port=FALKORDB_PORT, password=FALKORDB_PASSWORD
+                host=FALKORDB_HOST, port=FALKORDB_PORT,
+                username=FALKORDB_USERNAME, password=FALKORDB_PASSWORD,
             )
 
         gbc = GBC.load_gbc_index(cfg)

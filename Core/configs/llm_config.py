@@ -21,11 +21,11 @@ class LLMConfig:
             raise ValueError(f"Unsupported backend: {self.backend}")
         # Allow api_key to be resolved from environment variable
         if not self.api_key or self.api_key in ("env", "ENV"):
-            env_key = os.environ.get("DASHSCOPE_API_KEY", "")
+            env_key = os.environ.get("CHAT_API_KEY", "") or os.environ.get("DASHSCOPE_API_KEY", "")
             if env_key:
                 self.api_key = env_key
             else:
                 raise ValueError(
-                    "LLM api_key is empty/env but DASHSCOPE_API_KEY "
-                    "environment variable is not set."
+                    "LLM api_key is empty/env but neither CHAT_API_KEY nor "
+                    "DASHSCOPE_API_KEY environment variable is set."
                 )

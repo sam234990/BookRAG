@@ -315,6 +315,8 @@ class Graph:
             from falkordb import FalkorDB
             cfg = self.falkordb_cfg
             conn_kwargs = {"host": cfg.host, "port": cfg.port}
+            if cfg.username:
+                conn_kwargs["username"] = cfg.username
             if cfg.password:
                 conn_kwargs["password"] = cfg.password
             client = FalkorDB(**conn_kwargs)
@@ -559,6 +561,8 @@ class Graph:
             from falkordb import FalkorDB
             cfg = falkordb_cfg
             conn_kwargs = {"host": cfg.host, "port": cfg.port}
+            if cfg.username:
+                conn_kwargs["username"] = cfg.username
             if cfg.password:
                 conn_kwargs["password"] = cfg.password
             client = FalkorDB(**conn_kwargs)
@@ -595,6 +599,8 @@ class Graph:
             from falkordb import FalkorDB
             cfg = falkordb_cfg
             conn_kwargs = {"host": cfg.host, "port": cfg.port}
+            if cfg.username:
+                conn_kwargs["username"] = cfg.username
             if cfg.password:
                 conn_kwargs["password"] = cfg.password
             client = FalkorDB(**conn_kwargs)

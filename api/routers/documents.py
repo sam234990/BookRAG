@@ -235,10 +235,15 @@ async def delete_document(doc_id: str, current_user: dict = Depends(get_current_
 
     # Clean up FalkorDB graph (best-effort)
     try:
-        from api.dependencies import FALKORDB_HOST, FALKORDB_PORT, FALKORDB_PASSWORD
+        from api.dependencies import FALKORDB_HOST, FALKORDB_PORT, FALKORDB_USERNAME, FALKORDB_PASSWORD
         if os.getenv("BOOKRAG_FALKORDB_HOST", ""):
             import falkordb
-            fdb = falkordb.FalkorDB(host=FALKORDB_HOST, port=FALKORDB_PORT, password=FALKORDB_PASSWORD or None)
+            conn_kwargs = {"host": FALKORDB_HOST, "port": FALKORDB_PORT}
+            if FALKORDB_USERNAME:
+                conn_kwargs["username"] = FALKORDB_USERNAME
+            if FALKORDB_PASSWORD:
+                conn_kwargs["password"] = FALKORDB_PASSWORD
+            fdb = falkordb.FalkorDB(**conn_kwargs)
             graph_name = f"bookrag:{tenant_id}:doc:{doc_id}"
             try:
                 g = fdb.select_graph(graph_name)

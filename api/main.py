@@ -189,12 +189,14 @@ async def health():
     fdb_host = os.getenv("BOOKRAG_FALKORDB_HOST", "")
     if fdb_host:
         try:
-            from api.dependencies import FALKORDB_HOST, FALKORDB_PORT, FALKORDB_PASSWORD
+            from api.dependencies import FALKORDB_HOST, FALKORDB_PORT, FALKORDB_USERNAME, FALKORDB_PASSWORD
             import falkordb
-            fdb = falkordb.FalkorDB(
-                host=FALKORDB_HOST, port=FALKORDB_PORT,
-                password=FALKORDB_PASSWORD or None,
-            )
+            conn_kwargs = {"host": FALKORDB_HOST, "port": FALKORDB_PORT}
+            if FALKORDB_USERNAME:
+                conn_kwargs["username"] = FALKORDB_USERNAME
+            if FALKORDB_PASSWORD:
+                conn_kwargs["password"] = FALKORDB_PASSWORD
+            fdb = falkordb.FalkorDB(**conn_kwargs)
             fdb.connection.ping()
             checks["falkordb"] = "ok"
         except Exception as exc:

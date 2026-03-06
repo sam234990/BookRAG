@@ -11,7 +11,7 @@ from typing import List, Optional
 from api.db import mongodb as db
 from api.dependencies import (
     MONGO_URI, MONGO_DB_PREFIX, INDEX_SAVE_DIR,
-    FALKORDB_HOST, FALKORDB_PORT, FALKORDB_PASSWORD,
+    FALKORDB_HOST, FALKORDB_PORT, FALKORDB_USERNAME, FALKORDB_PASSWORD,
     THREAD_POOL,
 )
 
@@ -109,7 +109,8 @@ def _get_gbc_index(tenant_id: str, doc_id: str, config_path: str):
     fdb_host = os.getenv("BOOKRAG_FALKORDB_HOST", "")
     if fdb_host:
         cfg.falkordb = FalkorDBConfig(
-            host=FALKORDB_HOST, port=FALKORDB_PORT, password=FALKORDB_PASSWORD
+            host=FALKORDB_HOST, port=FALKORDB_PORT,
+            username=FALKORDB_USERNAME, password=FALKORDB_PASSWORD,
         )
 
     gbc_index = GBC.load_gbc_index(cfg)

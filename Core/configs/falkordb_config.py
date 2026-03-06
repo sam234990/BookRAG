@@ -7,6 +7,7 @@ class FalkorDBConfig:
 
     host: str = "localhost"
     port: int = 6379
+    username: str = ""
     password: str = ""
     graph_prefix: str = "bookrag"
 
