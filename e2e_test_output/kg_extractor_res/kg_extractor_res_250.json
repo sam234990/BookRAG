@@ -1,0 +1,153 @@
+{
+  "entities": [
+    {
+      "entity_name": "global",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "global refers to a type of question requiring an aggregation operation over a set of items identified by a structural filter",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "entity_name": "counting",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "counting is an example of an aggregation operation mentioned in the text",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "entity_name": "listing",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "listing is an example of an aggregation operation mentioned in the text",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "entity_name": "summarizing",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "summarizing is an example of an aggregation operation mentioned in the text",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "entity_name": "structural filter",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "structural filter is a clear filter used to identify items in the set for the global question",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "entity_name": "aggregation operation",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "entity_name": "items",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        250
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "global",
+      "tgt_entity_name": "aggregation operation",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the global task requires an aggregation operation such as counting  listing  or summarizing",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "src_entity_name": "global",
+      "tgt_entity_name": "counting",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the global task includes counting as a possible aggregation operation",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "src_entity_name": "global",
+      "tgt_entity_name": "listing",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the global task includes listing as a possible aggregation operation",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "src_entity_name": "global",
+      "tgt_entity_name": "summarizing",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the global task includes summarizing as a possible aggregation operation",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "src_entity_name": "global",
+      "tgt_entity_name": "structural filter",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the global task identifies items using a clear structural filter",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "src_entity_name": "counting",
+      "tgt_entity_name": "aggregation operation",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "counting is explicitly described as an aggregation operation",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "src_entity_name": "listing",
+      "tgt_entity_name": "aggregation operation",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "listing is explicitly described as an aggregation operation",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "src_entity_name": "summarizing",
+      "tgt_entity_name": "aggregation operation",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "summarizing is explicitly described as an aggregation operation",
+      "source_ids": [
+        250
+      ]
+    },
+    {
+      "src_entity_name": "structural filter",
+      "tgt_entity_name": "items",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the structural filter is used to identify the set of items",
+      "source_ids": [
+        250
+      ]
+    }
+  ],
+  "node_idx": 250
+}

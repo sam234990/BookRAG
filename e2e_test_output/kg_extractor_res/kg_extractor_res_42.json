@@ -1,0 +1,159 @@
+{
+  "entities": [
+    {
+      "entity_name": "information foraging theory",
+      "entity_type": "SCIENTIFIC_THEORY",
+      "description": "information foraging theory  ift  is a framework for understanding information access as a process analogous to animal foraging",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "entity_name": "animal foraging",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "animal foraging is the process used as an analogy to explain how users access information in the context of information foraging theory",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "entity_name": "information scent",
+      "entity_type": "CONCEPT",
+      "description": "information scent refers to cues like keywords or icons that users follow to navigate content",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "entity_name": "information patches",
+      "entity_type": "CONCEPT",
+      "description": "information patches are clusters of content  such as sections in handbooks  that users navigate between",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "entity_name": "handbooks",
+      "entity_type": "PRODUCT",
+      "description": "handbooks are mentioned as containing sections that serve as information patches",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "entity_name": "keywords",
+      "entity_type": "CONCEPT",
+      "description": "keywords are identified as specific examples of information scent cues used by users",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "entity_name": "icons",
+      "entity_type": "CONCEPT",
+      "description": "icons are identified as specific examples of information scent cues used by users",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "entity_name": "sections",
+      "entity_type": "CONCEPT",
+      "description": "sections are described as parts of handbooks that function as information patches",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "entity_name": "reference 42",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "reference 42 is the citation source for information foraging theory mentioned in the text",
+      "source_ids": [
+        42
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "information foraging theory",
+      "tgt_entity_name": "animal foraging",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "information foraging theory uses animal foraging as an analogy to explain information access",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "src_entity_name": "information foraging theory",
+      "tgt_entity_name": "information scent",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "information foraging theory suggests that users follow information scent cues to navigate content",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "src_entity_name": "information foraging theory",
+      "tgt_entity_name": "information patches",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "information foraging theory describes information patches as clusters of content that users navigate between",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "src_entity_name": "information scent",
+      "tgt_entity_name": "handbooks",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "information scent cues like keywords or icons are found within sections of handbooks  which act as information patches",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "src_entity_name": "information scent",
+      "tgt_entity_name": "keywords",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "keywords are explicitly listed as examples of information scent",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "src_entity_name": "information scent",
+      "tgt_entity_name": "icons",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "icons are explicitly listed as examples of information scent",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "src_entity_name": "information patches",
+      "tgt_entity_name": "sections",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "sections in handbooks are explicitly listed as examples of information patches",
+      "source_ids": [
+        42
+      ]
+    },
+    {
+      "src_entity_name": "information foraging theory",
+      "tgt_entity_name": "reference 42",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "information foraging theory is cited with reference number 42 in the text",
+      "source_ids": [
+        42
+      ]
+    }
+  ],
+  "node_idx": 42
+}

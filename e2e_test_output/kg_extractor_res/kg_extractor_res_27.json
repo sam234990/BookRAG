@@ -1,0 +1,133 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a product that significantly outperforms existing baselines in solving complex document qa tasks",
+      "source_ids": [
+        27
+      ]
+    },
+    {
+      "entity_name": "existing baselines",
+      "entity_type": "PRODUCT",
+      "description": "existing baselines are the current methods or systems that bookrag outperforms in the experiments",
+      "source_ids": [
+        27
+      ]
+    },
+    {
+      "entity_name": "complex document qa tasks",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "complex document qa tasks are the specific problems that bookrag is designed to solve",
+      "source_ids": [
+        27
+      ]
+    },
+    {
+      "entity_name": "extensive experiments",
+      "entity_type": "EVENT",
+      "description": "extensive experiments are the tests conducted to evaluate the performance of bookrag",
+      "source_ids": [
+        27
+      ]
+    },
+    {
+      "entity_name": "multiple benchmarks",
+      "entity_type": "BENCHMARK",
+      "description": "multiple benchmarks are the evaluation standards used in the experiments to measure performance",
+      "source_ids": [
+        27
+      ]
+    },
+    {
+      "entity_name": "state of the art performance",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "state of the art performance is the high level of achievement attained by bookrag in the tasks",
+      "source_ids": [
+        27
+      ]
+    },
+    {
+      "entity_name": "competitive efficiency",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "competitive efficiency is a metric indicating that bookrag maintains good efficiency while performing well",
+      "source_ids": [
+        27
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "existing baselines",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag significantly outperforms existing baselines in experiments",
+      "source_ids": [
+        27
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "complex document qa tasks",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag attains state of the art performance in solving complex document qa tasks",
+      "source_ids": [
+        27
+      ]
+    },
+    {
+      "src_entity_name": "extensive experiments",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "extensive experiments were performed on bookrag to demonstrate its capabilities",
+      "source_ids": [
+        27
+      ]
+    },
+    {
+      "src_entity_name": "extensive experiments",
+      "tgt_entity_name": "multiple benchmarks",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "extensive experiments were conducted on multiple benchmarks to validate results",
+      "source_ids": [
+        27
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "state of the art performance",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag attained state of the art performance as a result of the experiments",
+      "source_ids": [
+        27
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "competitive efficiency",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag maintained competitive efficiency while solving tasks",
+      "source_ids": [
+        27
+      ]
+    },
+    {
+      "src_entity_name": "multiple benchmarks",
+      "tgt_entity_name": "state of the art performance",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the performance on multiple benchmarks showed state of the art results",
+      "source_ids": [
+        27
+      ]
+    }
+  ],
+  "node_idx": 27
+}

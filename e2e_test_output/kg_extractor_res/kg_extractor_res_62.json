@@ -1,0 +1,61 @@
+{
+  "entities": [
+    {
+      "entity_name": "tree t",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "tree t is a structure that is established before proceeding to the next step",
+      "source_ids": [
+        62
+      ]
+    },
+    {
+      "entity_name": "knowledge graph g",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "knowledge graph g is a structure that is populated by extracting and refining entities from the tree nodes",
+      "source_ids": [
+        62
+      ]
+    },
+    {
+      "entity_name": "tree nodes",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "tree nodes are the components within tree t from which entities are extracted and refined",
+      "source_ids": [
+        62
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "tree t",
+      "tgt_entity_name": "knowledge graph g",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "tree t is the source from which entities are extracted to populate knowledge graph g",
+      "source_ids": [
+        62
+      ]
+    },
+    {
+      "src_entity_name": "tree t",
+      "tgt_entity_name": "tree nodes",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "tree nodes are the constituent parts of tree t that serve as the source for entity extraction",
+      "source_ids": [
+        62
+      ]
+    },
+    {
+      "src_entity_name": "knowledge graph g",
+      "tgt_entity_name": "tree nodes",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "knowledge graph g is populated by extracting and refining entities from tree nodes",
+      "source_ids": [
+        62
+      ]
+    }
+  ],
+  "node_idx": 62
+}

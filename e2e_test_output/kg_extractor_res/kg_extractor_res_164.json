@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "ablation study",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "ablation study is a task designed to evaluate the contribution of core components in bookrag",
+      "source_ids": [
+        164
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a product or system whose core components are being evaluated through variants",
+      "source_ids": [
+        164
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "ablation study",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the ablation study is conducted to evaluate the core components of bookrag",
+      "source_ids": [
+        164
+      ]
+    }
+  ],
+  "node_idx": 164
+}

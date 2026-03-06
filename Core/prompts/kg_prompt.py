@@ -139,7 +139,7 @@ For each pair of related entities, extract the following information:
 - relationship_strength: a numeric score indicating strength of the relationship between the source entity and target entity
 Format each relationship as ("relationship"{tuple_delimiter}<source_entity>{tuple_delimiter}<target_entity>{tuple_delimiter}<relationship_description>{tuple_delimiter}<relationship_strength>)
 
-3. Return output in English as a single list of all the entities and relationships identified in steps 1 and 2. Use **{record_delimiter}** as the list delimiter.
+3. Return output as a single list of all the entities and relationships identified in steps 1 and 2. Preserve entity names exactly as they appear in the source text (do not translate them). Use **{record_delimiter}** as the list delimiter.
 
 4. When finished, output {completion_delimiter}
 

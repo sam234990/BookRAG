@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "query classification",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "query classification is a task mentioned in the text used to determine the appropriate solution strategy",
+      "source_ids": [
+        95
+      ]
+    },
+    {
+      "entity_name": "operator plan",
+      "entity_type": "PRODUCT",
+      "description": "operator plan is a specific output generated after determining the solution strategy",
+      "source_ids": [
+        95
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "query classification",
+      "tgt_entity_name": "operator plan",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "query classification is performed to generate a specific operator plan",
+      "source_ids": [
+        95
+      ]
+    }
+  ],
+  "node_idx": 95
+}

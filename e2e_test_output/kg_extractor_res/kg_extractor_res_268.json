@@ -1,0 +1,25 @@
+{
+  "entities": [
+    {
+      "entity_name": "entity type",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "entity type is a task or problem described as having medium importance in the context of type compatibility",
+      "source_ids": [
+        268
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "entity type",
+      "tgt_entity_name": "entity type",
+      "relation_name": "",
+      "weight": 5.0,
+      "description": "the entity type is described as needing to be closely related and compatible with other types  such as company and organization",
+      "source_ids": [
+        268
+      ]
+    }
+  ],
+  "node_idx": 268
+}

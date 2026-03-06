@@ -1,0 +1,429 @@
+{
+  "entities": [
+    {
+      "entity_name": "exact match",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "exact match is a primary evaluation metric used to assess performance in the text",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "accuracy",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "accuracy is a primary evaluation metric used to assess performance in the text",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "token based f1 score",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "token based f1 score is a primary evaluation metric used to assess performance in the text",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "time cost",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "time cost is a metric used to assess efficiency during the response phase",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "token usage",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "token usage is a metric used to assess efficiency during the response phase",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "retrieval recall",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "retrieval recall is a metric used to evaluate methods including pdf parsing",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "pdf parsing",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "pdf parsing is a method mentioned in the text that is evaluated using retrieval recall",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "mmlongbench",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "mmlongbench is a dataset that provides page numbers for filtering candidate blocks",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "qasper",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "qasper is a dataset that provides evidence statements for filtering candidate blocks",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "texts",
+      "entity_type": "TABLE",
+      "description": "texts are specific pdf blocks labeled to establish ground truth",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "titles",
+      "entity_type": "TABLE",
+      "description": "titles are specific pdf blocks labeled to establish ground truth",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "tables",
+      "entity_type": "TABLE",
+      "description": "tables are specific pdf blocks labeled to establish ground truth",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "images",
+      "entity_type": "TABLE",
+      "description": "images are specific pdf blocks labeled to establish ground truth",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "formulas",
+      "entity_type": "TABLE",
+      "description": "formulas are specific pdf blocks labeled to establish ground truth",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "qa",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "qa refers to the question answering task for which official metrics are specified by each dataset",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "ground truth",
+      "entity_type": "CONCEPT",
+      "description": "ground truth is the established standard used to evaluate retrieval recall and guide manual labeling",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "metadata",
+      "entity_type": "CONCEPT",
+      "description": "metadata refers to the ground truth evidence information provided in each dataset that guides the labeling process",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "modality",
+      "entity_type": "CONCEPT",
+      "description": "modality is a given attribute used to filter candidate blocks across all datasets",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "query",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a query is a specific question for which retrieval recall is recorded  particularly when pdf parsing errors occur",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "pdf blocks",
+      "entity_type": "TABLE",
+      "description": "pdf blocks are the specific units of content  texts  titles  tables  images  formulas  that are manually labeled",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "candidate blocks",
+      "entity_type": "TABLE",
+      "description": "candidate blocks are the set of blocks filtered using modality  page numbers  and evidence statements before manual annotation",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "response phase",
+      "entity_type": "TIME",
+      "description": "the response phase is the specific time period during which time cost and token usage are measured",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "page numbers",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "entity_name": "evidence statements",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        144
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "exact match",
+      "tgt_entity_name": "accuracy",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "both are primary evaluation metrics used together in the assessment process",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "exact match",
+      "tgt_entity_name": "token based f1 score",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "both are primary evaluation metrics used together in the assessment process",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "accuracy",
+      "tgt_entity_name": "token based f1 score",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "both are primary evaluation metrics used together in the assessment process",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "time cost",
+      "tgt_entity_name": "token usage",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "both are metrics used to assess efficiency during the response phase",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "pdf parsing",
+      "tgt_entity_name": "retrieval recall",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "retrieval recall is the specific metric used to evaluate the pdf parsing method",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "mmlongbench",
+      "tgt_entity_name": "page numbers",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "mmlongbench provides page numbers used to filter candidate blocks",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "qasper",
+      "tgt_entity_name": "evidence statements",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "qasper provides evidence statements used to filter candidate blocks",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "texts",
+      "tgt_entity_name": "formulas",
+      "relation_name": "",
+      "weight": 6.0,
+      "description": "both are types of pdf blocks manually labeled to establish ground truth",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "tables",
+      "tgt_entity_name": "images",
+      "relation_name": "",
+      "weight": 6.0,
+      "description": "both are types of pdf blocks manually labeled to establish ground truth",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "qa",
+      "tgt_entity_name": "exact match",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "exact match is a metric used to evaluate the qa task",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "qa",
+      "tgt_entity_name": "accuracy",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "accuracy is a metric used to evaluate the qa task",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "qa",
+      "tgt_entity_name": "token based f1 score",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "token based f1 score is a metric used to evaluate the qa task",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "ground truth",
+      "tgt_entity_name": "pdf blocks",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "pdf blocks are manually labeled to establish the ground truth",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "ground truth",
+      "tgt_entity_name": "retrieval recall",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "retrieval recall is measured against the ground truth",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "metadata",
+      "tgt_entity_name": "ground truth",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "metadata provides the ground truth evidence used to guide the labeling process",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "candidate blocks",
+      "tgt_entity_name": "pdf blocks",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "candidate blocks are filtered from the set of pdf blocks",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "candidate blocks",
+      "tgt_entity_name": "modality",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "candidate blocks are filtered using the given modality",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "candidate blocks",
+      "tgt_entity_name": "page numbers",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "candidate blocks are filtered using page numbers from mmlongbench",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "candidate blocks",
+      "tgt_entity_name": "evidence statements",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "candidate blocks are filtered using evidence statements from qasper",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "pdf parsing",
+      "tgt_entity_name": "pdf blocks",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "pdf parsing errors affect the availability of items within pdf blocks",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "query",
+      "tgt_entity_name": "retrieval recall",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "retrieval recall is recorded for a specific query when a pdf parsing error occurs",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "time cost",
+      "tgt_entity_name": "response phase",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "time cost is measured during the response phase",
+      "source_ids": [
+        144
+      ]
+    },
+    {
+      "src_entity_name": "token usage",
+      "tgt_entity_name": "response phase",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "token usage is measured during the response phase",
+      "source_ids": [
+        144
+      ]
+    }
+  ],
+  "node_idx": 144
+}

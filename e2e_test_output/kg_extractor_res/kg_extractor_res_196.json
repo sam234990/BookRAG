@@ -1,0 +1,533 @@
+{
+  "entities": [
+    {
+      "entity_name": "yukun cao",
+      "entity_type": "PERSON",
+      "description": "yukun cao is listed as one of the authors of the paper titled lego graphrag",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "zengyi gao",
+      "entity_type": "PERSON",
+      "description": "zengyi gao is listed as one of the authors of the paper titled lego graphrag",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "zhiyang li",
+      "entity_type": "PERSON",
+      "description": "zhiyang li is listed as one of the authors of the paper titled lego graphrag",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "xike xie",
+      "entity_type": "PERSON",
+      "description": "xike xie is listed as one of the authors of the paper titled lego graphrag",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "s kevin zhou",
+      "entity_type": "PERSON",
+      "description": "s  kevin zhou is listed as one of the authors of the paper titled lego graphrag",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "jianliang xu",
+      "entity_type": "PERSON",
+      "description": "jianliang xu is listed as one of the authors of the paper titled lego graphrag",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "lego graphrag",
+      "entity_type": "PRODUCT",
+      "description": "lego graphrag is a modularized graph based retrieval augmented generation system designed for design space exploration",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "proc vldb endow",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "proc  vldb endow  is the publication venue where the paper was published",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "june 2025",
+      "entity_type": "DATE",
+      "description": "june 2025 is the specific date of publication for the paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "2025",
+      "entity_type": "DATE",
+      "description": "2025 is the year associated with the publication and the authors  work",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "3269 3283",
+      "entity_type": "MEASUREMENT",
+      "description": "3269 3283 represents the page range of the article in the publication",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "10",
+      "entity_type": "MEASUREMENT",
+      "description": "10 is the issue number of the publication volume",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "18",
+      "entity_type": "MEASUREMENT",
+      "description": "18 is the volume number of the publication",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "design space exploration",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "design space exploration is the specific problem domain that the lego graphrag system is designed to address",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "graph based retrieval augmented generation",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "graph based retrieval augmented generation is the underlying technique being modularized in the paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "modularizing",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "modularizing is the specific method or approach applied to the graph based retrieval augmented generation system",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "entity_name": "https doi org 10 14778 3748191 3748194",
+      "entity_type": "URL",
+      "description": "https   doi org 10 14778 3748191 3748194 is the digital object identifier link for the paper",
+      "source_ids": [
+        196
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "yukun cao",
+      "tgt_entity_name": "lego graphrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yukun cao is an author of the paper describing lego graphrag",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "zengyi gao",
+      "tgt_entity_name": "lego graphrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "zengyi gao is an author of the paper describing lego graphrag",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "zhiyang li",
+      "tgt_entity_name": "lego graphrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "zhiyang li is an author of the paper describing lego graphrag",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "xike xie",
+      "tgt_entity_name": "lego graphrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "xike xie is an author of the paper describing lego graphrag",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "s kevin zhou",
+      "tgt_entity_name": "lego graphrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "s  kevin zhou is an author of the paper describing lego graphrag",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "jianliang xu",
+      "tgt_entity_name": "lego graphrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "jianliang xu is an author of the paper describing lego graphrag",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "yukun cao",
+      "tgt_entity_name": "proc vldb endow",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "yukun cao is an author of a paper published in proc  vldb endow",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "zengyi gao",
+      "tgt_entity_name": "proc vldb endow",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "zengyi gao is an author of a paper published in proc  vldb endow",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "zhiyang li",
+      "tgt_entity_name": "proc vldb endow",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "zhiyang li is an author of a paper published in proc  vldb endow",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "xike xie",
+      "tgt_entity_name": "proc vldb endow",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "xike xie is an author of a paper published in proc  vldb endow",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "s kevin zhou",
+      "tgt_entity_name": "proc vldb endow",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "s  kevin zhou is an author of a paper published in proc  vldb endow",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "jianliang xu",
+      "tgt_entity_name": "proc vldb endow",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "jianliang xu is an author of a paper published in proc  vldb endow",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "yukun cao",
+      "tgt_entity_name": "zengyi gao",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yukun cao and zengyi gao are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "yukun cao",
+      "tgt_entity_name": "zhiyang li",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yukun cao and zhiyang li are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "yukun cao",
+      "tgt_entity_name": "xike xie",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yukun cao and xike xie are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "yukun cao",
+      "tgt_entity_name": "s kevin zhou",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yukun cao and s  kevin zhou are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "yukun cao",
+      "tgt_entity_name": "jianliang xu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yukun cao and jianliang xu are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "zengyi gao",
+      "tgt_entity_name": "zhiyang li",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zengyi gao and zhiyang li are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "zengyi gao",
+      "tgt_entity_name": "xike xie",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zengyi gao and xike xie are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "zengyi gao",
+      "tgt_entity_name": "s kevin zhou",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zengyi gao and s  kevin zhou are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "zengyi gao",
+      "tgt_entity_name": "jianliang xu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zengyi gao and jianliang xu are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "zhiyang li",
+      "tgt_entity_name": "xike xie",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zhiyang li and xike xie are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "zhiyang li",
+      "tgt_entity_name": "s kevin zhou",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zhiyang li and s  kevin zhou are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "zhiyang li",
+      "tgt_entity_name": "jianliang xu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zhiyang li and jianliang xu are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "xike xie",
+      "tgt_entity_name": "s kevin zhou",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "xike xie and s  kevin zhou are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "xike xie",
+      "tgt_entity_name": "jianliang xu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "xike xie and jianliang xu are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "s kevin zhou",
+      "tgt_entity_name": "jianliang xu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "s  kevin zhou and jianliang xu are co authors on the same paper",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "lego graphrag",
+      "tgt_entity_name": "proc vldb endow",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "lego graphrag is the subject of a paper published in proc  vldb endow",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "lego graphrag",
+      "tgt_entity_name": "june 2025",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "lego graphrag was published in june 2025",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "lego graphrag",
+      "tgt_entity_name": "2025",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "lego graphrag was published in the year 2025",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "proc vldb endow",
+      "tgt_entity_name": "june 2025",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "proc  vldb endow published the paper in june 2025",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "proc vldb endow",
+      "tgt_entity_name": "2025",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "proc  vldb endow published the paper in 2025",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "proc vldb endow",
+      "tgt_entity_name": "18",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the paper was published in volume 18 of proc  vldb endow",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "proc vldb endow",
+      "tgt_entity_name": "10",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the paper was published in issue 10 of proc  vldb endow",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "proc vldb endow",
+      "tgt_entity_name": "3269 3283",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the paper appears on pages 3269 3283 of proc  vldb endow",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "lego graphrag",
+      "tgt_entity_name": "design space exploration",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "lego graphrag is developed specifically for design space exploration",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "lego graphrag",
+      "tgt_entity_name": "graph based retrieval augmented generation",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "lego graphrag is a modularized version of graph based retrieval augmented generation",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "lego graphrag",
+      "tgt_entity_name": "modularizing",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the paper describes the process of modularizing graph based retrieval augmented generation to create lego graphrag",
+      "source_ids": [
+        196
+      ]
+    },
+    {
+      "src_entity_name": "lego graphrag",
+      "tgt_entity_name": "https doi org 10 14778 3748191 3748194",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the paper describing lego graphrag is accessible via the provided doi link",
+      "source_ids": [
+        196
+      ]
+    }
+  ],
+  "node_idx": 196
+}

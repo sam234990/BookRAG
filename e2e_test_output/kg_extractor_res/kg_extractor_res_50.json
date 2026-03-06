@@ -1,0 +1,69 @@
+{
+  "entities": [
+    {
+      "entity_name": "4.1 overview of bookindex",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'BOOKINDEX', this section provides a high-level introduction to the proposed BookIndex, defining its hierarchical structure-aware nature and outlining its two-stage construction process (Tree Construction and Graph Construction) for capturing logical hierarchies and entity relations in complex documents.",
+      "source_ids": [
+        50
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "A hierarchical structure-aware index designed to capture explicit logical hierarchy and intricate entity relations within complex documents, serving as the core subject of section 4.1.",
+      "source_ids": [
+        50
+      ]
+    },
+    {
+      "entity_name": "tree construction",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "The first stage of the BookIndex construction process, which parses document layout to establish hierarchical nodes categorized by type, detailed in section 4.1.",
+      "source_ids": [
+        50
+      ]
+    },
+    {
+      "entity_name": "graph construction",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "The second stage of the BookIndex construction process, which extracts fine-grained entity knowledge from tree nodes and refines it using gradient-based entity resolution, detailed in section 4.1.",
+      "source_ids": [
+        50
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "4.1 overview of bookindex",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'BookIndex' is the primary topic defined and introduced in section 4.1.",
+      "source_ids": [
+        50
+      ]
+    },
+    {
+      "src_entity_name": "tree construction",
+      "tgt_entity_name": "4.1 overview of bookindex",
+      "relation_name": "",
+      "weight": 9.5,
+      "description": "The method 'Tree Construction' is a key component of the overview provided in section 4.1.",
+      "source_ids": [
+        50
+      ]
+    },
+    {
+      "src_entity_name": "graph construction",
+      "tgt_entity_name": "4.1 overview of bookindex",
+      "relation_name": "",
+      "weight": 9.5,
+      "description": "The method 'Graph Construction' is a key component of the overview provided in section 4.1.",
+      "source_ids": [
+        50
+      ]
+    }
+  ],
+  "node_idx": 50
+}

@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (5)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the variable N_s as a glyph value for an element s in set S within a target subtree. LaTeX: 𝑁 𝑠 = GLYPH<216> 𝑠 ∈ 𝑆 target Subtree ( 𝑠 ) (5)",
+      "source_ids": [
+        105
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 105
+}

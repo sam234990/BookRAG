@@ -1,0 +1,205 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a multi modal rag method evaluated for efficiency in terms of query time and token consumption",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "entity_name": "graph based rag methods",
+      "entity_type": "TECHNOLOGY",
+      "description": "graph based rag methods are existing methods used as a baseline for comparing bookrag s efficiency",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "entity_name": "text based rag approaches",
+      "entity_type": "TECHNOLOGY",
+      "description": "text based rag approaches are methods that generally exhibit lower latency and token usage due to the absence of vlm processing",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "entity_name": "vlm",
+      "entity_type": "TECHNOLOGY",
+      "description": "vlm refers to vision language models  the processing component absent in purely text based rag approaches",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "entity_name": "docetl",
+      "entity_type": "PRODUCT",
+      "description": "docetl is a baseline method against which bookrag s token consumption and query latency are compared",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "entity_name": "mmlongbench",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "mmlongbench is a dataset used to evaluate the token consumption of docetl and bookrag",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "entity_name": "figure 5",
+      "entity_type": "IMAGE",
+      "description": "figure 5 is a visual illustration showing the efficiency evaluation of bookrag in terms of query time and token consumption",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "entity_name": "53 million tokens",
+      "entity_type": "MEASUREMENT",
+      "description": "53 million tokens is the amount of token consumption recorded for docetl on the mmlongbench dataset",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "entity_name": "5 million",
+      "entity_type": "MEASUREMENT",
+      "description": "5 million is the upper limit of token consumption required by bookrag on the mmlongbench dataset",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "entity_name": "2",
+      "entity_type": "MEASUREMENT",
+      "description": "2   represents the speedup factor achieved by bookrag compared to docetl in query latency",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "entity_name": "order of magnitude",
+      "entity_type": "MEASUREMENT",
+      "description": "order of magnitude describes the scale of reduction in token consumption by bookrag compared to docetl",
+      "source_ids": [
+        160
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "graph based rag methods",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag maintains time and token costs comparable to existing graph based rag methods",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "text based rag approaches",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "bookrag maintains a balanced efficiency among multi modal methods compared to text based approaches which have lower latency",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "vlm",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag involves vlm processing for images  unlike purely text based rag approaches",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "docetl",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag reduces token consumption by an order of magnitude and achieves a speedup of up to 2x compared to docetl",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "src_entity_name": "docetl",
+      "tgt_entity_name": "mmlongbench",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "docetl consumes over 53 million tokens on the mmlongbench dataset",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "mmlongbench",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag requires less than 5 million tokens on the mmlongbench dataset",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "figure 5",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "figure 5 illustrates the efficiency evaluation of bookrag",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "src_entity_name": "docetl",
+      "tgt_entity_name": "53 million tokens",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "docetl consumes 53 million tokens on the mmlongbench dataset",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "5 million",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag requires less than 5 million tokens on the mmlongbench dataset",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "2",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag achieves a speedup of up to 2   compared to docetl",
+      "source_ids": [
+        160
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "order of magnitude",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag reduces token consumption by an order of magnitude compared to docetl",
+      "source_ids": [
+        160
+      ]
+    }
+  ],
+  "node_idx": 160
+}

@@ -1,0 +1,219 @@
+{
+  "entities": [
+    {
+      "entity_name": "kg g",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "kg g is a knowledge graph that serves as the input for the described process",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "entity_name": "new entity v n",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "new entity v n is a new entity being introduced into the system",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "entity_name": "rerank model r",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "rerank model r is a model used to rerank entities in the process",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "entity_name": "entity vector database db",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "entity vector database db is a database storing entity vectors",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "entity_name": "vector search number top k",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "vector search number top k is a parameter defining the number of top results for vector search",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "entity_name": "threshold of gradient g",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "threshold of gradient g is a threshold value used for gradient calculations",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "entity_name": "kg",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "kg is the abbreviation for the knowledge graph mentioned as input",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "entity_name": "g",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "g is the specific instance or variable name for the knowledge graph",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "entity_name": "v",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "v is the variable representing the new entity",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "entity_name": "n",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "n is a subscript or identifier associated with the new entity v",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "entity_name": "r",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "r is the specific variable name for the rerank model",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "entity_name": "db",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "db is the specific variable name for the entity vector database",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "entity_name": "top k",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "top k is the specific variable name for the vector search number",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "entity_name": "g",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "g is the specific variable name for the threshold of gradient",
+      "source_ids": [
+        70
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "kg g",
+      "tgt_entity_name": "new entity v n",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the new entity v n is added to or processed within the knowledge graph g",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "src_entity_name": "rerank model r",
+      "tgt_entity_name": "entity vector database db",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the rerank model r likely utilizes the entity vector database db to perform its ranking tasks",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "src_entity_name": "vector search number top k",
+      "tgt_entity_name": "entity vector database db",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the vector search number top k parameter determines the scope of the search performed on the entity vector database db",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "src_entity_name": "threshold of gradient g",
+      "tgt_entity_name": "rerank model r",
+      "relation_name": "",
+      "weight": 6.0,
+      "description": "the threshold of gradient g is a parameter that influences the operation or convergence of the rerank model r",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "src_entity_name": "kg",
+      "tgt_entity_name": "g",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "kg and g refer to the same knowledge graph entity  with g being its variable representation",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "src_entity_name": "v",
+      "tgt_entity_name": "n",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "n is a subscript or modifier defining the specific instance of the new entity v",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "src_entity_name": "rerank model r",
+      "tgt_entity_name": "r",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "r is the variable name for the rerank model",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "src_entity_name": "entity vector database db",
+      "tgt_entity_name": "db",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "db is the variable name for the entity vector database",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "src_entity_name": "vector search number top k",
+      "tgt_entity_name": "top k",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "top k is the variable name for the vector search number",
+      "source_ids": [
+        70
+      ]
+    },
+    {
+      "src_entity_name": "threshold of gradient g",
+      "tgt_entity_name": "g",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "g is the variable name for the threshold of gradient",
+      "source_ids": [
+        70
+      ]
+    }
+  ],
+  "node_idx": 70
+}

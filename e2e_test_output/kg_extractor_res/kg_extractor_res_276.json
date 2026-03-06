@@ -1,0 +1,115 @@
+{
+  "entities": [
+    {
+      "entity_name": "select id",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "select id is a parameter representing an integer id for a candidate determined to be an exact match",
+      "source_ids": [
+        276
+      ]
+    },
+    {
+      "entity_name": "id",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "id is the identifier of the candidate determined to be an exact match",
+      "source_ids": [
+        276
+      ]
+    },
+    {
+      "entity_name": "exact match",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "exact match refers to the condition where a candidate is determined to be identical to a reference",
+      "source_ids": [
+        276
+      ]
+    },
+    {
+      "entity_name": "1",
+      "entity_type": "MONEY",
+      "description": "1 is a specific integer value used to indicate that no exact match was found",
+      "source_ids": [
+        276
+      ]
+    },
+    {
+      "entity_name": "candidate",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "candidate refers to an item being evaluated to determine if it is an exact match",
+      "source_ids": [
+        276
+      ]
+    },
+    {
+      "entity_name": "integer",
+      "entity_type": "MEASUREMENT",
+      "description": "integer is the data type specified for the select id value",
+      "source_ids": [
+        276
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "select id",
+      "tgt_entity_name": "id",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "select id is defined as the integer value of the id of the candidate",
+      "source_ids": [
+        276
+      ]
+    },
+    {
+      "src_entity_name": "select id",
+      "tgt_entity_name": "exact match",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "select id holds the value of the id if an exact match is found",
+      "source_ids": [
+        276
+      ]
+    },
+    {
+      "src_entity_name": "select id",
+      "tgt_entity_name": "1",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "select id is assigned the value  1 if no exact match is found",
+      "source_ids": [
+        276
+      ]
+    },
+    {
+      "src_entity_name": "select id",
+      "tgt_entity_name": "candidate",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "select id represents the id of the candidate being evaluated",
+      "source_ids": [
+        276
+      ]
+    },
+    {
+      "src_entity_name": "select id",
+      "tgt_entity_name": "integer",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "select id is defined as an integer type",
+      "source_ids": [
+        276
+      ]
+    },
+    {
+      "src_entity_name": "candidate",
+      "tgt_entity_name": "exact match",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the candidate is the subject of the exact match determination",
+      "source_ids": [
+        276
+      ]
+    }
+  ],
+  "node_idx": 276
+}

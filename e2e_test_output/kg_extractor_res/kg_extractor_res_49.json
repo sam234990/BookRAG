@@ -1,0 +1,357 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookindex construction",
+      "entity_type": "IMAGE",
+      "description": "A diagram illustrating the process of constructing a book index, divided into Tree Construction and Graph Construction phases.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "tree construction",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The top section of the diagram detailing the initial phase of building the index from document layouts.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "layout parsing",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "Step 1 in Tree Construction involving the extraction of visual elements like Tables, Text, Titles, and Images from a document layout.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "section filtering",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "Step 2 in Tree Construction where parsed sections are filtered based on title properties such as FontSize and content type (Section vs Text).",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "title: method",
+      "entity_type": "SECTION_TITLE",
+      "description": "A specific text label identified during parsing with FontSize 14.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "title: experiment",
+      "entity_type": "SECTION_TITLE",
+      "description": "A specific text label identified during parsing with FontSize 14.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "title: moe layer",
+      "entity_type": "SECTION_TITLE",
+      "description": "A specific text label identified during parsing with FontSize 20.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "level: 2 type: section",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "An attribute indicating that 'Method' and 'Experiment' titles are classified as Level 2 Sections.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "level: none type: text",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "An attribute associated with 'MOE Layer', marked with a red cross, indicating it was rejected or not treated as a section.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "tree node",
+      "entity_type": "HARDWARE",
+      "description": "Visual element representing nodes in the tree structure shown in the legend and the resulting BookIndex.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "gt-link",
+      "entity_type": "SOFTWARE",
+      "description": "Legend item representing Ground Truth links between entities in the diagram.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "relation",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "Legend item representing relationships between entities.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "graph construction",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The bottom section of the diagram detailing the construction of a knowledge graph for entity resolution.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "kg construction",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "Step 1 in Graph Construction showing the generation of a Knowledge Graph from Tree Nodes.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "gradient-based entity resolution",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "Step 2 in Graph Construction involving similarity matching and merging of entities.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "similarity",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "Y-axis label of the chart in the Gradient-based Entity Resolution step.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "entity",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "X-axis label of the chart in the Gradient-based Entity Resolution step.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "merge",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "Action performed to combine similar entities (e.g., e2 and e9) into a single resolved entity.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "PRODUCT",
+      "description": "The final output data structure shown on the far right, containing the organized tree and graph representation.",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "entity_name": "image cref='#/texts/52'",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        49
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "bookindex construction",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to BookIndex Construction",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "tree construction",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Tree Construction",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "layout parsing",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Layout Parsing",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "section filtering",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Section Filtering",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "title: method",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Title: Method",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "title: experiment",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Title: Experiment",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "title: moe layer",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Title: MOE Layer",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "level: 2 type: section",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Level: 2 Type: Section",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "level: none type: text",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Level: None Type: Text",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "tree node",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Tree Node",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "gt-link",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to GT-Link",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "entity",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Entity",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "relation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Relation",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "graph construction",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Graph Construction",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "kg construction",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to KG Construction",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "gradient-based entity resolution",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Gradient-based Entity Resolution",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "similarity",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Similarity",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "merge",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to Merge",
+      "source_ids": [
+        49
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/52'",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/52' related to BookIndex",
+      "source_ids": [
+        49
+      ]
+    }
+  ],
+  "node_idx": 49
+}

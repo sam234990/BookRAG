@@ -1,0 +1,265 @@
+{
+  "entities": [
+    {
+      "entity_name": "section 2",
+      "entity_type": "SECTION_TITLE",
+      "description": "section 2 is the part of the text where related work is reviewed",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "section 3",
+      "entity_type": "SECTION_TITLE",
+      "description": "section 3 introduces the problem formulation  ift  and rag workflow",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "ift",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "ift is a method or technique introduced in section 3 alongside problem formulation and rag workflow",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "rag",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "rag is a method or technique introduced in section 3 alongside problem formulation and ift",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "section 4",
+      "entity_type": "SECTION_TITLE",
+      "description": "section 4 presents the structure of bookindex and its construction",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "PRODUCT",
+      "description": "bookindex is a structure presented in section 4 along with its construction details",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a system or product whose structured execution involves query classification and operators discussed in section 5",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "section 6",
+      "entity_type": "SECTION_TITLE",
+      "description": "section 6 presents experimental results and detailed analysis",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "section 7",
+      "entity_type": "SECTION_TITLE",
+      "description": "section 7 is where the paper concludes",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "section 5",
+      "entity_type": "SECTION_TITLE",
+      "description": "section 5 is the part of the text where agent based retrieval is presented",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "query classification",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "query classification is a component of the agent based retrieval elaborated in section 5",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "operators",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "operators are used in the structured execution of bookrag as described in section 5",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "structured execution",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "structured execution refers to the process in bookrag that utilizes query classification and operators",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "related work",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "experimental results",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "entity_name": "conclusion",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        29
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "section 2",
+      "tgt_entity_name": "related work",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "section 2 is dedicated to reviewing related work",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "src_entity_name": "section 3",
+      "tgt_entity_name": "ift",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "section 3 introduces the ift method",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "src_entity_name": "section 3",
+      "tgt_entity_name": "rag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "section 3 introduces the rag workflow",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "src_entity_name": "section 4",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "section 4 presents the structure and construction of bookindex",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "src_entity_name": "section 5",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "section 5 elaborates on the execution of bookrag",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "src_entity_name": "section 6",
+      "tgt_entity_name": "experimental results",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "section 6 presents the experimental results and analysis",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "src_entity_name": "section 7",
+      "tgt_entity_name": "conclusion",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "section 7 concludes the paper",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "src_entity_name": "section 5",
+      "tgt_entity_name": "query classification",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "section 5 elaborates on query classification as part of agent based retrieval",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "src_entity_name": "section 5",
+      "tgt_entity_name": "operators",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "section 5 describes the operators used in the structured execution of bookrag",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "src_entity_name": "section 5",
+      "tgt_entity_name": "structured execution",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "section 5 presents the structured execution of bookrag",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "structured execution",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is the system undergoing structured execution described in section 5",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "query classification",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag utilizes query classification in its execution",
+      "source_ids": [
+        29
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "operators",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag uses operators in its structured execution",
+      "source_ids": [
+        29
+      ]
+    }
+  ],
+  "node_idx": 29
+}

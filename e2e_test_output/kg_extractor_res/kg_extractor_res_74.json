@@ -1,0 +1,115 @@
+{
+  "entities": [
+    {
+      "entity_name": "gradient based er algorithm",
+      "entity_type": "TECHNOLOGY",
+      "description": "the gradient based er algorithm is a method designed to detect sharp declines characteristic of case b and isolate high relevance sets",
+      "source_ids": [
+        74
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "TECHNOLOGY",
+      "description": "an llm is utilized for finer grained distinction when multiple similar entities are identified within a set",
+      "source_ids": [
+        74
+      ]
+    },
+    {
+      "entity_name": "case b",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "case b is a scenario characterized by a sharp decline that the gradient based er algorithm is designed to detect",
+      "source_ids": [
+        74
+      ]
+    },
+    {
+      "entity_name": "case a",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "case a is a  no gradient  scenario that the llm helps differentiate from the set identified by the algorithm",
+      "source_ids": [
+        74
+      ]
+    },
+    {
+      "entity_name": "high relevance set",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "the high relevance set is a collection of entities isolated by the gradient based er algorithm for further processing",
+      "source_ids": [
+        74
+      ]
+    },
+    {
+      "entity_name": "similar entities",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "similar entities are a group of items identified within the high relevance set that require finer grained distinction",
+      "source_ids": [
+        74
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "gradient based er algorithm",
+      "tgt_entity_name": "case b",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the gradient based er algorithm is designed to detect the sharp decline characteristic of case b",
+      "source_ids": [
+        74
+      ]
+    },
+    {
+      "src_entity_name": "gradient based er algorithm",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the gradient based er algorithm isolates a set of entities which is subsequently processed by an llm for finer grained distinction",
+      "source_ids": [
+        74
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "case a",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the llm is used to differentiate the identified set from the  no gradient  scenario of case a",
+      "source_ids": [
+        74
+      ]
+    },
+    {
+      "src_entity_name": "gradient based er algorithm",
+      "tgt_entity_name": "high relevance set",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the gradient based er algorithm efficiently isolates the high relevance set",
+      "source_ids": [
+        74
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "similar entities",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the llm is utilized to distinguish between multiple similar entities identified within the set",
+      "source_ids": [
+        74
+      ]
+    },
+    {
+      "src_entity_name": "high relevance set",
+      "tgt_entity_name": "similar entities",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the similar entities are contained within the high relevance set identified by the algorithm",
+      "source_ids": [
+        74
+      ]
+    }
+  ],
+  "node_idx": 74
+}

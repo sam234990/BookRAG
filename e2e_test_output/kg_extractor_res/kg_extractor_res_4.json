@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "pvldb",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "pvldb is a publication venue referenced in the text for its reference format",
+      "source_ids": [
+        4
+      ]
+    },
+    {
+      "entity_name": "reference format",
+      "entity_type": "SECTION_TITLE",
+      "description": "reference format is a section or concept mentioned in the context of pvldb",
+      "source_ids": [
+        4
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "pvldb",
+      "tgt_entity_name": "reference format",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "pvldb is associated with a specific reference format mentioned in the text",
+      "source_ids": [
+        4
+      ]
+    }
+  ],
+  "node_idx": 4
+}

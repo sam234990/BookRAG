@@ -1,0 +1,289 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 2",
+      "entity_type": "IMAGE",
+      "description": "figure 2 is an image that provides an example of the bookindex",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "PRODUCT",
+      "description": "bookindex is a system or product being illustrated in the text",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "entity_name": "tree component",
+      "entity_type": "SOFTWARE",
+      "description": "the tree component is a part of the bookindex that organizes documents into a hierarchical structure",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "entity_name": "graph component",
+      "entity_type": "SOFTWARE",
+      "description": "the graph component is a part of the bookindex composed of entities and relations extracted from document nodes",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "entity_name": "gt link",
+      "entity_type": "TECHNOLOGY",
+      "description": "gt link is a feature illustrated by blue dotted lines that connects entities to their corresponding tree nodes",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "entity_name": "text",
+      "entity_type": "PRODUCT",
+      "description": "text is a type of content block serving as a leaf node within the document structure",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "entity_name": "tables",
+      "entity_type": "PRODUCT",
+      "description": "tables are a type of content block serving as a leaf node within the document structure",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "entity_name": "images",
+      "entity_type": "PRODUCT",
+      "description": "images are a type of content block serving as a leaf node within the document structure",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "entity_name": "section nodes",
+      "entity_type": "PRODUCT",
+      "description": "section nodes are hierarchical nodes within the document structure that contain content blocks",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "entity_name": "document",
+      "entity_type": "PRODUCT",
+      "description": "document is the object being organized into a hierarchical structure by the tree component",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "entity_name": "content blocks",
+      "entity_type": "PRODUCT",
+      "description": "content blocks are the items  text  tables  images  that serve as leaf nodes in the hierarchy",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "entity_name": "leaf nodes",
+      "entity_type": "PRODUCT",
+      "description": "leaf nodes are the terminal elements in the hierarchical structure  containing content blocks",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "entity_name": "semantic entities",
+      "entity_type": "CONCEPT",
+      "description": "semantic entities are the extracted entities grounded within the document s logical hierarchy by gt link",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "entity_name": "logical hierarchy",
+      "entity_type": "CONCEPT",
+      "description": "logical hierarchy is the structure within the document that grounds the semantic entities",
+      "source_ids": [
+        52
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 2",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 2 provides an example of the bookindex",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "tree component",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the tree component is a part of the bookindex",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "graph component",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the graph component is a part of the bookindex",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "gt link",
+      "tgt_entity_name": "graph component",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gt link is a feature within the graph component that connects entities to tree nodes",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "tree component",
+      "tgt_entity_name": "section nodes",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the tree component organizes content blocks within section nodes",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "text",
+      "tgt_entity_name": "section nodes",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "text serves as a leaf node nested within section nodes",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "tables",
+      "tgt_entity_name": "section nodes",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "tables serve as a leaf node nested within section nodes",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "images",
+      "tgt_entity_name": "section nodes",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "images serve as a leaf node nested within section nodes",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "gt link",
+      "tgt_entity_name": "tree component",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gt link connects entities back to their corresponding tree nodes",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "tree component",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the tree component organizes the document into a hierarchical structure",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "content blocks",
+      "tgt_entity_name": "leaf nodes",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "content blocks serve as leaf nodes within the structure",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "text",
+      "tgt_entity_name": "content blocks",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "text is identified as a type of content block",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "tables",
+      "tgt_entity_name": "content blocks",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "tables are identified as a type of content block",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "images",
+      "tgt_entity_name": "content blocks",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "images are identified as a type of content block",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "gt link",
+      "tgt_entity_name": "semantic entities",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "gt link explicitly connects semantic entities back to their corresponding tree nodes",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "semantic entities",
+      "tgt_entity_name": "logical hierarchy",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "semantic entities are grounded within the document s logical hierarchy",
+      "source_ids": [
+        52
+      ]
+    },
+    {
+      "src_entity_name": "graph component",
+      "tgt_entity_name": "semantic entities",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the graph component is composed of entities and relations extracted from nodes  which include semantic entities",
+      "source_ids": [
+        52
+      ]
+    }
+  ],
+  "node_idx": 52
+}

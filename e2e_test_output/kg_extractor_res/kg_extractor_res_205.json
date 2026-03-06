@@ -1,0 +1,237 @@
+{
+  "entities": [
+    {
+      "entity_name": "xavier daull",
+      "entity_type": "PERSON",
+      "description": "xavier daull is one of the authors of the 2023 survey on complex qa and language models hybrid architectures",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "entity_name": "patrice bellot",
+      "entity_type": "PERSON",
+      "description": "patrice bellot is one of the authors of the 2023 survey on complex qa and language models hybrid architectures",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "entity_name": "emmanuel bruno",
+      "entity_type": "PERSON",
+      "description": "emmanuel bruno is one of the authors of the 2023 survey on complex qa and language models hybrid architectures",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "entity_name": "vincent martin",
+      "entity_type": "PERSON",
+      "description": "vincent martin is one of the authors of the 2023 survey on complex qa and language models hybrid architectures",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "entity_name": "elisabeth murisasco",
+      "entity_type": "PERSON",
+      "description": "elisabeth murisasco is one of the authors of the 2023 survey on complex qa and language models hybrid architectures",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "entity_name": "2023",
+      "entity_type": "DATE",
+      "description": "2023 is the year the survey was published and the year associated with the arxiv preprint",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "entity_name": "arxiv preprint arxiv 2302 09051",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv preprint arxiv 2302 09051 is the specific identifier for the preprint where the survey was published",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "entity_name": "complex qa and language models hybrid architectures survey",
+      "entity_type": "BOOK",
+      "description": "complex qa and language models hybrid architectures  survey is the title of the work authored by the listed individuals",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "entity_name": "arxiv",
+      "entity_type": "ORGANIZATION",
+      "description": "arxiv is the organization or platform hosting the preprint arxiv 2302 09051",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "entity_name": "2302 09051",
+      "entity_type": "FILE_TYPE",
+      "description": "2302 09051 is the unique identifier code for the specific preprint document",
+      "source_ids": [
+        205
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "xavier daull",
+      "tgt_entity_name": "patrice bellot",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same survey document",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "xavier daull",
+      "tgt_entity_name": "emmanuel bruno",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same survey document",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "xavier daull",
+      "tgt_entity_name": "vincent martin",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same survey document",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "xavier daull",
+      "tgt_entity_name": "elisabeth murisasco",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same survey document",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "patrice bellot",
+      "tgt_entity_name": "emmanuel bruno",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same survey document",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "patrice bellot",
+      "tgt_entity_name": "vincent martin",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same survey document",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "patrice bellot",
+      "tgt_entity_name": "elisabeth murisasco",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same survey document",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "emmanuel bruno",
+      "tgt_entity_name": "vincent martin",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same survey document",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "emmanuel bruno",
+      "tgt_entity_name": "elisabeth murisasco",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same survey document",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "vincent martin",
+      "tgt_entity_name": "elisabeth murisasco",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same survey document",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "xavier daull",
+      "tgt_entity_name": "2023",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "xavier daull is an author of the work published in 2023",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "xavier daull",
+      "tgt_entity_name": "arxiv preprint arxiv 2302 09051",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "xavier daull is an author of the work identified by this preprint number",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "xavier daull",
+      "tgt_entity_name": "complex qa and language models hybrid architectures survey",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "xavier daull is the author of this specific survey title",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "arxiv preprint arxiv 2302 09051",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the preprint is hosted by the arxiv organization",
+      "source_ids": [
+        205
+      ]
+    },
+    {
+      "src_entity_name": "arxiv preprint arxiv 2302 09051",
+      "tgt_entity_name": "2302 09051",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the preprint identifier contains the specific code 2302 09051",
+      "source_ids": [
+        205
+      ]
+    }
+  ],
+  "node_idx": 205
+}

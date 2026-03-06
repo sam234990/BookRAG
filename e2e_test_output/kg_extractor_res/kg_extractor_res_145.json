@@ -1,0 +1,61 @@
+{
+  "entities": [
+    {
+      "entity_name": "baselines",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "baselines refer to the standard configurations used for comparison in the experiments",
+      "source_ids": [
+        145
+      ]
+    },
+    {
+      "entity_name": "three model configurations",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "three model configurations are the specific experimental setups considered in the study",
+      "source_ids": [
+        145
+      ]
+    },
+    {
+      "entity_name": "our experiments",
+      "entity_type": "EVENT",
+      "description": "our experiments refer to the specific study or set of trials being conducted to evaluate the model configurations",
+      "source_ids": [
+        145
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "baselines",
+      "tgt_entity_name": "three model configurations",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the baselines consist of or are defined by the three model configurations used in the experiments",
+      "source_ids": [
+        145
+      ]
+    },
+    {
+      "src_entity_name": "our experiments",
+      "tgt_entity_name": "baselines",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the experiments consider the baselines as part of their evaluation process",
+      "source_ids": [
+        145
+      ]
+    },
+    {
+      "src_entity_name": "our experiments",
+      "tgt_entity_name": "three model configurations",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the experiments explicitly consider three model configurations as their primary focus",
+      "source_ids": [
+        145
+      ]
+    }
+  ],
+  "node_idx": 145
+}

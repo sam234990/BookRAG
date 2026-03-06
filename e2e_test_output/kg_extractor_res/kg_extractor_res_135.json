@@ -1,0 +1,283 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 4 b",
+      "entity_type": "IMAGE",
+      "description": "figure 4 b  is an image presenting an execution trace for a  single hop  query",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "entity_name": "single hop",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "single hop refers to a specific type of query being illustrated in the text",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "entity_name": "car",
+      "entity_type": "PRODUCT",
+      "description": "car is a key entity identified in the query  what is the type of car in the ranking prompt example",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "entity_name": "ranking prompt example",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "ranking prompt example is a specific example context mentioned in the query regarding the type of car",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "entity_name": "extract",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "extract is a method used to identify key entities like  car",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "entity_name": "select by entity",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "select by entity is a method used to retrieve relevant nodes after entity identification",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "entity_name": "skyline filtering",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "skyline filtering is a technique used to refine nodes during the process",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "entity_name": "reduce",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "reduce is a method used to synthesize the final answer",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "entity_name": "agent",
+      "entity_type": "PERSON",
+      "description": "the agent is an entity that classifies queries and generates workflows in the described process",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "entity_name": "planning phase",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the planning phase is the initial stage where the agent classifies the query and generates a workflow",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "entity_name": "reasoning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "reasoning is a step used to refine nodes in the process",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "entity_name": "answer",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the answer is the final output synthesized by the agent using the reduce method",
+      "source_ids": [
+        135
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 4 b",
+      "tgt_entity_name": "single hop",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 4 b  presents the execution trace for the  single hop  query",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "car",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the  single hop  query asks about the type of  car  in the example",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "car",
+      "tgt_entity_name": "ranking prompt example",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the  car  is the subject of the query within the  ranking prompt example  context",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "extract",
+      "tgt_entity_name": "car",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the  extract  method is used to identify the entity  car",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "select by entity",
+      "tgt_entity_name": "car",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the  select by entity  method retrieves nodes related to the identified entity  car",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "skyline filtering",
+      "tgt_entity_name": "car",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the  skyline filtering  technique refines the nodes related to  car",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "reduce",
+      "tgt_entity_name": "car",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the  reduce  method synthesizes the answer regarding the  car",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "planning phase",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent operates during the planning phase to classify queries and generate workflows",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "extract",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent uses the extract method to identify key entities",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "select by entity",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent uses the select by entity method to retrieve relevant nodes",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "reasoning",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the agent applies reasoning to refine nodes",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "skyline filtering",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the agent applies skyline filtering to refine nodes",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "reduce",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent uses the reduce method to synthesize the answer",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "planning phase",
+      "tgt_entity_name": "agent",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the planning phase is conducted by the agent",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "extract",
+      "tgt_entity_name": "select by entity",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the extract method precedes the select by entity method in the workflow",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "select by entity",
+      "tgt_entity_name": "reasoning",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the select by entity method is followed by reasoning in the workflow",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "reasoning",
+      "tgt_entity_name": "skyline filtering",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "reasoning is followed by skyline filtering in the workflow",
+      "source_ids": [
+        135
+      ]
+    },
+    {
+      "src_entity_name": "skyline filtering",
+      "tgt_entity_name": "reduce",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "skyline filtering is followed by the reduce method in the workflow",
+      "source_ids": [
+        135
+      ]
+    }
+  ],
+  "node_idx": 135
+}

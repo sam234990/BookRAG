@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "our contributions",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "our contributions refers to the summary of work or achievements presented in the text",
+      "source_ids": [
+        24
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 24
+}

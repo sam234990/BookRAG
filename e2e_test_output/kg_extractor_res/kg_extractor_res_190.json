@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "references",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a top-level section following the main title 'BookRAG: A Hierarchical Structure-aware Index-based Approach for Retrieval-Augmented Generation on Complex Documents', this section serves as the bibliography, listing all cited works and sources that support the research presented in the paper.",
+      "source_ids": [
+        190
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 190
+}

@@ -1,0 +1,223 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 4",
+      "entity_type": "IMAGE",
+      "description": "figure 4 is an image depicting the bookrag operator library and an execution example",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "entity_name": "bookrag operator library",
+      "entity_type": "SOFTWARE",
+      "description": "the bookrag operator library is a software component containing four operator types",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "entity_name": "mmlongbench dataset",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "the mmlongbench dataset is the source of the execution example shown in the text",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "entity_name": "formulator",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "formulator is one of the four operator types depicted in the bookrag operator library",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "entity_name": "selector",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "selector is one of the four operator types depicted in the bookrag operator library",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "entity_name": "reasoner",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "reasoner is one of the four operator types depicted in the bookrag operator library",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "entity_name": "synthesizer",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "synthesizer is one of the four operator types depicted in the bookrag operator library",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "entity_name": "single hop",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "single hop is a type of query for which an execution trace is demonstrated",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "entity_name": "operator",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "operator is a general term for the components  formulator  selector  reasoner  synthesizer  within the bookrag system",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "entity_name": "execution trace",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "execution trace is the step by step record of the agent based planning and operator execution shown in the text",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "entity_name": "agent based planning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "agent based planning is the method used for planning demonstrated in the execution trace",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "entity_name": "step by step operator execution",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "step by step operator execution is the method of executing operators demonstrated in the text",
+      "source_ids": [
+        93
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 4",
+      "tgt_entity_name": "bookrag operator library",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 4 visually depicts the bookrag operator library",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "src_entity_name": "figure 4",
+      "tgt_entity_name": "mmlongbench dataset",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 4 shows an execution example derived from the mmlongbench dataset",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "src_entity_name": "bookrag operator library",
+      "tgt_entity_name": "formulator",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the bookrag operator library contains the formulator operator type",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "src_entity_name": "bookrag operator library",
+      "tgt_entity_name": "selector",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the bookrag operator library contains the selector operator type",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "src_entity_name": "bookrag operator library",
+      "tgt_entity_name": "reasoner",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the bookrag operator library contains the reasoner operator type",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "src_entity_name": "bookrag operator library",
+      "tgt_entity_name": "synthesizer",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the bookrag operator library contains the synthesizer operator type",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "src_entity_name": "figure 4",
+      "tgt_entity_name": "single hop",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 4 demonstrates an execution trace for a  single hop  query",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "src_entity_name": "bookrag operator library",
+      "tgt_entity_name": "operator",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the bookrag operator library is composed of specific operators",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "src_entity_name": "figure 4",
+      "tgt_entity_name": "execution trace",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 4 contains an execution trace for a  single hop  query",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "src_entity_name": "execution trace",
+      "tgt_entity_name": "agent based planning",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the execution trace demonstrates agent based planning",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "src_entity_name": "execution trace",
+      "tgt_entity_name": "step by step operator execution",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the execution trace demonstrates step by step operator execution",
+      "source_ids": [
+        93
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "execution trace",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the execution trace is specifically for a  single hop  query",
+      "source_ids": [
+        93
+      ]
+    }
+  ],
+  "node_idx": 93
+}

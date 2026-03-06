@@ -1,0 +1,91 @@
+{
+  "entities": [
+    {
+      "entity_name": "entity name",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "entity name is a placeholder term used to denote the name of an entity in the context of matching criteria",
+      "source_ids": [
+        267
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "TECHNOLOGY",
+      "description": "llm is mentioned as an abbreviation for large language model in the context of entity name matching",
+      "source_ids": [
+        267
+      ]
+    },
+    {
+      "entity_name": "large language model",
+      "entity_type": "TECHNOLOGY",
+      "description": "large language model is the full form of the abbreviation llm  used as an example of a direct abbreviation match",
+      "source_ids": [
+        267
+      ]
+    },
+    {
+      "entity_name": "event detection",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "event detection is a task mentioned as a distinct concept that should not be matched with named entity recognition",
+      "source_ids": [
+        267
+      ]
+    },
+    {
+      "entity_name": "named entity recognition",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "named entity recognition is a task mentioned as a distinct concept that should not be matched with event detection",
+      "source_ids": [
+        267
+      ]
+    },
+    {
+      "entity_name": "high importance",
+      "entity_type": "CONCEPT",
+      "description": "high importance is a criterion mentioned for determining the similarity of entity names",
+      "source_ids": [
+        267
+      ]
+    },
+    {
+      "entity_name": "alias",
+      "entity_type": "CONCEPT",
+      "description": "alias is a concept mentioned as a valid form of similarity for entity names  alongside direct abbreviations",
+      "source_ids": [
+        267
+      ]
+    },
+    {
+      "entity_name": "distinct concepts",
+      "entity_type": "CONCEPT",
+      "description": "distinct concepts refers to parallel concepts that are explicitly excluded from being considered a match",
+      "source_ids": [
+        267
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "large language model",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "llm is a direct abbreviation for large language model",
+      "source_ids": [
+        267
+      ]
+    },
+    {
+      "src_entity_name": "event detection",
+      "tgt_entity_name": "named entity recognition",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "event detection and named entity recognition are distinct  parallel concepts and are explicitly stated as not a match",
+      "source_ids": [
+        267
+      ]
+    }
+  ],
+  "node_idx": 267
+}

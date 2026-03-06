@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "12",
+      "entity_type": "MEASUREMENT",
+      "description": "12 is a numerical value mentioned in the text  potentially representing a count or measurement",
+      "source_ids": [
+        189
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 189
+}

@@ -1,0 +1,467 @@
+{
+  "entities": [
+    {
+      "entity_name": "chengliang chai",
+      "entity_type": "PERSON",
+      "description": "chengliang chai is an author of the paper titled  doctopus  budget aware structural table extraction from unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "jiajun li",
+      "entity_type": "PERSON",
+      "description": "jiajun li is an author of the paper titled  doctopus  budget aware structural table extraction from unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "yuhao deng",
+      "entity_type": "PERSON",
+      "description": "yuhao deng is an author of the paper titled  doctopus  budget aware structural table extraction from unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "yuanhao zhong",
+      "entity_type": "PERSON",
+      "description": "yuanhao zhong is an author of the paper titled  doctopus  budget aware structural table extraction from unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "ye yuan",
+      "entity_type": "PERSON",
+      "description": "ye yuan is an author of the paper titled  doctopus  budget aware structural table extraction from unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "guoren wang",
+      "entity_type": "PERSON",
+      "description": "guoren wang is an author of the paper titled  doctopus  budget aware structural table extraction from unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "lei cao",
+      "entity_type": "PERSON",
+      "description": "lei cao is an author of the paper titled  doctopus  budget aware structural table extraction from unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "doctopus",
+      "entity_type": "PRODUCT",
+      "description": "doctopus is a system or method for budget aware structural table extraction from unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "proceedings of the vldb endowment",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "proceedings of the vldb endowment is the publication venue where the paper was published in 2025",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "2025",
+      "entity_type": "DATE",
+      "description": "2025 is the year the paper was published and the year associated with the volume and issue number",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "budget aware structural table extraction",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "budget aware structural table extraction is the specific task addressed by the doctopus system described in the text",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "unstructured documents",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "unstructured documents are the source material from which structural tables are extracted in the described work",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "18",
+      "entity_type": "MEASUREMENT",
+      "description": "18 is the volume number of the proceedings of the vldb endowment where the paper was published",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "11",
+      "entity_type": "MEASUREMENT",
+      "description": "11 is the issue number of the proceedings of the vldb endowment where the paper was published",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "entity_name": "3695 3707",
+      "entity_type": "MEASUREMENT",
+      "description": "3695 3707 represents the page range of the paper within the publication",
+      "source_ids": [
+        197
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "chengliang chai",
+      "tgt_entity_name": "doctopus",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "chengliang chai is an author of the paper describing the doctopus system",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "jiajun li",
+      "tgt_entity_name": "doctopus",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "jiajun li is an author of the paper describing the doctopus system",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "yuhao deng",
+      "tgt_entity_name": "doctopus",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "yuhao deng is an author of the paper describing the doctopus system",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "yuanhao zhong",
+      "tgt_entity_name": "doctopus",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "yuanhao zhong is an author of the paper describing the doctopus system",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "ye yuan",
+      "tgt_entity_name": "doctopus",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "ye yuan is an author of the paper describing the doctopus system",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "guoren wang",
+      "tgt_entity_name": "doctopus",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "guoren wang is an author of the paper describing the doctopus system",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "lei cao",
+      "tgt_entity_name": "doctopus",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "lei cao is an author of the paper describing the doctopus system",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "chengliang chai",
+      "tgt_entity_name": "proceedings of the vldb endowment",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "chengliang chai is an author of a paper published in the proceedings of the vldb endowment",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "jiajun li",
+      "tgt_entity_name": "proceedings of the vldb endowment",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jiajun li is an author of a paper published in the proceedings of the vldb endowment",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "yuhao deng",
+      "tgt_entity_name": "proceedings of the vldb endowment",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yuhao deng is an author of a paper published in the proceedings of the vldb endowment",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "yuanhao zhong",
+      "tgt_entity_name": "proceedings of the vldb endowment",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yuanhao zhong is an author of a paper published in the proceedings of the vldb endowment",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "ye yuan",
+      "tgt_entity_name": "proceedings of the vldb endowment",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "ye yuan is an author of a paper published in the proceedings of the vldb endowment",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "guoren wang",
+      "tgt_entity_name": "proceedings of the vldb endowment",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "guoren wang is an author of a paper published in the proceedings of the vldb endowment",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "lei cao",
+      "tgt_entity_name": "proceedings of the vldb endowment",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "lei cao is an author of a paper published in the proceedings of the vldb endowment",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "doctopus",
+      "tgt_entity_name": "proceedings of the vldb endowment",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the doctopus paper was published in the proceedings of the vldb endowment",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "doctopus",
+      "tgt_entity_name": "budget aware structural table extraction",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "doctopus is the system designed to perform budget aware structural table extraction",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "doctopus",
+      "tgt_entity_name": "unstructured documents",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "doctopus processes unstructured documents to extract structural tables",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "proceedings of the vldb endowment",
+      "tgt_entity_name": "18",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the proceedings of the vldb endowment volume 18 contains the paper",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "proceedings of the vldb endowment",
+      "tgt_entity_name": "11",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the proceedings of the vldb endowment issue 11 contains the paper",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "proceedings of the vldb endowment",
+      "tgt_entity_name": "3695 3707",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the paper appears on pages 3695 3707 of the proceedings of the vldb endowment",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "chengliang chai",
+      "tgt_entity_name": "budget aware structural table extraction",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "chengliang chai is an author of the work on budget aware structural table extraction",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "jiajun li",
+      "tgt_entity_name": "budget aware structural table extraction",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jiajun li is an author of the work on budget aware structural table extraction",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "yuhao deng",
+      "tgt_entity_name": "budget aware structural table extraction",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yuhao deng is an author of the work on budget aware structural table extraction",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "yuanhao zhong",
+      "tgt_entity_name": "budget aware structural table extraction",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yuanhao zhong is an author of the work on budget aware structural table extraction",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "ye yuan",
+      "tgt_entity_name": "budget aware structural table extraction",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "ye yuan is an author of the work on budget aware structural table extraction",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "guoren wang",
+      "tgt_entity_name": "budget aware structural table extraction",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "guoren wang is an author of the work on budget aware structural table extraction",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "lei cao",
+      "tgt_entity_name": "budget aware structural table extraction",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "lei cao is an author of the work on budget aware structural table extraction",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "chengliang chai",
+      "tgt_entity_name": "unstructured documents",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "chengliang chai is an author of the work involving unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "jiajun li",
+      "tgt_entity_name": "unstructured documents",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "jiajun li is an author of the work involving unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "yuhao deng",
+      "tgt_entity_name": "unstructured documents",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yuhao deng is an author of the work involving unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "yuanhao zhong",
+      "tgt_entity_name": "unstructured documents",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yuanhao zhong is an author of the work involving unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "ye yuan",
+      "tgt_entity_name": "unstructured documents",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "ye yuan is an author of the work involving unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "guoren wang",
+      "tgt_entity_name": "unstructured documents",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "guoren wang is an author of the work involving unstructured documents",
+      "source_ids": [
+        197
+      ]
+    },
+    {
+      "src_entity_name": "lei cao",
+      "tgt_entity_name": "unstructured documents",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "lei cao is an author of the work involving unstructured documents",
+      "source_ids": [
+        197
+      ]
+    }
+  ],
+  "node_idx": 197
+}

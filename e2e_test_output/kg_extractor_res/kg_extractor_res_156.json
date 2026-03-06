@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "cref='#/texts/158'",
+      "entity_type": "TABLE",
+      "description": "A table entity identified by the reference string provided in the description, representing a specific text section or data block.",
+      "source_ids": [
+        156
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 156
+}

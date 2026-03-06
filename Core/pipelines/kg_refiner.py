@@ -55,6 +55,7 @@ class KGRefiner:
             max_length=graph_config.embedding_config.max_length,
             device=graph_config.embedding_config.device,
             api_base=graph_config.embedding_config.api_base,
+            api_key=graph_config.embedding_config.api_key,
         )
         self.reranker = TextRerankerProvider(
             model_name=graph_config.reranker_config.model_name,
@@ -62,6 +63,7 @@ class KGRefiner:
             max_length=graph_config.reranker_config.max_length,
             backend=graph_config.reranker_config.backend,
             api_base=graph_config.reranker_config.api_base,
+            api_key=graph_config.reranker_config.api_key,
         )
         # delete the old vector database if exists
         self.vdb_path = os.path.join(save_path, "kg_vdb")
@@ -122,6 +124,51 @@ class KGRefiner:
             # Recursively find the latest entity name
             return self.get_latest_entity_name(latest_node_name)
 
+    def _merge_entity_metadata(
+        self,
+        primary_entity: Entity,
+        secondary_entity: Entity,
+        description: str,
+        entity_name: Optional[str] = None,
+        entity_type: Optional[str] = None,
+    ) -> Entity:
+        merged_aliases = []
+        for alias in [
+            primary_entity.entity_name,
+            secondary_entity.entity_name,
+            *primary_entity.aliases,
+            *secondary_entity.aliases,
+        ]:
+            alias = str(alias or "").strip()
+            if alias and alias not in merged_aliases:
+                merged_aliases.append(alias)
+
+        entity_role = primary_entity.entity_role or secondary_entity.entity_role or "provisional"
+        if "canonical" in {primary_entity.entity_role, secondary_entity.entity_role}:
+            entity_role = "canonical"
+
+        entity_id = primary_entity.entity_id or secondary_entity.entity_id
+        canonical_id = (
+            primary_entity.canonical_id
+            or secondary_entity.canonical_id
+            or entity_id
+        )
+
+        return Entity(
+            entity_name=entity_name or primary_entity.entity_name,
+            entity_type=entity_type or primary_entity.entity_type,
+            description=description,
+            entity_id=entity_id,
+            canonical_id=canonical_id,
+            entity_role=entity_role,
+            aliases=merged_aliases,
+            mapping_confidence=max(
+                primary_entity.mapping_confidence, secondary_entity.mapping_confidence
+            ),
+            ontology_source=primary_entity.ontology_source or secondary_entity.ontology_source,
+            source_ids=set(primary_entity.source_ids).union(secondary_entity.source_ids),
+        )
+
     def entity_merge(
         self,
         old_entity: Entity,
@@ -143,28 +190,65 @@ class KGRefiner:
         # 2. merge the two entities
         old_node_name = self.graph_index.get_node_name_from_entity(old_entity)
         new_node_name = self.graph_index.get_node_name_from_entity(new_entity)
-        if (old_node_name == new_node_name) or merged_to_old_entity:
+        canonical_entity = None
+        if old_entity.entity_role == "canonical":
+            canonical_entity = old_entity
+        elif new_entity.entity_role == "canonical":
+            canonical_entity = new_entity
+
+        if canonical_entity is not None:
+            log.info("merged with canonical entity metadata preserved")
+            description = (
+                old_entity.description + self._DESCRIPTION_SEP_ + new_entity.description
+            )
+            primary_entity = canonical_entity
+            secondary_entity = new_entity if canonical_entity == old_entity else old_entity
+            merged_entity = self._merge_entity_metadata(
+                primary_entity=primary_entity,
+                secondary_entity=secondary_entity,
+                description=description,
+            )
+        elif (old_node_name == new_node_name) or merged_to_old_entity:
             # 2.1 if have the same node name, or merged to old entity,
             # Directly merged if the entity name and type are the same
             log.info("merged directly")
             new_description = (
                 old_entity.description + self._DESCRIPTION_SEP_ + new_entity.description
             )
-            merged_entity = Entity(
-                entity_name=old_entity.entity_name,
-                entity_type=old_entity.entity_type,
+            merged_entity = self._merge_entity_metadata(
+                primary_entity=old_entity,
+                secondary_entity=new_entity,
                 description=new_description,
-                source_ids=set(old_entity.source_ids).union(new_entity.source_ids),
             )
         else:
             # 2.2 if have different node name, use LLM to create new entity
             log.info("merged by LLM summarization")
-            old_entity_dict = old_entity.model_dump(exclude={"source_ids"})
+            old_entity_dict = old_entity.model_dump(
+                exclude={
+                    "source_ids",
+                    "entity_id",
+                    "canonical_id",
+                    "entity_role",
+                    "aliases",
+                    "mapping_confidence",
+                    "ontology_source",
+                }
+            )
             old_entity_dict["description"] = truncate_description(
                 old_entity_dict["description"], max_words=200
             )
 
-            new_entity_dict = new_entity.model_dump(exclude={"source_ids"})
+            new_entity_dict = new_entity.model_dump(
+                exclude={
+                    "source_ids",
+                    "entity_id",
+                    "canonical_id",
+                    "entity_role",
+                    "aliases",
+                    "mapping_confidence",
+                    "ontology_source",
+                }
+            )
             new_entity_dict["description"] = truncate_description(
                 new_entity_dict["description"], max_words=200
             )
@@ -191,11 +275,12 @@ class KGRefiner:
                 old_entity.description + self._DESCRIPTION_SEP_ + new_entity.description
             )
 
-            merged_entity = Entity(
+            merged_entity = self._merge_entity_metadata(
+                primary_entity=old_entity,
+                secondary_entity=new_entity,
+                description=description,
                 entity_name=res_entity.entity_name,
                 entity_type=res_entity.entity_type,
-                description=description,
-                source_ids=set(old_entity.source_ids).union(new_entity.source_ids),
             )
 
             # 2.3 If the llm generated merged entity is another entity (entityC) in the graph,
@@ -228,11 +313,12 @@ class KGRefiner:
                     old_entity_type=entity_c.entity_type,
                     new_entity=old_entity,
                 )
-                merged_entity.description += (
-                    self._DESCRIPTION_SEP_ + entity_c.description
-                )
-                merged_entity.source_ids = set(merged_entity.source_ids).union(
-                    entity_c.source_ids
+                merged_entity = self._merge_entity_metadata(
+                    primary_entity=merged_entity,
+                    secondary_entity=entity_c,
+                    description=(
+                        merged_entity.description + self._DESCRIPTION_SEP_ + entity_c.description
+                    ),
                 )
                 # since entity_c is the same as merged_entity, no need to update alias map
 
@@ -291,6 +377,7 @@ class KGRefiner:
                     entity.entity_name, entity.entity_type
                 )
                 merged_entity = self.entity_merge(existing_entity, entity)
+                entity_map[entity.entity_name] = merged_entity
                 entity_map[existing_entity.entity_name] = merged_entity
                 add_entity_list.append(merged_entity)
 
@@ -299,12 +386,23 @@ class KGRefiner:
 
         # Update relationships
         for rel in relationships:
-            if rel.src_entity_name in entity_map:
-                rel.src_entity_name = entity_map[rel.src_entity_name].entity_name
-                src_type = entity_map[rel.src_entity_name].entity_type
-            if rel.tgt_entity_name in entity_map:
-                rel.tgt_entity_name = entity_map[rel.tgt_entity_name].entity_name
-                tgt_type = entity_map[rel.tgt_entity_name].entity_type
+            old_src_name = rel.src_entity_name
+            old_tgt_name = rel.tgt_entity_name
+            src_type = None
+            tgt_type = None
+            if old_src_name in entity_map:
+                mapped_src = entity_map[old_src_name]
+                rel.src_entity_name = mapped_src.entity_name
+                src_type = mapped_src.entity_type
+            if old_tgt_name in entity_map:
+                mapped_tgt = entity_map[old_tgt_name]
+                rel.tgt_entity_name = mapped_tgt.entity_name
+                tgt_type = mapped_tgt.entity_type
+            if src_type is None or tgt_type is None:
+                log.info(
+                    f"Relationship {rel} has missing entity types. Skipping this relationship."
+                )
+                continue
             self.graph_index.add_kg_edge(rel=rel, src_type=src_type, tgt_type=tgt_type)
 
     def get_vdb_meta_data(self, entity: Entity) -> dict:
@@ -316,11 +414,7 @@ class KGRefiner:
             dict: The metadata dictionary without source_ids.
             since vdb does not support list type.
         """
-        return {
-            "entity_name": entity.entity_name,
-            "entity_type": entity.entity_type,
-            "description": entity.description,
-        }
+        return entity.to_vdb_metadata()
 
     def add_entities_to_vdb(self, entities: List[Entity]) -> None:
         """
@@ -475,7 +569,7 @@ class KGRefiner:
             else:
                 break
 
-        if len(sel_entities) == ranked_results:
+        if len(sel_entities) == len(ranked_results):
             # 4.3 If all entities are selected, return empty list
             return []
 
@@ -538,23 +632,20 @@ class KGRefiner:
 
         if 0 <= select_id < len(similar_entities):
             # Log the selection and reason
-            log.info(
-                f"LLM selected entity ID: {select_id}, " f"Reason: {res.explanation}"
-            )
+            log.info(f"LLM selected entity ID: {select_id}, Reason: {res.explanation}")
             # Log the new entity and the selected similar entity
             log.info("New Entity Info:")
             log.info(
                 f"Entity Name: {new_entity.entity_name}, Entity Type: {new_entity.entity_type}"
             )
-            log.info(f"LLM selected Entity Info:")
+            log.info("LLM selected Entity Info:")
             log.info(
                 f"Entity Name: {similar_entities[select_id].entity_name}, Entity Type: {similar_entities[select_id].entity_type}"
             )
 
             return similar_entities[select_id]
-        else:
-            print(f"Warning: LLM returned an out-of-bounds ID: {select_id}")
-            return None
+        print(f"Warning: LLM returned an out-of-bounds ID: {select_id}")
+        return None
 
     def entity_resolution(self, new_entity: Entity) -> Entity:
         """
@@ -682,10 +773,9 @@ class KGRefiner:
                     "Skipping this relationship."
                 )
                 continue
-            else:
-                self.graph_index.add_kg_edge(
-                    rel=rel, src_type=src_type, tgt_type=tgt_type
-                )
+            self.graph_index.add_kg_edge(
+                rel=rel, src_type=src_type, tgt_type=tgt_type
+            )
 
     def _debug_check_num(self):
         num_node_graph = len(self.graph_index.kg.nodes())
@@ -870,7 +960,6 @@ class KGRefiner:
             f"Refined {len(add_entities)} entities and added them to the vector database."
         )
         self._debug_check_num()
-        return
 
     def refine_relation(self):
         # delete self loop in graph index

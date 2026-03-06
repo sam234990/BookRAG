@@ -1,0 +1,51 @@
+{
+  "entities": [
+    {
+      "entity_name": "the plan",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the plan is a structured workflow tailored to each category",
+      "source_ids": [
+        114
+      ]
+    },
+    {
+      "entity_name": "workflow",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the workflow is a structured process followed by the plan",
+      "source_ids": [
+        114
+      ]
+    },
+    {
+      "entity_name": "category",
+      "entity_type": "CONCEPT",
+      "description": "category refers to the classifications to which the plan s workflow is tailored",
+      "source_ids": [
+        114
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "the plan",
+      "tgt_entity_name": "workflow",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the plan follows a structured workflow",
+      "source_ids": [
+        114
+      ]
+    },
+    {
+      "src_entity_name": "the plan",
+      "tgt_entity_name": "category",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the plan s workflow is tailored to each category",
+      "source_ids": [
+        114
+      ]
+    }
+  ],
+  "node_idx": 114
+}

@@ -1,0 +1,205 @@
+{
+  "entities": [
+    {
+      "entity_name": "kg",
+      "entity_type": "CONCEPT",
+      "description": "kg refers to a knowledge graph  which is a data structure used for multi hop reasoning",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "PRODUCT",
+      "description": "llm is an example of a distinct entity name mentioned in the context of entity ambiguity",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "entity_name": "large language model",
+      "entity_type": "PRODUCT",
+      "description": "large language model is an example of a distinct entity name mentioned in the context of entity ambiguity",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "entity_name": "gradient based entity resolution method",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the gradient based entity resolution method is a novel approach proposed to address entity ambiguity by analyzing similarity distributions",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "entity_name": "multi hop reasoning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "multi hop reasoning is a task that relies on a high quality knowledge graph",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "entity_name": "entity ambiguity",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "entity ambiguity is a problem where distinct entities share similar names  compromising the knowledge graph",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "entity_name": "similarity distribution",
+      "entity_type": "CONCEPT",
+      "description": "similarity distribution is the data pattern analyzed by the proposed method to identify sharp drops in scores",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "entity_name": "candidate entities",
+      "entity_type": "CONCEPT",
+      "description": "candidate entities are the potential matches analyzed to distinguish and merge coreferent entities",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "entity_name": "coreferent entities",
+      "entity_type": "CONCEPT",
+      "description": "coreferent entities are distinct entities that refer to the same real world object and need to be merged",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "entity_name": "graph connectivity",
+      "entity_type": "CONCEPT",
+      "description": "graph connectivity is a property of the knowledge graph that is ensured by the proposed method",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "entity_name": "reasoning capabilities",
+      "entity_type": "CONCEPT",
+      "description": "reasoning capabilities are the skills of the system that are enhanced by the proposed method",
+      "source_ids": [
+        21
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "kg",
+      "tgt_entity_name": "gradient based entity resolution method",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the gradient based entity resolution method is proposed to ensure the high quality of the kg by resolving entity ambiguity",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "large language model",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "llm and large language model are cited as examples of distinct entities that cause ambiguity in the kg",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "src_entity_name": "multi hop reasoning",
+      "tgt_entity_name": "kg",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "multi hop reasoning relies on a high quality kg for its execution",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "src_entity_name": "kg",
+      "tgt_entity_name": "entity ambiguity",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "entity ambiguity compromises the quality of the kg",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution method",
+      "tgt_entity_name": "similarity distribution",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the method analyzes the similarity distribution of candidate entities to function",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution method",
+      "tgt_entity_name": "candidate entities",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the method analyzes candidate entities to identify sharp drops in similarity scores",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution method",
+      "tgt_entity_name": "coreferent entities",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the method distinguishes and merges coreferent entities",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution method",
+      "tgt_entity_name": "graph connectivity",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the method ensures graph connectivity by resolving entity ambiguity",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "src_entity_name": "gradient based entity resolution method",
+      "tgt_entity_name": "reasoning capabilities",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the method enhances reasoning capabilities by improving the kg",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "entity ambiguity",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "llm is an example of a name that contributes to entity ambiguity",
+      "source_ids": [
+        21
+      ]
+    },
+    {
+      "src_entity_name": "large language model",
+      "tgt_entity_name": "entity ambiguity",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "large language model is an example of a name that contributes to entity ambiguity",
+      "source_ids": [
+        21
+      ]
+    }
+  ],
+  "node_idx": 21
+}

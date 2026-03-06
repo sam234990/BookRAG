@@ -1,0 +1,51 @@
+{
+  "entities": [
+    {
+      "entity_name": "4.3.2 gradient-based entity resolution",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'Graph Construction' within the 'BOOKINDEX' chapter, this section details a robust Entity Resolution (ER) process designed to identify and merge fragmented conceptual entities in a Knowledge Graph, addressing challenges like abbreviations and co-references.",
+      "source_ids": [
+        65
+      ]
+    },
+    {
+      "entity_name": "gradient-based entity resolution",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A specific technique mentioned in the title for resolving entity fragmentation by utilizing gradient-based approaches to refine raw Knowledge Graphs.",
+      "source_ids": [
+        65
+      ]
+    },
+    {
+      "entity_name": "entity resolution",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The core problem addressed in this section: identifying and merging fragmented entities caused by abbreviations, co-references, or varied occurrences to ensure a well-constructed Knowledge Graph.",
+      "source_ids": [
+        65
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "gradient-based entity resolution",
+      "tgt_entity_name": "4.3.2 gradient-based entity resolution",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'Gradient-based Entity Resolution' is the primary methodological topic of section 4.3.2.",
+      "source_ids": [
+        65
+      ]
+    },
+    {
+      "src_entity_name": "entity resolution",
+      "tgt_entity_name": "4.3.2 gradient-based entity resolution",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The task of 'Entity Resolution' is the central subject matter detailed in section 4.3.2.",
+      "source_ids": [
+        65
+      ]
+    }
+  ],
+  "node_idx": 65
+}

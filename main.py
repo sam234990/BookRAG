@@ -10,7 +10,7 @@ from rich.logging import RichHandler
 from Core.configs.system_config import load_system_config, SystemConfig
 from Core.configs.dataset_config import load_dataset_config, DatasetConfig
 from Core.construct_index import (
-    construct_GBC_index,
+    construct_gbc_index,
     construct_vdb,
     compute_mm_reranker,
     rebuild_graph_vdb,
@@ -128,13 +128,13 @@ def build_index(config: SystemConfig, stage: str = "all", data_df: pd.DataFrame 
     if stage in ["tree", "all"]:
         log.info("  - STAGE: Building Document Tree...")
         # This function should build the tree and save it to config.save_path
-        construct_GBC_index(config, tree_only=True)
+        construct_gbc_index(config, tree_only=True)
 
     # Stage 2: Build the Knowledge Graph
     if stage in ["graph", "all"]:
         log.info("  - STAGE: Building Knowledge Graph...")
         # This function should LOAD the pre-existing tree and then build/save the graph
-        construct_GBC_index(config)
+        construct_gbc_index(config)
 
     # Stage 3: Build the Vector Database
     if stage in ["vdb", "all"]:

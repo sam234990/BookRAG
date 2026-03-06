@@ -1,0 +1,141 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a system or product being examined in the text through an ablation study and experiments",
+      "source_ids": [
+        163
+      ]
+    },
+    {
+      "entity_name": "ablation study",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "ablation study is a method used to validate the contribution of each component of bookrag",
+      "source_ids": [
+        163
+      ]
+    },
+    {
+      "entity_name": "gradient based er",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "gradient based er is a method used in experiments to analyze its impact on qa performance",
+      "source_ids": [
+        163
+      ]
+    },
+    {
+      "entity_name": "qa performance",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "qa performance is the metric being evaluated in the experiments across different query types",
+      "source_ids": [
+        163
+      ]
+    },
+    {
+      "entity_name": "entity resolution method",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "entity resolution method is a technique compared for effectiveness in the text",
+      "source_ids": [
+        163
+      ]
+    },
+    {
+      "entity_name": "case study",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "case study is a specific analysis presented in the text",
+      "source_ids": [
+        163
+      ]
+    },
+    {
+      "entity_name": "query types",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "query types are the different categories of queries used to evaluate qa performance in the experiments",
+      "source_ids": [
+        163
+      ]
+    },
+    {
+      "entity_name": "error analysis",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "error analysis is a comprehensive method performed to examine the results of the study",
+      "source_ids": [
+        163
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "ablation study",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "an ablation study is conducted on bookrag to validate its components",
+      "source_ids": [
+        163
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "gradient based er",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "experiments on bookrag involve analyzing the impact of gradient based er",
+      "source_ids": [
+        163
+      ]
+    },
+    {
+      "src_entity_name": "gradient based er",
+      "tgt_entity_name": "qa performance",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "gradient based er is evaluated for its impact on qa performance",
+      "source_ids": [
+        163
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "entity resolution method",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the effectiveness of the entity resolution method is compared in the context of bookrag",
+      "source_ids": [
+        163
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "case study",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "a case study is presented as part of the examination of bookrag",
+      "source_ids": [
+        163
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "query types",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "experiments on bookrag are conducted across different query types",
+      "source_ids": [
+        163
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "error analysis",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "a comprehensive error analysis is performed as part of the examination of bookrag",
+      "source_ids": [
+        163
+      ]
+    }
+  ],
+  "node_idx": 163
+}

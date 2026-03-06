@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "s",
+      "entity_type": "PERSON",
+      "description": "s is an entity described as needing to navigate sequential page content and logical hierarchy to synthesize a response",
+      "source_ids": [
+        40
+      ]
+    },
+    {
+      "entity_name": "d",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "d represents the logical hierarchy that s must navigate to synthesize a response",
+      "source_ids": [
+        40
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "s",
+      "tgt_entity_name": "d",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "s must navigate the logical hierarchy of d to synthesize the response",
+      "source_ids": [
+        40
+      ]
+    }
+  ],
+  "node_idx": 40
+}

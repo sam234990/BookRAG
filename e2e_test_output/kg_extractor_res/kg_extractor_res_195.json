@@ -1,0 +1,271 @@
+{
+  "entities": [
+    {
+      "entity_name": "camille barboule",
+      "entity_type": "PERSON",
+      "description": "camille barboule is one of the authors of the 2025 survey on question answering over visually rich documents",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "entity_name": "benjamin piwowarski",
+      "entity_type": "PERSON",
+      "description": "benjamin piwowarski is one of the authors of the 2025 survey on question answering over visually rich documents",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "entity_name": "yoan chabot",
+      "entity_type": "PERSON",
+      "description": "yoan chabot is one of the authors of the 2025 survey on question answering over visually rich documents",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "entity_name": "survey on question answering over visually rich documents methods challenges and trends",
+      "entity_type": "BOOK",
+      "description": "this is the title of the survey paper published in 2025",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "entity_name": "arxiv",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv is the preprint server where the survey paper was published",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "entity_name": "2025",
+      "entity_type": "DATE",
+      "description": "2025 is the year the survey paper was published",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "entity_name": "arxiv 2501 02235",
+      "entity_type": "FILE_TYPE",
+      "description": "arxiv 2501 02235 is the specific identifier for the preprint version of the survey",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "entity_name": "question answering",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "question answering is the specific task addressed by the survey over visually rich documents",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "entity_name": "visually rich documents",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "visually rich documents are the type of documents analyzed in the survey",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "entity_name": "methods",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "methods refers to the techniques discussed in the survey for handling visually rich documents",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "entity_name": "challenges",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "challenges refers to the difficulties identified in the field of question answering over visually rich documents",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "entity_name": "trends",
+      "entity_type": "RESEARCH_FIELD",
+      "description": "trends refers to the current directions and future outlooks in the research area",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "entity_name": "preprint",
+      "entity_type": "FILE_TYPE",
+      "description": "preprint indicates the document is a preliminary version of a research paper",
+      "source_ids": [
+        195
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "camille barboule",
+      "tgt_entity_name": "survey on question answering over visually rich documents methods challenges and trends",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "camille barboule is an author of the survey paper",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "benjamin piwowarski",
+      "tgt_entity_name": "survey on question answering over visually rich documents methods challenges and trends",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "benjamin piwowarski is an author of the survey paper",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "yoan chabot",
+      "tgt_entity_name": "survey on question answering over visually rich documents methods challenges and trends",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yoan chabot is an author of the survey paper",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "survey on question answering over visually rich documents methods challenges and trends",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the survey paper was published as a preprint on arxiv",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "survey on question answering over visually rich documents methods challenges and trends",
+      "tgt_entity_name": "2025",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the survey paper was published in the year 2025",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "survey on question answering over visually rich documents methods challenges and trends",
+      "tgt_entity_name": "arxiv 2501 02235",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the survey paper is identified by the preprint number arxiv 2501 02235",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "camille barboule",
+      "tgt_entity_name": "benjamin piwowarski",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "camille barboule and benjamin piwowarski are co authors of the same survey paper",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "camille barboule",
+      "tgt_entity_name": "yoan chabot",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "camille barboule and yoan chabot are co authors of the same survey paper",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "benjamin piwowarski",
+      "tgt_entity_name": "yoan chabot",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "benjamin piwowarski and yoan chabot are co authors of the same survey paper",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "survey on question answering over visually rich documents methods challenges and trends",
+      "tgt_entity_name": "question answering",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the survey focuses on the task of question answering",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "survey on question answering over visually rich documents methods challenges and trends",
+      "tgt_entity_name": "visually rich documents",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the survey specifically addresses visually rich documents",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "survey on question answering over visually rich documents methods challenges and trends",
+      "tgt_entity_name": "methods",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the survey covers various methods used in the field",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "survey on question answering over visually rich documents methods challenges and trends",
+      "tgt_entity_name": "challenges",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the survey discusses the challenges present in the field",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "survey on question answering over visually rich documents methods challenges and trends",
+      "tgt_entity_name": "trends",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the survey outlines the trends in the research area",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "arxiv 2501 02235",
+      "tgt_entity_name": "preprint",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "arxiv 2501 02235 is identified as a preprint document",
+      "source_ids": [
+        195
+      ]
+    },
+    {
+      "src_entity_name": "question answering",
+      "tgt_entity_name": "visually rich documents",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "question answering is performed over visually rich documents in the context of the survey",
+      "source_ids": [
+        195
+      ]
+    }
+  ],
+  "node_idx": 195
+}

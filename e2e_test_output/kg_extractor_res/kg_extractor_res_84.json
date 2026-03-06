@@ -1,0 +1,105 @@
+{
+  "entities": [
+    {
+      "entity_name": "cref='#/texts/89'",
+      "entity_type": "IMAGE",
+      "description": "A flowchart diagram illustrating a three-stage process involving planning, retrieval, and generation to answer a question.",
+      "source_ids": [
+        84
+      ]
+    },
+    {
+      "entity_name": "question",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The input trigger for the system, represented by an icon of a person with a question mark.",
+      "source_ids": [
+        84
+      ]
+    },
+    {
+      "entity_name": "agent-based planning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "The first stage of the process, which handles classification and planning tasks.",
+      "source_ids": [
+        84
+      ]
+    },
+    {
+      "entity_name": "retrieval process",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "The second stage of the process, utilizing scent or filter-based mechanisms to retrieve information.",
+      "source_ids": [
+        84
+      ]
+    },
+    {
+      "entity_name": "generation process",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "The third stage of the process, responsible for analysis and merging data to form the output.",
+      "source_ids": [
+        84
+      ]
+    },
+    {
+      "entity_name": "answer",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "The final output of the system, symbolized by a lightbulb icon.",
+      "source_ids": [
+        84
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "cref='#/texts/89'",
+      "tgt_entity_name": "question",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/89' related to Question",
+      "source_ids": [
+        84
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/89'",
+      "tgt_entity_name": "agent-based planning",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/89' related to Agent-based Planning",
+      "source_ids": [
+        84
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/89'",
+      "tgt_entity_name": "retrieval process",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/89' related to Retrieval Process",
+      "source_ids": [
+        84
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/89'",
+      "tgt_entity_name": "generation process",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/89' related to Generation Process",
+      "source_ids": [
+        84
+      ]
+    },
+    {
+      "src_entity_name": "cref='#/texts/89'",
+      "tgt_entity_name": "answer",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity cref='#/texts/89' related to Answer",
+      "source_ids": [
+        84
+      ]
+    }
+  ],
+  "node_idx": 84
+}

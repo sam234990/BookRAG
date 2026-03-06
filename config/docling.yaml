@@ -1,0 +1,113 @@
+# config/docling.yaml
+#
+# BookRAG configuration that uses Docling as the document parser instead of
+# MinerU.  Suitable for scanned books and multi-format documents (PDF, DOCX,
+# PPTX, HTML, images).  MinerU settings are still required for the rest of
+# the system; they are simply unused at parse time when parser=docling.
+#
+# Usage:
+#   python main.py -c config/docling.yaml -d Scripts/cfg/Qasper.yaml index --stage tree
+
+pdf_path: TODO
+save_path: TODO
+
+# ── Parser selection ────────────────────────────────────────────────────────
+# Set to "docling" to use Docling.  Change to "mineru" to fall back to MinerU.
+parser: docling
+
+docling:
+  # OCR engine: "easyocr" (default) | "tesseract" | "rapidocr"
+  ocr_engine: easyocr
+  # Force OCR on every page even when selectable text is present.
+  # Set to true for scanned documents where text layer is absent or unreliable.
+  force_full_page_ocr: true
+  # Image render scale (1.0 ≈ 72 DPI).  2.0 gives crisper figure/table crops.
+  images_scale: 2.0
+  # Language hint for the OCR engine (ISO 639-1).
+  lang: en
+
+# ── MinerU (kept for completeness; unused when parser=docling) ──────────────
+mineru:
+  backend: pipeline
+  method: auto
+  lang: en
+
+# ── LLM (used for outline extraction, refinement, summaries) ────────────────
+llm:
+  model_name: TODO
+  api_key: TODO
+  api_base: TODO
+  backend: openai
+  max_tokens: 5000
+  temperature: 0.1
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+  max_workers: 8
+
+# ── VLM (used for image/table node summaries when tree.node_summary=true) ───
+vlm:
+  model_name: TODO
+  api_key: TODO
+  api_base: TODO
+  temperature: 0.1
+  max_tokens: 6000
+  backend: ollama
+
+# ── Tree index ───────────────────────────────────────────────────────────────
+index:
+  chunk_size: 512
+  overlap: 50
+
+tree:
+  node_keywords: true
+  node_summary: true
+
+# ── Knowledge graph ──────────────────────────────────────────────────────────
+graph:
+  extractor_type: "llm"
+  local_model_name: "en_core_web_sm"
+  image_description_force: true
+  max_gleaning: 0
+  refine_type: "advanced"
+  embedding_config:
+    model_name: TODO
+    backend: openai
+    max_length: TODO
+    device: TODO
+    api_base: TODO
+  reranker_config:
+    model_name: TODO
+    max_length: 4096
+    device: TODO
+    backend: vllm
+    api_base: TODO
+
+# ── Vector database ──────────────────────────────────────────────────────────
+vdb:
+  mm_embedding: true
+  vdb_dir_name: "Tree_vdb"
+  collection_name: "TreeVDB"
+  embedding_config:
+    model_name: TODO
+    device: TODO
+
+rag_force_reprocess: true
+
+# ── RAG ──────────────────────────────────────────────────────────────────────
+rag:
+  strategy: gbc
+  varient: standard
+  topk: 10
+  sim_threshold: 0.3
+  select_depth: 2
+  max_retry: 2
+  reranker_config:
+    model_name: TODO
+    max_length: TODO
+    device: TODO
+    backend: vllm
+    api_base: TODO
+  mm_reranker_config:
+    model_name: TODO
+    device: TODO
+

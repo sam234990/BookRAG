@@ -1,0 +1,237 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a system or method being compared against baseline methods in the text",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "qwen family",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "the qwen family refers to a set of state of the art backbone models used to power bookrag and baseline methods",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "mineru",
+      "entity_type": "SOFTWARE",
+      "description": "mineru is a tool employed for robust document layout parsing",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "github com sam234990 bookrag",
+      "entity_type": "LOCATION",
+      "description": "github com sam234990 bookrag is the url where source code  prompts  and configurations for bookrag are available",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "0 6",
+      "entity_type": "MEASUREMENT",
+      "description": "0 6 is the threshold value set for the gradient g in the implementation details",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "technical report",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "the technical report is a document containing more details about the implementation  referenced as  57",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "gradient g",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "gradient g is a parameter with a threshold set to 0 6 in the implementation details",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "appendix",
+      "entity_type": "SECTION_TITLE",
+      "description": "the appendix is a section of the technical report where more details are provided",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "prompts",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "prompts are specific instructions or inputs used in the bookrag system  available on github",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "detailed configurations",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "detailed configurations are specific settings for the bookrag system  available on github",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "state of theart",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "state of theart describes the quality of the backbone models used in the comparison",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "robust document layout parsing",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "robust document layout parsing is the specific task performed by mineru",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "fair comparison",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "fair comparison is the goal of the experimental setup described in the text",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "baseline methods",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "entity_name": "implementation details",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        149
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "qwen family",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is powered by backbone models from the qwen family",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "src_entity_name": "baseline methods",
+      "tgt_entity_name": "qwen family",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "baseline methods are also powered by backbone models from the qwen family",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "mineru",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag employs mineru for document layout parsing",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "github com sam234990 bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the source code and configurations for bookrag are available at the specified github location",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "src_entity_name": "implementation details",
+      "tgt_entity_name": "technical report",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "more details about the implementation are provided in the technical report",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "gradient g",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag s implementation sets the threshold of gradient g as 0 6",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "src_entity_name": "technical report",
+      "tgt_entity_name": "appendix",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the appendix is a section within the technical report containing more details",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "src_entity_name": "github com sam234990 bookrag",
+      "tgt_entity_name": "prompts",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "prompts are available at the specified github location",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "src_entity_name": "github com sam234990 bookrag",
+      "tgt_entity_name": "detailed configurations",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "detailed configurations are available at the specified github location",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "src_entity_name": "mineru",
+      "tgt_entity_name": "robust document layout parsing",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "mineru is employed to perform robust document layout parsing",
+      "source_ids": [
+        149
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "baseline methods",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag and baseline methods are compared fairly using the same backbone models",
+      "source_ids": [
+        149
+      ]
+    }
+  ],
+  "node_idx": 149
+}

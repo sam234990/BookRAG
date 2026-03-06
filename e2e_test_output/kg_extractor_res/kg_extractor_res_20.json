@@ -1,0 +1,197 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "TECHNOLOGY",
+      "description": "bookrag is a retrieval augmented generation method introduced to bridge a gap in document qa tasks",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "PRODUCT",
+      "description": "bookindex is a document native structure used by bookrag to organize information through hierarchical and graph based methods",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "entity_name": "document qa tasks",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "document qa tasks are the specific problems that bookrag and bookindex are designed to address",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "entity_name": "hierarchical tree structure",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the hierarchical tree structure is a method used to preserve the document s native logical hierarchy by organizing parsed content blocks",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "entity_name": "kg",
+      "entity_type": "TECHNOLOGY",
+      "description": "kg refers to a knowledge graph constructed to capture intricate relations within document blocks",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "entity_name": "table of contents",
+      "entity_type": "PRODUCT",
+      "description": "the table of contents is the role served by the hierarchical tree structure in organizing the document s logical hierarchy",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "entity_name": "parsed content blocks",
+      "entity_type": "MATERIAL",
+      "description": "parsed content blocks are the units of document content organized into a hierarchical tree structure",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "entity_name": "fine grained entities",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "fine grained entities are the specific data points contained within the document blocks that are captured by the knowledge graph",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "entity_name": "relation",
+      "entity_type": "CONCEPT",
+      "description": "the relation refers to the deep connections within the document that the method aims to capture",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "entity_name": "tree nodes",
+      "entity_type": "PRODUCT",
+      "description": "tree nodes are the specific components of the hierarchical tree structure to which kg entities are mapped",
+      "source_ids": [
+        20
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is built upon the document native bookindex",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "document qa tasks",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is designed specifically for document qa tasks",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "hierarchical tree structure",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookindex organizes information using a hierarchical tree structure to preserve logical hierarchy",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "kg",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookindex constructs a kg to capture intricate relations within document blocks",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "src_entity_name": "hierarchical tree structure",
+      "tgt_entity_name": "table of contents",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the hierarchical tree structure serves the role of the document s table of contents",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "src_entity_name": "kg",
+      "tgt_entity_name": "hierarchical tree structure",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the kg entities are mapped to their corresponding tree nodes to unify the two structures",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "parsed content blocks",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookindex organizes parsed content blocks into a hierarchical tree structure",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "src_entity_name": "kg",
+      "tgt_entity_name": "fine grained entities",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the kg is constructed containing fine grained entities to capture intricate relations",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "relation",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag is designed to capture the deep connection of the relation in the document",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "src_entity_name": "kg",
+      "tgt_entity_name": "tree nodes",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "kg entities are mapped to their corresponding tree nodes to unify the structures",
+      "source_ids": [
+        20
+      ]
+    },
+    {
+      "src_entity_name": "parsed content blocks",
+      "tgt_entity_name": "tree nodes",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "parsed content blocks are organized into the hierarchical tree structure which consists of tree nodes",
+      "source_ids": [
+        20
+      ]
+    }
+  ],
+  "node_idx": 20
+}

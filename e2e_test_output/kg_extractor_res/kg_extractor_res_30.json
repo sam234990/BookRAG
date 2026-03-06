@@ -1,0 +1,51 @@
+{
+  "entities": [
+    {
+      "entity_name": "2 related work",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of the main paper 'BookRAG: A Hierarchical Structure-aware Index-based Approach for Retrieval-Augmented Generation on Complex Documents', this section provides a comprehensive review of existing literature, specifically focusing on Retrieval-Augmented Generation (RAG) methods and their limitations regarding hierarchical document structures.",
+      "source_ids": [
+        30
+      ]
+    },
+    {
+      "entity_name": "retrieval-augmented generation",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "Refers to the class of techniques discussed in section 2 that enhance Large Language Models by querying external information, serving as the primary context for the related work analysis.",
+      "source_ids": [
+        30
+      ]
+    },
+    {
+      "entity_name": "hierarchical document structures",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "Refers to the specific structural characteristics of documents (e.g., books, handbooks) that existing RAG approaches often overlook, which is a key problem addressed in the literature review within section 2.",
+      "source_ids": [
+        30
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "retrieval-augmented generation",
+      "tgt_entity_name": "2 related work",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'Retrieval-Augmented Generation' is a primary topic reviewed in section 2.",
+      "source_ids": [
+        30
+      ]
+    },
+    {
+      "src_entity_name": "hierarchical document structures",
+      "tgt_entity_name": "2 related work",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The challenge of 'Hierarchical Document Structures' is a primary topic reviewed in section 2.",
+      "source_ids": [
+        30
+      ]
+    }
+  ],
+  "node_idx": 30
+}

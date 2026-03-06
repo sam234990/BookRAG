@@ -1,0 +1,319 @@
+{
+  "entities": [
+    {
+      "entity_name": "layout aware segmentation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "layout aware segmentation is a paradigm that parses documents into structured blocks to preserve original layout and information",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "docetl",
+      "entity_type": "SOFTWARE",
+      "description": "docetl is a state of the art method providing a declarative interface for defining llm based processing pipelines",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "llm refers to large language models used in processing pipelines for analyzing retrieved blocks",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "multimodal retrieval",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "multimodal retrieval is a technique applied to obtain relevant content from blocks with multimodal characteristics",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "paragraphs",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "paragraphs are structural blocks within a document preserved by layout aware segmentation",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "tables",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "tables are structural blocks within a document preserved by layout aware segmentation",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "figures",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "figures are structural blocks within a document preserved by layout aware segmentation",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "equations",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "equations are structural blocks within a document preserved by layout aware segmentation",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "first paradigm",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the first paradigm is a method that uses fixed chunk sizes  often leading to fragmented information",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "second paradigm",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the second paradigm refers to layout aware segmentation  which preserves document structure",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "declarative interface",
+      "entity_type": "SOFTWARE",
+      "description": "the declarative interface is a feature provided by docetl that allows users to define processing pipelines",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "processing pipelines",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "processing pipelines are sequences of operations defined by users to analyze retrieved blocks",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "llm based processing pipelines",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "llm based processing pipelines are pipelines that utilize large language models for analysis",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "llm powered operations",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "llm powered operations are the specific tasks combined within the processing pipelines",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "task specific optimizations",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "task specific optimizations are enhancements applied to the pipelines for specific tasks",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "fixed chunk size",
+      "entity_type": "MEASUREMENT",
+      "description": "fixed chunk size is a parameter used in the first paradigm that can cause information fragmentation",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "document native structural information",
+      "entity_type": "CONCEPT",
+      "description": "document native structural information is the data retained by layout aware segmentation",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "relevant content",
+      "entity_type": "CONCEPT",
+      "description": "relevant content is the information obtained through multimodal retrieval to answer queries",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "entity_name": "queries",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "queries are the questions or requests for which relevant content is retrieved",
+      "source_ids": [
+        18
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "layout aware segmentation",
+      "tgt_entity_name": "paragraphs",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "layout aware segmentation parses documents into paragraphs to preserve their structure",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "layout aware segmentation",
+      "tgt_entity_name": "tables",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "layout aware segmentation parses documents into tables to preserve their structure",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "layout aware segmentation",
+      "tgt_entity_name": "figures",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "layout aware segmentation parses documents into figures to preserve their structure",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "layout aware segmentation",
+      "tgt_entity_name": "equations",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "layout aware segmentation parses documents into equations to preserve their structure",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "docetl",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "docetl uses llm powered operations to create processing pipelines",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "layout aware segmentation",
+      "tgt_entity_name": "multimodal retrieval",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "multimodal retrieval is a typical approach applied to blocks generated by layout aware segmentation",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "docetl",
+      "tgt_entity_name": "layout aware segmentation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "docetl is a state of the art method within the category of layout aware segmentation",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "second paradigm",
+      "tgt_entity_name": "layout aware segmentation",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the second paradigm is identified as layout aware segmentation in the text",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "first paradigm",
+      "tgt_entity_name": "fixed chunk size",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the first paradigm uses a fixed chunk size  which leads to fragmented information",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "docetl",
+      "tgt_entity_name": "declarative interface",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "docetl provides a declarative interface for users",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "declarative interface",
+      "tgt_entity_name": "processing pipelines",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the declarative interface allows users to define processing pipelines",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "processing pipelines",
+      "tgt_entity_name": "llm powered operations",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "processing pipelines consist of llm powered operations",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "processing pipelines",
+      "tgt_entity_name": "task specific optimizations",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "processing pipelines include task specific optimizations",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "layout aware segmentation",
+      "tgt_entity_name": "document native structural information",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "layout aware segmentation retains document native structural information",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "multimodal retrieval",
+      "tgt_entity_name": "relevant content",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "multimodal retrieval is used to obtain relevant content",
+      "source_ids": [
+        18
+      ]
+    },
+    {
+      "src_entity_name": "multimodal retrieval",
+      "tgt_entity_name": "queries",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "multimodal retrieval is applied to answer queries",
+      "source_ids": [
+        18
+      ]
+    }
+  ],
+  "node_idx": 18
+}

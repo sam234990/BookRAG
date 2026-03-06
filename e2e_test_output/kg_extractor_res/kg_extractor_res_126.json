@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (13)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the variable Ns as a selector function applied to N and parameters. LaTeX: 𝑁 𝑠 = Selector ( 𝑁, params sel ) (13)",
+      "source_ids": [
+        126
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 126
+}

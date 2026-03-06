@@ -1,0 +1,301 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 7",
+      "entity_type": "IMAGE",
+      "description": "figure 7 is an image presenting a performance breakdown of qa by different query types",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "entity_name": "single hop",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "single hop is a type of query used in the qa performance breakdown",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "entity_name": "multi hop",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "multi hop is a type of query used in the qa performance breakdown",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "entity_name": "global",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "global is a type of query used in the qa performance breakdown",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "entity_name": "exact match",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "exact match is an evaluation metric represented by blue bars for mmlongbench",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "entity_name": "accuracy",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "accuracy is an evaluation metric represented by blue bars for qasper",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "entity_name": "f1 score",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "f1 score is an evaluation metric represented by red bars",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "entity_name": "mmlongbench",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "mmlongbench is a dataset for which exact match performance is measured",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "entity_name": "qasper",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "qasper is a dataset for which accuracy performance is measured",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "entity_name": "qa",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "qa refers to the question answering task being evaluated in the figure",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "entity_name": "query types",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "query types refers to the categories of queries  single hop  multi hop  and global  analyzed in the text",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "entity_name": "blue bars",
+      "entity_type": "IMAGE",
+      "description": "blue bars represent the visual elements in the figure corresponding to exact match and accuracy metrics",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "entity_name": "red bars",
+      "entity_type": "IMAGE",
+      "description": "red bars represent the visual elements in the figure corresponding to the f1 score metric",
+      "source_ids": [
+        177
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 7",
+      "tgt_entity_name": "single hop",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 7 displays the performance breakdown for the single hop query type",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "figure 7",
+      "tgt_entity_name": "multi hop",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 7 displays the performance breakdown for the multi hop query type",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "figure 7",
+      "tgt_entity_name": "global",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 7 displays the performance breakdown for the global query type",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "figure 7",
+      "tgt_entity_name": "exact match",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "figure 7 uses exact match as a metric represented by blue bars for mmlongbench",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "figure 7",
+      "tgt_entity_name": "accuracy",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "figure 7 uses accuracy as a metric represented by blue bars for qasper",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "figure 7",
+      "tgt_entity_name": "f1 score",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "figure 7 uses f1 score as a metric represented by red bars",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "exact match",
+      "tgt_entity_name": "mmlongbench",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "exact match is the specific metric used to evaluate performance on the mmlongbench dataset in the figure",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "accuracy",
+      "tgt_entity_name": "qasper",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "accuracy is the specific metric used to evaluate performance on the qasper dataset in the figure",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "multi hop",
+      "relation_name": "",
+      "weight": 5.0,
+      "description": "both are listed as distinct query types in the performance breakdown",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "global",
+      "relation_name": "",
+      "weight": 5.0,
+      "description": "both are listed as distinct query types in the performance breakdown",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "multi hop",
+      "tgt_entity_name": "global",
+      "relation_name": "",
+      "weight": 5.0,
+      "description": "both are listed as distinct query types in the performance breakdown",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "figure 7",
+      "tgt_entity_name": "qa",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 7 presents the performance breakdown specifically for the qa task",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "figure 7",
+      "tgt_entity_name": "query types",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 7 breaks down performance by different query types",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "figure 7",
+      "tgt_entity_name": "blue bars",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "figure 7 contains blue bars to represent specific metrics",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "figure 7",
+      "tgt_entity_name": "red bars",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "figure 7 contains red bars to represent specific metrics",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "exact match",
+      "tgt_entity_name": "blue bars",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "exact match is visually represented by the blue bars in the figure",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "accuracy",
+      "tgt_entity_name": "blue bars",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "accuracy is visually represented by the blue bars in the figure",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "f1 score",
+      "tgt_entity_name": "red bars",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "f1 score is visually represented by the red bars in the figure",
+      "source_ids": [
+        177
+      ]
+    },
+    {
+      "src_entity_name": "qa",
+      "tgt_entity_name": "query types",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the qa task performance is analyzed across different query types",
+      "source_ids": [
+        177
+      ]
+    }
+  ],
+  "node_idx": 177
+}

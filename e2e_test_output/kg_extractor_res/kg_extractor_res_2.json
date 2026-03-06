@@ -1,0 +1,411 @@
+{
+  "entities": [
+    {
+      "entity_name": "shu wang",
+      "entity_type": "PERSON",
+      "description": "shu wang is an author of the paper affiliated with the chinese university of hong kong  shenzhen",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "yingli zhou",
+      "entity_type": "PERSON",
+      "description": "yingli zhou is an author of the paper affiliated with the chinese university of hong kong  shenzhen",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "yixiang fang",
+      "entity_type": "PERSON",
+      "description": "yixiang fang is an author of the paper affiliated with the chinese university of hong kong  shenzhen",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "the chinese university of hong kong shenzhen",
+      "entity_type": "ORGANIZATION",
+      "description": "the chinese university of hong kong  shenzhen is the institution where the authors are affiliated",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "large language models",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "large language models are the models whose performance is being boosted by the proposed method",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "retrievalaugmented generation",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "retrievalaugmented generation is a method that queries external documents to boost llm performance",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "bookrag is a novel rag approach targeted for documents with hierarchical structures",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "SOFTWARE",
+      "description": "bookindex is a novel index structure built by extracting a hierarchical tree from documents",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "information foraging theory",
+      "entity_type": "SCIENTIFIC_THEORY",
+      "description": "information foraging theory is the theory inspiring the agent based query method",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "question answering",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "question answering is the task where the proposed methods aim to improve performance",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "books",
+      "entity_type": "BOOK",
+      "description": "books are examples of real world documents with hierarchical structures",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "booklets",
+      "entity_type": "BOOK",
+      "description": "booklets are examples of real world documents with hierarchical structures",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "handbooks",
+      "entity_type": "BOOK",
+      "description": "handbooks are examples of real world documents with hierarchical structures",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "three widely adopted benchmarks",
+      "entity_type": "BENCHMARK",
+      "description": "three widely adopted benchmarks were used to demonstrate the performance of bookrag",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "industry",
+      "entity_type": "ORGANIZATION",
+      "description": "industry is a sector that has attracted attention to retrievalaugmented generation",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "academia",
+      "entity_type": "ORGANIZATION",
+      "description": "academia is a sector that has attracted attention to retrievalaugmented generation",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "graph",
+      "entity_type": "SOFTWARE",
+      "description": "a graph is used to capture intricate relationships between entities in the bookindex",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "tree",
+      "entity_type": "SOFTWARE",
+      "description": "a hierarchical tree is extracted from documents to serve as the role of a table of contents",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "table of contents",
+      "entity_type": "SOFTWARE",
+      "description": "the table of contents is the role served by the hierarchical tree in the bookindex",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "retrieval recall",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "retrieval recall is a metric where bookrag significantly outperforms baselines",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "qa accuracy",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "qa accuracy is a metric where bookrag significantly outperforms baselines",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "efficiency",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "efficiency is a metric where bookrag maintains competitive performance",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "entity_name": "baselines",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "baselines are existing methods that bookrag outperforms in retrieval recall and qa accuracy",
+      "source_ids": [
+        2
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "shu wang",
+      "tgt_entity_name": "the chinese university of hong kong shenzhen",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "shu wang is affiliated with the chinese university of hong kong  shenzhen",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "yingli zhou",
+      "tgt_entity_name": "the chinese university of hong kong shenzhen",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yingli zhou is affiliated with the chinese university of hong kong  shenzhen",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "yixiang fang",
+      "tgt_entity_name": "the chinese university of hong kong shenzhen",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "yixiang fang is affiliated with the chinese university of hong kong  shenzhen",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "retrievalaugmented generation",
+      "tgt_entity_name": "large language models",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "retrievalaugmented generation is used to boost the performance of large language models",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "retrievalaugmented generation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is a novel approach within the category of retrievalaugmented generation",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "question answering",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag is designed to improve performance on the question answering task",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "books",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag is specifically targeted for documents like books that have hierarchical structures",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag utilizes the bookindex structure to exploit logical hierarchies and trace entity relations",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "books",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookindex is built by extracting a hierarchical tree from documents such as books",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "information foraging theory",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the agent based query method in bookrag is inspired by information foraging theory",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "three widely adopted benchmarks",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag was evaluated and demonstrated state of the art performance on three widely adopted benchmarks",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "retrievalaugmented generation",
+      "tgt_entity_name": "industry",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "industry has attracted attention to retrievalaugmented generation",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "retrievalaugmented generation",
+      "tgt_entity_name": "academia",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "academia has attracted attention to retrievalaugmented generation",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "booklets",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag is specifically targeted for documents like booklets that have hierarchical structures",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "handbooks",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag is specifically targeted for documents like handbooks that have hierarchical structures",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "tree",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookindex is built by extracting a hierarchical tree from the document",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "graph",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookindex uses a graph to capture the intricate relationships between entities",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "tree",
+      "tgt_entity_name": "table of contents",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the hierarchical tree serves as the role of the table of contents",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "retrieval recall",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag significantly outperforms baselines in retrieval recall",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "qa accuracy",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag significantly outperforms baselines in qa accuracy",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "efficiency",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "bookrag maintains competitive efficiency",
+      "source_ids": [
+        2
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "baselines",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag significantly outperforms baselines in both retrieval recall and qa accuracy",
+      "source_ids": [
+        2
+      ]
+    }
+  ],
+  "node_idx": 2
+}

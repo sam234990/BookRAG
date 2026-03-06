@@ -1,0 +1,475 @@
+{
+  "entities": [
+    {
+      "entity_name": "gheorghe comanici",
+      "entity_type": "PERSON",
+      "description": "gheorghe comanici is listed as one of the authors of the paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "eric bieber",
+      "entity_type": "PERSON",
+      "description": "eric bieber is listed as one of the authors of the paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "mike schaekermann",
+      "entity_type": "PERSON",
+      "description": "mike schaekermann is listed as one of the authors of the paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "ice pasupat",
+      "entity_type": "PERSON",
+      "description": "ice pasupat is listed as one of the authors of the paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "noveen sachdeva",
+      "entity_type": "PERSON",
+      "description": "noveen sachdeva is listed as one of the authors of the paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "inderjit dhillon",
+      "entity_type": "PERSON",
+      "description": "inderjit dhillon is listed as one of the authors of the paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "marcel blistein",
+      "entity_type": "PERSON",
+      "description": "marcel blistein is listed as one of the authors of the paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "ori ram",
+      "entity_type": "PERSON",
+      "description": "ori ram is listed as one of the authors of the paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "dan zhang",
+      "entity_type": "PERSON",
+      "description": "dan zhang is listed as one of the authors of the paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "evan rosen",
+      "entity_type": "PERSON",
+      "description": "evan rosen is listed as one of the authors of the paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "gemini 2 5",
+      "entity_type": "PRODUCT",
+      "description": "gemini 2 5 is a product described as pushing the frontier with advanced reasoning  multimodality  long context  and next generation agentic capabilities",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "arxiv",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv is the venue where the preprint is published",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "2025",
+      "entity_type": "DATE",
+      "description": "2025 is the year the paper was published",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "arxiv 2507 06261",
+      "entity_type": "FILE_TYPE",
+      "description": "arxiv 2507 06261 is the specific identifier for the preprint document",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "et al",
+      "entity_type": "PERSON",
+      "description": "et al  indicates additional authors not explicitly listed in the text",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "advanced reasoning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "advanced reasoning is a capability of gemini 2 5 mentioned in the text",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "multimodality",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "multimodality is a capability of gemini 2 5 mentioned in the text",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "long context",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "long context is a capability of gemini 2 5 mentioned in the text",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "next generation agentic capabilities",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "next generation agentic capabilities are capabilities of gemini 2 5 mentioned in the text",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "gemini 2 5 pushing the frontier with advanced reasoning multimodality long context and next generation agentic capabilities",
+      "entity_type": "BOOK",
+      "description": "gemini 2 5  pushing the frontier with advanced reasoning  multimodality  long context  and next generation agentic capabilities is the title of the paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "entity_name": "arxiv preprint",
+      "entity_type": "FILE_TYPE",
+      "description": "arxiv preprint describes the type of document published",
+      "source_ids": [
+        203
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "gheorghe comanici",
+      "tgt_entity_name": "gemini 2 5",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "gheorghe comanici is an author of the paper describing gemini 2 5",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "eric bieber",
+      "tgt_entity_name": "gemini 2 5",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "eric bieber is an author of the paper describing gemini 2 5",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "mike schaekermann",
+      "tgt_entity_name": "gemini 2 5",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "mike schaekermann is an author of the paper describing gemini 2 5",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "ice pasupat",
+      "tgt_entity_name": "gemini 2 5",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "ice pasupat is an author of the paper describing gemini 2 5",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "noveen sachdeva",
+      "tgt_entity_name": "gemini 2 5",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "noveen sachdeva is an author of the paper describing gemini 2 5",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "inderjit dhillon",
+      "tgt_entity_name": "gemini 2 5",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "inderjit dhillon is an author of the paper describing gemini 2 5",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "marcel blistein",
+      "tgt_entity_name": "gemini 2 5",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "marcel blistein is an author of the paper describing gemini 2 5",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "ori ram",
+      "tgt_entity_name": "gemini 2 5",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "ori ram is an author of the paper describing gemini 2 5",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "dan zhang",
+      "tgt_entity_name": "gemini 2 5",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "dan zhang is an author of the paper describing gemini 2 5",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "evan rosen",
+      "tgt_entity_name": "gemini 2 5",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "evan rosen is an author of the paper describing gemini 2 5",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gheorghe comanici",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gheorghe comanici is an author of the paper published on arxiv",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gemini 2 5",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the paper describing gemini 2 5 is published on arxiv",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gemini 2 5",
+      "tgt_entity_name": "2025",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gemini 2 5 is the subject of a paper published in 2025",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "arxiv 2507 06261",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "arxiv 2507 06261 is the specific identifier for the paper on arxiv",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gheorghe comanici",
+      "tgt_entity_name": "eric bieber",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gheorghe comanici and eric bieber are co authors on the same paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gheorghe comanici",
+      "tgt_entity_name": "mike schaekermann",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gheorghe comanici and mike schaekermann are co authors on the same paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gheorghe comanici",
+      "tgt_entity_name": "ice pasupat",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gheorghe comanici and ice pasupat are co authors on the same paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gheorghe comanici",
+      "tgt_entity_name": "noveen sachdeva",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gheorghe comanici and noveen sachdeva are co authors on the same paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gheorghe comanici",
+      "tgt_entity_name": "inderjit dhillon",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gheorghe comanici and inderjit dhillon are co authors on the same paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gheorghe comanici",
+      "tgt_entity_name": "marcel blistein",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gheorghe comanici and marcel blistein are co authors on the same paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gheorghe comanici",
+      "tgt_entity_name": "ori ram",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gheorghe comanici and ori ram are co authors on the same paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gheorghe comanici",
+      "tgt_entity_name": "dan zhang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gheorghe comanici and dan zhang are co authors on the same paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gheorghe comanici",
+      "tgt_entity_name": "evan rosen",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gheorghe comanici and evan rosen are co authors on the same paper",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gheorghe comanici",
+      "tgt_entity_name": "et al",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "gheorghe comanici is listed before et al   indicating they are among the authors represented by the abbreviation",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gemini 2 5",
+      "tgt_entity_name": "advanced reasoning",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "gemini 2 5 is described as having advanced reasoning capabilities",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gemini 2 5",
+      "tgt_entity_name": "multimodality",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "gemini 2 5 is described as having multimodality capabilities",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gemini 2 5",
+      "tgt_entity_name": "long context",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "gemini 2 5 is described as having long context capabilities",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gemini 2 5",
+      "tgt_entity_name": "next generation agentic capabilities",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "gemini 2 5 is described as having next generation agentic capabilities",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "gemini 2 5 pushing the frontier with advanced reasoning multimodality long context and next generation agentic capabilities",
+      "tgt_entity_name": "gemini 2 5",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the title refers to the product gemini 2 5",
+      "source_ids": [
+        203
+      ]
+    },
+    {
+      "src_entity_name": "arxiv 2507 06261",
+      "tgt_entity_name": "arxiv preprint",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "arxiv 2507 06261 is identified as an arxiv preprint",
+      "source_ids": [
+        203
+      ]
+    }
+  ],
+  "node_idx": 203
+}

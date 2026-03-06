@@ -1,0 +1,417 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a system compared against baselines that achieves state of the art qa performance",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "table 5",
+      "entity_type": "TABLE",
+      "description": "table 5 is the location where the comparison of qa performance between bookrag and baselines is shown",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "m3docvqa",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "m3docvqa is a dataset used to evaluate the exact match performance of bookrag",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "layout vanilla",
+      "entity_type": "PRODUCT",
+      "description": "layout   vanilla is a baseline method that consistently outperforms vanilla rag",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "vanilla rag",
+      "entity_type": "PRODUCT",
+      "description": "vanilla rag is a baseline method that is outperformed by layout   vanilla",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "tree traverse",
+      "entity_type": "PRODUCT",
+      "description": "tree traverse is a method highlighted for having suboptimal results due to limitations in hierarchical navigation",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "graphranker",
+      "entity_type": "PRODUCT",
+      "description": "graphranker is a method highlighted for having suboptimal results due to limitations in graph based reasoning",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "tree graph bookindex",
+      "entity_type": "PRODUCT",
+      "description": "tree graph bookindex is a component of bookrag that contributes to its superior performance",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "agent based planning",
+      "entity_type": "PRODUCT",
+      "description": "agent based planning is a component of bookrag that contributes to its superior performance",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "18 0",
+      "entity_type": "PERCENTAGE",
+      "description": "18 0  is the margin by which bookrag outperforms the top performing baseline in exact match on m3docvqa",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "qa performance",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "qa performance is the specific task being evaluated and compared in the text",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "exact match",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "exact match is the metric used to measure the performance of bookrag against baselines",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "hierarchical navigation",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "hierarchical navigation is a method used by tree traverse that is noted for missing cross sectional context",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "graph based reasoning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "graph based reasoning is a method used by graphranker that is noted for drifting into irrelevant scopes",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "context fragmentation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "context fragmentation is a limitation of existing baselines that bookrag overcomes",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "static query workflow",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "static query workflow is a limitation of existing baselines that bookrag overcomes",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "cross sectional context",
+      "entity_type": "CONCEPT",
+      "description": "cross sectional context is information often missed by methods relying solely on hierarchical navigation",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "irrelevant scopes",
+      "entity_type": "CONCEPT",
+      "description": "irrelevant scopes are areas that methods relying solely on graph based reasoning may drift into",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "retrieval",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "retrieval is the process of finding evidence  which is improved by layout parsing",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "generation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "generation is the process of creating output  which is made accurate by bookrag",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "queries",
+      "entity_type": "CONCEPT",
+      "description": "queries are inputs that bookrag effectively classifies to configure optimal workflows",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "workflows",
+      "entity_type": "CONCEPT",
+      "description": "workflows are configured by bookrag to ensure precise evidence retrieval and accurate generation",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "baselines",
+      "entity_type": "PRODUCT",
+      "description": "baselines are the three categories of methods against which bookrag is compared",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "top performing baseline",
+      "entity_type": "PRODUCT",
+      "description": "top performing baseline is the specific baseline that bookrag substantially outperforms",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "entity_name": "existing baselines",
+      "entity_type": "PRODUCT",
+      "description": "existing baselines are the methods that suffer from context fragmentation and static query workflows",
+      "source_ids": [
+        152
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "table 5",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag s qa performance is presented and compared in table 5",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "m3docvqa",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is evaluated on the m3docvqa dataset  where it achieves a specific performance margin",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "18 0",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag outperforms the top baseline by 18 0  on the m3docvqa dataset",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "layout vanilla",
+      "tgt_entity_name": "vanilla rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "layout   vanilla consistently outperforms vanilla rag in the comparison",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "tree graph bookindex",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag s superiority stems from the synergy of its unified tree graph bookindex",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "agent based planning",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag s superiority stems from the synergy of its agent based planning",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "tree traverse",
+      "tgt_entity_name": "graphranker",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "both tree traverse and graphranker are highlighted for having suboptimal results due to similar limitations",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "qa performance",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is the subject of the qa performance evaluation described in the text",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "exact match",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag s performance is measured using the exact match metric on m3docvqa",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "retrieval",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag ensures precise evidence retrieval by overcoming limitations of existing baselines",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "generation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag ensures accurate generation by overcoming limitations of existing baselines",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "queries",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag effectively classifies queries to configure optimal workflows",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "workflows",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag configures optimal workflows to improve retrieval and generation",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "layout vanilla",
+      "tgt_entity_name": "retrieval",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "layout   vanilla preserves essential structural information for better retrieval",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "tree traverse",
+      "tgt_entity_name": "hierarchical navigation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "tree traverse relies on hierarchical navigation  which leads to suboptimal results",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "graphranker",
+      "tgt_entity_name": "graph based reasoning",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graphranker relies on graph based reasoning  which leads to suboptimal results",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "tree traverse",
+      "tgt_entity_name": "cross sectional context",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "tree traverse often misses cross sectional context due to its reliance on hierarchical navigation",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "graphranker",
+      "tgt_entity_name": "irrelevant scopes",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "graphranker often drifts into irrelevant scopes due to its reliance on graph based reasoning",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "context fragmentation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag overcomes the limitation of context fragmentation found in existing baselines",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "static query workflow",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag overcomes the limitation of static query workflow found in existing baselines",
+      "source_ids": [
+        152
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "top performing baseline",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag substantially outperforms the top performing baseline by 18 0",
+      "source_ids": [
+        152
+      ]
+    }
+  ],
+  "node_idx": 152
+}

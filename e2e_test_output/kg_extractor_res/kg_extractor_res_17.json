@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "table: cref='#/texts/17'...",
+      "entity_type": "TABLE",
+      "description": "A data table described as: cref='#/texts/17'",
+      "source_ids": [
+        17
+      ]
+    },
+    {
+      "entity_name": "texts reference",
+      "entity_type": "SECTION_TITLE",
+      "description": "A reference identifier pointing to a specific text location within a document structure, indicated by the cref attribute '#/texts/17'.",
+      "source_ids": [
+        17
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "table: cref='#/texts/17'...",
+      "tgt_entity_name": "texts reference",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Table 'Table: cref='#/texts/17'...' contains data about 'Texts Reference'.",
+      "source_ids": [
+        17
+      ]
+    }
+  ],
+  "node_idx": 17
+}

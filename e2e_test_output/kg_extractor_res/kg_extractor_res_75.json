@@ -1,0 +1,437 @@
+{
+  "entities": [
+    {
+      "entity_name": "algorithm 1",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "algorithm 1 is the entity resolution process described in the text",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "v n",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "v n is a new entity being processed in the entity resolution process",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "e c",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "e c represents the top k candidates retrieved for the new entity v n",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "db",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "db is the vector database from which candidates are retrieved",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "r",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "r is the reranker used to re rank candidates against v n",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "s",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "s represents the scores assigned to the candidates",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "sel",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "sel is the selection set initialized with the top scoring candidate",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "g",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "g is the gradient threshold used to check score drops",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "case a",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "case a occurs when all candidates pass the gradient check  indicating scores lacked discriminative power",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "case b",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "case b occurs when a gradient is found  signaling a sharp score drop",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "v sel",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "v sel is the canonical entity selected from the selection set sel",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "SOFTWARE",
+      "description": "llm is a tool used to select the canonical entity if multiple aliases are identified",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "g",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "g is a data structure or set that is updated and returned at the end of the process",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "lines 1 3",
+      "entity_type": "SECTION_TITLE",
+      "description": "lines 1 3 describe the initial retrieval and reranking steps of the algorithm",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "line 4",
+      "entity_type": "SECTION_TITLE",
+      "description": "line 4 describes the initialization of the selection set and the initial score",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "lines 5 8",
+      "entity_type": "SECTION_TITLE",
+      "description": "lines 5 8 describe the iteration through remaining candidates and the gradient threshold check",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "lines 7 8",
+      "entity_type": "SECTION_TITLE",
+      "description": "lines 7 8 detail the logic for adding candidates to the selection set and updating scores",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "line 8",
+      "entity_type": "SECTION_TITLE",
+      "description": "line 8 describes the condition where the loop breaks upon detecting a sharp score drop",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "lines 9 14",
+      "entity_type": "SECTION_TITLE",
+      "description": "lines 9 14 describe the final decision making logic of the algorithm",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "line 9 10",
+      "entity_type": "SECTION_TITLE",
+      "description": "lines 9 10 describe the action taken in case a where a new entity is added",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "lines 12 14",
+      "entity_type": "SECTION_TITLE",
+      "description": "lines 12 14 describe the merging of the new entity with the canonical entity in case b",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "line 13",
+      "entity_type": "SECTION_TITLE",
+      "description": "line 13 describes the use of an llm to select a canonical entity when multiple aliases exist",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "line 15",
+      "entity_type": "SECTION_TITLE",
+      "description": "line 15 describes the return of the updated g and db structures",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "score",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "score is the variable updated during the iteration to track the current score value",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "entity_name": "v c",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "v c represents the current candidate being evaluated in the iteration",
+      "source_ids": [
+        75
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "v n",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "algorithm 1 processes the new entity v n by retrieving candidates and making a decision",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "e c",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "algorithm 1 retrieves the top k candidates e c from the vector database db",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "db",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the vector database db is the source from which candidates e c are retrieved",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "r",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "algorithm 1 uses the reranker r to re rank candidates e c against v n",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "s",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "algorithm 1 sorts candidates based on their scores s",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "sel",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "algorithm 1 initializes and iterates through the selection set sel",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "g",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "algorithm 1 uses the gradient threshold g to determine if a score drop is sharp",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "case a",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "algorithm 1 identifies case a when the selection set sel is identical to e c",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "case b",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "algorithm 1 identifies case b when a gradient is found in the selection set sel",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "v sel",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "algorithm 1 selects the canonical entity v sel from the selection set sel in case b",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "algorithm 1 uses an llm to select v sel if multiple aliases are identified",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "lines 1 3",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "algorithm 1 executes the steps outlined in lines 1 3 to retrieve and rerank candidates",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "line 4",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "algorithm 1 executes the initialization step described in line 4",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "lines 5 8",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "algorithm 1 executes the iteration logic described in lines 5 8",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "lines 7 8",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the logic in lines 7 8 is part of the iteration process within algorithm 1",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "line 8",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "line 8 defines the break condition within the loop of algorithm 1",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "lines 9 14",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "algorithm 1 executes the decision logic described in lines 9 14",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "line 9 10",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "lines 9 10 are the specific actions taken when case a is identified in algorithm 1",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "lines 12 14",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "lines 12 14 are the specific actions taken when case b is identified in algorithm 1",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "line 13",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "line 13 is a step within the case b logic of algorithm 1",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "line 15",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "line 15 is the final step of algorithm 1 where results are returned",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "score",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the variable score is initialized and updated during the execution of algorithm 1",
+      "source_ids": [
+        75
+      ]
+    },
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "v c",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the variable v c is the current candidate processed within the loop of algorithm 1",
+      "source_ids": [
+        75
+      ]
+    }
+  ],
+  "node_idx": 75
+}

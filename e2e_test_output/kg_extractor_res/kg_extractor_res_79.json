@@ -1,0 +1,167 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "SOFTWARE",
+      "description": "bookrag is an agent based approach proposed to address complex document queries by planning and executing operations on a bookindex",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "DATABASE",
+      "description": "bookindex is the data structure or system on which bookrag executes operations for document queries",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "entity_name": "agent based planning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "agent based planning is a core mechanism in bookrag that formulates strategies for operations",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "entity_name": "structured execution",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "structured execution is a core mechanism in bookrag that includes the retrieval process based on ift and generation principles",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "entity_name": "ift",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "ift is a principle used within the structured execution mechanism of bookrag",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "entity_name": "modal type filtering",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "modal type filtering is an operation mentioned as necessary for addressing complex real world document queries",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "entity_name": "semantic selection",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "semantic selection is an operation mentioned as necessary for addressing complex real world document queries",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "entity_name": "multi hop reasoning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "multi hop reasoning is an operation mentioned as necessary for addressing complex real world document queries",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "entity_name": "generation",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "generation is a process included within the structured execution mechanism of bookrag",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "entity_name": "real world document queries",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        79
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag executes operations on the bookindex to handle document queries",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "agent based planning",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag utilizes agent based planning as one of its two core mechanisms to formulate strategies",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "structured execution",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag utilizes structured execution as one of its two core mechanisms to handle retrieval and generation",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "src_entity_name": "structured execution",
+      "tgt_entity_name": "ift",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "structured execution includes the retrieval process under the principles of ift",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "src_entity_name": "real world document queries",
+      "tgt_entity_name": "modal type filtering",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "real world document queries necessitate operations like modal type filtering",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "src_entity_name": "real world document queries",
+      "tgt_entity_name": "semantic selection",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "real world document queries necessitate operations like semantic selection",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "src_entity_name": "real world document queries",
+      "tgt_entity_name": "multi hop reasoning",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "real world document queries necessitate operations like multi hop reasoning",
+      "source_ids": [
+        79
+      ]
+    },
+    {
+      "src_entity_name": "structured execution",
+      "tgt_entity_name": "generation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "structured execution includes the generation process as part of its workflow",
+      "source_ids": [
+        79
+      ]
+    }
+  ],
+  "node_idx": 79
+}

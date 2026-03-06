@@ -1,0 +1,261 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a system designed to intelligently navigate a bookindex and adapt to query requirements",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "bookindex is a data structure represented as  t  g  m  that bookrag navigates",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "entity_name": "formulator",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "formulator is one of four types of operators defined to support flexible retrieval in bookrag",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "entity_name": "selector",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "selector is one of four types of operators defined to support flexible retrieval in bookrag",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "entity_name": "reasoner",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "reasoner is one of four types of operators defined to support flexible retrieval in bookrag",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "entity_name": "synthesizer",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "synthesizer is one of four types of operators defined to support flexible retrieval in bookrag",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "entity_name": "agent",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the agent is an entity that performs the first step of the sequential process in bookrag",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "entity_name": "t",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "t is a component of the bookindex data structure  b    t  g  m",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "entity_name": "g",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "g is a component of the bookindex data structure  b    t  g  m",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "entity_name": "m",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "m is a component of the bookindex data structure  b    t  g  m",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "entity_name": "query categories",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "query categories are specific requirements that bookrag adapts to using its operators",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "entity_name": "execution pipelines",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "execution pipelines are formed by combining operators to support flexible retrieval",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "entity_name": "adjustable parameters",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "adjustable parameters are attributes of the execution pipelines that can be configured",
+      "source_ids": [
+        88
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is designed to intelligently navigate the bookindex",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "formulator",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag defines the formulator as one of its four types of operators",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "selector",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag defines the selector as one of its four types of operators",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "reasoner",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag defines the reasoner as one of its four types of operators",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "synthesizer",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag defines the synthesizer as one of its four types of operators",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "agent",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the agent performs the first step of the process within bookrag",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "t",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "t is a defined component within the bookindex structure",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "g",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "g is a defined component within the bookindex structure",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "m",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "m is a defined component within the bookindex structure",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "formulator",
+      "tgt_entity_name": "execution pipelines",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the formulator operator is combined to form tailored execution pipelines",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "selector",
+      "tgt_entity_name": "execution pipelines",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the selector operator is combined to form tailored execution pipelines",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "reasoner",
+      "tgt_entity_name": "execution pipelines",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the reasoner operator is combined to form tailored execution pipelines",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "synthesizer",
+      "tgt_entity_name": "execution pipelines",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the synthesizer operator is combined to form tailored execution pipelines",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "query categories",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag dynamically configures operators to adapt to the specific requirements of different query categories",
+      "source_ids": [
+        88
+      ]
+    },
+    {
+      "src_entity_name": "execution pipelines",
+      "tgt_entity_name": "adjustable parameters",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "execution pipelines are created with adjustable parameters",
+      "source_ids": [
+        88
+      ]
+    }
+  ],
+  "node_idx": 88
+}

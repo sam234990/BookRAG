@@ -1,0 +1,87 @@
+{
+  "entities": [
+    {
+      "entity_name": "proceedings of the vldb endowment",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "proceedings of the vldb endowment is the name of the publication venue mentioned in the text",
+      "source_ids": [
+        11
+      ]
+    },
+    {
+      "entity_name": "vol 19",
+      "entity_type": "MEASUREMENT",
+      "description": "vol  19 refers to the volume number of the publication",
+      "source_ids": [
+        11
+      ]
+    },
+    {
+      "entity_name": "no 1",
+      "entity_type": "MEASUREMENT",
+      "description": "no  1 refers to the issue number of the publication",
+      "source_ids": [
+        11
+      ]
+    },
+    {
+      "entity_name": "issn 2150 8097",
+      "entity_type": "MEASUREMENT",
+      "description": "issn 2150 8097 is the international standard serial number assigned to the publication",
+      "source_ids": [
+        11
+      ]
+    },
+    {
+      "entity_name": "doi xx xx xxx xx",
+      "entity_type": "MEASUREMENT",
+      "description": "doi xx xx xxx xx is the digital object identifier assigned to the document",
+      "source_ids": [
+        11
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "proceedings of the vldb endowment",
+      "tgt_entity_name": "vol 19",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "vol  19 is the volume associated with the proceedings of the vldb endowment",
+      "source_ids": [
+        11
+      ]
+    },
+    {
+      "src_entity_name": "proceedings of the vldb endowment",
+      "tgt_entity_name": "no 1",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "no  1 is the issue number associated with the proceedings of the vldb endowment",
+      "source_ids": [
+        11
+      ]
+    },
+    {
+      "src_entity_name": "proceedings of the vldb endowment",
+      "tgt_entity_name": "issn 2150 8097",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "issn 2150 8097 is the identifier for the proceedings of the vldb endowment",
+      "source_ids": [
+        11
+      ]
+    },
+    {
+      "src_entity_name": "proceedings of the vldb endowment",
+      "tgt_entity_name": "doi xx xx xxx xx",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "doi xx xx xxx xx is the identifier for the specific article within the proceedings of the vldb endowment",
+      "source_ids": [
+        11
+      ]
+    }
+  ],
+  "node_idx": 11
+}

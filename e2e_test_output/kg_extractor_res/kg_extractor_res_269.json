@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "description",
+      "entity_type": "CONCEPT",
+      "description": "description refers to the contextual importance of text segments which may differ as they are extracted from different parts of a document",
+      "source_ids": [
+        269
+      ]
+    },
+    {
+      "entity_name": "contextual importance",
+      "entity_type": "CONCEPT",
+      "description": "contextual importance is a property of descriptions that requires looking past surface level text similarity to determine if they describe the same underlying object or concept",
+      "source_ids": [
+        269
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "description",
+      "tgt_entity_name": "contextual importance",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "descriptions possess contextual importance  which dictates the need to analyze them for underlying identity rather than surface similarity",
+      "source_ids": [
+        269
+      ]
+    }
+  ],
+  "node_idx": 269
+}

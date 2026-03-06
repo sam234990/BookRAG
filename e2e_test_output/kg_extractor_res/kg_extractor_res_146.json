@@ -1,0 +1,119 @@
+{
+  "entities": [
+    {
+      "entity_name": "conventional rag",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "conventional rag is described as the most common pipeline for document analysis involving text extraction and chunking",
+      "source_ids": [
+        146
+      ]
+    },
+    {
+      "entity_name": "bm25",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "bm25 is identified as a strong and widely used retrieval model selected for implementation",
+      "source_ids": [
+        146
+      ]
+    },
+    {
+      "entity_name": "vanilla rag",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "vanilla rag is identified as a strong and widely used retrieval model selected for implementation",
+      "source_ids": [
+        146
+      ]
+    },
+    {
+      "entity_name": "layout vanilla",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "layout vanilla is a variant of vanilla rag that utilizes document layout analysis for semantic chunking",
+      "source_ids": [
+        146
+      ]
+    },
+    {
+      "entity_name": "document analysis",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "document analysis is the general task where raw text is extracted and processed in the described pipeline",
+      "source_ids": [
+        146
+      ]
+    },
+    {
+      "entity_name": "raw text",
+      "entity_type": "MATERIAL",
+      "description": "raw text is the input material that is first extracted in the pipeline",
+      "source_ids": [
+        146
+      ]
+    },
+    {
+      "entity_name": "segments",
+      "entity_type": "MEASUREMENT",
+      "description": "segments are the chunks of specified size that the raw text is divided into",
+      "source_ids": [
+        146
+      ]
+    },
+    {
+      "entity_name": "document layout analysis",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "document layout analysis is the technique used by layout vanilla for semantic chunking",
+      "source_ids": [
+        146
+      ]
+    },
+    {
+      "entity_name": "semantic chunking",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "semantic chunking is the process of dividing text into segments based on meaning  utilized by layout vanilla",
+      "source_ids": [
+        146
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "conventional rag",
+      "tgt_entity_name": "bm25",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "conventional rag is the pipeline where bm25 is selected as a retrieval model",
+      "source_ids": [
+        146
+      ]
+    },
+    {
+      "src_entity_name": "conventional rag",
+      "tgt_entity_name": "vanilla rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "conventional rag is the pipeline where vanilla rag is selected as a retrieval model",
+      "source_ids": [
+        146
+      ]
+    },
+    {
+      "src_entity_name": "layout vanilla",
+      "tgt_entity_name": "vanilla rag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "layout vanilla is a variant that builds upon vanilla rag by adding document layout analysis",
+      "source_ids": [
+        146
+      ]
+    },
+    {
+      "src_entity_name": "layout vanilla",
+      "tgt_entity_name": "conventional rag",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "layout vanilla is implemented as part of the conventional rag pipeline described in the text",
+      "source_ids": [
+        146
+      ]
+    }
+  ],
+  "node_idx": 146
+}

@@ -12,6 +12,43 @@ class OutlineExtraction(BaseModel):
     outline: List[OutlineExtractionOutput]
 
 
+# ── Language-specific supplements for outline extraction ──────────────────────
+
+_OUTLINE_LANG_SUPPLEMENTS = {
+    "id": """
+### Additional Guidance — Indonesian Legal Documents
+
+This document is written in **Bahasa Indonesia** and follows Indonesian legal drafting conventions.
+Use the following standard hierarchy when determining heading levels:
+
+| Pattern | Meaning | Recommended Level |
+|---|---|---|
+| **BAB** (+ Roman numeral) | Chapter | `level: 1` (top-level section) |
+| **Bagian** (+ ordinal word: Kesatu, Kedua …) | Part | `level: 2` |
+| **Paragraf** (+ number) | Sub-section | `level: 3` |
+| **Pasal** (+ number) | Article | `level: 3` or `level: 4` |
+
+**Key rules for Indonesian legal documents:**
+- The document title (e.g., "UNDANG-UNDANG …", "PERATURAN …") is **always `level: 0`**.
+- BAB headings use **Roman numerals** (BAB I, BAB II, …) and are major divisions (`level: 1`).
+- Bagian headings use **Indonesian ordinal words** (Bagian Kesatu, Bagian Kedua, …) — they subdivide a BAB (`level: 2`).
+- Paragraf headings use **Arabic numerals** (Paragraf 1, Paragraf 2, …) — they subdivide a Bagian (`level: 3`).
+- Pasal headings use **Arabic numerals** (Pasal 1, Pasal 2, …) — they are articles within the nearest parent section.
+- Preserve all heading text exactly as it appears; do **not** translate.
+""",
+}
+
+
+def get_outline_prompt(lang: str = "en") -> str:
+    """Return the outline extraction prompt, optionally augmented with
+    language-specific guidance (e.g. Indonesian legal hierarchy)."""
+    supplement = _OUTLINE_LANG_SUPPLEMENTS.get(lang, "")
+    if supplement:
+        # Insert the supplement just before the final instruction line
+        return OUTLINE_EXTRACTION_PROMPT + supplement
+    return OUTLINE_EXTRACTION_PROMPT
+
+
 # 2219 tokens
 OUTLINE_EXTRACTION_PROMPT = """
 You are an expert in document structure analysis. Your task is to generate a structured outline based on a given list of text segments.

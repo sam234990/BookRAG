@@ -1,0 +1,79 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 13",
+      "entity_type": "IMAGE",
+      "description": "figure 13 is an image containing a prompt for entity resolution judgement",
+      "source_ids": [
+        284
+      ]
+    },
+    {
+      "entity_name": "entity resolution",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "entity resolution is the task or problem addressed by the prompt in figure 13",
+      "source_ids": [
+        284
+      ]
+    },
+    {
+      "entity_name": "prompt",
+      "entity_type": "SOFTWARE",
+      "description": "the prompt is a software component used for entity resolution judgement",
+      "source_ids": [
+        284
+      ]
+    },
+    {
+      "entity_name": "examples",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "examples are data instances that were omitted from the text due to space constraints",
+      "source_ids": [
+        284
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 13",
+      "tgt_entity_name": "entity resolution",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 13 contains the prompt used for the entity resolution judgement task",
+      "source_ids": [
+        284
+      ]
+    },
+    {
+      "src_entity_name": "figure 13",
+      "tgt_entity_name": "prompt",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 13 displays the prompt for entity resolution judgement",
+      "source_ids": [
+        284
+      ]
+    },
+    {
+      "src_entity_name": "prompt",
+      "tgt_entity_name": "entity resolution",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the prompt is specifically designed for the entity resolution judgement task",
+      "source_ids": [
+        284
+      ]
+    },
+    {
+      "src_entity_name": "examples",
+      "tgt_entity_name": "figure 13",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "examples were omitted from figure 13 due to lack of space",
+      "source_ids": [
+        284
+      ]
+    }
+  ],
+  "node_idx": 284
+}

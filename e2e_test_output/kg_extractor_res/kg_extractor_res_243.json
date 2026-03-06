@@ -1,0 +1,199 @@
+{
+  "entities": [
+    {
+      "entity_name": "single hop",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "single hop is a task type where a question can be answered by retrieving information from a single location",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "entity_name": "question",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "question is the item that needs to be answered in the single hop task",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "entity_name": "information",
+      "entity_type": "CONCEPT",
+      "description": "information is the data retrieved to answer the question",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "entity_name": "document",
+      "entity_type": "CONCEPT",
+      "description": "document is the source material containing the information",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "entity_name": "paragraph",
+      "entity_type": "SECTION_TITLE",
+      "description": "paragraph is an example of a contiguous location within a document",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "entity_name": "table",
+      "entity_type": "SECTION_TITLE",
+      "description": "table is an example of a contiguous location within a document",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "entity_name": "figure",
+      "entity_type": "SECTION_TITLE",
+      "description": "figure is an example of a contiguous location within a document",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "entity_name": "single",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "entity_name": "contiguous location",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        243
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "single",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the single hop task requires retrieving information from a single location",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "contiguous location",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the single hop task involves information found in a contiguous location",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the single hop task is defined within the context of a document",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "question",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the single hop task is defined by the ability to answer a question",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "information",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the single hop task involves retrieving information",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "src_entity_name": "information",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "information is retrieved from the document",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "src_entity_name": "paragraph",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "a paragraph is a part of a document",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "src_entity_name": "table",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "a table is a part of a document",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "src_entity_name": "figure",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "a figure is a part of a document",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "paragraph",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "a single hop question can be answered by retrieving information from a paragraph",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "table",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "a single hop question can be answered by retrieving information from a table",
+      "source_ids": [
+        243
+      ]
+    },
+    {
+      "src_entity_name": "single hop",
+      "tgt_entity_name": "figure",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "a single hop question can be answered by retrieving information from a figure",
+      "source_ids": [
+        243
+      ]
+    }
+  ],
+  "node_idx": 243
+}

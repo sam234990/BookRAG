@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (17)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the Accuracy metric as the average of an indicator function comparing neighborhood sets. LaTeX: Accuracy = 1 𝑁 𝑁 ∑︁ 𝑖 = 1 I (N( 𝑦 𝑔𝑜𝑙𝑑,𝑖 ) ⊆ N( 𝑦 𝑟𝑎𝑤,𝑖 )) (17)",
+      "source_ids": [
+        228
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 228
+}

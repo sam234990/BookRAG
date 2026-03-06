@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (9)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the variable P_s based on extraction success or failure conditions. LaTeX: 𝑃 s = ( Extract success - - - - -→ Select_by_Entity → 𝑃 std Extract fail - -→ Select_by_Section → 𝑃 std (9)",
+      "source_ids": [
+        116
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 116
+}

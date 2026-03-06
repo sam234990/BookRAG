@@ -1,0 +1,107 @@
+{
+  "entities": [
+    {
+      "entity_name": "accuracy inclusion based",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "accuracy  inclusion based  is a soft match metric used to evaluate model predictions by checking if the normalized gold answer is included in the generated response",
+      "source_ids": [
+        227
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "TECHNOLOGY",
+      "description": "llm refers to large language models  the type of technology whose generation nature is described as uncontrollable in the text",
+      "source_ids": [
+        227
+      ]
+    },
+    {
+      "entity_name": "prior works",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "prior works refer to previous research studies cited in the text as a basis for the methodology",
+      "source_ids": [
+        227
+      ]
+    },
+    {
+      "entity_name": "3",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "3 is a citation number referring to a specific prior work mentioned in the text",
+      "source_ids": [
+        227
+      ]
+    },
+    {
+      "entity_name": "34",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "34 is a citation number referring to a specific prior work mentioned in the text",
+      "source_ids": [
+        227
+      ]
+    },
+    {
+      "entity_name": "46",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "46 is a citation number referring to a specific prior work mentioned in the text",
+      "source_ids": [
+        227
+      ]
+    },
+    {
+      "entity_name": "soft match metric",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "soft match metric is a category of evaluation methods described as being used in the text",
+      "source_ids": [
+        227
+      ]
+    },
+    {
+      "entity_name": "normalized gold answer",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "normalized gold answer is the reference data used to determine if a prediction is correct",
+      "source_ids": [
+        227
+      ]
+    },
+    {
+      "entity_name": "model s generated response",
+      "entity_type": "PRODUCT",
+      "description": "model s generated response is the output produced by the model being evaluated",
+      "source_ids": [
+        227
+      ]
+    },
+    {
+      "entity_name": "strict exact match",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "strict exact match is a comparison method explicitly contrasted with the soft match metric in the text",
+      "source_ids": [
+        227
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "accuracy inclusion based",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "accuracy  inclusion based  is utilized to account for the uncontrollable nature of llm generation",
+      "source_ids": [
+        227
+      ]
+    },
+    {
+      "src_entity_name": "accuracy inclusion based",
+      "tgt_entity_name": "prior works",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "accuracy  inclusion based  is utilized following prior works cited as  3  34  46",
+      "source_ids": [
+        227
+      ]
+    }
+  ],
+  "node_idx": 227
+}

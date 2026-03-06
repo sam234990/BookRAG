@@ -1,0 +1,79 @@
+{
+  "entities": [
+    {
+      "entity_name": "5",
+      "entity_type": "PERCENTAGE",
+      "description": "5  represents a specific portion of the latino population mentioned in the context of economic upward mobility",
+      "source_ids": [
+        246
+      ]
+    },
+    {
+      "entity_name": "latinos",
+      "entity_type": "NATIONALITY",
+      "description": "latinos are the demographic group whose views on economic upward mobility for their children are being queried",
+      "source_ids": [
+        246
+      ]
+    },
+    {
+      "entity_name": "economic upward mobility",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "economic upward mobility is the specific issue regarding the children of latinos that is the subject of the inquiry",
+      "source_ids": [
+        246
+      ]
+    },
+    {
+      "entity_name": "children",
+      "entity_type": "PERSON",
+      "description": "children are the offspring of the latinos whose economic upward mobility is being discussed",
+      "source_ids": [
+        246
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "5",
+      "tgt_entity_name": "latinos",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the percentage 5  specifically refers to a subset of the latino population",
+      "source_ids": [
+        246
+      ]
+    },
+    {
+      "src_entity_name": "latinos",
+      "tgt_entity_name": "economic upward mobility",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "latinos are the group whose perspective on economic upward mobility for their children is being examined",
+      "source_ids": [
+        246
+      ]
+    },
+    {
+      "src_entity_name": "latinos",
+      "tgt_entity_name": "children",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the children belong to the latino demographic group mentioned in the text",
+      "source_ids": [
+        246
+      ]
+    },
+    {
+      "src_entity_name": "economic upward mobility",
+      "tgt_entity_name": "children",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "economic upward mobility is the specific attribute or outcome being considered for the children",
+      "source_ids": [
+        246
+      ]
+    }
+  ],
+  "node_idx": 246
+}

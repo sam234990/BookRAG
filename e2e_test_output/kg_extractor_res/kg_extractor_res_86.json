@@ -1,0 +1,97 @@
+{
+  "entities": [
+    {
+      "entity_name": "generation process",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "generation process is the final stage where retrieved information is synthesized and analyzed to formulate a coherent response",
+      "source_ids": [
+        86
+      ]
+    },
+    {
+      "entity_name": "analysis merging",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "analysis   merging is the specific activity within the generation stage that synthesizes fragmented evidence",
+      "source_ids": [
+        86
+      ]
+    },
+    {
+      "entity_name": "retrieved information",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "retrieved information refers to the data collected and brought into the generation stage for processing",
+      "source_ids": [
+        86
+      ]
+    },
+    {
+      "entity_name": "fragmented pieces of evidence",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "fragmented pieces of evidence are the specific  incomplete data items that are synthesized during the process",
+      "source_ids": [
+        86
+      ]
+    },
+    {
+      "entity_name": "coherent response",
+      "entity_type": "PRODUCT",
+      "description": "coherent response is the final output formulated by the generation stage after analysis",
+      "source_ids": [
+        86
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "generation process",
+      "tgt_entity_name": "analysis merging",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "analysis   merging is a sub stage or activity performed within the generation process",
+      "source_ids": [
+        86
+      ]
+    },
+    {
+      "src_entity_name": "retrieved information",
+      "tgt_entity_name": "generation process",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "retrieved information enters the generation process as its primary input",
+      "source_ids": [
+        86
+      ]
+    },
+    {
+      "src_entity_name": "fragmented pieces of evidence",
+      "tgt_entity_name": "analysis merging",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "analysis   merging synthesizes the fragmented pieces of evidence",
+      "source_ids": [
+        86
+      ]
+    },
+    {
+      "src_entity_name": "generation process",
+      "tgt_entity_name": "coherent response",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the generation process formulates the coherent response as its final output",
+      "source_ids": [
+        86
+      ]
+    },
+    {
+      "src_entity_name": "analysis merging",
+      "tgt_entity_name": "coherent response",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "analysis   merging contributes to the formulation of the coherent response through final analysis",
+      "source_ids": [
+        86
+      ]
+    }
+  ],
+  "node_idx": 86
+}

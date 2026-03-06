@@ -1,0 +1,265 @@
+{
+  "entities": [
+    {
+      "entity_name": "vector search",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "db",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "search",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "r",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "e",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "sort",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "gradient select",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "top k",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "v n",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "e c",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "v cn",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "s",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "c",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "score",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "s 0",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "entity_name": "sel",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        71
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "vector search",
+      "tgt_entity_name": "db",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "vector search operates on the db to find relevant entities",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "src_entity_name": "search",
+      "tgt_entity_name": "db",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the search function is applied to the db to retrieve entities",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "src_entity_name": "r",
+      "tgt_entity_name": "e",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the function r takes entities e as input to process them",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "src_entity_name": "sort",
+      "tgt_entity_name": "e",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the sort operation is applied to the list of entities e",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "src_entity_name": "gradient select",
+      "tgt_entity_name": "e",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "gradient select is used to select entities from the remaining list e",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "src_entity_name": "vector search",
+      "tgt_entity_name": "top k",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "vector search utilizes the top k parameter to limit the number of relevant entities found",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "src_entity_name": "search",
+      "tgt_entity_name": "v n",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the search function uses the vector v n as its query input",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "src_entity_name": "search",
+      "tgt_entity_name": "e c",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the search function outputs the candidate entities e c",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "src_entity_name": "r",
+      "tgt_entity_name": "v cn",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the function r uses the vector v cn to calculate rerank scores",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "src_entity_name": "sort",
+      "tgt_entity_name": "s",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the sort operation generates the sorted list s",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "src_entity_name": "sort",
+      "tgt_entity_name": "c",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the sort operation orders entities based on the rerank scores c",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "src_entity_name": "score",
+      "tgt_entity_name": "s 0",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the score variable is assigned the value of the first element s 0 from the sorted list",
+      "source_ids": [
+        71
+      ]
+    },
+    {
+      "src_entity_name": "gradient select",
+      "tgt_entity_name": "sel",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the gradient select method produces the selected entities sel",
+      "source_ids": [
+        71
+      ]
+    }
+  ],
+  "node_idx": 71
+}

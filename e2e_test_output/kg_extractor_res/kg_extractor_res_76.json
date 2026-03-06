@@ -1,0 +1,233 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 2",
+      "entity_type": "IMAGE",
+      "description": "figure 2 is a visual representation used to illustrate the processing of a new entity in a knowledge graph",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "entity_name": "kg",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "kg refers to the knowledge graph where entities are processed  compared  and merged",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "entity_name": "e 9",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "e 9 is a new entity being processed and compared against existing entities in the kg",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "entity_name": "e 6",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "e 6 is an existing entity in the kg that shows a sharp decline in similarity with e 9",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "entity_name": "e 8",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "e 8 is an existing entity in the kg that shows a sharp decline in similarity with e 9",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "entity_name": "e 5",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "e 5 is an existing entity in the kg that shows a sharp decline in similarity with e 9",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "entity_name": "e 7",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "e   7 is the final merged entity resulting from the consolidation of e 9 and e 7",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "entity_name": "similarity curve",
+      "entity_type": "IMAGE",
+      "description": "the similarity curve is a visual depiction  orange line  showing the similarity levels between entities",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "entity_name": "gradient based selection process",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the gradient based selection process is the method used to identify high confidence matches between entities",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "entity_name": "orange line",
+      "entity_type": "IMAGE",
+      "description": "the orange line is a specific visual element within the similarity curve mentioned in the text",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "entity_name": "unique high confidence match",
+      "entity_type": "CONCEPT",
+      "description": "a unique  high confidence match is the result of the gradient based selection process identifying e 7 for e 9",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "entity_name": "consolidated information",
+      "entity_type": "CONCEPT",
+      "description": "consolidated information refers to the enriched data resulting from merging entities in the kg",
+      "source_ids": [
+        76
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "e 9",
+      "tgt_entity_name": "kg",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "e 9 is processed within the kg context",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "src_entity_name": "e 9",
+      "tgt_entity_name": "e 7",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "e 9 shows high similarity with e 7 and is merged with it",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "src_entity_name": "e 9",
+      "tgt_entity_name": "e 6",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "e 9 shows a sharp decline in similarity with e 6",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "src_entity_name": "e 9",
+      "tgt_entity_name": "e 8",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "e 9 shows a sharp decline in similarity with e 8",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "src_entity_name": "e 9",
+      "tgt_entity_name": "e 5",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "e 9 shows a sharp decline in similarity with e 5",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "src_entity_name": "gradient based selection process",
+      "tgt_entity_name": "e 7",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the gradient based selection process identifies e 7 as the match for e 9",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "src_entity_name": "similarity curve",
+      "tgt_entity_name": "e 9",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the similarity curve depicts the similarity of e 9 with other entities",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "src_entity_name": "similarity curve",
+      "tgt_entity_name": "e 7",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the similarity curve shows e 9 s high similarity with e 7",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "src_entity_name": "similarity curve",
+      "tgt_entity_name": "orange line",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the orange line is the visual representation of the similarity curve described in the text",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "src_entity_name": "gradient based selection process",
+      "tgt_entity_name": "unique high confidence match",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the gradient based selection process produces the unique  high confidence match",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "src_entity_name": "e 9",
+      "tgt_entity_name": "unique high confidence match",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "e 9 is the entity for which the unique  high confidence match  e 7  is identified",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "src_entity_name": "e 9",
+      "tgt_entity_name": "consolidated information",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the merging of e 9 with e 7 enriches the kg with consolidated information",
+      "source_ids": [
+        76
+      ]
+    },
+    {
+      "src_entity_name": "e 7",
+      "tgt_entity_name": "e 7",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "e 7 is the component of the final merged entity e   7 that incorporates e 9",
+      "source_ids": [
+        76
+      ]
+    }
+  ],
+  "node_idx": 76
+}

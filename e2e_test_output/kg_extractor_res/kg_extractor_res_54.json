@@ -1,0 +1,97 @@
+{
+  "entities": [
+    {
+      "entity_name": "t",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "t is a structured hierarchical tree that is the result of transforming a raw document",
+      "source_ids": [
+        54
+      ]
+    },
+    {
+      "entity_name": "raw document",
+      "entity_type": "PRODUCT",
+      "description": "raw document is the initial input that undergoes transformation into a structured hierarchical tree",
+      "source_ids": [
+        54
+      ]
+    },
+    {
+      "entity_name": "robust layout parsing",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "robust layout parsing is a key step involved in transforming the raw document into a structured hierarchical tree",
+      "source_ids": [
+        54
+      ]
+    },
+    {
+      "entity_name": "intelligent section filtering",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "intelligent section filtering is a key step involved in transforming the raw document into a structured hierarchical tree",
+      "source_ids": [
+        54
+      ]
+    },
+    {
+      "entity_name": "task or problem",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        54
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "t",
+      "tgt_entity_name": "task or problem",
+      "relation_name": "",
+      "weight": 5.0,
+      "description": "t represents the structured hierarchical tree which is the outcome of the transformation task described",
+      "source_ids": [
+        54
+      ]
+    },
+    {
+      "src_entity_name": "robust layout parsing",
+      "tgt_entity_name": "t",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "robust layout parsing is a step used to create the structured hierarchical tree t",
+      "source_ids": [
+        54
+      ]
+    },
+    {
+      "src_entity_name": "intelligent section filtering",
+      "tgt_entity_name": "t",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "intelligent section filtering is a step used to create the structured hierarchical tree t",
+      "source_ids": [
+        54
+      ]
+    },
+    {
+      "src_entity_name": "raw document",
+      "tgt_entity_name": "robust layout parsing",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "raw document is the input processed by the robust layout parsing step",
+      "source_ids": [
+        54
+      ]
+    },
+    {
+      "src_entity_name": "raw document",
+      "tgt_entity_name": "intelligent section filtering",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "raw document is the input processed by the intelligent section filtering step",
+      "source_ids": [
+        54
+      ]
+    }
+  ],
+  "node_idx": 54
+}

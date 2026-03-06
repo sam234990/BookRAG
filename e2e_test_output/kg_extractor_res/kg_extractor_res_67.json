@@ -1,0 +1,169 @@
+{
+  "entities": [
+    {
+      "entity_name": "gradient based er method",
+      "entity_type": "TECHNOLOGY",
+      "description": "a gradient based entity resolution method employed to process a single document incrementally",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "entity_name": "clean er",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a simplified version of the entity resolution task used as the basis for the incremental process",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "entity_name": "database",
+      "entity_type": "SOFTWARE",
+      "description": "a storage system containing already processed entities against which new entities are compared",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "entity_name": "top k most relevant candidates",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "a set of the most relevant entities used for reranking a new entity in the incremental process",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "entity_name": "entity",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "a single new entity being extracted in the incremental process",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "entity_name": "quadratic batch problem",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the original complex problem that the incremental method transforms into a simpler task",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "entity_name": "repeated lookup task",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the simplified task resulting from transforming the quadratic batch problem",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "entity_name": "scoring patterns",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "distinct observable patterns yielded by the incremental process when reranking entities",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "entity_name": "incremental process",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        67
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "gradient based er method",
+      "tgt_entity_name": "clean er",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the method operates on a single document simplified as the clean er",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "src_entity_name": "gradient based er method",
+      "tgt_entity_name": "database",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the method determines where a new entity fits among entities already in the database",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "src_entity_name": "gradient based er method",
+      "tgt_entity_name": "top k most relevant candidates",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the method yields scoring patterns when a new entity is reranked against its top   k candidates",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "src_entity_name": "gradient based er method",
+      "tgt_entity_name": "entity",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the method performs entity resolution incrementally as each new entity     is extracted",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "src_entity_name": "gradient based er method",
+      "tgt_entity_name": "quadratic batch problem",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the method transforms the quadratic batch problem into a simpler task",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "src_entity_name": "gradient based er method",
+      "tgt_entity_name": "repeated lookup task",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the method transforms the problem into a repeated lookup task",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "src_entity_name": "entity",
+      "tgt_entity_name": "database",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the new entity     is determined to fit among the already processed entities in the database",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "src_entity_name": "entity",
+      "tgt_entity_name": "top k most relevant candidates",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the new entity     is reranked against its top   k most relevant candidates",
+      "source_ids": [
+        67
+      ]
+    },
+    {
+      "src_entity_name": "incremental process",
+      "tgt_entity_name": "scoring patterns",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the incremental process yields two distinct scoring patterns",
+      "source_ids": [
+        67
+      ]
+    }
+  ],
+  "node_idx": 67
+}

@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "a.2 implementation details",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'Experimental Details' and following 'Evaluation Metrics', this section provides the specific technical configurations, software environments, and parameter settings used to realize the BookRAG system.",
+      "source_ids": [
+        237
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 237
+}

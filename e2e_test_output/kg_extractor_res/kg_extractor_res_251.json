@@ -1,0 +1,51 @@
+{
+  "entities": [
+    {
+      "entity_name": "example",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "example is a task or problem asking how many tables are in the document",
+      "source_ids": [
+        251
+      ]
+    },
+    {
+      "entity_name": "global",
+      "entity_type": "CONCEPT",
+      "description": "global refers to a process that filters for all items of a specific type  in this case   table",
+      "source_ids": [
+        251
+      ]
+    },
+    {
+      "entity_name": "table",
+      "entity_type": "PRODUCT",
+      "description": "table is the specific item type being filtered for in the document",
+      "source_ids": [
+        251
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "example",
+      "tgt_entity_name": "global",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the example task is defined by the global process of filtering for tables",
+      "source_ids": [
+        251
+      ]
+    },
+    {
+      "src_entity_name": "global",
+      "tgt_entity_name": "table",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the global process specifically targets and filters for items of type  table",
+      "source_ids": [
+        251
+      ]
+    }
+  ],
+  "node_idx": 251
+}

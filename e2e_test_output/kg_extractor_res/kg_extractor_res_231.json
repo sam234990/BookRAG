@@ -1,0 +1,95 @@
+{
+  "entities": [
+    {
+      "entity_name": "f1 score",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "f1 score is an evaluation metric used to measure the performance of text span answers by comparing extracted answers to ground truth",
+      "source_ids": [
+        231
+      ]
+    },
+    {
+      "entity_name": "token level f1 score",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "token level f1 score is a specific type of f1 score used for questions requiring text span answers",
+      "source_ids": [
+        231
+      ]
+    },
+    {
+      "entity_name": "p",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "p represents precision  calculated as the intersection of extracted and ground truth tokens divided by the extracted tokens",
+      "source_ids": [
+        231
+      ]
+    },
+    {
+      "entity_name": "r",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "r represents recall  calculated as the intersection of extracted and ground truth tokens divided by the ground truth tokens",
+      "source_ids": [
+        231
+      ]
+    },
+    {
+      "entity_name": "f1",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "f1 is the harmonic mean of precision  p  and recall  r   calculated using the formula 2   p   r    p   r",
+      "source_ids": [
+        231
+      ]
+    },
+    {
+      "entity_name": "equation 19",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "equation  19  defines the calculation for the f1 score based on precision and recall",
+      "source_ids": [
+        231
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "f1 score",
+      "tgt_entity_name": "token level f1 score",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the token level f1 score is a specific application of the f1 score for text span answers",
+      "source_ids": [
+        231
+      ]
+    },
+    {
+      "src_entity_name": "f1 score",
+      "tgt_entity_name": "equation 19",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "equation  19  provides the mathematical formula for calculating the f1 score",
+      "source_ids": [
+        231
+      ]
+    },
+    {
+      "src_entity_name": "p",
+      "tgt_entity_name": "f1",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "p  precision  is a component used in the calculation of the f1 score",
+      "source_ids": [
+        231
+      ]
+    },
+    {
+      "src_entity_name": "r",
+      "tgt_entity_name": "f1",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "r  recall  is a component used in the calculation of the f1 score",
+      "source_ids": [
+        231
+      ]
+    }
+  ],
+  "node_idx": 231
+}

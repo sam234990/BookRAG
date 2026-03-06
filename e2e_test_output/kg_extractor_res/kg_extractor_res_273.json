@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "when in doubt",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "when in doubt is a condition mentioned in the text that triggers a specific output requirement",
+      "source_ids": [
+        273
+      ]
+    },
+    {
+      "entity_name": "1",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        273
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "when in doubt",
+      "tgt_entity_name": "1",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the text states that if the condition  when in doubt  is met  the output must be  1",
+      "source_ids": [
+        273
+      ]
+    }
+  ],
+  "node_idx": 273
+}

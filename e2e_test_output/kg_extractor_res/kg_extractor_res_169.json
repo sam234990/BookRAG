@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "text reasoning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "text reasoning is an operator that is removed in the described scenario",
+      "source_ids": [
+        169
+      ]
+    },
+    {
+      "entity_name": "skyline ranker",
+      "entity_type": "SOFTWARE",
+      "description": "skyline ranker is a component that is disabled when text reasoning is removed  relying on graph based scores",
+      "source_ids": [
+        169
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "text reasoning",
+      "tgt_entity_name": "skyline ranker",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the removal of the text reasoning operator causes the skyline ranker to be disabled",
+      "source_ids": [
+        169
+      ]
+    }
+  ],
+  "node_idx": 169
+}

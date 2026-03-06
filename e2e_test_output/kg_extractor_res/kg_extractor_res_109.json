@@ -1,0 +1,209 @@
+{
+  "entities": [
+    {
+      "entity_name": "text ranker",
+      "entity_type": "SOFTWARE",
+      "description": "text ranker is a system that evaluates the semantic relevance of a tree node s content to a query",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "entity_name": "skyline ranker",
+      "entity_type": "SOFTWARE",
+      "description": "skyline ranker is a system that employs the skyline operator to filter nodes based on multiple criteria",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "entity_name": "skyline operator",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the skyline operator is a method used by skyline ranker to filter nodes based on scoring dimensions",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "entity_name": "query",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the query is the input for which semantic relevance is evaluated by text ranker",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "entity_name": "relevance score",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "the relevance score is a metric assigned to each node to indicate its semantic relevance to the query",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "entity_name": "tree node",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the tree node is the content unit being evaluated for relevance and filtered based on scoring dimensions",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "entity_name": "nodes",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "nodes are the data elements being evaluated for relevance and filtered by the ranking systems",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "entity_name": "scoring dimensions",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "scoring dimensions are the specified criteria used to determine if nodes are dominated by others",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "entity_name": "",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        109
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "text ranker",
+      "tgt_entity_name": "query",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "text ranker evaluates the relevance of content specifically to the query",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "src_entity_name": "text ranker",
+      "tgt_entity_name": "relevance score",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "text ranker assigns a relevance score to each tree node",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "src_entity_name": "text ranker",
+      "tgt_entity_name": "tree node",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "text ranker evaluates the content of the tree node",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "skyline operator",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "skyline ranker employs the skyline operator to perform its filtering function",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "tree node",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "skyline ranker filters tree nodes based on scoring dimensions",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "relevance score",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "skyline ranker uses relevance scores  along with others  to filter nodes",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "src_entity_name": "skyline operator",
+      "tgt_entity_name": "tree node",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the skyline operator is used to filter tree nodes",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "src_entity_name": "text ranker",
+      "tgt_entity_name": "",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "text ranker uses the query   to evaluate semantic relevance",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "src_entity_name": "text ranker",
+      "tgt_entity_name": "nodes",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "text ranker evaluates the content of the nodes",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "skyline ranker uses the criterion     to filter nodes",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "src_entity_name": "skyline ranker",
+      "tgt_entity_name": "nodes",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "skyline ranker filters the nodes based on the specified scoring dimensions",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "src_entity_name": "skyline operator",
+      "tgt_entity_name": "",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the skyline operator utilizes     as a scoring dimension",
+      "source_ids": [
+        109
+      ]
+    },
+    {
+      "src_entity_name": "skyline operator",
+      "tgt_entity_name": "nodes",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the skyline operator filters the nodes",
+      "source_ids": [
+        109
+      ]
+    }
+  ],
+  "node_idx": 109
+}

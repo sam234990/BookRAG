@@ -1,0 +1,143 @@
+{
+  "entities": [
+    {
+      "entity_name": "large language models",
+      "entity_type": "TECHNOLOGY",
+      "description": "large language models are a type of technology that has revolutionized question answering systems",
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "entity_name": "qwen 3",
+      "entity_type": "PRODUCT",
+      "description": "qwen 3 is a specific large language model mentioned as an example",
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "entity_name": "gemini 2 5",
+      "entity_type": "PRODUCT",
+      "description": "gemini 2 5 is a specific large language model mentioned as an example",
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "entity_name": "question answering",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "question answering is a system or task that has been revolutionized by large language models",
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "entity_name": "industry",
+      "entity_type": "ORGANIZATION",
+      "description": "the industry refers to the collective group of organizations increasingly adopting llms for qa systems",
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "entity_name": "qa system",
+      "entity_type": "PRODUCT",
+      "description": "qa system is a product built using llms to assist users and reduce manual effort",
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "entity_name": "users",
+      "entity_type": "PERSON",
+      "description": "users are the individuals who are assisted by the qa systems built by the industry",
+      "source_ids": [
+        9
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "large language models",
+      "tgt_entity_name": "qwen 3",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "qwen 3 is identified as an example of a large language model",
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "src_entity_name": "large language models",
+      "tgt_entity_name": "gemini 2 5",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "gemini 2 5 is identified as an example of a large language model",
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "src_entity_name": "large language models",
+      "tgt_entity_name": "question answering",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "large language models have revolutionized the question answering system",
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "src_entity_name": "industry",
+      "tgt_entity_name": "large language models",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the industry is adopting large language models to build question answering systems",
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "src_entity_name": "industry",
+      "tgt_entity_name": "question answering",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the industry is building question answering systems to assist users and reduce manual effort",
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "src_entity_name": "industry",
+      "tgt_entity_name": "qa system",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the industry builds qa systems to assist users and reduce manual effort",
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "src_entity_name": "qa system",
+      "tgt_entity_name": "users",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "qa systems are designed to assist users",
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "src_entity_name": "large language models",
+      "tgt_entity_name": "qa system",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "large language models are used to build qa systems",
+      "source_ids": [
+        9
+      ]
+    }
+  ],
+  "node_idx": 9
+}

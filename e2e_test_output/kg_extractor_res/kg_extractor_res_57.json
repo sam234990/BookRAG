@@ -1,0 +1,315 @@
+{
+  "entities": [
+    {
+      "entity_name": "section filtering",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "section filtering is a phase that processes an initial sequence to identify a document s logically hierarchical structure",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "layout parsing",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "layout parsing is a method that identifies blocks as title but does not assign their hierarchical level",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "llm is a model used for analysis to determine hierarchical levels and node types of document candidates",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "title",
+      "entity_type": "SECTION_TITLE",
+      "description": "title refers to blocks identified by layout parsing that require hierarchical level assignment",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "text",
+      "entity_type": "SECTION_TITLE",
+      "description": "text is a node type used to re classify erroneous title blocks  such as descriptive text within images",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "image",
+      "entity_type": "IMAGE",
+      "description": "image refers to a location within a document where descriptive text might be erroneously parsed as a title",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "table",
+      "entity_type": "TABLE",
+      "description": "table refers to a document element  specifically borderless table headers  that might be erroneously parsed as a title",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "b",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "b represents the candidate subset of blocks selected for llm based analysis",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "c",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "c represents the content of the candidates analyzed by the llm",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "f",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "f represents the layout features of the candidates analyzed by the llm",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "4 2 2",
+      "entity_type": "SECTION_TITLE",
+      "description": "4 2 2 is the section identifier for the section filtering phase",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "b title",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "b title is a candidate subset of blocks where the type is title  selected for llm based analysis",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "l",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "l represents the actual hierarchical level of a block  ranging from 1 to infinity",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "1",
+      "entity_type": "MEASUREMENT",
+      "description": "1 is the value assigned to the root level in the hierarchical structure",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "none",
+      "entity_type": "SECTION_TITLE",
+      "description": "none is a value indicating that a block has no hierarchical level",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "entity_name": "",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        57
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "section filtering",
+      "tgt_entity_name": "layout parsing",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "section filtering processes the output of layout parsing to identify hierarchical structure",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "section filtering",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "section filtering utilizes an llm to analyze content and layout features of candidates",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "layout parsing",
+      "tgt_entity_name": "title",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "layout parsing identifies blocks as title",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "title",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "llm analyzes title candidates to determine their actual hierarchical level and final node type",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "text",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "llm may re classify erroneous title blocks as text",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "section filtering",
+      "tgt_entity_name": "image",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "section filtering aims to correct blocks erroneously parsed as title  such as descriptive text within images",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "section filtering",
+      "tgt_entity_name": "table",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "section filtering aims to correct blocks erroneously parsed as title  such as borderless table headers",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "section filtering",
+      "tgt_entity_name": "b",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "section filtering selects the candidate subset b for analysis",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "l",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "llm determines the hierarchical level l for each candidate",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "c",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "llm analyzes the content c of the candidates",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "f",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "llm analyzes the layout features f of the candidates",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "section filtering",
+      "tgt_entity_name": "b title",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "section filtering selects the candidate subset b title for analysis",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "b title",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the llm analyzes the candidate subset b title to determine properties",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "layout parsing",
+      "tgt_entity_name": "b title",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "layout parsing identifies blocks as title  forming the subset b title",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the llm uses   to identify blocks as title candidates",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "l",
+      "tgt_entity_name": "1",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the parameter l uses 1 to represent the root level",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "",
+      "tgt_entity_name": "none",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the final node type    can be assigned the value none if a block has no level",
+      "source_ids": [
+        57
+      ]
+    },
+    {
+      "src_entity_name": "section filtering",
+      "tgt_entity_name": "text",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "section filtering corrects blocks erroneously parsed as title by re classifying them as text",
+      "source_ids": [
+        57
+      ]
+    }
+  ],
+  "node_idx": 57
+}

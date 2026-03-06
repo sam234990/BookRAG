@@ -1,0 +1,187 @@
+{
+  "entities": [
+    {
+      "entity_name": "agent based planning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "agent based planning is a stage in the bookrag process that involves classification and planning for queries",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "SOFTWARE",
+      "description": "bookrag is a system that performs classification and planning stages to handle queries",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "entity_name": "classification plan",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "classification   plan is the specific stage within agent based planning aimed at distinguishing query types",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "entity_name": "transformer",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "transformer is a model architecture mentioned as an example in a query regarding long range dependencies",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "entity_name": "rnns",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "rnns are model architectures mentioned as an example in a query regarding long range dependencies",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "bookindex is a predefined set of operators used to generate plans for retrieval and generation strategies",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "entity_name": "query classification",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "query classification is a step within the classification   plan stage that categorizes queries",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "entity_name": "operators plan",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "an operators plan is generated to guide retrieval and generation strategies",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "entity_name": "retrieval",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "retrieval is a strategy guided by the operators plan",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "entity_name": "generation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "generation is a strategy guided by the operators plan",
+      "source_ids": [
+        82
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "agent based planning",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag performs the agent based planning stage as its first step",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "src_entity_name": "agent based planning",
+      "tgt_entity_name": "classification plan",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "agent based planning includes the classification   plan stage to distinguish query types",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "src_entity_name": "classification plan",
+      "tgt_entity_name": "transformer",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the classification   plan stage uses a query comparing transformer and rnns as an example",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "src_entity_name": "classification plan",
+      "tgt_entity_name": "rnns",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the classification   plan stage uses a query comparing transformer and rnns as an example",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "src_entity_name": "agent based planning",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "agent based planning uses a predefined set of operators designed for the bookindex to generate plans",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "src_entity_name": "classification plan",
+      "tgt_entity_name": "query classification",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "classification   plan performs query classification to distinguish query types",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "src_entity_name": "query classification",
+      "tgt_entity_name": "operators plan",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the operators plan is generated based on the results of query classification",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "src_entity_name": "operators plan",
+      "tgt_entity_name": "retrieval",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the operators plan guides the retrieval strategy",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "src_entity_name": "operators plan",
+      "tgt_entity_name": "generation",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the operators plan guides the generation strategy",
+      "source_ids": [
+        82
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "operators plan",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the operators plan is designed for the bookindex",
+      "source_ids": [
+        82
+      ]
+    }
+  ],
+  "node_idx": 82
+}

@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 10",
+      "entity_type": "IMAGE",
+      "description": "figure 10 is an image in the text that displays a prompt for query classification",
+      "source_ids": [
+        253
+      ]
+    },
+    {
+      "entity_name": "query classification",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "query classification is the task or problem for which the prompt in figure 10 is designed",
+      "source_ids": [
+        253
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 10",
+      "tgt_entity_name": "query classification",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 10 contains the prompt specifically used for query classification",
+      "source_ids": [
+        253
+      ]
+    }
+  ],
+  "node_idx": 253
+}

@@ -1,0 +1,469 @@
+{
+  "entities": [
+    {
+      "entity_name": "vassilis christophides",
+      "entity_type": "PERSON",
+      "description": "vassilis christophides is an author of the 2020 paper on end to end entity resolution for big data",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "entity_name": "vasilis efthymiou",
+      "entity_type": "PERSON",
+      "description": "vasilis efthymiou is an author of the 2020 paper on end to end entity resolution for big data",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "entity_name": "themis palpanas",
+      "entity_type": "PERSON",
+      "description": "themis palpanas is an author of the 2020 paper on end to end entity resolution for big data",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "entity_name": "george papadakis",
+      "entity_type": "PERSON",
+      "description": "george papadakis is an author of the 2020 paper on end to end entity resolution for big data",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "entity_name": "kostas stefanidis",
+      "entity_type": "PERSON",
+      "description": "kostas stefanidis is an author of the 2020 paper on end to end entity resolution for big data",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "entity_name": "2020",
+      "entity_type": "DATE",
+      "description": "2020 is the year the paper was published",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "entity_name": "acm computing surveys",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "acm computing surveys is the journal where the paper was published",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "entity_name": "an overview of end to end entity resolution for big data",
+      "entity_type": "BOOK",
+      "description": "an overview of end to end entity resolution for big data is the title of the paper discussed in the text",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "entity_name": "csur",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "csur is the abbreviation for acm computing surveys  the journal where the paper was published",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "entity_name": "53",
+      "entity_type": "MEASUREMENT",
+      "description": "53 is the volume number of the journal acm computing surveys where the paper was published",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "entity_name": "6",
+      "entity_type": "MEASUREMENT",
+      "description": "6 is the issue number of the journal acm computing surveys where the paper was published",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "entity_name": "1 42",
+      "entity_type": "MEASUREMENT",
+      "description": "1 42 represents the page range of the paper within the journal",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "entity_name": "end to end entity resolution",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "end to end entity resolution is the specific technical problem addressed in the paper",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "entity_name": "big data",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "big data is the domain or subject matter discussed in the paper",
+      "source_ids": [
+        202
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "vassilis christophides",
+      "tgt_entity_name": "vasilis efthymiou",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "vassilis christophides",
+      "tgt_entity_name": "themis palpanas",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "vassilis christophides",
+      "tgt_entity_name": "george papadakis",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "vassilis christophides",
+      "tgt_entity_name": "kostas stefanidis",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "vassilis christophides",
+      "tgt_entity_name": "2020",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "vassilis christophides is an author of a paper published in 2020",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "vassilis christophides",
+      "tgt_entity_name": "acm computing surveys",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "vassilis christophides is an author of a paper published in acm computing surveys",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "vassilis christophides",
+      "tgt_entity_name": "an overview of end to end entity resolution for big data",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "vassilis christophides is an author of the paper titled an overview of end to end entity resolution for big data",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "vasilis efthymiou",
+      "tgt_entity_name": "themis palpanas",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "vasilis efthymiou",
+      "tgt_entity_name": "george papadakis",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "vasilis efthymiou",
+      "tgt_entity_name": "kostas stefanidis",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "vasilis efthymiou",
+      "tgt_entity_name": "2020",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "vasilis efthymiou is an author of a paper published in 2020",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "vasilis efthymiou",
+      "tgt_entity_name": "acm computing surveys",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "vasilis efthymiou is an author of a paper published in acm computing surveys",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "vasilis efthymiou",
+      "tgt_entity_name": "an overview of end to end entity resolution for big data",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "vasilis efthymiou is an author of the paper titled an overview of end to end entity resolution for big data",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "themis palpanas",
+      "tgt_entity_name": "george papadakis",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "themis palpanas",
+      "tgt_entity_name": "kostas stefanidis",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "themis palpanas",
+      "tgt_entity_name": "2020",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "themis palpanas is an author of a paper published in 2020",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "themis palpanas",
+      "tgt_entity_name": "acm computing surveys",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "themis palpanas is an author of a paper published in acm computing surveys",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "themis palpanas",
+      "tgt_entity_name": "an overview of end to end entity resolution for big data",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "themis palpanas is an author of the paper titled an overview of end to end entity resolution for big data",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "george papadakis",
+      "tgt_entity_name": "kostas stefanidis",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "listed as co authors on the same paper",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "george papadakis",
+      "tgt_entity_name": "2020",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "george papadakis is an author of a paper published in 2020",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "george papadakis",
+      "tgt_entity_name": "acm computing surveys",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "george papadakis is an author of a paper published in acm computing surveys",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "george papadakis",
+      "tgt_entity_name": "an overview of end to end entity resolution for big data",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "george papadakis is an author of the paper titled an overview of end to end entity resolution for big data",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "kostas stefanidis",
+      "tgt_entity_name": "2020",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "kostas stefanidis is an author of a paper published in 2020",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "kostas stefanidis",
+      "tgt_entity_name": "acm computing surveys",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "kostas stefanidis is an author of a paper published in acm computing surveys",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "kostas stefanidis",
+      "tgt_entity_name": "an overview of end to end entity resolution for big data",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "kostas stefanidis is an author of the paper titled an overview of end to end entity resolution for big data",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "2020",
+      "tgt_entity_name": "acm computing surveys",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the paper was published in acm computing surveys in the year 2020",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "2020",
+      "tgt_entity_name": "an overview of end to end entity resolution for big data",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the paper titled an overview of end to end entity resolution for big data was published in 2020",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "acm computing surveys",
+      "tgt_entity_name": "an overview of end to end entity resolution for big data",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "acm computing surveys is the publication venue for the paper titled an overview of end to end entity resolution for big data",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "acm computing surveys",
+      "tgt_entity_name": "csur",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "csur is the abbreviation used for the publication venue acm computing surveys",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "acm computing surveys",
+      "tgt_entity_name": "53",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the paper was published in volume 53 of acm computing surveys",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "acm computing surveys",
+      "tgt_entity_name": "6",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the paper was published in issue 6 of acm computing surveys",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "acm computing surveys",
+      "tgt_entity_name": "1 42",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the paper spans pages 1 42 in acm computing surveys",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "an overview of end to end entity resolution for big data",
+      "tgt_entity_name": "end to end entity resolution",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the paper title indicates it provides an overview of the task of end to end entity resolution",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "an overview of end to end entity resolution for big data",
+      "tgt_entity_name": "big data",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the paper title indicates it discusses the application of entity resolution to big data",
+      "source_ids": [
+        202
+      ]
+    },
+    {
+      "src_entity_name": "end to end entity resolution",
+      "tgt_entity_name": "big data",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the text links the task of end to end entity resolution with the domain of big data",
+      "source_ids": [
+        202
+      ]
+    }
+  ],
+  "node_idx": 202
+}

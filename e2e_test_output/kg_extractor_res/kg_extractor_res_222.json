@@ -1,0 +1,89 @@
+{
+  "entities": [
+    {
+      "entity_name": "main experiments",
+      "entity_type": "EVENT",
+      "description": "main experiments are the primary experiments for which metrics are defined and calculated in the text",
+      "source_ids": [
+        222
+      ]
+    },
+    {
+      "entity_name": "metrics",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "metrics are the specific measures defined and calculated in the text for the main experiments",
+      "source_ids": [
+        222
+      ]
+    },
+    {
+      "entity_name": "definitions",
+      "entity_type": "CONCEPT",
+      "description": "definitions are the detailed descriptions provided for the metrics in the text",
+      "source_ids": [
+        222
+      ]
+    },
+    {
+      "entity_name": "calculation procedures",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "calculation procedures are the step by step methods described for computing the metrics",
+      "source_ids": [
+        222
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "main experiments",
+      "tgt_entity_name": "main experiments",
+      "relation_name": "",
+      "weight": 1.0,
+      "description": "the text refers to the metrics used in the main experiments  implying a self referential context for the definitions",
+      "source_ids": [
+        222
+      ]
+    },
+    {
+      "src_entity_name": "metrics",
+      "tgt_entity_name": "main experiments",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "metrics are explicitly stated to be used in the main experiments",
+      "source_ids": [
+        222
+      ]
+    },
+    {
+      "src_entity_name": "definitions",
+      "tgt_entity_name": "metrics",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "definitions are provided for the metrics",
+      "source_ids": [
+        222
+      ]
+    },
+    {
+      "src_entity_name": "calculation procedures",
+      "tgt_entity_name": "metrics",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "calculation procedures are provided for the metrics",
+      "source_ids": [
+        222
+      ]
+    },
+    {
+      "src_entity_name": "definitions",
+      "tgt_entity_name": "calculation procedures",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "both definitions and calculation procedures are provided together for the metrics in the text",
+      "source_ids": [
+        222
+      ]
+    }
+  ],
+  "node_idx": 222
+}

@@ -1,0 +1,87 @@
+{
+  "entities": [
+    {
+      "entity_name": "creative commons by nc nd 4 0 international license",
+      "entity_type": "LAW",
+      "description": "creative commons by nc nd 4 0 international license is the specific license under which this work is distributed",
+      "source_ids": [
+        10
+      ]
+    },
+    {
+      "entity_name": "vldb endowment",
+      "entity_type": "ORGANIZATION",
+      "description": "vldb endowment is the organization that holds the publication rights for this work",
+      "source_ids": [
+        10
+      ]
+    },
+    {
+      "entity_name": "info vldb org",
+      "entity_type": "EMAIL",
+      "description": "info vldb org is the email address provided for obtaining permission for uses beyond the license",
+      "source_ids": [
+        10
+      ]
+    },
+    {
+      "entity_name": "creative commons",
+      "entity_type": "ORGANIZATION",
+      "description": "creative commons is the organization that created the by nc nd 4 0 international license",
+      "source_ids": [
+        10
+      ]
+    },
+    {
+      "entity_name": "owner author s",
+      "entity_type": "PERSON",
+      "description": "owner author s  refers to the individuals or entities holding the copyright for the work",
+      "source_ids": [
+        10
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "creative commons by nc nd 4 0 international license",
+      "tgt_entity_name": "vldb endowment",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the work licensed under the creative commons by nc nd 4 0 international license has its publication rights licensed to the vldb endowment",
+      "source_ids": [
+        10
+      ]
+    },
+    {
+      "src_entity_name": "creative commons",
+      "tgt_entity_name": "creative commons by nc nd 4 0 international license",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "creative commons is the creator of the by nc nd 4 0 international license",
+      "source_ids": [
+        10
+      ]
+    },
+    {
+      "src_entity_name": "owner author s",
+      "tgt_entity_name": "creative commons by nc nd 4 0 international license",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the owner author s  hold the copyright for the work which is licensed under the creative commons by nc nd 4 0 international license",
+      "source_ids": [
+        10
+      ]
+    },
+    {
+      "src_entity_name": "owner author s",
+      "tgt_entity_name": "vldb endowment",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the owner author s  hold the copyright while the vldb endowment is licensed the publication rights",
+      "source_ids": [
+        10
+      ]
+    }
+  ],
+  "node_idx": 10
+}

@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (16)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the predicted output y_hat as a function of raw input and instruction. LaTeX: ˆ 𝑦 = LLMextract ( 𝑦 𝑟𝑎𝑤 , Instruction ) (16)",
+      "source_ids": [
+        225
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 225
+}

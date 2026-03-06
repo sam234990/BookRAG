@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "new entity",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "new entity is a task or problem described as needing analysis of its name  type  and description",
+      "source_ids": [
+        265
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 265
+}

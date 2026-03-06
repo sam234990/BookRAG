@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (4)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the set N_f as a subset of N based on condition C. LaTeX: 𝑁 𝑓 = { 𝑛 ∈ 𝑁 | 𝐶 𝑛 ( )} (4)",
+      "source_ids": [
+        103
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 103
+}

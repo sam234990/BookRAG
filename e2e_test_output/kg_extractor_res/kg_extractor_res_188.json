@@ -1,0 +1,277 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a novel method proposed in the paper built upon book index",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "book index",
+      "entity_type": "PRODUCT",
+      "description": "book index is a document native  structured tree graph index designed to capture intricate relations of structural documents",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "agent based method",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "an agent based method is employed to dynamically configure retrieval and reasoning operators",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "retrieval precision",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "retrieval precision is a metric where the proposed approach demonstrates significant superiority over existing baselines",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "answer accuracy",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "answer accuracy is a metric where the proposed approach demonstrates significant superiority over existing baselines",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "benchmarks",
+      "entity_type": "BENCHMARK",
+      "description": "benchmarks are multiple tests on which the approach achieves state of the art performance",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "document native database system",
+      "entity_type": "PRODUCT",
+      "description": "a document native database system is a future exploration goal that supports data formatting  knowledge extraction  and intelligent querying",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "paper",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "the paper is the document in which the bookrag method is proposed",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "tree graph index",
+      "entity_type": "TECHNOLOGY",
+      "description": "the tree graph index is the specific structure of the book index document native system",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "retrieval operators",
+      "entity_type": "SOFTWARE",
+      "description": "retrieval operators are components dynamically configured by the agent based method",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "reasoning operators",
+      "entity_type": "SOFTWARE",
+      "description": "reasoning operators are components dynamically configured by the agent based method",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "existing baselines",
+      "entity_type": "PRODUCT",
+      "description": "existing baselines are the current methods that bookrag outperforms in performance",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "data formatting",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "data formatting is a capability supported by the future document native database system",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "knowledge extraction",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "knowledge extraction is a capability supported by the future document native database system",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "entity_name": "intelligent querying",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "intelligent querying is a capability supported by the future document native database system",
+      "source_ids": [
+        188
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "book index",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is built upon book index",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "agent based method",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag employs an agent based method to configure operators",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "benchmarks",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag achieves state of the art performance on multiple benchmarks",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "retrieval precision",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag demonstrates significant superiority in retrieval precision over existing baselines",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "answer accuracy",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "bookrag demonstrates significant superiority in answer accuracy over existing baselines",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "agent based method",
+      "tgt_entity_name": "retrieval precision",
+      "relation_name": "",
+      "weight": 6.0,
+      "description": "the agent based method is used to configure operators that affect retrieval precision",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "agent based method",
+      "tgt_entity_name": "answer accuracy",
+      "relation_name": "",
+      "weight": 6.0,
+      "description": "the agent based method is used to configure operators that affect answer accuracy",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "paper",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookrag is proposed within the paper",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "book index",
+      "tgt_entity_name": "tree graph index",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "book index is specifically a structured tree graph index",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "agent based method",
+      "tgt_entity_name": "retrieval operators",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent based method dynamically configures retrieval operators",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "agent based method",
+      "tgt_entity_name": "reasoning operators",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent based method dynamically configures reasoning operators",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "existing baselines",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag demonstrates significant superiority over existing baselines",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "document native database system",
+      "tgt_entity_name": "data formatting",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the future database system supports data formatting",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "document native database system",
+      "tgt_entity_name": "knowledge extraction",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the future database system supports knowledge extraction",
+      "source_ids": [
+        188
+      ]
+    },
+    {
+      "src_entity_name": "document native database system",
+      "tgt_entity_name": "intelligent querying",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the future database system supports intelligent querying",
+      "source_ids": [
+        188
+      ]
+    }
+  ],
+  "node_idx": 188
+}

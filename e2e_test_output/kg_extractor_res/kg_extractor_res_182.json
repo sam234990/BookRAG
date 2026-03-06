@@ -1,0 +1,447 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag response of different query types",
+      "entity_type": "IMAGE",
+      "description": "A document illustrating BookRAG's responses to three distinct query types: Single-hop, Multi-hop, and Global Aggregation cases.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "single-hop case from qasper",
+      "entity_type": "SECTION_TITLE",
+      "description": "The title of the first section detailing a single-hop query example involving a reward model for reinforcement learning.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "qasper",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The source dataset used for the single-hop and multi-hop case studies presented in the image.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "agent-based planning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A planning strategy described in the text where operators are selected to decompose or handle specific queries.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "select_by_entity operator",
+      "entity_type": "SOFTWARE",
+      "description": "An operator that identifies relevant sub-trees (e.g., Introduction, Related work) to prune the reasoning space.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "graph_reasoning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "A reasoning step performed after the Select_by_Entity operator focuses on a specific scope.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "text_reasoning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "A reasoning step involved in retrieving nodes for the final response.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "skyline_ranker",
+      "entity_type": "SOFTWARE",
+      "description": "An operator used to retrieve 8 nodes for the final response based on focused scope.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "binary reward system",
+      "entity_type": "TECHNOLOGY",
+      "description": "A system that evaluates the success or failure of dialog interactions with a discount factor.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "discount factor",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "A variable used in the reward model calculation, specifically noted as 0.95 in the text.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "multi-hop case from qasper",
+      "entity_type": "SECTION_TITLE",
+      "description": "The title of the second section detailing a multi-hop query comparing interpretable systems and LSTM models.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "interpretable system",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "A system type compared against LSTM-ELMo, utilizing vectors and cosine distance.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "lstm with elmo system",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "A machine learning model mentioned in the comparison, achieving an accuracy of 0.6818.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "lstm-elmo net",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "Another reference to the Long Short-Term Memory network combined with ELMo embeddings.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "table 1",
+      "entity_type": "TABLE",
+      "description": "A table referenced in the text containing experimental results.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "diacritic swapping",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A method mentioned as showing remarkably poor performance in the context of the experiment.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "cross-entropy",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "The loss measure used for the test results in the multi-hop query analysis.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "decompose operator",
+      "entity_type": "SOFTWARE",
+      "description": "An operator used in Agent-based Planning for multi-hop queries to break down the question.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "global aggregation case from mmlongbench",
+      "entity_type": "SECTION_TITLE",
+      "description": "The title of the third section detailing a global query about counting charts in a document.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "mmlongbench",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The benchmark or dataset used for the global aggregation case study.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "filter operators",
+      "entity_type": "SOFTWARE",
+      "description": "Operators applied to filter data based on specific criteria like page range or modality.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "filter_range",
+      "entity_type": "SOFTWARE",
+      "description": "A filter operator specifying a range of pages (e.g., '1-10') to search within.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "filter_modal",
+      "entity_type": "SOFTWARE",
+      "description": "A filter operator specifying the modality of content, such as 'image'.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "reduce",
+      "entity_type": "SOFTWARE",
+      "description": "A process step that synthesizes the final output after analyzing images.",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "entity_name": "image cref='#/texts/282'",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        182
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "bookrag response of different query types",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to BookRAG response of different query types",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "single-hop case from qasper",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Single-hop Case from Qasper",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "qasper",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Qasper",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "agent-based planning",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Agent-based Planning",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "select_by_entity operator",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Select_by_Entity operator",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "graph_reasoning",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Graph_Reasoning",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "text_reasoning",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Text_Reasoning",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "skyline_ranker",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Skyline_Ranker",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "binary reward system",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to binary reward system",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "discount factor",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to discount factor",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "multi-hop case from qasper",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Multi-hop Case from Qasper",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "interpretable system",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Interpretable system",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "lstm with elmo system",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to LSTM with ELMo system",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "lstm-elmo net",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to LSTM-ELMo net",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "table 1",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Table 1",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "diacritic swapping",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Diacritic swapping",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "cross-entropy",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to cross-entropy",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "decompose operator",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Decompose operator",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "global aggregation case from mmlongbench",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Global Aggregation Case from MMLongBench",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "mmlongbench",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to MMLongBench",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "filter operators",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Filter operators",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "filter_range",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Filter_Range",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "filter_modal",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Filter_Modal",
+      "source_ids": [
+        182
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/282'",
+      "tgt_entity_name": "reduce",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/282' related to Reduce",
+      "source_ids": [
+        182
+      ]
+    }
+  ],
+  "node_idx": 182
+}

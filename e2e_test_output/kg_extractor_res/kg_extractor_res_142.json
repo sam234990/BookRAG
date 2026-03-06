@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "wikipedia",
+      "entity_type": "ORGANIZATION",
+      "description": "wikipedia is an organization associated with the url provided in the text",
+      "source_ids": [
+        142
+      ]
+    },
+    {
+      "entity_name": "https www wikipedia org",
+      "entity_type": "LOCATION",
+      "description": "https   www wikipedia org  is a web address mentioned in the text",
+      "source_ids": [
+        142
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "wikipedia",
+      "tgt_entity_name": "https www wikipedia org",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "wikipedia is the organization represented by the url https   www wikipedia org",
+      "source_ids": [
+        142
+      ]
+    }
+  ],
+  "node_idx": 142
+}

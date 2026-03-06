@@ -1,0 +1,61 @@
+{
+  "entities": [
+    {
+      "entity_name": "table 6",
+      "entity_type": "TABLE",
+      "description": "table 6 is a table presenting a comparison of retrieval recall among layout based methods",
+      "source_ids": [
+        155
+      ]
+    },
+    {
+      "entity_name": "retrieval recall",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "retrieval recall is the metric being compared among the layout based methods in the text",
+      "source_ids": [
+        155
+      ]
+    },
+    {
+      "entity_name": "layout based methods",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "layout based methods are the techniques being evaluated for their retrieval recall performance",
+      "source_ids": [
+        155
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "table 6",
+      "tgt_entity_name": "retrieval recall",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "table 6 displays the comparison results for the retrieval recall metric",
+      "source_ids": [
+        155
+      ]
+    },
+    {
+      "src_entity_name": "table 6",
+      "tgt_entity_name": "layout based methods",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "table 6 compares the performance of various layout based methods",
+      "source_ids": [
+        155
+      ]
+    },
+    {
+      "src_entity_name": "retrieval recall",
+      "tgt_entity_name": "layout based methods",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "retrieval recall is the specific metric used to evaluate the layout based methods",
+      "source_ids": [
+        155
+      ]
+    }
+  ],
+  "node_idx": 155
+}

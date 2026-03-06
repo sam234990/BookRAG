@@ -1,0 +1,143 @@
+{
+  "entities": [
+    {
+      "entity_name": "q",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "q is the original user query mentioned in the text",
+      "source_ids": [
+        101
+      ]
+    },
+    {
+      "entity_name": "p dec",
+      "entity_type": "SOFTWARE",
+      "description": "p dec represents a prompt used to guide the llm for the decomposition task",
+      "source_ids": [
+        101
+      ]
+    },
+    {
+      "entity_name": "p ext",
+      "entity_type": "SOFTWARE",
+      "description": "p ext represents a prompt used to guide the llm for the extraction task",
+      "source_ids": [
+        101
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "llm is the model being guided by the prompts for decomposition and extraction tasks",
+      "source_ids": [
+        101
+      ]
+    },
+    {
+      "entity_name": "decomposition",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "decomposition is a task for which the prompt p dec is used to guide the llm",
+      "source_ids": [
+        101
+      ]
+    },
+    {
+      "entity_name": "extraction",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "extraction is a task for which the prompt p ext is used to guide the llm",
+      "source_ids": [
+        101
+      ]
+    },
+    {
+      "entity_name": "prompt",
+      "entity_type": "SOFTWARE",
+      "description": "prompts are instructions used to guide the llm for specific tasks",
+      "source_ids": [
+        101
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "p dec",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "p dec is used to guide the llm for the decomposition task",
+      "source_ids": [
+        101
+      ]
+    },
+    {
+      "src_entity_name": "p ext",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "p ext is used to guide the llm for the extraction task",
+      "source_ids": [
+        101
+      ]
+    },
+    {
+      "src_entity_name": "q",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "q is the original user query that the llm processes",
+      "source_ids": [
+        101
+      ]
+    },
+    {
+      "src_entity_name": "p dec",
+      "tgt_entity_name": "decomposition",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "p dec is the specific prompt used to guide the llm for the decomposition task",
+      "source_ids": [
+        101
+      ]
+    },
+    {
+      "src_entity_name": "p ext",
+      "tgt_entity_name": "extraction",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "p ext is the specific prompt used to guide the llm for the extraction task",
+      "source_ids": [
+        101
+      ]
+    },
+    {
+      "src_entity_name": "prompt",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "prompts are used to guide the llm",
+      "source_ids": [
+        101
+      ]
+    },
+    {
+      "src_entity_name": "decomposition",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the llm performs the decomposition task",
+      "source_ids": [
+        101
+      ]
+    },
+    {
+      "src_entity_name": "extraction",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the llm performs the extraction task",
+      "source_ids": [
+        101
+      ]
+    }
+  ],
+  "node_idx": 101
+}

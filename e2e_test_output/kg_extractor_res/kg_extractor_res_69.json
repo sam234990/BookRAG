@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "algorithm 1",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "algorithm 1 is a gradient based entity resolution method mentioned in the text",
+      "source_ids": [
+        69
+      ]
+    },
+    {
+      "entity_name": "gradient based entity resolution",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "gradient based entity resolution is the specific technique or approach described for the algorithm",
+      "source_ids": [
+        69
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "algorithm 1",
+      "tgt_entity_name": "gradient based entity resolution",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "algorithm 1 is defined as a gradient based entity resolution method",
+      "source_ids": [
+        69
+      ]
+    }
+  ],
+  "node_idx": 69
+}

@@ -1,0 +1,315 @@
+{
+  "entities": [
+    {
+      "entity_name": "gt link",
+      "entity_type": "TECHNOLOGY",
+      "description": "gt link is a formalized mechanism denoted as m  used to complete the bookindex",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "bookindex",
+      "entity_type": "PRODUCT",
+      "description": "bookindex is a structure denoted as b  composed of t  g  and m  which gt link helps complete",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "kg construction phase",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "kg construction phase is a specific stage described in the text where origin tree nodes are recorded for extracted entities",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "entity resolution",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "entity resolution is a process during which gt link is refined by merging entities into canonical entities",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "origin tree node",
+      "entity_type": "HARDWARE",
+      "description": "origin tree node is a structural location recorded for every newly extracted entity",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "canonical entity",
+      "entity_type": "CONCEPT",
+      "description": "canonical entity is the target of merging during entity resolution  receiving updated origin node sets",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "mapping m",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "mapping m is the final aggregation process defined as v to p n   linking entities to structural locations",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "g",
+      "entity_type": "CONCEPT",
+      "description": "g is a component of the bookindex structure b",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "t",
+      "entity_type": "CONCEPT",
+      "description": "t is a component of the bookindex structure b and represents the set of structural locations  nodes",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "v i",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "v i represents a newly extracted entity for which an origin tree node is recorded",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "v n",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "v n represents an entity that is merged into a canonical entity during entity resolution",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "v sel",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "v sel represents the canonical entity into which v n is merged",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "n",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "n represents the set of nodes in the origin tree t",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "v",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "v represents the set of entities in the graph g",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "p n",
+      "entity_type": "MATHEMATICAL_CONCEPT",
+      "description": "p n  represents the power set of nodes n  used in the definition of the mapping m",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "entity_name": "m",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        77
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "gt link",
+      "tgt_entity_name": "bookindex",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "gt link is formalized to complete the bookindex",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "kg construction phase",
+      "tgt_entity_name": "origin tree node",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "during the kg construction phase  origin tree nodes are recorded for newly extracted entities",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "entity resolution",
+      "tgt_entity_name": "gt link",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "gt link is refined during the entity resolution process",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "entity resolution",
+      "tgt_entity_name": "canonical entity",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "during entity resolution  entities are merged into a canonical entity",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "mapping m",
+      "tgt_entity_name": "g",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the mapping m bi directionally links the entities in g to their structural locations",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "mapping m",
+      "tgt_entity_name": "t",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the mapping m links entities to the set of their structural locations  nodes  in t",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "g",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "g is a component of the bookindex structure b",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "t",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "t is a component of the bookindex structure b",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "m",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "m is a component of the bookindex structure b",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "kg construction phase",
+      "tgt_entity_name": "v i",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the kg construction phase records the origin tree node for every newly extracted entity v i",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "entity resolution",
+      "tgt_entity_name": "v n",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "during entity resolution  the entity v n is merged into a canonical entity",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "entity resolution",
+      "tgt_entity_name": "v sel",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the entity v n is merged into the canonical entity v sel during entity resolution",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "v sel",
+      "tgt_entity_name": "v n",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "v sel is the target entity that receives the origin nodes previously associated with v n",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "mapping m",
+      "tgt_entity_name": "v",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the mapping m is defined as a function from the set of entities v",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "mapping m",
+      "tgt_entity_name": "p n",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the mapping m maps entities to the power set of nodes p n",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "v i",
+      "relation_name": "",
+      "weight": 6.0,
+      "description": "the bookindex structure b involves the recording of origin nodes for entities like v i",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "origin tree node",
+      "tgt_entity_name": "v i",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "an origin tree node is recorded specifically for the entity v i",
+      "source_ids": [
+        77
+      ]
+    },
+    {
+      "src_entity_name": "origin tree node",
+      "tgt_entity_name": "v sel",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the origin node set of v sel is updated to include nodes from v n",
+      "source_ids": [
+        77
+      ]
+    }
+  ],
+  "node_idx": 77
+}

@@ -1,0 +1,107 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 9",
+      "entity_type": "IMAGE",
+      "description": "figure 9 is an image presenting an error analysis on sampled queries",
+      "source_ids": [
+        183
+      ]
+    },
+    {
+      "entity_name": "mmlongbench",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "mmlongbench is a dataset from which 200 sampled queries were taken for error analysis",
+      "source_ids": [
+        183
+      ]
+    },
+    {
+      "entity_name": "qasper",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "qasper is a dataset from which 200 sampled queries were taken for error analysis",
+      "source_ids": [
+        183
+      ]
+    },
+    {
+      "entity_name": "200",
+      "entity_type": "MEASUREMENT",
+      "description": "200 is the number of sampled queries used in the error analysis",
+      "source_ids": [
+        183
+      ]
+    },
+    {
+      "entity_name": "error analysis",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "error analysis is the task being performed on the sampled queries from the datasets",
+      "source_ids": [
+        183
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 9",
+      "tgt_entity_name": "mmlongbench",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 9 presents an error analysis on queries sampled from the mmlongbench dataset",
+      "source_ids": [
+        183
+      ]
+    },
+    {
+      "src_entity_name": "figure 9",
+      "tgt_entity_name": "qasper",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 9 presents an error analysis on queries sampled from the qasper dataset",
+      "source_ids": [
+        183
+      ]
+    },
+    {
+      "src_entity_name": "figure 9",
+      "tgt_entity_name": "error analysis",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 9 displays the results of the error analysis",
+      "source_ids": [
+        183
+      ]
+    },
+    {
+      "src_entity_name": "error analysis",
+      "tgt_entity_name": "200",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the error analysis was conducted on 200 sampled queries",
+      "source_ids": [
+        183
+      ]
+    },
+    {
+      "src_entity_name": "mmlongbench",
+      "tgt_entity_name": "200",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "200 sampled queries were taken from the mmlongbench dataset",
+      "source_ids": [
+        183
+      ]
+    },
+    {
+      "src_entity_name": "qasper",
+      "tgt_entity_name": "200",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "200 sampled queries were taken from the qasper dataset",
+      "source_ids": [
+        183
+      ]
+    }
+  ],
+  "node_idx": 183
+}

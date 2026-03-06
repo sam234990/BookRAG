@@ -1,0 +1,277 @@
+{
+  "entities": [
+    {
+      "entity_name": "akari asai",
+      "entity_type": "PERSON",
+      "description": "akari asai is one of the authors of the 2023 paper titled  self rag",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "entity_name": "zeqiu wu",
+      "entity_type": "PERSON",
+      "description": "zeqiu wu is one of the authors of the 2023 paper titled  self rag",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "entity_name": "yizhong wang",
+      "entity_type": "PERSON",
+      "description": "yizhong wang is one of the authors of the 2023 paper titled  self rag",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "entity_name": "avirup sil",
+      "entity_type": "PERSON",
+      "description": "avirup sil is one of the authors of the 2023 paper titled  self rag",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "entity_name": "hannaneh hajishirzi",
+      "entity_type": "PERSON",
+      "description": "hannaneh hajishirzi is one of the authors of the 2023 paper titled  self rag",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "entity_name": "self rag",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "self rag is a method described in the text for learning to retrieve  generate  and critique through self reflection",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "entity_name": "2023",
+      "entity_type": "DATE",
+      "description": "2023 is the year the paper  self rag  was published",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "entity_name": "arxiv preprint arxiv 2310 11511",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "arxiv preprint arxiv 2310 11511 is the specific identifier and venue for the publication of the paper",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "entity_name": "learning to retrieve generate and critique through self reflection",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "this is the specific technique described in the text that the self rag model learns to perform",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "entity_name": "arxiv",
+      "entity_type": "ORGANIZATION",
+      "description": "arxiv is the organization or platform hosting the preprint mentioned in the text",
+      "source_ids": [
+        193
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "akari asai",
+      "tgt_entity_name": "self rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "akari asai is an author of the paper describing the self rag model",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "zeqiu wu",
+      "tgt_entity_name": "self rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "zeqiu wu is an author of the paper describing the self rag model",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "yizhong wang",
+      "tgt_entity_name": "self rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "yizhong wang is an author of the paper describing the self rag model",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "avirup sil",
+      "tgt_entity_name": "self rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "avirup sil is an author of the paper describing the self rag model",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "hannaneh hajishirzi",
+      "tgt_entity_name": "self rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "hannaneh hajishirzi is an author of the paper describing the self rag model",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "akari asai",
+      "tgt_entity_name": "zeqiu wu",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "akari asai and zeqiu wu are co authors on the same paper",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "akari asai",
+      "tgt_entity_name": "yizhong wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "akari asai and yizhong wang are co authors on the same paper",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "akari asai",
+      "tgt_entity_name": "avirup sil",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "akari asai and avirup sil are co authors on the same paper",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "akari asai",
+      "tgt_entity_name": "hannaneh hajishirzi",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "akari asai and hannaneh hajishirzi are co authors on the same paper",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "zeqiu wu",
+      "tgt_entity_name": "yizhong wang",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zeqiu wu and yizhong wang are co authors on the same paper",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "zeqiu wu",
+      "tgt_entity_name": "avirup sil",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zeqiu wu and avirup sil are co authors on the same paper",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "zeqiu wu",
+      "tgt_entity_name": "hannaneh hajishirzi",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "zeqiu wu and hannaneh hajishirzi are co authors on the same paper",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "yizhong wang",
+      "tgt_entity_name": "avirup sil",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yizhong wang and avirup sil are co authors on the same paper",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "yizhong wang",
+      "tgt_entity_name": "hannaneh hajishirzi",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "yizhong wang and hannaneh hajishirzi are co authors on the same paper",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "avirup sil",
+      "tgt_entity_name": "hannaneh hajishirzi",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "avirup sil and hannaneh hajishirzi are co authors on the same paper",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "self rag",
+      "tgt_entity_name": "2023",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the self rag paper was published in the year 2023",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "self rag",
+      "tgt_entity_name": "arxiv preprint arxiv 2310 11511",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the self rag paper is identified by the arxiv preprint number arxiv 2310 11511",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "self rag",
+      "tgt_entity_name": "learning to retrieve generate and critique through self reflection",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "self rag is the model that implements the method of learning to retrieve  generate  and critique through self reflection",
+      "source_ids": [
+        193
+      ]
+    },
+    {
+      "src_entity_name": "arxiv preprint arxiv 2310 11511",
+      "tgt_entity_name": "arxiv",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the preprint is hosted by the arxiv organization",
+      "source_ids": [
+        193
+      ]
+    }
+  ],
+  "node_idx": 193
+}

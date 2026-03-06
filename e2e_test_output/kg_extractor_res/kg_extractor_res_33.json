@@ -1,0 +1,279 @@
+{
+  "entities": [
+    {
+      "entity_name": "rag approaches",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "rag approaches are methods proven to excel in tasks like question answering and data cleaning",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "open ended question answering",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "open ended question answering is a task where rag approaches have been proven to excel",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "programming context",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "programming context is a task where rag approaches have been proven to excel",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "sql rewrite",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "sql rewrite is a task where rag approaches have been proven to excel",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "data cleaning",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "data cleaning is a task where rag approaches have been proven to excel",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "naive rag technique",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the naive rag technique relies on retrieving query relevant contexts from external knowledge bases to mitigate hallucination",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "llms",
+      "entity_type": "TECHNOLOGY",
+      "description": "llms are large language models whose hallucination is mitigated by the naive rag technique",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "graph structures",
+      "entity_type": "TECHNOLOGY",
+      "description": "graph structures are adopted by many rag approaches to organize information and relationships within documents",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "agentic rag paradigm",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the agentic rag paradigm employs autonomous agents to dynamically orchestrate and refine the rag pipeline",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "autonomous agents",
+      "entity_type": "TECHNOLOGY",
+      "description": "autonomous agents are employed by the agentic rag paradigm to orchestrate and refine the pipeline",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "rag pipeline",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the rag pipeline is the process dynamically orchestrated and refined by the agentic rag paradigm",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "recent survey of graph based rag methods",
+      "entity_type": "PUBLICATION_VENUE",
+      "description": "a recent survey of graph based rag methods is referenced for more details on the topic",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "rag",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "rag is a technique proven to excel in many tasks including question answering and data cleaning",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "external knowledge bases",
+      "entity_type": "TECHNOLOGY",
+      "description": "external knowledge bases are sources from which the naive rag technique retrieves query relevant contexts",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "hallucination",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "hallucination is a problem in llms that the naive rag technique aims to mitigate",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "overall retrieval performance",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "overall retrieval performance is improved by rag approaches that adopt graph structures",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "reasoning robustness",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "reasoning robustness is a metric significantly boosted by the agentic rag paradigm",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "generation fidelity",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "generation fidelity is a metric significantly boosted by the agentic rag paradigm",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "entity_name": "documents",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        33
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "rag approaches",
+      "tgt_entity_name": "open ended question answering",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "rag approaches excel in open ended question answering",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "src_entity_name": "rag approaches",
+      "tgt_entity_name": "programming context",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "rag approaches excel in programming context tasks",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "src_entity_name": "rag approaches",
+      "tgt_entity_name": "sql rewrite",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "rag approaches excel in sql rewrite tasks",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "src_entity_name": "rag approaches",
+      "tgt_entity_name": "data cleaning",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "rag approaches excel in data cleaning tasks",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "src_entity_name": "naive rag technique",
+      "tgt_entity_name": "llms",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the naive rag technique mitigates the hallucination of llms",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "src_entity_name": "naive rag technique",
+      "tgt_entity_name": "external knowledge bases",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the naive rag technique retrieves query relevant contexts from external knowledge bases",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "src_entity_name": "rag approaches",
+      "tgt_entity_name": "graph structures",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "many rag approaches have adopted graph structures to organize information",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "src_entity_name": "graph structures",
+      "tgt_entity_name": "documents",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "graph structures organize information and relationships within documents",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "src_entity_name": "agentic rag paradigm",
+      "tgt_entity_name": "autonomous agents",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the agentic rag paradigm employs autonomous agents to orchestrate the pipeline",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "src_entity_name": "agentic rag paradigm",
+      "tgt_entity_name": "rag pipeline",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the agentic rag paradigm dynamically orchestrates and refines the rag pipeline",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "src_entity_name": "agentic rag paradigm",
+      "tgt_entity_name": "reasoning robustness",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agentic rag paradigm significantly boosts reasoning robustness",
+      "source_ids": [
+        33
+      ]
+    },
+    {
+      "src_entity_name": "agentic rag paradigm",
+      "tgt_entity_name": "generation fidelity",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agentic rag paradigm significantly boosts generation fidelity",
+      "source_ids": [
+        33
+      ]
+    }
+  ],
+  "node_idx": 33
+}

@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "user query",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "user query is a task or problem mentioned in the text  representing a request for information or action",
+      "source_ids": [
+        252
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 252
+}

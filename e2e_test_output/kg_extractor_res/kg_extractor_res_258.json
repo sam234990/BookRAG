@@ -1,0 +1,521 @@
+{
+  "entities": [
+    {
+      "entity_name": "ai assistant",
+      "entity_type": "PERSON",
+      "description": "an ai assistant described as highly specialized with the function of analyzing a global query",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "global query",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a query that the ai assistant is designed to analyze to determine filtering steps and aggregation operations",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "json object",
+      "entity_type": "FILE_TYPE",
+      "description": "the specific output format required from the ai assistant  containing filters and an operation",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "filters",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a list of filtering steps to be applied  which can include sections  images  tables  or pages",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "operation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the final aggregation operation to be performed  such as count  list  summarize  or analyze",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "methodology",
+      "entity_type": "SECTION_TITLE",
+      "description": "a specific section title mentioned in an example query regarding data augmentation",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "paper",
+      "entity_type": "BOOK",
+      "description": "a document referenced in an example query regarding figures on specific pages",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "report",
+      "entity_type": "BOOK",
+      "description": "a document referenced in an example query regarding chapters",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "user",
+      "entity_type": "PERSON",
+      "description": "the user is the entity providing the query to the ai assistant",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "assistant",
+      "entity_type": "PERSON",
+      "description": "the assistant is the entity responding to the user with a json object",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "chapter",
+      "entity_type": "SECTION_TITLE",
+      "description": "a structural part of a document mentioned in the example about counting chapters",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "appendices",
+      "entity_type": "SECTION_TITLE",
+      "description": "a structural part of a document mentioned in the definition of section filters",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "references",
+      "entity_type": "SECTION_TITLE",
+      "description": "a structural part of a document mentioned in the definition of section filters",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "figures",
+      "entity_type": "IMAGE",
+      "description": "visual elements mentioned in the example query regarding counting figures",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "data augmentation",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "a specific topic discussed in the methodology section in the example query",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "discussion",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the content regarding data augmentation that needs to be summarized",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "3 10",
+      "entity_type": "MEASUREMENT",
+      "description": "a specific page range mentioned as a filter value in the example query",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "3",
+      "entity_type": "MEASUREMENT",
+      "description": "the starting page number in the example range",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "10",
+      "entity_type": "MEASUREMENT",
+      "description": "the ending page number in the example range",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "count",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "an aggregation operation used to count items",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "list",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "an aggregation operation used to list items",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "summarize",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "an aggregation operation used to summarize content",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "analyze",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "an aggregation operation used to analyze content",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "section",
+      "entity_type": "SECTION_TITLE",
+      "description": "a filter type used for structural parts like chapters",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "image",
+      "entity_type": "IMAGE",
+      "description": "a filter type used for visual elements",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "table",
+      "entity_type": "TABLE",
+      "description": "a filter type used for tabular data",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "page",
+      "entity_type": "MEASUREMENT",
+      "description": "a filter type used for specific page numbers",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "entity_name": "null",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a value indicating that no specific value is provided for image or table filters",
+      "source_ids": [
+        258
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "ai assistant",
+      "tgt_entity_name": "global query",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the ai assistant s function is to analyze the global query",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "ai assistant",
+      "tgt_entity_name": "json object",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the ai assistant must return a single  valid json object as its output",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "ai assistant",
+      "tgt_entity_name": "filters",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the ai assistant must determine the list of filters to apply",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "ai assistant",
+      "tgt_entity_name": "operation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the ai assistant must determine the final aggregation operation",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "filters",
+      "tgt_entity_name": "section",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "filters can be of type  section  to target structural parts like chapters or appendices",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "filters",
+      "tgt_entity_name": "image",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "filters can be of type  image  to target visual elements",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "filters",
+      "tgt_entity_name": "table",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "filters can be of type  table  to target tabular data",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "filters",
+      "tgt_entity_name": "page",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "filters can be of type  page  to target specific page numbers",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "operation",
+      "tgt_entity_name": "count",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "count is one of the possible operations for aggregation",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "operation",
+      "tgt_entity_name": "list",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "list is one of the possible operations for aggregation",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "operation",
+      "tgt_entity_name": "summarize",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "summarize is one of the possible operations for aggregation",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "operation",
+      "tgt_entity_name": "analyze",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "analyze is one of the possible operations for aggregation",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "paper",
+      "tgt_entity_name": "figures",
+      "relation_name": "",
+      "weight": 6.0,
+      "description": "the example query asks to count figures in the paper",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "paper",
+      "tgt_entity_name": "page",
+      "relation_name": "",
+      "weight": 6.0,
+      "description": "the example query specifies a page range  3 to 10  for the paper",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "report",
+      "tgt_entity_name": "chapter",
+      "relation_name": "",
+      "weight": 6.0,
+      "description": "the example query asks to count chapters in the report",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "methodology",
+      "tgt_entity_name": "data augmentation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the example query asks to summarize the discussion about data augmentation in the methodology section",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "user",
+      "tgt_entity_name": "assistant",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the user sends a query to the assistant",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "assistant",
+      "tgt_entity_name": "user",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the assistant responds to the user",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "assistant",
+      "tgt_entity_name": "json object",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the assistant must output a json object",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "assistant",
+      "tgt_entity_name": "filters",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the assistant determines the filters to apply",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "assistant",
+      "tgt_entity_name": "operation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the assistant determines the operation to perform",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "section",
+      "tgt_entity_name": "chapter",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "chapters are examples of sections",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "section",
+      "tgt_entity_name": "appendices",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "appendices are examples of sections",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "section",
+      "tgt_entity_name": "references",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "references are examples of sections",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "image",
+      "tgt_entity_name": "figures",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figures are examples of images",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "page",
+      "tgt_entity_name": "3 10",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "3 10 is an example value for a page filter",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "page",
+      "tgt_entity_name": "3",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "3 is part of the page range",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "page",
+      "tgt_entity_name": "10",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "10 is part of the page range",
+      "source_ids": [
+        258
+      ]
+    },
+    {
+      "src_entity_name": "discussion",
+      "tgt_entity_name": "data augmentation",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the discussion is about data augmentation",
+      "source_ids": [
+        258
+      ]
+    }
+  ],
+  "node_idx": 258
+}

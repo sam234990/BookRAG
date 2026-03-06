@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "2",
+      "entity_type": "NUMBER",
+      "description": "2 is a numerical value appearing in the text  though its specific context or meaning is not defined",
+      "source_ids": [
+        28
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 28
+}

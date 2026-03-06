@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "3 preliminaries",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of the main paper 'BookRAG: A Hierarchical Structure-aware Index-based Approach for Retrieval-Augmented Generation on Complex Documents', this section establishes the foundational concepts, definitions, and theoretical background necessary to understand the proposed BookRAG method and its context within Retrieval-Augmented Generation (RAG) for hierarchical documents.",
+      "source_ids": [
+        34
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 34
+}

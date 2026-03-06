@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "field by field adjudication",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "field by field adjudication is a task described as a method to determine a match by evaluating each field with a specific focus",
+      "source_ids": [
+        266
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 266
+}

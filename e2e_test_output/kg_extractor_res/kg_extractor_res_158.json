@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 5",
+      "entity_type": "IMAGE",
+      "description": "figure 5 is an image in the text that presents a comparison of query efficiency",
+      "source_ids": [
+        158
+      ]
+    },
+    {
+      "entity_name": "query efficiency",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "query efficiency is a metric being compared in the text",
+      "source_ids": [
+        158
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 5",
+      "tgt_entity_name": "query efficiency",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 5 displays a comparison of the query efficiency metric",
+      "source_ids": [
+        158
+      ]
+    }
+  ],
+  "node_idx": 158
+}

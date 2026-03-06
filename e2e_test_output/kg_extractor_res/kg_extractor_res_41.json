@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "3.2 information foraging theory",
+      "entity_type": "SECTION_TITLE",
+      "description": "As a subsection of 'Preliminaries' within the BookRAG paper, this section formalizes the foundational Information Foraging Theory (IFT) used to model user behavior in complex document QA tasks.",
+      "source_ids": [
+        41
+      ]
+    },
+    {
+      "entity_name": "information foraging theory",
+      "entity_type": "SCIENTIFIC_THEORY",
+      "description": "A theoretical framework explaining how individuals seek information efficiently, serving as the conceptual basis for the system's design discussed in section 3.2.",
+      "source_ids": [
+        41
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "information foraging theory",
+      "tgt_entity_name": "3.2 information foraging theory",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "The concept of 'Information Foraging Theory' is the primary subject matter detailed in section 3.2.",
+      "source_ids": [
+        41
+      ]
+    }
+  ],
+  "node_idx": 41
+}

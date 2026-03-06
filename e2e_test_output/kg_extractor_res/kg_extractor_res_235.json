@@ -1,0 +1,14 @@
+{
+  "entities": [
+    {
+      "entity_name": "formula (20)",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "An equation defining the recall metric r_et as a conditional value based on parsing errors and set intersections. LaTeX: Recall 𝑟𝑒𝑡 = ( 0 if parsing error occurs on B 𝑔𝑜𝑙𝑑 | B 𝑟𝑒𝑡 ∩B 𝑔𝑜𝑙𝑑 | | B 𝑔𝑜𝑙𝑑 | otherwise (20)",
+      "source_ids": [
+        235
+      ]
+    }
+  ],
+  "relations": [],
+  "node_idx": 235
+}

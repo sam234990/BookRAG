@@ -1,0 +1,233 @@
+{
+  "entities": [
+    {
+      "entity_name": "user a2gbifl43u1lkj",
+      "entity_type": "PERSON",
+      "description": "user a2gbifl43u1lkj is a specific user referenced in the example query regarding personality vectors and receptiviti scores",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "foreign born latinos",
+      "entity_type": "PERSON",
+      "description": "foreign born latinos are a demographic group mentioned in the example query regarding population surveys",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "latinos interviewed by cellphone",
+      "entity_type": "PERSON",
+      "description": "latinos interviewed by cellphone are a demographic group mentioned in the example query regarding population surveys",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "soft labeled personality embedding matrix",
+      "entity_type": "PRODUCT",
+      "description": "the soft labeled personality embedding matrix is a data structure containing personality vectors and their associated colors",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "receptiviti score",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "the receptiviti score is a metric used to evaluate personality vectors in the context of the example query",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "population",
+      "entity_type": "MEASUREMENT",
+      "description": "population refers to the count of individuals in a specific demographic group within a survey",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "query decomposition expert",
+      "entity_type": "PROFESSION",
+      "description": "the query decomposition expert is the role assigned to the ai to break down complex questions into atomic sub questions",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "complex question",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a complex question is the input task that needs to be broken down into simple sub questions",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "simple atomic sub questions",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "simple atomic sub questions are the output components of the decomposition process  each being a direct information retrieval task",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "retrieval sub question",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a retrieval sub question is a specific type of sub question that requires looking up a specific fact  number  or value in the document",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "synthesis question",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "a synthesis question is a specific type of sub question that requires comparing  calculating  or combining answers from previous retrieval questions",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "json object",
+      "entity_type": "FILE_TYPE",
+      "description": "the json object is the required format for the response  containing a single key  sub questions  with a list of objects",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "sub questions",
+      "entity_type": "SECTION_TITLE",
+      "description": "the  sub questions  key is the container within the json object that holds the list of decomposed questions",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "question",
+      "entity_type": "SECTION_TITLE",
+      "description": "the  question  key within each sub question object holds the string of the actual question",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "type",
+      "entity_type": "SECTION_TITLE",
+      "description": "the  type  key within each sub question object specifies whether the question is  retrieval  or  synthesis",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "user query",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the user query is the final input provided in the real data section  which is the word  query  itself",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "example 1",
+      "entity_type": "EVENT",
+      "description": "example 1 is a demonstration of correct decomposition with independent lookups provided in the text",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "example 2",
+      "entity_type": "EVENT",
+      "description": "example 2 is a demonstration of decomposition with retrieval and synthesis steps provided in the text",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "personality vector",
+      "entity_type": "PRODUCT",
+      "description": "a personality vector is a data element within the soft labeled personality embedding matrix",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "color",
+      "entity_type": "COLOR",
+      "description": "color is an attribute mapped to personality vectors in the soft labeled personality embedding matrix",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "survey",
+      "entity_type": "EVENT",
+      "description": "the survey is the context in which population data for latinos is collected in example 2",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "entity_name": "report",
+      "entity_type": "BOOK",
+      "description": "the report is the document referenced in example 2 that contains population data",
+      "source_ids": [
+        255
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "user a2gbifl43u1lkj",
+      "tgt_entity_name": "soft labeled personality embedding matrix",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "user a2gbifl43u1lkj is the subject for whom personality vectors are analyzed within the soft labeled personality embedding matrix",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "src_entity_name": "user a2gbifl43u1lkj",
+      "tgt_entity_name": "receptiviti score",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "receptiviti scores are calculated for the personality vectors associated with user a2gbifl43u1lkj",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "src_entity_name": "foreign born latinos",
+      "tgt_entity_name": "population",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the population of foreign born latinos is a specific value sought in the survey example",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "src_entity_name": "latinos interviewed by cellphone",
+      "tgt_entity_name": "population",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the population of latinos interviewed by cellphone is a specific value sought in the survey example",
+      "source_ids": [
+        255
+      ]
+    },
+    {
+      "src_entity_name": "soft labeled personality embedding matrix",
+      "tgt_entity_name": "receptiviti score",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the soft labeled personality embedding matrix contains personality vectors that are evaluated using receptiviti scores",
+      "source_ids": [
+        255
+      ]
+    }
+  ],
+  "node_idx": 255
+}

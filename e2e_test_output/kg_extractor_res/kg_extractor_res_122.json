@@ -1,0 +1,99 @@
+{
+  "entities": [
+    {
+      "entity_name": "modal filter",
+      "entity_type": "TECHNOLOGY",
+      "description": "modal filter is a type of filter applied at each step of the nested composition",
+      "source_ids": [
+        122
+      ]
+    },
+    {
+      "entity_name": "range filter",
+      "entity_type": "TECHNOLOGY",
+      "description": "range filter is a type of filter applied at each step of the nested composition",
+      "source_ids": [
+        122
+      ]
+    },
+    {
+      "entity_name": "nested composition",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "nested composition refers to the process of applying filters at each step",
+      "source_ids": [
+        122
+      ]
+    },
+    {
+      "entity_name": "",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        122
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "",
+      "tgt_entity_name": "",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the symbol   denotes the nested composition of filters  applying either a modal or range filter at each step",
+      "source_ids": [
+        122
+      ]
+    },
+    {
+      "src_entity_name": "",
+      "tgt_entity_name": "modal filter",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the symbol   denotes the application of a modal filter at each step",
+      "source_ids": [
+        122
+      ]
+    },
+    {
+      "src_entity_name": "",
+      "tgt_entity_name": "range filter",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the symbol   denotes the application of a range filter at each step",
+      "source_ids": [
+        122
+      ]
+    },
+    {
+      "src_entity_name": "",
+      "tgt_entity_name": "nested composition",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the symbol   represents the nested composition of filters",
+      "source_ids": [
+        122
+      ]
+    },
+    {
+      "src_entity_name": "modal filter",
+      "tgt_entity_name": "nested composition",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "modal filters are applied as part of the nested composition process",
+      "source_ids": [
+        122
+      ]
+    },
+    {
+      "src_entity_name": "range filter",
+      "tgt_entity_name": "nested composition",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "range filters are applied as part of the nested composition process",
+      "source_ids": [
+        122
+      ]
+    }
+  ],
+  "node_idx": 122
+}

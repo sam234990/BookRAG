@@ -109,7 +109,10 @@ class OpenAIController(BaseLLMController):
             "max_tokens": get_max_output_tokens(messages, self.max_tokens),
             "frequency_penalty": self.frequency_penalty,
             "presence_penalty": self.presence_penalty,
-            "extra_body": {"chat_template_kwargs": {"enable_thinking": False}},
+            "extra_body": {
+                "enable_thinking": False,                          # DashScope
+                "chat_template_kwargs": {"enable_thinking": False},  # vLLM
+            },
         }
         if json_response:
             parameters["response_format"] = {"type": "json_object"}
@@ -167,7 +170,8 @@ class OpenAIController(BaseLLMController):
             messages=messages,
             response_format=schema,
             extra_body={
-                "chat_template_kwargs": {"enable_thinking": think_mode},
+                "enable_thinking": think_mode,                          # DashScope
+                "chat_template_kwargs": {"enable_thinking": think_mode},  # vLLM
             },
         )
 

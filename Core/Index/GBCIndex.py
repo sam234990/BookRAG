@@ -1,10 +1,16 @@
-from sympy import N
-from Core.Index.Tree import *
+import logging
+import os
+from typing import Optional
+
+from Core.Index.Tree import DocumentTree
 from Core.configs.system_config import SystemConfig
 from Core.provider.llm import LLM
 from Core.Index.Graph import Graph
 from Core.provider.embedding import TextEmbeddingProvider
 from Core.provider.vdb import VectorStore
+
+
+log = logging.getLogger(__name__)
 
 
 class GBC:
@@ -18,7 +24,7 @@ class GBC:
         self,
         config: SystemConfig,
         graph_index: Optional[Graph] = None,
-        TreeIndex: Optional[DocumentTree] = None,
+        tree_index: Optional[DocumentTree] = None,
     ):
         """
         Initializes the TreeIndex with an optional index.
@@ -28,21 +34,29 @@ class GBC:
         self.save_dir = config.save_path
         self.config = config
         self.llm = LLM(config.llm)
-        self.TreeIndex: DocumentTree = TreeIndex
+        self.TreeIndex: DocumentTree = tree_index
         self.GraphIndex: Graph = graph_index
 
-        # load the vdb of entities
+        # load the vdb of entities — namespaced by tenant/doc if available
         if config.graph.refine_type == "basic":
-            self.entity_vdb_path = os.path.join(self.save_dir, "kg_vdb_basic")
+            vdb_name = "kg_vdb_basic"
         else:
-            self.entity_vdb_path = os.path.join(self.save_dir, "kg_vdb")
-        
+            vdb_name = "kg_vdb"
+
+        if config.tenant_id and config.doc_id:
+            self.entity_vdb_path = os.path.join(
+                self.save_dir, config.tenant_id, config.doc_id, vdb_name
+            )
+        else:
+            self.entity_vdb_path = os.path.join(self.save_dir, vdb_name)
+
         self.embedder = TextEmbeddingProvider(
             model_name=config.graph.embedding_config.model_name,
             backend=config.graph.embedding_config.backend,
             max_length=config.graph.embedding_config.max_length,
             device=config.graph.embedding_config.device,
             api_base=config.graph.embedding_config.api_base,
+            api_key=config.graph.embedding_config.api_key,
         )
         self.entity_vdb: VectorStore = VectorStore(
             db_path=self.entity_vdb_path,
@@ -64,7 +78,7 @@ class GBC:
 
         # vdb is saved automatically when the entity_vdb is created
 
-        log.info(f"GBC index saved")
+        log.info("GBC index saved")
 
     def rebuild_vdb(self):
         """
@@ -83,12 +97,7 @@ class GBC:
             texts.append(node)
 
             entity = self.GraphIndex.get_entity_by_node_name(node)
-            tmp_dict = {
-                "entity_name": entity.entity_name,
-                "entity_type": entity.entity_type,
-                "description": entity.description,
-            }
-            meta_datas.append(tmp_dict)
+            meta_datas.append(entity.to_vdb_metadata())
 
         self.entity_vdb.add_texts(texts=texts, metadatas=meta_datas)
         log.info(f"Rebuilt entity VDB with {len(texts)} entries.")
@@ -104,13 +113,47 @@ class GBC:
         tree_index = DocumentTree.load_from_file(
             DocumentTree.get_save_path(config.save_path)
         )
-        
+
         if config.graph.refine_type == "basic":
             variant = "basic"
         else:
             variant = None
-        
-        graph_index = Graph.load_from_dir(config.save_path, variant=variant)
-        GBC = cls(config=config, graph_index=graph_index, TreeIndex=tree_index)
+
+        # Pass FalkorDB config if tenant/doc IDs are set
+        falkordb_cfg = config.falkordb if (config.tenant_id and config.doc_id) else None
+        graph_index = Graph.load_from_dir(
+            config.save_path,
+            variant=variant,
+            tenant_id=config.tenant_id,
+            doc_id=config.doc_id,
+            falkordb_cfg=falkordb_cfg,
+        )
+        GBC = cls(config=config, graph_index=graph_index, tree_index=tree_index)
         log.info(f"GBC index loaded from {config.save_path}")
         return GBC
+
+    def rebuild_global_vdb(self, global_vdb_path: str) -> None:
+        """
+        Build a global vector database of canonical entities (Phase 3).
+        Pulls all nodes from the current GraphIndex and adds them to a shared VDB.
+        """
+        from Core.provider.vdb import VectorStore
+        global_vdb = VectorStore(
+            db_path=global_vdb_path,
+            embedding_model=self.embedder,
+            collection_name="global_kg_collection",
+        )
+        nodes = self.GraphIndex.get_all_nodes()
+        texts = []
+        meta_datas = []
+        for node in nodes:
+            texts.append(node)
+            entity = self.GraphIndex.get_entity_by_node_name(node)
+            metadata = entity.to_vdb_metadata()
+            metadata["doc_id"] = self.config.doc_id or ""
+            metadata["tenant_id"] = self.config.tenant_id or ""
+            meta_datas.append(metadata)
+        global_vdb.add_texts(texts=texts, metadatas=meta_datas)
+        log.info(
+            f"Rebuilt global VDB with {len(texts)} entries from doc '{self.config.doc_id}'."
+        )

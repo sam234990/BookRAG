@@ -1,0 +1,51 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 3",
+      "entity_type": "IMAGE",
+      "description": "figure 3 is an illustration depicting the workflow of agent based retrieval",
+      "source_ids": [
+        81
+      ]
+    },
+    {
+      "entity_name": "agent based retrieval",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "agent based retrieval is a workflow designed to address users  queries systematically",
+      "source_ids": [
+        81
+      ]
+    },
+    {
+      "entity_name": "three stage pipeline",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the three stage pipeline is the structure of the workflow used to address users  queries",
+      "source_ids": [
+        81
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 3",
+      "tgt_entity_name": "agent based retrieval",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 3 illustrates the workflow of agent based retrieval",
+      "source_ids": [
+        81
+      ]
+    },
+    {
+      "src_entity_name": "agent based retrieval",
+      "tgt_entity_name": "three stage pipeline",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "agent based retrieval follows a three stage pipeline to address queries",
+      "source_ids": [
+        81
+      ]
+    }
+  ],
+  "node_idx": 81
+}

@@ -1,0 +1,69 @@
+{
+  "entities": [
+    {
+      "entity_name": "single hop workflow",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "single hop workflow is a method denoted as ps used to solve sub problems",
+      "source_ids": [
+        118
+      ]
+    },
+    {
+      "entity_name": "ps",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "ps is the specific notation or identifier for the single hop workflow applied to sub problems",
+      "source_ids": [
+        118
+      ]
+    },
+    {
+      "entity_name": "agent",
+      "entity_type": "PERSON",
+      "description": "the agent is the entity performing the decomposition of the problem and the synthesis of results",
+      "source_ids": [
+        118
+      ]
+    },
+    {
+      "entity_name": "complex",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "complex refers to the problem being decomposed by the agent",
+      "source_ids": [
+        118
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "single hop workflow",
+      "tgt_entity_name": "ps",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the single hop workflow is identified by the notation ps in the text",
+      "source_ids": [
+        118
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "complex",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent decomposes the complex problem into sub problems",
+      "source_ids": [
+        118
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "single hop workflow",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the agent applies the single hop workflow to each sub problem",
+      "source_ids": [
+        118
+      ]
+    }
+  ],
+  "node_idx": 118
+}

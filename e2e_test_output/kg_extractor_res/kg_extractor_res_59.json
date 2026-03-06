@@ -1,0 +1,419 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 2",
+      "entity_type": "IMAGE",
+      "description": "figure 2 is an example shown in the text that illustrates the layout parsing phase",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "layout parsing phase",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "layout parsing phase is a process that identifies diverse blocks in a document",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "title text table",
+      "entity_type": "PRODUCT",
+      "description": "title text table is a type of block identified during the layout parsing phase",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "image",
+      "entity_type": "IMAGE",
+      "description": "image is a type of block identified during the layout parsing phase",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "section filtering phase",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "section filtering phase is a process where title candidates are analyzed by the llm",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "llm",
+      "entity_type": "MODEL_OR_ARCHITECTURE",
+      "description": "llm is a model used to analyze title candidates and re classify blocks",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "method",
+      "entity_type": "SECTION_TITLE",
+      "description": "method is a title candidate analyzed during the section filtering phase",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "experiment",
+      "entity_type": "SECTION_TITLE",
+      "description": "experiment is a title candidate analyzed during the section filtering phase",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "moe layer",
+      "entity_type": "SECTION_TITLE",
+      "description": "moe layer is a title candidate that was erroneously tagged as a title but re classified as a text node",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "section nodes",
+      "entity_type": "SECTION_TITLE",
+      "description": "section nodes are blocks identified as having a specific level in the document hierarchy",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "text node",
+      "entity_type": "SECTION_TITLE",
+      "description": "text node is a classification for blocks that do not have a specific level in the document hierarchy",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "final tree structure",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "final tree structure is the result of assembling filtered and classified nodes based on their levels and order",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "fontsize",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "fontsize is a parameter used to describe the size of text blocks  such as 14 or 20",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "14",
+      "entity_type": "MEASUREMENT",
+      "description": "14 is the specific font size value associated with the  method  and  experiment  blocks",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "20",
+      "entity_type": "MEASUREMENT",
+      "description": "20 is the specific font size value associated with the  moe layer  block",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "level",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "level is a parameter used to define the hierarchy depth of document nodes",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "2",
+      "entity_type": "MEASUREMENT",
+      "description": "2 is the specific level value assigned to the  method  and  experiment  blocks",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "none",
+      "entity_type": "MEASUREMENT",
+      "description": "none is the specific level value assigned to the  moe layer  block  indicating no hierarchy level",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "entity_name": "document order",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "document order is a factor used to assemble nodes into the final tree structure",
+      "source_ids": [
+        59
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "layout parsing phase",
+      "tgt_entity_name": "figure 2",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "figure 2 serves as an example for the layout parsing phase",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "layout parsing phase",
+      "tgt_entity_name": "title text table",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the layout parsing phase identifies title text table as a type of block",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "layout parsing phase",
+      "tgt_entity_name": "image",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the layout parsing phase identifies image as a type of block",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "section filtering phase",
+      "tgt_entity_name": "llm",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the section filtering phase uses the llm to analyze title candidates",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "section filtering phase",
+      "tgt_entity_name": "method",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the section filtering phase analyzes method as a title candidate",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "section filtering phase",
+      "tgt_entity_name": "experiment",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the section filtering phase analyzes experiment as a title candidate",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "section filtering phase",
+      "tgt_entity_name": "moe layer",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the section filtering phase analyzes moe layer  which was erroneously tagged and re classified",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "method",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the llm correctly identifies method as a section node",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "experiment",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the llm correctly identifies experiment as a section node",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "llm",
+      "tgt_entity_name": "moe layer",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the llm re classifies moe layer from a title to a text node",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "section filtering phase",
+      "tgt_entity_name": "final tree structure",
+      "relation_name": "",
+      "weight": 7.0,
+      "description": "the section filtering phase contributes to the creation of the final tree structure",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "layout parsing phase",
+      "tgt_entity_name": "section filtering phase",
+      "relation_name": "",
+      "weight": 6.0,
+      "description": "the layout parsing phase precedes the section filtering phase in the document processing workflow",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "method",
+      "tgt_entity_name": "fontsize",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the  method  block has a fontsize of 14",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "method",
+      "tgt_entity_name": "14",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the  method  block is associated with the measurement value 14",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "method",
+      "tgt_entity_name": "level",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the  method  block is identified as having a level of 2",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "method",
+      "tgt_entity_name": "2",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the  method  block is associated with the measurement value 2",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "experiment",
+      "tgt_entity_name": "fontsize",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the  experiment  block has a fontsize of 14",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "experiment",
+      "tgt_entity_name": "14",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the  experiment  block is associated with the measurement value 14",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "experiment",
+      "tgt_entity_name": "level",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the  experiment  block is identified as having a level of 2",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "experiment",
+      "tgt_entity_name": "2",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the  experiment  block is associated with the measurement value 2",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "moe layer",
+      "tgt_entity_name": "fontsize",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the  moe layer  block has a fontsize of 20",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "moe layer",
+      "tgt_entity_name": "20",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the  moe layer  block is associated with the measurement value 20",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "moe layer",
+      "tgt_entity_name": "level",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the  moe layer  block is identified as having a level of none",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "moe layer",
+      "tgt_entity_name": "none",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the  moe layer  block is associated with the measurement value none",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "final tree structure",
+      "tgt_entity_name": "document order",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the final tree structure is assembled based on the document order of the nodes",
+      "source_ids": [
+        59
+      ]
+    },
+    {
+      "src_entity_name": "final tree structure",
+      "tgt_entity_name": "level",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the final tree structure is assembled based on the determined levels of the nodes",
+      "source_ids": [
+        59
+      ]
+    }
+  ],
+  "node_idx": 59
+}

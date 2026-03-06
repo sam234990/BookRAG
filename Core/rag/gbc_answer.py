@@ -13,6 +13,8 @@ from Core.prompts.gbc_prompt import (
     VLM_GENERATION_USER_PROMPT,
     SYNTHESIS_SYS_PROMPT,
     SYNTHESIS_USER_PROMPT,
+    get_iter_generation_sys_prompt,
+    get_synthesis_sys_prompt,
 )
 from Core.utils.utils import num_tokens, TextProcessor
 from Core.utils.table_utils import table2text
@@ -23,9 +25,10 @@ log = logging.getLogger(__name__)
 
 
 class AnswerAgent:
-    def __init__(self, llm: LLM, vlm: VLM):
+    def __init__(self, llm: LLM, vlm: VLM, lang: str = "en"):
         self.llm = llm
         self.vlm = vlm
+        self.lang = lang or "en"
 
     def _prepare_evidence(
         self, retrieved_nodes: List[Dict]
@@ -59,6 +62,8 @@ class AnswerAgent:
         """
         Builds chunked and formatted prompts for both LLM and VLM.
         """
+        sys_prompt = get_iter_generation_sys_prompt(self.lang)
+
         # 1. Build VLM prompts for image-based evidence
         image_prompts = []
         for node in image_nodes:
@@ -69,7 +74,7 @@ class AnswerAgent:
             node_content = node.get("content", "")
             content = f"An image in Page: {page}, Caption: {node_content}"
             vlm_prompt = (
-                f"{ITER_GENERATION_SYS_PROMPT.strip()}\n\n"
+                f"{sys_prompt.strip()}\n\n"
                 f"{VLM_GENERATION_USER_PROMPT.format(question=query, content=content).strip()}"
             )
             if img_path:
@@ -92,7 +97,7 @@ class AnswerAgent:
             )
             + graph_prompt_part
         )
-        system_prompt_tokens = num_tokens(ITER_GENERATION_SYS_PROMPT)
+        system_prompt_tokens = num_tokens(sys_prompt)
         content_limit = (
             self.llm.config.max_tokens - system_prompt_tokens - base_prompt_tokens - 400
         )  # 400 as buffer
@@ -148,7 +153,7 @@ class AnswerAgent:
                 )
                 gen_memory = Memory()
                 gen_memory.add(
-                    Message(role="system", content=ITER_GENERATION_SYS_PROMPT)
+                    Message(role="system", content=sys_prompt)
                 )
                 gen_memory.add(Message(role="user", content=user_prompt))
                 text_prompts.append(gen_memory)
@@ -173,7 +178,7 @@ class AnswerAgent:
                 + graph_prompt_part
             )
             gen_memory = Memory()
-            gen_memory.add(Message(role="system", content=ITER_GENERATION_SYS_PROMPT))
+            gen_memory.add(Message(role="system", content=sys_prompt))
             gen_memory.add(Message(role="user", content=user_prompt))
             text_prompts.append(gen_memory)
 
@@ -237,11 +242,12 @@ class AnswerAgent:
         )
 
         log.info("Synthesizing the final answer from partial results...")
+        synth_sys = get_synthesis_sys_prompt(self.lang)
         synthesis_user_prompt = SYNTHESIS_USER_PROMPT.format(
             user_question=query, partial_answers_str=partial_answers_str
         )
         synthesis_memory = Memory()
-        synthesis_memory.add(Message(role="system", content=SYNTHESIS_SYS_PROMPT))
+        synthesis_memory.add(Message(role="system", content=synth_sys))
         synthesis_memory.add(Message(role="user", content=synthesis_user_prompt))
 
         try:
@@ -493,11 +499,12 @@ Your concise analysis of this single piece of evidence:
         )
 
         log.info("Synthesizing the final answer from partial results...")
+        synth_sys = get_synthesis_sys_prompt(self.lang)
         synthesis_user_prompt = SYNTHESIS_USER_PROMPT.format(
             user_question=original_query, partial_answers_str=partial_answers_str
         )
         synthesis_memory = Memory()
-        synthesis_memory.add(Message(role="system", content=SYNTHESIS_SYS_PROMPT))
+        synthesis_memory.add(Message(role="system", content=synth_sys))
         synthesis_memory.add(Message(role="user", content=synthesis_user_prompt))
 
         try:

@@ -1,7 +1,7 @@
 from typing import Optional, List
 
 from Core.provider.llm import LLM
-from Core.prompts.outline_prompt import OUTLINE_EXTRACTION_PROMPT, OutlineExtraction
+from Core.prompts.outline_prompt import OUTLINE_EXTRACTION_PROMPT, OutlineExtraction, get_outline_prompt
 from Core.utils.utils import get_json_content, num_tokens, enumerate_pdf_list
 import logging
 
@@ -43,7 +43,7 @@ def outline_refine(outline_list: List[Optional[str]]) -> List[Optional[str]]:
     return outline_list
 
 
-def extract_pdf_outline(pdf_list: List[Optional[str]], llm: LLM) -> List[Optional[str]]:
+def extract_pdf_outline(pdf_list: List[Optional[str]], llm: LLM, lang: str = "en") -> List[Optional[str]]:
     """Extract the outline from the PDF content."""
 
     pdf_length = len(pdf_list)
@@ -77,7 +77,7 @@ def extract_pdf_outline(pdf_list: List[Optional[str]], llm: LLM) -> List[Optiona
 
     json_format_title = get_json_content(title_list, selected_columns=SELECT_COLS)
 
-    prompt = OUTLINE_EXTRACTION_PROMPT.format(json_title=json_format_title)
+    prompt = get_outline_prompt(lang).format(json_title=json_format_title)
     log.info(f"number of token in prompt: {num_tokens(prompt)}")
     response: OutlineExtraction = llm.get_json_completion(prompt, OutlineExtraction)
     outline_list = []
@@ -199,14 +199,15 @@ def calculate_effective_height(entry: dict) -> float:
 
 
 def extract_pdf_outline_in_chunks(
-    pdf_list: List[Optional[str]], llm: LLM
+    pdf_list: List[Optional[str]], llm: LLM, lang: str = "en"
 ) -> List[Optional[str]]:
     """
     Extracts the PDF outline by processing titles in chunks with improved, stateful
     context building to ensure accurate hierarchical structure.
     """
     # 1. More precise token budget calculation (Your Point 1 & 4)
-    prompt_template_tokens = num_tokens(OUTLINE_EXTRACTION_PROMPT.format(json_title=""))
+    outline_prompt = get_outline_prompt(lang)
+    prompt_template_tokens = num_tokens(outline_prompt.format(json_title=""))
     # Leave a 400-token buffer for the LLM's response generation and other overhead
     available_tokens_for_titles = llm.config.max_tokens - prompt_template_tokens - 500
     available_tokens_for_titles = min(2000, available_tokens_for_titles)
@@ -313,7 +314,7 @@ def extract_pdf_outline_in_chunks(
         # 4. Call LLM with the constructed prompt
         prompt_payload = context_titles + new_titles_for_chunk
         json_format_title = get_json_content(prompt_payload, SELECT_COLS)
-        prompt = OUTLINE_EXTRACTION_PROMPT.format(json_title=json_format_title)
+        prompt = outline_prompt.format(json_title=json_format_title)
         log.info(f"Number of tokens in prompt: {num_tokens(prompt)}")
 
         try:

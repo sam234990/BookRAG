@@ -1,0 +1,357 @@
+{
+  "entities": [
+    {
+      "entity_name": "figure 5",
+      "entity_type": "IMAGE",
+      "description": "A figure comparing the query efficiency of various RAG (Retrieval-Augmented Generation) methods across three datasets, displaying Query Time and Token cost metrics.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "bm25",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A classical probabilistic ranking function used for information retrieval, listed in the chart legend.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "vanilla rag",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "The baseline Retrieval-Augmented Generation model without additional enhancements, listed in the chart legend.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "layout + vanilla",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A variant of the vanilla RAG method that incorporates layout information, listed in the chart legend.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "raptor",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "Recursive Abstractive Processing for Tree-Organized Retrieval, a specific RAG approach listed in the chart legend.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "graphrag-local",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A local graph-based retrieval method, listed in the chart legend.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "graphrag-global",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A global graph-based retrieval method, listed in the chart legend.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "mm-vanilla",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A multi-modal vanilla RAG baseline, listed in the chart legend.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "tree-traverse",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A tree-traversal based retrieval or processing method, listed in the chart legend.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "graphranker",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A ranking method utilizing graph structures, listed in the chart legend.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "docetl",
+      "entity_type": "SOFTWARE",
+      "description": "Document Extraction, Transformation, and Loading tool, listed in the chart legend.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "bookrag",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "A RAG system specifically designed or optimized for book content, listed in the chart legend.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "mmlongbench",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The first dataset evaluated in the comparison, labeled under section (a).",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "m3docvqa",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The second dataset evaluated in the comparison, labeled under section (b).",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "qasper",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "The third dataset evaluated in the comparison, labeled under section (c).",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "query time",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "A performance metric measuring the time taken to process a query, displayed on the x-axis of the left charts.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "token cost",
+      "entity_type": "EVALUATION_METRIC",
+      "description": "A performance metric measuring the number of tokens consumed, displayed on the x-axis of the right charts.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "time (s)",
+      "entity_type": "MEASUREMENT",
+      "description": "The unit of measurement for the y-axis in the Query Time charts, representing seconds.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "token (m)",
+      "entity_type": "MEASUREMENT",
+      "description": "The unit of measurement for the y-axis in the Token cost charts, representing millions of tokens.",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "entity_name": "image cref='#/texts/161'",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        159
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "figure 5",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to Figure 5",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "bm25",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to BM25",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "vanilla rag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to Vanilla RAG",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "layout + vanilla",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to Layout + Vanilla",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "raptor",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to RAPTOR",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "graphrag-local",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to GraphRAG-Local",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "graphrag-global",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to GraphRAG-Global",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "mm-vanilla",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to MM-Vanilla",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "tree-traverse",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to Tree-Traverse",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "graphranker",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to GraphRanker",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "docetl",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to DocETL",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to BookRAG",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "mmlongbench",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to MMLongBench",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "m3docvqa",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to M3DocVQA",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "qasper",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to Qasper",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "query time",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to Query Time",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "token cost",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to Token cost",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "time (s)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to time (s)",
+      "source_ids": [
+        159
+      ]
+    },
+    {
+      "src_entity_name": "image cref='#/texts/161'",
+      "tgt_entity_name": "token (m)",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Image entity Image cref='#/texts/161' related to token (M)",
+      "source_ids": [
+        159
+      ]
+    }
+  ],
+  "node_idx": 159
+}

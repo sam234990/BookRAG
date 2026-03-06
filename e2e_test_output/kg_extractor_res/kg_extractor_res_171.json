@@ -1,0 +1,33 @@
+{
+  "entities": [
+    {
+      "entity_name": "table: cref='#/texts/220'...",
+      "entity_type": "TABLE",
+      "description": "A data table described as: cref='#/texts/220'",
+      "source_ids": [
+        171
+      ]
+    },
+    {
+      "entity_name": "cref",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "A reference identifier or cross-reference key found in the description text, pointing to a specific text location ('#/texts/220').",
+      "source_ids": [
+        171
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "table: cref='#/texts/220'...",
+      "tgt_entity_name": "cref",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "Table 'Table: cref='#/texts/220'...' contains data about 'cref'.",
+      "source_ids": [
+        171
+      ]
+    }
+  ],
+  "node_idx": 171
+}

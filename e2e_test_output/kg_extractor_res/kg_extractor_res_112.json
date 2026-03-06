@@ -1,0 +1,225 @@
+{
+  "entities": [
+    {
+      "entity_name": "operator plan",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "operator plan is the final task of an agent to generate an executable plan after classifying a query",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "entity_name": "agent",
+      "entity_type": "PERSON",
+      "description": "the agent is an entity that classifies queries and generates executable plans based on the classification",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "entity_name": "query",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the query is the input that the agent classifies into a category to generate a plan",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "entity_name": "category",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the category is the classification result of the query used by the agent",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "entity_name": "library",
+      "entity_type": "ORGANIZATION",
+      "description": "the library is a collection of operators from which the agent selects a sequence",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "entity_name": "operators",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "operators are the specific sequence elements selected from the library to form the plan",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "entity_name": "parameters",
+      "entity_type": "PARAMETER_OR_VARIABLE",
+      "description": "parameters are dynamically instantiated based on the query to configure the operators",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "entity_name": "1",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "1     represents the specific sequence of operators selected for the plan",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "entity_name": "agent plan",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "agent plan is the specific formulation or function used to generate the plan   from the query  category  and library",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "entity_name": "equation 8",
+      "entity_type": "EQUATION_OR_FORMULA",
+      "description": "equation  8  is the mathematical formulation     agent plan            describing the plan generation process",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "entity_name": "",
+      "entity_type": "UNKNOWN",
+      "description": "",
+      "source_ids": [
+        112
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "operator plan",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the agent s final task is to generate the operator plan",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "query",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent classifies the query into a category",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "category",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent uses the category derived from the query to generate the plan",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "library",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the agent selects operators from the library to form the plan",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "src_entity_name": "agent",
+      "tgt_entity_name": "operators",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent selects a specific sequence of operators to create the plan",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "src_entity_name": "query",
+      "tgt_entity_name": "parameters",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "parameters are dynamically instantiated based on the query",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "src_entity_name": "operators",
+      "tgt_entity_name": "parameters",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "operators are configured with parameters dynamically instantiated based on the query",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "src_entity_name": "",
+      "tgt_entity_name": "",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the query   is classified into the category",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "src_entity_name": "",
+      "tgt_entity_name": "1",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the sequence                 1     is selected from the library",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "src_entity_name": "agent plan",
+      "tgt_entity_name": "",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the agent plan method defines the generation of the plan",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "src_entity_name": "equation 8",
+      "tgt_entity_name": "",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "equation  8  defines the variable",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "src_entity_name": "equation 8",
+      "tgt_entity_name": "agent plan",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "equation  8  utilizes the agent plan function",
+      "source_ids": [
+        112
+      ]
+    },
+    {
+      "src_entity_name": "parameters",
+      "tgt_entity_name": "operators",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "parameters are dynamically instantiated for the operators",
+      "source_ids": [
+        112
+      ]
+    }
+  ],
+  "node_idx": 112
+}

@@ -1,0 +1,225 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookrag",
+      "entity_type": "PRODUCT",
+      "description": "bookrag is a system whose performance is being evaluated across different query types",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "entity_name": "figure 7",
+      "entity_type": "IMAGE",
+      "description": "figure 7 is a visual representation that breaks down the performance of bookrag",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "entity_name": "single hop",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "single hop is a type of query used to evaluate the performance of bookrag",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "entity_name": "multihop",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "multihop is a type of query that presents a greater challenge compared to single hop queries",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "entity_name": "global aggregation",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "global aggregation is a type of query used to evaluate the performance of bookrag",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "entity_name": "agent based planning strategy",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "the agent based planning strategy is a method used to handle different query types separately",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "entity_name": "qa performance",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "qa performance refers to the quality of answers generated  which is analyzed under different query types",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "entity_name": "query types",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "query types are the categories of questions used to evaluate the system s performance",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "entity_name": "disjoint pieces of evidence",
+      "entity_type": "DATASET_OR_CORPUS",
+      "description": "disjoint pieces of evidence are the fragmented information sources that make reasoning difficult",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "entity_name": "retrieving",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "retrieving is the process of finding information  identified as a challenge in the text",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "entity_name": "reasoning",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "reasoning is the cognitive process of drawing conclusions  identified as a challenge in the text",
+      "source_ids": [
+        179
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "figure 7",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "figure 7 displays the performance breakdown of bookrag",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "single hop",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag s performance is evaluated against single hop queries",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "multihop",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag s performance is evaluated against multihop queries  which present a greater challenge",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "src_entity_name": "bookrag",
+      "tgt_entity_name": "global aggregation",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookrag s performance is evaluated against global aggregation queries",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "src_entity_name": "multihop",
+      "tgt_entity_name": "agent based planning strategy",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the agent based planning strategy is validated by its ability to handle multihop queries",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "src_entity_name": "agent based planning strategy",
+      "tgt_entity_name": "single hop",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the agent based planning strategy handles single hop queries separately",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "src_entity_name": "agent based planning strategy",
+      "tgt_entity_name": "global aggregation",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "the agent based planning strategy handles global aggregation queries separately",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "src_entity_name": "qa performance",
+      "tgt_entity_name": "query types",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "qa performance is measured under different query types",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "src_entity_name": "qa performance",
+      "tgt_entity_name": "bookrag",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "qa performance is the metric used to evaluate bookrag s capabilities",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "src_entity_name": "multihop",
+      "tgt_entity_name": "disjoint pieces of evidence",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "multihop queries are challenging because they require retrieving and reasoning over disjoint pieces of evidence",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "src_entity_name": "retrieving",
+      "tgt_entity_name": "disjoint pieces of evidence",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "retrieving is the action performed on disjoint pieces of evidence",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "src_entity_name": "reasoning",
+      "tgt_entity_name": "disjoint pieces of evidence",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "reasoning is the action performed on disjoint pieces of evidence",
+      "source_ids": [
+        179
+      ]
+    },
+    {
+      "src_entity_name": "agent based planning strategy",
+      "tgt_entity_name": "query types",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "the agent based planning strategy is designed to handle different query types separately",
+      "source_ids": [
+        179
+      ]
+    }
+  ],
+  "node_idx": 179
+}

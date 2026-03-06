@@ -1,0 +1,169 @@
+{
+  "entities": [
+    {
+      "entity_name": "bookindex",
+      "entity_type": "PRODUCT",
+      "description": "bookindex is a proposed hierarchical structure aware index designed to capture logical hierarchy and entity relations within complex documents",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "entity_name": "tree construction",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "tree construction is the first stage of the two stage process that parses document layout to establish hierarchical nodes",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "entity_name": "graph construction",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "graph construction is the second stage of the process that extracts fine grained entity knowledge and refines it",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "entity_name": "gradient based entity resolution method",
+      "entity_type": "METHOD_OR_TECHNIQUE",
+      "description": "a novel gradient based entity resolution method used to refine entity knowledge during graph construction",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "entity_name": "document",
+      "entity_type": "PRODUCT",
+      "description": "document refers to the complex documents within which the bookindex captures logical hierarchy and entity relations",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "entity_name": "logical hierarchy",
+      "entity_type": "CONCEPT",
+      "description": "logical hierarchy is the explicit structure within complex documents that the bookindex is designed to capture",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "entity_name": "entity relations",
+      "entity_type": "CONCEPT",
+      "description": "entity relations are the intricate connections within complex documents that the bookindex is designed to capture",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "entity_name": "hierarchical nodes",
+      "entity_type": "CONCEPT",
+      "description": "hierarchical nodes are the categorized units established by the tree construction process",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "entity_name": "fine grained entity knowledge",
+      "entity_type": "CONCEPT",
+      "description": "fine grained entity knowledge is the detailed information extracted from tree nodes during the graph construction process",
+      "source_ids": [
+        47
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "tree construction",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookindex utilizes tree construction as its first stage to parse document layout and establish hierarchical nodes",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "graph construction",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookindex utilizes graph construction as its second stage to extract and refine entity knowledge",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "src_entity_name": "graph construction",
+      "tgt_entity_name": "gradient based entity resolution method",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "graph construction refines entity knowledge using the novel gradient based entity resolution method",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "document",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "bookindex is designed to operate on complex documents to capture their internal structures",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "logical hierarchy",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookindex is explicitly designed to capture the explicit logical hierarchy found in documents",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "src_entity_name": "bookindex",
+      "tgt_entity_name": "entity relations",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "bookindex is explicitly designed to capture the intricate entity relations found in documents",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "src_entity_name": "tree construction",
+      "tgt_entity_name": "hierarchical nodes",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "tree construction parses document layout to establish hierarchical nodes",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "src_entity_name": "graph construction",
+      "tgt_entity_name": "fine grained entity knowledge",
+      "relation_name": "",
+      "weight": 9.0,
+      "description": "graph construction extracts fine grained entity knowledge from tree nodes",
+      "source_ids": [
+        47
+      ]
+    },
+    {
+      "src_entity_name": "graph construction",
+      "tgt_entity_name": "hierarchical nodes",
+      "relation_name": "",
+      "weight": 8.0,
+      "description": "graph construction operates on the tree nodes established by tree construction to extract knowledge",
+      "source_ids": [
+        47
+      ]
+    }
+  ],
+  "node_idx": 47
+}

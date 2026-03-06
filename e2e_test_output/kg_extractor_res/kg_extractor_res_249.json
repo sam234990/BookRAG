@@ -1,0 +1,25 @@
+{
+  "entities": [
+    {
+      "entity_name": "personality vector",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "the personality vector is a concept mentioned in a question regarding its color  indicating it is a complex retrieval task",
+      "source_ids": [
+        249
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "personality vector",
+      "tgt_entity_name": "personality vector",
+      "relation_name": "",
+      "weight": 5.0,
+      "description": "the entity is the subject of a question asking for its color  implying a self referential query about its attributes",
+      "source_ids": [
+        249
+      ]
+    }
+  ],
+  "node_idx": 249
+}

@@ -2,7 +2,9 @@ from Core.Index.Tree import DocumentTree
 from Core.pipelines.tree_node_builder import create_node_by_type
 from Core.pipelines.outline_extractor import extract_pdf_outline_in_chunks
 from Core.pipelines.pdf_refiner import pdf_info_refiner
-from Core.provider.extract_pdf_info import parse_doc, merge_middle_content
+from Core.pipelines.legal_heading_detector import detect_legal_headings, detect_document_language
+# MinerU imports are deferred to avoid top-level dependency on doclayout_yolo
+# when using the Docling parser.  See the ``else`` branch below.
 from Core.pipelines.tree_node_summary import generate_tree_node_summary
 from Core.configs.system_config import SystemConfig
 from Core.provider.llm import LLM
@@ -82,51 +84,83 @@ def build_tree_from_pdf(cfg: SystemConfig, reforce: bool = False) -> DocumentTre
 
     tree_index = DocumentTree(meta_dict=meta_dict, cfg=cfg)
 
-    backend = cfg.mineru.backend
-    server_url = cfg.mineru.server_url
-    method = cfg.mineru.method
+    import json
+
+    parser = getattr(cfg, "parser", "mineru") or "mineru"
     base_file_name = Path(cfg.pdf_path).stem
-    tmp_save_path = os.path.join(
-        cfg.save_path, method, f"{base_file_name}_merged_content.json"
-    )
 
-    if os.path.exists(tmp_save_path) and not reforce:
-        # tmp load pdf_list
-        import json
-
-        with open(tmp_save_path, "rb") as f:
-            pdf_list = json.load(f)
-        print(f"Loaded content from {tmp_save_path}")
+    # Each parser writes its cached pdf_list to its own sub-directory so the
+    # two caches never collide even when the same save_path is reused.
+    if parser == "docling":
+        tmp_save_path = os.path.join(
+            cfg.save_path, "docling", f"{base_file_name}_merged_content.json"
+        )
     else:
-        # Extract content from the PDF file
-        log.info(f"Extracting content from {cfg.pdf_path}...")
-        middle_json, content_list = parse_doc(
-            cfg.pdf_path,
-            output_dir=cfg.save_path,
-            backend=backend,
-            method=method,
-            server_url=server_url,
-            lang=cfg.mineru.lang,
+        method = cfg.mineru.method
+        tmp_save_path = os.path.join(
+            cfg.save_path, method, f"{base_file_name}_merged_content.json"
         )
 
-        file_name = str(Path(cfg.pdf_path).stem)
-        save_dir = os.path.join(cfg.save_path, method)
-        pdf_list = merge_middle_content(
-            middle_json,
-            content_list,
-            parse_dir=os.path.join(cfg.save_path, method),
-            save_dir=save_dir,
-            file_name=file_name,
-        )  # merge middle json content with content list.
+    if os.path.exists(tmp_save_path) and not reforce:
+        # Load cached pdf_list (parser-agnostic from this point on)
+        with open(tmp_save_path, "rb") as f:
+            pdf_list = json.load(f)
+        log.info(f"Loaded cached content from {tmp_save_path}")
+    else:
+        log.info(f"Extracting content from '{cfg.pdf_path}' using parser='{parser}' …")
 
-        # tmp pdf_list save for fast test
-        log.info(f"Content extracted and saved to {tmp_save_path}")
+        if parser == "docling":
+            from Core.provider.extract_pdf_info_docling import parse_doc_with_docling
+
+            pdf_list = parse_doc_with_docling(
+                pdf_path=cfg.pdf_path,
+                output_dir=cfg.save_path,
+                cfg=cfg.docling,
+            )
+            # Persist for subsequent fast loads (mirrors what merge_middle_content
+            # does for the MinerU path).
+            docling_cache_dir = os.path.join(cfg.save_path, "docling")
+            os.makedirs(docling_cache_dir, exist_ok=True)
+            with open(tmp_save_path, "w", encoding="utf-8") as f:
+                json.dump(pdf_list, f, ensure_ascii=False, indent=4)
+            log.info(f"[Docling] Extracted content cached to '{tmp_save_path}'")
+        else:
+            # ── MinerU (default) ──────────────────────────────────────────
+            from Core.provider.extract_pdf_info import parse_doc, merge_middle_content
+
+            backend = cfg.mineru.backend
+            server_url = cfg.mineru.server_url
+            method = cfg.mineru.method
+
+            middle_json, content_list = parse_doc(
+                cfg.pdf_path,
+                output_dir=cfg.save_path,
+                backend=backend,
+                method=method,
+                server_url=server_url,
+                lang=cfg.mineru.lang,
+            )
+
+            file_name = str(Path(cfg.pdf_path).stem)
+            save_dir = os.path.join(cfg.save_path, method)
+            pdf_list = merge_middle_content(
+                middle_json,
+                content_list,
+                parse_dir=os.path.join(cfg.save_path, method),
+                save_dir=save_dir,
+                file_name=file_name,
+            )
+            log.info(f"[MinerU] Extracted content saved to '{tmp_save_path}'")
 
     llm = LLM(cfg.llm)
     vlm = VLM(cfg.vlm) if cfg.tree.use_vlm else None
 
-    pdf_list = pdf_info_refiner(pdf_list, llm)
-    title_outline = extract_pdf_outline_in_chunks(pdf_list, llm)
+    lang = getattr(cfg, "document_lang", "auto") or "auto"
+    if lang == "auto":
+        lang = detect_document_language(pdf_list, fallback="en")
+    pdf_list = pdf_info_refiner(pdf_list, llm, lang=lang)
+    pdf_list = detect_legal_headings(pdf_list, lang=lang)
+    title_outline = extract_pdf_outline_in_chunks(pdf_list, llm, lang=lang)
     tree_index = construct_tree_index(
         tree_index=tree_index, pdf_list=pdf_list, title_outline=title_outline
     )

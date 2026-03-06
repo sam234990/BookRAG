@@ -1,0 +1,25 @@
+{
+  "entities": [
+    {
+      "entity_name": "multi hop",
+      "entity_type": "TASK_OR_PROBLEM",
+      "description": "multi hop is a task that requires decomposition into multiple simple sub questions",
+      "source_ids": [
+        247
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "src_entity_name": "multi hop",
+      "tgt_entity_name": "multi hop",
+      "relation_name": "",
+      "weight": 10.0,
+      "description": "the entity multi hop is described as requiring decomposition into sub questions  indicating its nature as a task",
+      "source_ids": [
+        247
+      ]
+    }
+  ],
+  "node_idx": 247
+}
