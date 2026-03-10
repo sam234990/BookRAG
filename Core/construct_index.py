@@ -21,7 +21,7 @@ from Core.provider.TokenTracker import TokenTracker
 from Core.utils.file_utils import save_indexing_stats
 
 
-def construct_GBC_index(cfg: SystemConfig, tree_only: bool = False):
+def construct_GBC_index(cfg: SystemConfig, tree_only: bool = False, graph_only: bool = False):
     """
     Construct the GBC index from the document tree and knowledge graph.
 
@@ -50,12 +50,20 @@ def construct_GBC_index(cfg: SystemConfig, tree_only: bool = False):
 
         # Save all collected stats and exit
         save_indexing_stats(save_path=cfg.save_path, new_stats=current_run_stats)
-        return tree_index
+        return
 
     # --- Measure Knowledge Graph Building ---
     kg_start_time = time.time()
     graph_index = build_knowledge_graph(tree_index, cfg)
 
+    kg_duration = time.time() - kg_start_time
+    log.info(f"Knowledge graph constructed and saved in {kg_duration:.2f} seconds.")
+    
+    if graph_only:
+        log.info("Only build graph index. Finished.")
+        graph_index.save_graph()
+        return
+    
     # The 'kg_extraction' stage is recorded inside build_knowledge_graph
     gbc_index = GBC(config=cfg, graph_index=graph_index, TreeIndex=tree_index)
     gbc_index.save_gbc_index()
@@ -63,8 +71,6 @@ def construct_GBC_index(cfg: SystemConfig, tree_only: bool = False):
     # rebuild vdb
     gbc_index.rebuild_vdb()
 
-    kg_duration = time.time() - kg_start_time
-    log.info(f"Knowledge graph constructed and saved in {kg_duration:.2f} seconds.")
     current_run_stats["build_kg_time"] = round(kg_duration, 2)
 
     # --- Finalize and Save All Stats for the Full Run ---
@@ -73,7 +79,7 @@ def construct_GBC_index(cfg: SystemConfig, tree_only: bool = False):
 
     save_indexing_stats(save_path=cfg.save_path, new_stats=current_run_stats)
 
-    return gbc_index
+    return
 
 def rebuild_graph_vdb(cfg: SystemConfig):
     gbc_index = GBC.load_gbc_index(cfg)

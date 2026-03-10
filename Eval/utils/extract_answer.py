@@ -1,16 +1,22 @@
 from openai import OpenAI
+from pathlib import Path
 
 
 def load_prompt():
-    PROMPT_PATH = "./Eval/utils/prompt.md"
-    with open(PROMPT_PATH, "r") as file:
+    prompt_path = Path(__file__).resolve().parent / "prompt.md"
+    with open(prompt_path, "r", encoding="utf-8") as file:
         prompt = file.read()
     return prompt
 
 
 class AnswerExtractor:
-    def __init__(self, api_config_path="./Eval/utils/api.txt"):
+    def __init__(self, api_config_path=None):
         print("Initializing AnswerExtractor and reading API config...")
+        if api_config_path is None:
+            api_config_path = Path(__file__).resolve().parent / "api.txt"
+        else:
+            api_config_path = Path(api_config_path)
+
         with open(api_config_path, "r") as f:
             lines = f.readlines()
             base_url = lines[0].strip()  

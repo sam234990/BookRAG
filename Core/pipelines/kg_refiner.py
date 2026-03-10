@@ -42,11 +42,23 @@ class KGRefiner:
     _DESCRIPTION_SEP_ = "<SEP>"
 
     def __init__(
-        self, llm: LLM, graph_config: GraphConfig, graph_index: Graph, save_path: str
+        self,
+        llm: LLM,
+        graph_config: GraphConfig,
+        graph_index: Graph,
+        save_path: str,
+        g: float = 0.6,
     ):
         self.llm = llm
         self.graph_index = graph_index
         self.graph_config = graph_config
+        # Similarity search configuration:
+        # `g` is configurable from init; others are fixed defaults.
+        self.similar_search_topk = 10
+        self.similar_search_distance_threshold = 0.2
+        self.similar_search_mink = 1
+        self.similar_search_g = g
+        log.info(f"KGRefiner initialized with g={g}")
 
         # The following used for advanced refiner
         self.embedder = TextEmbeddingProvider(
@@ -64,7 +76,7 @@ class KGRefiner:
             api_base=graph_config.reranker_config.api_base,
         )
         # delete the old vector database if exists
-        self.vdb_path = os.path.join(save_path, "kg_vdb")
+        self.vdb_path = os.path.join(save_path, f"kg_vdb_{g}_{graph_config.embedding_config.model_name}")
         if os.path.exists(self.vdb_path):
             log.info(f"Deleting old vector database at {self.vdb_path}")
             # delete this dir
@@ -388,9 +400,7 @@ class KGRefiner:
             )
             log.info("this may cause add duplicate entities later.")
 
-    def search_similar_entities(
-        self, entity: Entity, topk: int = 10, distance_threshold=0.2, mink=1, g=0.6
-    ) -> List[Entity]:
+    def search_similar_entities(self, entity: Entity) -> List[Entity]:
         """
         Searches for similar entities in the vector database based on the entity's text information.
         This method is the core method for entity resolution.
@@ -403,14 +413,14 @@ class KGRefiner:
 
         Args:
             entity (Entity): The entity to search for similar entities.
-            topk (int): The number of top similar entities to retrieve from the vector database.
-            distance_threshold (float): The maximum distance threshold from the closest entity,
-                below threshold, we consider it may have similar entities.
-            mink (int): The minimum number of entities to select before gradient-based selection.
-            g (float): The gradient factor for selecting additional entities based on their scores.
         Returns:
             List[Entity]: A list of similar entities or empty list if none found.
         """
+        topk = self.similar_search_topk
+        distance_threshold = self.similar_search_distance_threshold
+        mink = self.similar_search_mink
+        g = self.similar_search_g
+
         embed_text = self.graph_index.get_node_name_from_entity(entity)
         similar_entities = self.vdb.search(embed_text, top_k=topk)
         min_distance = (
@@ -478,6 +488,8 @@ class KGRefiner:
         if len(sel_entities) == ranked_results:
             # 4.3 If all entities are selected, return empty list
             return []
+
+        log.info(f"After gradient-select, found {len(sel_entities)} similar entities.")
 
         res_entities = []
         for ent, _ in sel_entities:

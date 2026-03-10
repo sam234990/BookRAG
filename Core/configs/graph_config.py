@@ -14,6 +14,7 @@ class GraphConfig:
 
     # KG refinement
     refine_type: str = "advanced"  # Options: "basic", "advanced"
+    g: float = 0.6 # For advanced refinement, the Gradient-based similar threshold
 
     embedding_config: EmbeddingConfig = field(default_factory=EmbeddingConfig)
     reranker_config: RerankerConfig = field(default_factory=RerankerConfig)

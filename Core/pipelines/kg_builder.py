@@ -58,7 +58,18 @@ def build_knowledge_graph(tree: DocumentTree, cfg: SystemConfig):
     if cfg.graph.refine_type == "basic":
         variant = "basic"
     else:
-        variant = None
+        g = cfg.graph.g
+        embedding_model_name = cfg.graph.embedding_config.model_name
+        is_default_g = abs(g - 0.6) < 1e-9
+        is_default_qwen_model = embedding_model_name.lower().startswith("qwen")
+
+        if is_default_g and is_default_qwen_model:
+            variant = None
+        else:
+            safe_model_name = (
+                embedding_model_name.replace("/", "_").replace(" ", "_")
+            )
+            variant = f"{g}_{safe_model_name}"
 
     graph_index = Graph(save_path=cfg.save_path, variant=variant)
 
@@ -70,6 +81,7 @@ def build_knowledge_graph(tree: DocumentTree, cfg: SystemConfig):
         graph_config=cfg.graph,
         graph_index=graph_index,
         save_path=cfg.save_path,
+        g=cfg.graph.g,
     )
 
     kg_extract_res = []

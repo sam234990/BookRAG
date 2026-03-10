@@ -134,7 +134,8 @@ def build_index(config: SystemConfig, stage: str = "all", data_df: pd.DataFrame 
     if stage in ["graph", "all"]:
         log.info("  - STAGE: Building Knowledge Graph...")
         # This function should LOAD the pre-existing tree and then build/save the graph
-        construct_GBC_index(config)
+        graph_flag = stage == "graph"
+        construct_GBC_index(config, graph_only=graph_flag)
 
     # Stage 3: Build the Vector Database
     if stage in ["vdb", "all"]:
@@ -217,9 +218,9 @@ def process_resource(base_system_cfg: SystemConfig, args):
     base_system_cfg.mineru.server_url = "http://localhost:30001"
 
     # For Graph construction
-    # base_system_cfg.graph.reranker_config.api_base = "http://localhost:8010/v1"
+    base_system_cfg.graph.reranker_config.api_base = "http://localhost:8010/v1"
     # base_system_cfg.llm.api_base = "http://10.26.1.21:8002/v1"
-    base_system_cfg.llm.api_base = "http://localhost:8003/v1"
+    # base_system_cfg.llm.api_base = "http://localhost:8003/v1"
 
     if base_system_cfg.rag.strategy_config.strategy == "mmr":
         base_system_cfg.rag.strategy_config.vdb_config.embedding_config.device = (

@@ -78,8 +78,8 @@ class Graph:
     @classmethod
     def _get_filename(cls, variant: str = None) -> str:
         """内部辅助函数：根据 variant 生成对应的 json 文件名"""
-        if variant == "basic":
-            log.info("Using 'basic' variant for graph filename.")
+        if variant:
+            log.info("Using '%s' variant for graph filename.", variant)
             return f"{cls._BASE_FILENAME}_{variant}.json"
         return f"{cls._BASE_FILENAME}.json"
 
