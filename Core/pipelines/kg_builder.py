@@ -55,10 +55,15 @@ def build_knowledge_graph(tree: DocumentTree, cfg: SystemConfig):
     # else:
     #     log.info("No existing knowledge graph found. Creating a new one...")
 
+    g = cfg.graph.g
+    reranker_model_name = cfg.graph.reranker_config.model_name
     if cfg.graph.refine_type == "basic":
         variant = "basic"
+    elif reranker_model_name.lower().startswith("bge"):
+        # BGE reranker gets its own variant (prefixed with g) to maximize reuse.
+        safe_model_name = reranker_model_name.replace("/", "_").replace(" ", "_")
+        variant = f"{g}_{safe_model_name}"
     else:
-        g = cfg.graph.g
         embedding_model_name = cfg.graph.embedding_config.model_name
         is_default_g = abs(g - 0.6) < 1e-9
         is_default_qwen_model = embedding_model_name.lower().startswith("qwen")
@@ -66,10 +71,29 @@ def build_knowledge_graph(tree: DocumentTree, cfg: SystemConfig):
         if is_default_g and is_default_qwen_model:
             variant = None
         else:
-            safe_model_name = (
-                embedding_model_name.replace("/", "_").replace(" ", "_")
-            )
+            safe_model_name = embedding_model_name.replace("/", "_").replace(" ", "_")
             variant = f"{g}_{safe_model_name}"
+
+    # Try to load the graph index if it already exists
+    target_graph_file = Graph._get_filename(variant)
+    target_graph_path = os.path.join(cfg.save_path, target_graph_file)
+
+    if os.path.exists(target_graph_path):
+        log.info(
+            f"Existing knowledge graph detected at {target_graph_path}. Trying to load..."
+        )
+        try:
+            graph_index = Graph.load_from_dir(cfg.save_path, variant=variant)
+            log.info("Loaded existing knowledge graph successfully. Skip rebuilding.")
+            return graph_index
+        except Exception as e:
+            log.warning(
+                f"Failed to load existing graph from {target_graph_path}, will rebuild. Reason: {e}"
+            )
+    else:
+        log.info(
+            f"No existing knowledge graph found at {target_graph_path}. Creating a new one..."
+        )
 
     graph_index = Graph(save_path=cfg.save_path, variant=variant)
 

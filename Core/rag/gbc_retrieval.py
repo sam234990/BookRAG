@@ -20,7 +20,7 @@ log = logging.getLogger(__name__)
 class Retriever:
     def __init__(
         self,
-        varient: str,
+        variant: str,
         reranker: TextRerankerProvider,
         # mm_reranker: MMRerankerProvider,
         embedder: TextEmbeddingProvider,
@@ -29,7 +29,7 @@ class Retriever:
         x_percentile: int = 90,
         topk: int = 10,
     ):
-        self.varient = varient
+        self.variant = variant
         self.reranker: TextRerankerProvider = reranker
         # self.mm_reranker: MMRerankerProvider = mm_reranker
         self.embedder: TextEmbeddingProvider = embedder
@@ -183,7 +183,7 @@ class Retriever:
             log.info("No subtree nodes available for reranking.")
             return [], []
 
-        if self.varient == "wo_graph":
+        if self.variant == "wo_graph":
             log.info("Variant 'wo_graph' selected: Skipping graph reranker.")
             # Only use text reranker
             text_rerank_res = self.text_reranker(subtree_nodes, sub_query)
@@ -198,7 +198,7 @@ class Retriever:
 
             return tree_node_ids, res_entities
 
-        if self.varient == "wo_text":
+        if self.variant == "wo_text":
             log.info("Variant 'wo_text' selected: Skipping text reranker.")
             # Only use graph reranker
             graph_rerank_res, res_entities = self.graph_reranker(
@@ -213,7 +213,7 @@ class Retriever:
         graph_rerank_res, res_entities = self.graph_reranker(
             subgraph, start_ent_map, subtree_nodes
         )
-        
+
         # tmp_test
         if len(graph_rerank_res) < self.topk:
             log.warning(
@@ -222,7 +222,6 @@ class Retriever:
             )
             tree_node_ids = [node_id for node_id, _ in graph_rerank_res]
             return tree_node_ids, res_entities
-        
 
         # 2.2 Rerank with text reranker model.
         text_rerank_res = self.text_reranker(subtree_nodes, sub_query)
@@ -241,10 +240,7 @@ class Retriever:
         sel_tree_nodes = calculate_skyline(merged_scores)
         tree_node_ids = [node["node_id"] for node in sel_tree_nodes]
 
-        if (
-            len(tree_node_ids) < self.topk
-            and len(merged_scores) >= self.topk
-        ):
+        if len(tree_node_ids) < self.topk and len(merged_scores) >= self.topk:
             log.info(
                 f"Skyline returned only {len(tree_node_ids)} nodes. "
                 f"Activating fallback to meet minimum of {self.topk}."

@@ -18,7 +18,7 @@ llm:
 vlm:
   model_name: Qwen2-5-VL
   api_key: openai
-  api_base: http://localhost:8000/v1
+  api_base: http://localhost:8025/v1
   temperature: 0.1
   max_tokens: 6000
   backend: gpt
@@ -65,11 +65,11 @@ vdb:
     model_name: Alibaba-NLP/gme-Qwen2-VL-2B-Instruct
     device: "cuda:1"
 
-rag_force_reprocess: True
+rag_force_reprocess: False
 
 rag:
   strategy: gbc
-  variant: wo_selector
+  variant: wo_map
   topk: 7
   sim_threshold: 0.3
   select_depth: 2

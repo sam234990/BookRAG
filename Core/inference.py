@@ -229,9 +229,9 @@ def inference(cfg: SystemConfig, data_df: pd.DataFrame, dataset_name: str):
             Path(cfg.save_path) / f"eval_{dataset_name}_{retrieval_method}"
         )
     elif rag_strategy == "gbc":
-        varient = cfg.rag.strategy_config.varient
+        variant = cfg.rag.strategy_config.variant
         output_dir = output_dir = (
-            Path(cfg.save_path) / f"eval_{dataset_name}_{rag_strategy}_{varient}"
+            Path(cfg.save_path) / f"eval_{dataset_name}_{rag_strategy}_{variant}"
         )
     else:
         output_dir = output_dir = (

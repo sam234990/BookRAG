@@ -11,12 +11,14 @@ from Core.configs.rag.mm_config import MMConfig
 from Core.configs.rag.gbc_config import GBCRAGConfig
 from Core.configs.rag.graph_config import GraphRAGConfig
 from Core.configs.rag.vanilla_config import VanillaConfig
+from Core.configs.rag.gbc_vanilla_config import GBCVanillaConfig
 
 from Core.rag.traverse_agent import TraverseAgent
 from Core.rag.gbc_rag import GBCRAG
 from Core.rag.mm_rag import MMRAG
 from Core.rag.graph_rag import GraphRAG
 from Core.rag.vanilla_rag import VanillaRAG
+from Core.rag.gbc_vanilla_rag import GBCVanillaRAG
 
 from Core.provider.llm import LLM
 from Core.provider.vlm import VLM
@@ -90,6 +92,16 @@ def create_rag_agent(
                 vector_store=vector_store,
                 bm25=None,
             )
+    elif isinstance(strategy_config, GBCVanillaConfig):
+        tree_vdb = dependencies.get("tree_vdb")
+        graph_vdb = dependencies.get("graph_vdb")
+        return GBCVanillaRAG(
+            llm=llm_client,
+            vlm=vlm_client,
+            config=strategy_config,
+            tree_vdb=tree_vdb,
+            graph_vdb=graph_vdb,
+        )
     elif isinstance(strategy_config, MMConfig):
         vector_store = dependencies.get("vector_store")
         if not vector_store:

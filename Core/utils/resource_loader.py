@@ -79,6 +79,48 @@ def prepare_rag_dependencies(cfg: SystemConfig) -> Dict[str, Any]:
             log.info(f"Successfully loaded vector store from {vdb_store_path}")
             dependencies["vector_store"] = vdb
 
+    elif strategy_name == "gbcvanilla":
+        from Core.configs.embedding_config import EmbeddingConfig
+        from Core.configs.vdb_config import VDBConfig
+        from Core.provider.vdb import VectorStore
+        from Core.provider.embedding import TextEmbeddingProvider
+
+        embed_cfg: EmbeddingConfig = rag_config.tree_vdb_config.embedding_config
+        
+        tree_vdb_cfg: VDBConfig = rag_config.tree_vdb_config
+        tree_vdb_store_path = tree_vdb_cfg.vdb_dir_name
+        if cfg.save_path not in tree_vdb_store_path:
+            tree_vdb_store_path = os.path.join(cfg.save_path, tree_vdb_store_path)
+            
+        graph_vdb_cfg: VDBConfig = rag_config.graph_vdb_config
+        graph_vdb_store_path = graph_vdb_cfg.vdb_dir_name
+        if cfg.save_path not in graph_vdb_store_path:
+            graph_vdb_store_path = os.path.join(cfg.save_path, graph_vdb_store_path)
+
+        embed_model = TextEmbeddingProvider(
+            model_name=embed_cfg.model_name,
+            backend=embed_cfg.backend,
+            device=embed_cfg.device,
+            max_length=embed_cfg.max_length,
+            api_base=embed_cfg.api_base,
+        )
+        
+        tree_vdb = VectorStore(
+            embedding_model=embed_model,
+            db_path=tree_vdb_store_path,
+            collection_name=tree_vdb_cfg.collection_name,
+        )
+        log.info(f"Successfully loaded tree VDB from {tree_vdb_store_path}")
+        
+        graph_vdb = VectorStore(
+            embedding_model=embed_model,
+            db_path=graph_vdb_store_path,
+            collection_name=graph_vdb_cfg.collection_name,
+        )
+        log.info(f"Successfully loaded graph VDB from {graph_vdb_store_path}")
+        dependencies["tree_vdb"] = tree_vdb
+        dependencies["graph_vdb"] = graph_vdb
+
     elif strategy_name == "mmr":
         from Core.configs.embedding_config import EmbeddingConfig
         from Core.provider.vdb import VectorStore

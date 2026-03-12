@@ -68,7 +68,7 @@ class VanillaRAG(BaseRAG):
         context_text = TextProcessor.split_text_into_chunks(
             text=context_text, max_length=self.max_tokens-400
         )
-        context_text = context_text[0]  # take the fFirst chunk only
+        context_text = context_text[0]  # take the first chunk only
         return context_text
 
     def _save_retrieval_res(self, context_nodes, query_output_dir) -> List[Dict]:

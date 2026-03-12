@@ -76,7 +76,11 @@ class KGRefiner:
             api_base=graph_config.reranker_config.api_base,
         )
         # delete the old vector database if exists
-        self.vdb_path = os.path.join(save_path, f"kg_vdb_{g}_{graph_config.embedding_config.model_name}")
+        embed_model_name = graph_config.embedding_config.model_name.replace("/", "_")
+        rerank_model_name = graph_config.reranker_config.model_name.replace("/", "_")
+        self.vdb_path = os.path.join(
+            save_path, f"kg_vdb_{g}_{embed_model_name}_{rerank_model_name}"
+        )
         if os.path.exists(self.vdb_path):
             log.info(f"Deleting old vector database at {self.vdb_path}")
             # delete this dir
@@ -292,9 +296,7 @@ class KGRefiner:
             # If the entity is not in the graph index, add it
             # Otherwise, merge it with the existing entity
             if entity_node_name not in self.graph_index.get_all_nodes():
-                self.graph_index.add_and_link(
-                    tree_node_id=source_id, entities=entity
-                )
+                self.graph_index.add_and_link(tree_node_id=source_id, entities=entity)
                 entity_map[entity.entity_name] = entity
                 add_entity_list.append(entity)
             else:
@@ -354,7 +356,7 @@ class KGRefiner:
                 existing_entity = entity_map[node_name]
                 if len(entity.description) > len(existing_entity.description):
                     existing_entity.description = entity.description
-        
+
         entities = list(entity_map.values())
 
         embed_texts = []
@@ -371,7 +373,7 @@ class KGRefiner:
             metadatas.append(self.get_vdb_meta_data(ent))
         if not embed_texts:
             return
-         
+
         vdbids: List[str] = self.vdb.add_texts(texts=embed_texts, metadatas=metadatas)
         for embed_text, vdbid in zip(embed_texts, vdbids):
             if embed_text in self.entity_to_vdb_id:
@@ -434,11 +436,11 @@ class KGRefiner:
             return []
 
         def metadata_str(meta_data: dict):
-            description = meta_data.get('description', '')
-            
+            description = meta_data.get("description", "")
+
             max_words = 1000
             max_chars = 10000
-            
+
             words = description.split()
             if len(words) > max_words:
                 description = " ".join(words[:max_words]) + "..."
@@ -615,14 +617,12 @@ class KGRefiner:
             raise ValueError(
                 f"Expected exactly one source_id, but found {len(new_entity.source_ids)}."
             )
-        
+
         source_id = next(iter(new_entity.source_ids))
-        
+
         if len(similar_entities) == 0:
             # 2.1 No similar entities found, add the new entity directly
-            self.graph_index.add_and_link(
-                tree_node_id=source_id, entities=new_entity
-            )
+            self.graph_index.add_and_link(tree_node_id=source_id, entities=new_entity)
             return new_entity
 
         # 2.2 If similar entities are found, use the LLM to determine if exist one of them is the same entity as the new one.
@@ -631,9 +631,7 @@ class KGRefiner:
         )
         if sel_existing_entity is None:
             # If no similar entity is selected, add the new entity directly
-            self.graph_index.add_and_link(
-                tree_node_id=source_id, entities=new_entity
-            )
+            self.graph_index.add_and_link(tree_node_id=source_id, entities=new_entity)
             return new_entity
         else:
             # If a similar entity is selected, merge the new entity with it
@@ -749,9 +747,7 @@ class KGRefiner:
 
             # add to vdb and graph
             self.add_entities_to_vdb(entities)
-            self.graph_index.add_and_link(
-                tree_node_id=source_id, entities=entities
-            )
+            self.graph_index.add_and_link(tree_node_id=source_id, entities=entities)
 
             # For unknown entities, we need to resoluation them
             entity_map = self.process_unknown_entities(

@@ -69,7 +69,7 @@ rag_force_reprocess: False
 
 rag:
   strategy: gbc
-  varient: wo_plan
+  variant: wo_plan
   topk: 7
   sim_threshold: 0.3
   select_depth: 2

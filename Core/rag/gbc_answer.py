@@ -11,6 +11,7 @@ from Core.prompts.gbc_prompt import (
     ITER_GENERATION_USER_PROMPT,
     ITER_GENERATION_GRAPH,
     VLM_GENERATION_USER_PROMPT,
+    VLM_ONE_GENERATION_USER_PROMPT,
     SYNTHESIS_SYS_PROMPT,
     SYNTHESIS_USER_PROMPT,
 )
@@ -23,9 +24,10 @@ log = logging.getLogger(__name__)
 
 
 class AnswerAgent:
-    def __init__(self, llm: LLM, vlm: VLM):
+    def __init__(self, llm: LLM, vlm: VLM, variant: str = None):
         self.llm = llm
         self.vlm = vlm
+        self.variant = variant
 
     def _prepare_evidence(
         self, retrieved_nodes: List[Dict]
@@ -179,6 +181,187 @@ class AnswerAgent:
 
         return text_prompts, image_prompts
 
+    def _build_single_prompt(
+        self,
+        query: str,
+        text_nodes: List[Dict],
+        image_nodes: List[Dict],
+        graph_str: str,
+    ) -> Tuple[List[Memory], List[Dict[str, Any]]]:
+        """
+        Builds exactly one prompt:
+        - If image evidence exists, return one VLM prompt in image_prompts.
+        - Otherwise, return one LLM prompt in text_prompts.
+        """
+        separator = "\n\n---\n\n"
+        separator_tokens = num_tokens(separator)
+        graph_prompt_part = ""
+
+        def _collect_retrieved_content(
+            nodes: List[Dict], content_limit: int, include_graph_block: bool = False
+        ) -> str:
+            if content_limit <= 0:
+                return ""
+
+            segments: List[str] = []
+
+            if include_graph_block and graph_prompt_part:
+                graph_block = graph_prompt_part.strip()
+                if num_tokens(graph_block) > content_limit:
+                    graph_chunks = TextProcessor.split_text_into_chunks(
+                        text=graph_block, max_length=max(content_limit, 1)
+                    )
+                    segments.extend([chunk for chunk in graph_chunks if chunk])
+                else:
+                    segments.append(graph_block)
+
+            for node in nodes:
+                node_content = node.get("content", "")
+                node_type = node.get("type", "text")
+                node_page = node.get("page", -1)
+                prefix = f"Type: {node_type} in Page: {node_page}\nContent: "
+                suffix = "\n"
+                node_text = f"{prefix}{node_content}{suffix}"
+
+                if num_tokens(node_text) <= content_limit:
+                    segments.append(node_text)
+                    continue
+
+                # Keep the node header and split only content to fit the per-segment budget.
+                content_budget = max(content_limit - num_tokens(prefix + suffix), 1)
+                chunks = TextProcessor.split_text_into_chunks(
+                    text=node_content, max_length=content_budget
+                )
+                for chunk in chunks:
+                    chunk_text = f"{prefix}{chunk}{suffix}"
+                    if num_tokens(chunk_text) <= content_limit:
+                        segments.append(chunk_text)
+
+            merged = ""
+            merged_tokens = 0
+            for segment in segments:
+                seg_tokens = num_tokens(segment)
+                extra_tokens = seg_tokens if not merged else (separator_tokens + seg_tokens)
+                if merged_tokens + extra_tokens > content_limit:
+                    break
+                if not merged:
+                    merged = segment
+                else:
+                    merged += separator + segment
+                merged_tokens += extra_tokens
+
+            return merged
+
+        # Prefer one VLM call when there is image evidence.
+        valid_image_nodes = [node for node in image_nodes if node.get("img_path")]
+        if valid_image_nodes:
+            selected_image = valid_image_nodes[0]
+            img_path = selected_image.get("img_path")
+            page = selected_image.get("page", "-1")
+            page = str(page) if isinstance(page, int) else page
+            node_content = selected_image.get("content", "")
+            image_meta = f"An image in Page: {page}, Caption: {node_content}"
+            max_tokens = getattr(
+                self.vlm.config, "max_tokens", self.llm.config.max_tokens
+            )
+
+            # Ensure image metadata itself does not overflow the VLM context window.
+            image_meta_budget = (
+                max_tokens
+                - num_tokens(ITER_GENERATION_SYS_PROMPT)
+                - num_tokens(
+                    VLM_ONE_GENERATION_USER_PROMPT.format(
+                        question=query, content="", retrieved_content=""
+                    )
+                )
+                - 400
+            )
+            if image_meta_budget <= 0:
+                image_meta = ""
+            elif num_tokens(image_meta) > image_meta_budget:
+                image_meta_chunks = TextProcessor.split_text_into_chunks(
+                    text=image_meta, max_length=image_meta_budget
+                )
+                image_meta = image_meta_chunks[0] if image_meta_chunks else ""
+
+            base_prompt_tokens = num_tokens(
+                VLM_ONE_GENERATION_USER_PROMPT.format(
+                    question=query, content=image_meta, retrieved_content=""
+                )
+            )
+            system_prompt_tokens = num_tokens(ITER_GENERATION_SYS_PROMPT)
+            content_limit = max_tokens - system_prompt_tokens - base_prompt_tokens - 400
+
+            if graph_str:
+                graph_prompt_part = ITER_GENERATION_GRAPH.format(
+                    knowledge_graph_subgraph=graph_str
+                )
+            retrieved_content = _collect_retrieved_content(
+                nodes=text_nodes,
+                content_limit=content_limit,
+                include_graph_block=True,
+            )
+            vlm_prompt = (
+                f"{ITER_GENERATION_SYS_PROMPT.strip()}\n\n"
+                f"{VLM_ONE_GENERATION_USER_PROMPT.format(question=query, content=image_meta, retrieved_content=retrieved_content).strip()}"
+            )
+            return [], [{"prompt": vlm_prompt, "image_url": img_path}]
+
+        # Fallback to one LLM prompt (no image or invalid image paths).
+        if graph_str:
+            graph_overhead_tokens = num_tokens(
+                ITER_GENERATION_USER_PROMPT.format(
+                    user_question=query, retrieved_content=""
+                )
+            ) + num_tokens(ITER_GENERATION_GRAPH.format(knowledge_graph_subgraph=""))
+            graph_budget = (
+                self.llm.config.max_tokens
+                - num_tokens(ITER_GENERATION_SYS_PROMPT)
+                - graph_overhead_tokens
+                - 400
+            )
+            if graph_budget <= 0:
+                graph_prompt_part = ""
+            elif num_tokens(graph_str) > graph_budget:
+                graph_chunks = TextProcessor.split_text_into_chunks(
+                    text=graph_str, max_length=graph_budget
+                )
+                if graph_chunks:
+                    graph_prompt_part = ITER_GENERATION_GRAPH.format(
+                        knowledge_graph_subgraph=graph_chunks[0]
+                    )
+            else:
+                graph_prompt_part = ITER_GENERATION_GRAPH.format(
+                    knowledge_graph_subgraph=graph_str
+                )
+
+        base_prompt_tokens = num_tokens(
+            ITER_GENERATION_USER_PROMPT.format(
+                user_question=query, retrieved_content=""
+            )
+            + graph_prompt_part
+        )
+        system_prompt_tokens = num_tokens(ITER_GENERATION_SYS_PROMPT)
+        content_limit = (
+            self.llm.config.max_tokens - system_prompt_tokens - base_prompt_tokens - 400
+        )
+        retrieved_content = _collect_retrieved_content(
+            nodes=text_nodes,
+            content_limit=content_limit,
+            include_graph_block=False,
+        )
+        user_prompt = (
+            ITER_GENERATION_USER_PROMPT.format(
+                user_question=query, retrieved_content=retrieved_content
+            )
+            + graph_prompt_part
+        )
+
+        gen_memory = Memory()
+        gen_memory.add(Message(role="system", content=ITER_GENERATION_SYS_PROMPT))
+        gen_memory.add(Message(role="user", content=user_prompt))
+        return [gen_memory], []
+
     def _synthesize_from_chunks(
         self,
         query: str,
@@ -276,9 +459,15 @@ class AnswerAgent:
         text_nodes, image_nodes = self._prepare_evidence(retrieved_nodes)
 
         # 2. Build chunked prompts for LLM and VLM
-        text_prompts, image_prompts = self._build_prompts(
-            query, text_nodes, image_nodes, graph_str
-        )
+        if self.variant == "wo_map":
+            # If the variant is "without map", we can only build one prompt
+            text_prompts, image_prompts = self._build_single_prompt(
+                query, text_nodes, image_nodes, graph_str
+            )
+        else:
+            text_prompts, image_prompts = self._build_prompts(
+                query, text_nodes, image_nodes, graph_str
+            )
 
         # 3. Execute prompts and synthesize the final answer
         final_answer, partial_answers = self._synthesize_from_chunks(

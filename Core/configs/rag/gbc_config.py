@@ -13,9 +13,11 @@ class GBCRAGConfig(BaseRAGStrategyConfig):
     """
 
     strategy: Literal["gbc"] = "gbc"
-    varient: Literal["standard", "wo_plan", "wo_selector", "wo_graph", "wo_text", "wo_er"] = Field(
+    variant: Literal[
+        "standard", "wo_plan", "wo_selector", "wo_graph", "wo_text", "wo_er", "wo_map"
+    ] = Field(
         default="standard",
-        description="The variant of the GBC RAG strategy to use. Options are 'standard', 'wo_plan', 'wo_selector', 'wo_graph', 'wo_text', and 'wo_er'.",
+        description="The variant of the GBC RAG strategy to use. Options are 'standard', 'wo_plan', 'wo_selector', 'wo_graph', 'wo_text', 'wo_er', and 'wo_map'.",
     )
     topk: int = Field(
         default=10,

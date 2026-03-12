@@ -218,7 +218,7 @@ def process_resource(base_system_cfg: SystemConfig, args):
     base_system_cfg.mineru.server_url = "http://localhost:30001"
 
     # For Graph construction
-    base_system_cfg.graph.reranker_config.api_base = "http://localhost:8010/v1"
+    # base_system_cfg.graph.reranker_config.api_base = "http://localhost:8010/v1"
     # base_system_cfg.llm.api_base = "http://10.26.1.21:8002/v1"
     # base_system_cfg.llm.api_base = "http://localhost:8003/v1"
 
@@ -378,9 +378,11 @@ def main():
         import os
         base_dir = os.path.dirname(os.path.abspath(__file__))
         dataset_name = dataset_cfg.dataset_name
+        timestamp = time.strftime("%Y%m%d_%H%M%S")
         if index_error_list:
             error_log_path = (
-                Path(base_dir) / f"{dataset_name}-index_error_split_{args.num}.txt"
+                Path(base_dir)
+                / f"{dataset_name}-index_error_split_{args.num}_{timestamp}.txt"
             )
             with open(error_log_path, "w", encoding="utf-8") as f:
                 for item in index_error_list:
@@ -391,7 +393,8 @@ def main():
 
         if rag_error_list:
             error_log_path = (
-                Path(base_dir) / f"{dataset_name}-rag_error_split_{args.num}.txt"
+                Path(base_dir)
+                / f"{dataset_name}-rag_error_split_{args.num}_{timestamp}.txt"
             )
             with open(error_log_path, "w", encoding="utf-8") as f:
                 for item in rag_error_list:

@@ -60,7 +60,7 @@ class GBCRAG(BaseRAG):
         )
         self.vlm = vlm
         self.cfg = config
-        self.varient = self.cfg.varient
+        self.variant = self.cfg.variant
         if not gbc_index:
             raise ValueError("GBC index must be provided for GBCRAG.")
         self.gbc_index = gbc_index
@@ -79,9 +79,13 @@ class GBCRAG(BaseRAG):
 
         # Agents
         self.planner = TaskPlanner(llm=self.llm)
-        self.answer = AnswerAgent(llm=self.llm, vlm=self.vlm)
+        self.answer = AnswerAgent(
+            llm=self.llm,
+            vlm=self.vlm,
+            variant=self.variant,
+        )
         self.retriever = Retriever(
-            varient=self.varient,
+            variant=self.variant,
             reranker=self.reranker,
             # mm_reranker=self.mm_reranker,
             embedder=self.embedder,
@@ -191,7 +195,7 @@ class GBCRAG(BaseRAG):
             else:
                 remain_ents.append(res_ent)
 
-        should_force_one = (len(Qent_GBCent_map) == 0)
+        should_force_one = len(Qent_GBCent_map) == 0
         if remain_ents:
             remain_map = self._entity_map(remain_ents, force_one=should_force_one)
             for k, v in remain_map.items():
@@ -409,13 +413,15 @@ class GBCRAG(BaseRAG):
 
         # 1. Get subgraph: sel_sec_id --> subtree --> subgraph.
         # Get the subtree rooted at the selected section ID
-        if self.varient == "wo_selector":
+        if self.variant == "wo_selector":
             log.info("Variant 'wo_selector' selected")
             subtree_nodes = self.gbc_index.TreeIndex.get_nodes(hasRoot=False)
         else:
-            log.info(f"Using {self.varient} variant for retrieval.")
+            log.info(f"Using {self.variant} variant for retrieval.")
             retrieval_sec_ids = iter_context.retrieval_sec_ids
-            subtree_nodes = self.gbc_index.TreeIndex.get_subtree_nodes(retrieval_sec_ids)
+            subtree_nodes = self.gbc_index.TreeIndex.get_subtree_nodes(
+                retrieval_sec_ids
+            )
 
         subtree_ids = [node.index_id for node in subtree_nodes]
 
@@ -457,9 +463,11 @@ class GBCRAG(BaseRAG):
         iter_context.linked_tree_nodes = tree_nodes
 
         # 3. Use LLM to select the most relevant section or supplementary sections
-        if self.varient == "wo_selector":
+        if self.variant == "wo_selector":
             log.info("Variant 'wo_selector' selected: Skipping LLM section selection.")
-            iter_context.retrieval_sec_ids = [self.gbc_index.TreeIndex.root_node.index_id]
+            iter_context.retrieval_sec_ids = [
+                self.gbc_index.TreeIndex.root_node.index_id
+            ]
         else:
             self.llm_section_selection(query, tree_nodes, iter_context)
 
@@ -571,7 +579,7 @@ class GBCRAG(BaseRAG):
     def generation(self, query: str, query_output_dir: str):
         context = GBCRAGContext(query=query)
 
-        if self.varient == "wo_plan":
+        if self.variant == "wo_plan":
             log.info("Variant 'wo_plan' selected: Skipping LLM planning.")
             query_analysis = PlanResult(
                 query_type="simple",

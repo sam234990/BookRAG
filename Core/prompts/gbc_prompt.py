@@ -503,6 +503,18 @@ VLM_GENERATION_USER_PROMPT = """
 {content}
 """
 
+VLM_ONE_GENERATION_USER_PROMPT = """
+--- User Question ---
+{question}
+
+**Image Metadata (Supplementary Context):**
+{content}
+
+** Other Retrieved Context (Textual):**
+{retrieved_content}
+"""
+
+
 SYNTHESIS_SYS_PROMPT = """
 You are an expert AI assistant specializing in synthesizing information.
 Given the user question, please merge all analyses into a final answer.
