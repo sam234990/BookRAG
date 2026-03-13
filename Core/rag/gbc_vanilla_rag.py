@@ -40,7 +40,7 @@ class GBCVanillaRAG(BaseRAG):
         self.cfg = config
         self.tree_vdb = tree_vdb
         self.graph_vdb = graph_vdb
-        self.embedder = self.tree_vdb.embedder if self.tree_vdb else None
+        self.embedder = self.tree_vdb.embedding_model if self.tree_vdb else None
 
         self.topk = self.cfg.topk
         self.topk_ent = self.cfg.topk_ent
@@ -76,7 +76,7 @@ class GBCVanillaRAG(BaseRAG):
                 context_text += f"Text {i+1}: {doc['content']}\n"
 
         context_text = TextProcessor.split_text_into_chunks(
-            text=context_text, max_length=self.max_tokens - 400
+            text=context_text, max_length=self.llm.config.max_tokens - 400
         )
         context_text = context_text[0]  # take the first chunk only
         return context_text
@@ -101,7 +101,7 @@ class GBCVanillaRAG(BaseRAG):
             graph_retrieval_res=graph_retrieval_res,
         )
 
-        final_answer = self.llm.get_completion(context_text, json_response=False)
+        final_answer = self.llm.get_completion(augmented_prompt, json_response=False)
 
         retrieval_ids = self._save_retrieval_res(
             tree_retrieval_res,

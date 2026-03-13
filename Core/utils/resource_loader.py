@@ -80,6 +80,7 @@ def prepare_rag_dependencies(cfg: SystemConfig) -> Dict[str, Any]:
             dependencies["vector_store"] = vdb
 
     elif strategy_name == "gbcvanilla":
+        import os
         from Core.configs.embedding_config import EmbeddingConfig
         from Core.configs.vdb_config import VDBConfig
         from Core.provider.vdb import VectorStore
