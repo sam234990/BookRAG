@@ -64,7 +64,7 @@ vdb:
 rag_force_reprocess: True
 rag:
   strategy: mmr
-  topk: 20
+  topk: 10
   vdb_config: 
     mm_embedding: True
     vdb_dir_name: "Tree_vdb"

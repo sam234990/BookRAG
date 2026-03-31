@@ -73,7 +73,7 @@ rag_force_reprocess: True
 
 rag:
   strategy: vanilla
-  topk: 5
+  topk: 10
   retrieval_method: vanilla
   vdb_config: 
     mm_embedding: False

@@ -203,3 +203,4 @@ test/
 /Scripts/cfg/m3docVQA.yaml
 /Scripts/cfg/MMLongBench.yaml
 /Scripts/cfg/Qasper.yaml
+/config/tmp/*

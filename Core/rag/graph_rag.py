@@ -265,7 +265,7 @@ class GraphRAG(BaseRAG):
         )
         context_text = context[0]
 
-        context_images = context_images[:2]
+        context_images = context_images[:1]
         context_text += question_text
         return context_text, context_images
 

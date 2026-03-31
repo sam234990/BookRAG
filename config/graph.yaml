@@ -68,6 +68,6 @@ rag_force_reprocess: True
 
 rag:
   strategy: graph
-  topk_docs: 7
+  topk_docs: 10
   sim_threshold: 0.3
   max_retry: 1
