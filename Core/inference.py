@@ -1,3 +1,6 @@
+# Copyright (C) 2025-2026 Shu Wang
+# SPDX-License-Identifier: Apache-2.0 OR AGPL-3.0-only
+
 import os
 import pandas as pd
 from Core.configs.system_config import load_system_config, SystemConfig

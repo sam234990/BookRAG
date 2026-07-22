@@ -1,3 +1,6 @@
+# Copyright (C) 2025-2026 Shu Wang
+# SPDX-License-Identifier: Apache-2.0 OR AGPL-3.0-only
+
 from Core.provider.llm import LLM
 from Core.provider.vlm import VLM
 from Core.configs.graph_config import GraphConfig
@@ -228,8 +231,10 @@ class LLMExtractor(BaseExtractor):
 
     def _extract_records_from_text(self, chunk_text: str):
         """
-        Extract entity and relationship from chunk, which is used for the GraphRAG.
-        Please refer to the following references:
+        Extract entities and relationships from a chunk for GraphRAG.
+
+        This implementation was independently authored. The following projects
+        were consulted as conceptual references:
         1. https://github.com/gusye1234/nano-graphrag
         2. https://github.com/HKUDS/LightRAG/tree/main
         """

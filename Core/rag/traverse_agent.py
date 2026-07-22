@@ -1,3 +1,6 @@
+# Copyright (C) 2025-2026 Shu Wang
+# SPDX-License-Identifier: Apache-2.0 OR AGPL-3.0-only
+
 from Core.provider.llm import LLM
 from Core.provider.vlm import VLM
 from Core.Index.Tree import DocumentTree, TreeNode, NodeType, MetaInfo

@@ -1,3 +1,8 @@
+# This file contains code copied and modified from the DROP evaluation
+# implementation linked below. It is not covered by the BookRAG software
+# licenses. See THIRD_PARTY_NOTICES.md for the unresolved provenance notice.
+# https://github.com/allenai/allennlp-reading-comprehension/blob/master/allennlp_rc/eval/drop_eval.py
+
 import json
 import re
 import string

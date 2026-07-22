@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Copyright (C) 2025-2026 Shu Wang
+# SPDX-License-Identifier: Apache-2.0 OR AGPL-3.0-only
+
 """
 @Time    : 2024/11/06 17:01
 @Author  : 🛞

@@ -1,3 +1,6 @@
+# Copyright (C) 2025-2026 Shu Wang
+# SPDX-License-Identifier: Apache-2.0 OR AGPL-3.0-only
+
 from Core.Index.Tree import DocumentTree
 from Core.pipelines.tree_node_builder import create_node_by_type
 from Core.pipelines.outline_extractor import extract_pdf_outline_in_chunks

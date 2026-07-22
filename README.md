@@ -185,6 +185,35 @@ BookRAG/
 - `Paper PDF`: [BOOKRAG_VLDB_2026_full.pdf](./BOOKRAG_VLDB_2026_full.pdf)
 - `Code`: [sam234990/BookRAG](https://github.com/sam234990/BookRAG)
 
+## License
+
+The root [`LICENSE`](./LICENSE) provides the GNU Affero General Public License
+v3.0 text for repository-level license identification. License terms for
+individual source files are specified by their SPDX license identifiers; the
+root license does not automatically apply to every file or non-software
+artifact in this repository.
+
+Independently authored BookRAG source components carrying the corresponding
+SPDX identifier, including the Core components and the `main.py` program entry
+point, are available under either Apache-2.0 or AGPL-3.0-only. Files derived
+from or adapted for MinerU are available under AGPL-3.0-only. A BookRAG
+distribution that includes or combines these MinerU-derived components must
+comply with AGPL-3.0.
+
+Datasets, evaluation resources, paper PDFs, figures, experimental artifacts,
+scripts and configuration files outside the licensed source components, and
+third-party materials are not automatically covered by the BookRAG software
+licenses. They remain subject to their respective terms and existing upstream
+notices unless explicitly stated otherwise.
+
+The BookRAG paper has been accepted for publication in PVLDB Volume 19 and for
+presentation at VLDB 2026. The paper is governed separately by the PVLDB
+publication terms and the CC BY-NC-ND 4.0 notice stated in the paper; it is not
+covered by the BookRAG software licenses.
+
+See [`LICENSE_SCOPE.md`](./LICENSE_SCOPE.md) and
+[`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md) for details.
+
 ## Citation
 
 If you find BookRAG useful, please cite our paper:

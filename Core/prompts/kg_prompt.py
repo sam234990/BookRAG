@@ -1,4 +1,13 @@
 # -*- coding: utf-8 -*-
+# Copyright (C) 2025-2026 Shu Wang
+# Copyright (c) 2025 LightRAG Team
+#
+# The entity-extraction prompt block identified below is adapted from LightRAG
+# under the MIT License. The remaining portions are independently authored
+# BookRAG code. See THIRD_PARTY_NOTICES.md for provenance and license details.
+#
+# SPDX-License-Identifier: MIT AND (Apache-2.0 OR AGPL-3.0-only)
+
 from typing import List
 from pydantic import BaseModel, Field
 
@@ -38,12 +47,16 @@ class EntityExtractionResult(BaseModel):
     entities: List[ExtractEntity]
 
 
-# This file is part of the Knowledge Graph Prompting project.
-# Our KG construction is build on the JayLZhou/GraphRAG projects.
-# Please refer to the following references:
-# 1. https://github.com/JayLZhou/GraphRAG
-# 2. https://github.com/gusye1234/nano-graphrag
-# 3. https://github.com/HKUDS/LightRAG
+# The entity type defaults, delimiters, and entity-extraction prompts below,
+# through ENTITY_IF_LOOP_EXTRACTION, are adapted from LightRAG's MIT-licensed
+# prompt and from the authors' prior integration in JayLZhou/GraphRAG. BookRAG
+# modifies the prompt instructions and examples.
+#
+# LightRAG source (fixed revision):
+# https://github.com/HKUDS/LightRAG/blob/da46b341dc1b2c6c578439374ed45a30bea493db/lightrag/prompt.py
+# Prior GraphRAG integration (fixed revision):
+# https://github.com/JayLZhou/GraphRAG/blob/4e87938e46f90f3616fb27f955e8b2dc43743bde/Core/Prompt/EntityPrompt.py
+# License: MIT; see LICENSES/LightRAG-MIT.txt.
 
 
 DEFAULT_ENTITY_TYPES = [

@@ -1,3 +1,11 @@
+# Copyright (C) 2025-2026 Shu Wang
+#
+# Portions of this file were adapted from MinerU 2.1.11 code.
+# MinerU 2.1.11 was released under GNU AGPL v3.0.
+# Upstream: https://github.com/opendatalab/MinerU/blob/30b698ecc51fd04e33ba4650e918dd9f8fe5adbe/mineru/cli/common.py
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
 # Copyright (c) Opendatalab. All rights reserved.
 import copy
 import json

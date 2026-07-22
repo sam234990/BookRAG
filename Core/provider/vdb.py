@@ -1,3 +1,6 @@
+# Copyright (C) 2025-2026 Shu Wang
+# SPDX-License-Identifier: Apache-2.0 OR AGPL-3.0-only
+
 from Core.provider.embedding import BaseEmbedder
 
 import chromadb
@@ -171,4 +174,3 @@ class VectorStore:
                     single_result.append(result_item)
             batch_results.append(single_result)
         return batch_results
-

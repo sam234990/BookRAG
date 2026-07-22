@@ -1,3 +1,6 @@
+# Copyright (C) 2025-2026 Shu Wang
+# SPDX-License-Identifier: Apache-2.0 OR AGPL-3.0-only
+
 from typing import Any, Union
 from Core.configs.llm_config import LLMConfig
 from Core.configs.vlm_config import VLMConfig

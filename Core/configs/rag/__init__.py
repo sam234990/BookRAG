@@ -1,3 +1,6 @@
+# Copyright (C) 2025-2026 Shu Wang
+# SPDX-License-Identifier: Apache-2.0 OR AGPL-3.0-only
+
 # Core/configs/rag/__init__.py
 
 from .traverse_config import TraverseRAGConfig

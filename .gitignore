@@ -197,6 +197,7 @@ cython_debug/
 test/
 *.txt
 !requirements.txt
+!LICENSES/*.txt
 # BookRAG
 /Scripts/eval.sh
 /Scripts/index.sh

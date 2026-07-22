@@ -1,3 +1,6 @@
+# Copyright (C) 2025-2026 Shu Wang
+# SPDX-License-Identifier: Apache-2.0 OR AGPL-3.0-only
+
 from Core.Index.Tree import DocumentTree, NodeType
 from Core.Index.Graph import Graph
 from Core.pipelines.kg_extractor import KGExtractor
